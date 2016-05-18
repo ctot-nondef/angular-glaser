@@ -2,10 +2,9 @@
 
 /* App Module */
 
-var phonecatApp = angular.module('phonecatApp', [
+var phonecatApp = angular.module('GlaserWebApp', [
   'ngRoute',
   'phonecatAnimations',
-
   'phonecatControllers',
   'phonecatFilters',
   'phonecatServices'
