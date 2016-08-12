@@ -7,7 +7,6 @@ var GlaserApp = angular.module('GlaserApp', [
   'ngAnimate',
   'ngSanitize',
   'ngMaterial',
-  'AdlibServices',
   'GlaserControllers',
   'GlaserFilters'  
 ]);
@@ -39,7 +38,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
         views: {
             'navbar': {
                 templateUrl: 'partials/navbar.html',
-                controller: 'GlaserFullList'
+                controller: 'GlaserNav'
             }
         }
     })
@@ -59,7 +58,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
         url: '/advancedsearch',
         views: {
             'content@': {
-                templateUrl: '/partials/advancedsearch.html',
+                templateUrl: 'partials/advancedsearch.html',
                 controller: 'GlaserFullList'
             }
         }
@@ -68,12 +67,21 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
         url: '/results',
         views: {
             'content@': {
-                templateUrl: '/partials/results.html',
+                templateUrl: 'partials/results.html',
+                controller: 'GlaserFullList'
+            }
+        }
+    })
+    .state('gl.test',{
+        url: '/test',
+        views: {
+            'content@': {
+                templateUrl: 'partials/start.html',
                 controller: 'GlaserFullList'
             }
         }
     })
     $mdThemingProvider.theme('default')
-    .primaryPalette('orange')
-    .accentPalette('deep-orange');
+    .primaryPalette('blue')
+    .accentPalette('light-blue');
 }
