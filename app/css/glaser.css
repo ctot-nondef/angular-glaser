@@ -1,76 +1,81 @@
 /******** App-Wide Fonts *********/
-.md-body-2, .md-subhead, .md-list-item-text p {
-  font-size: 15px!important;
-  font-weight: 300!important;
-  letter-spacing: -.012em!important;
-  color: rgba(0,0,0,0.95)!important;
-}
-
-a,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    text-rendering: optimizeLegibility!important
-}
-a {
-    text-decoration: none!important;
-    font-size: 14px!important;
-    font-weight: 500!important;
-    letter-spacing: .018em!important
-}
-h1 {
-    font-size: 45px!important;
-    letter-spacing: -.018em!important
-}
-h2 {
-    font-size: 18px!important;
-    letter-spacing: 0!important;
-    margin: 8px 0!important
-}
-h3, .md-list-item-text h3 {
-    font-size: 20px!important;
-    font-weight: 300!important;
-    letter-spacing: -.032em!important;
-    line-height: 2pc!important;
-}
-h4 {
-    font-size: 1pc!important
-}
+@font-face{font-family:'Brandonbld';src:url('Brandon_bldWeb.eot');src:url('Brandon_bldWeb.woff') format('woff')}
 
 /******** base styles ***********/
 body {
   padding: 1px!important;
 }
 
-
-/******** navigation elements *********/
-.sidebar{
-  width: 100px;
-  height: 100%;
-  position: absolute;
-  background-color: #2856a3;
-  top:0px;
-  left:0px;
-}
-
-.navbar{
-
-}
-
-.sidenav {
-
-}
-
-md-icon.sidenav {
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Brandonbld',sans-serif;
   margin: 0px;
 }
 
-md-icon.caption {
-  
+
+/******** navigation elements *********/
+md-sidenav {
+  max-width: 90%!important;
+  width: 90%!important;
+  position: fixed!important;
 }
+
+md-backdrop {
+  position: fixed!important;
+}
+
+.sidebar{
+  width: 100px;
+  height: 100vh;
+  background-color: #0D47A1;
+  top:0px;
+  position: fixed!important;
+}
+#outersidebar{
+  left:0px;
+}
+
+#innersidebar{
+  right:0px;
+}
+
+#quickmenu {
+  top: calc(100vh / 3);
+  position: absolute;
+  width: 100px;
+}
+
+#caption {
+  position: absolute;
+  bottom: 80px;
+  width: 100px;
+  color: #ffffff;
+}
+
+#logos {
+  position: absolute;
+  bottom: 20px;
+  width: 100px;
+}
+
+#menucontainer {
+  left:0px;
+  height: 100vh;
+  width: calc(100% - 100px);
+  /*background-color: #1565C0;*/
+  position: fixed;
+  /*color: #ffffff;*/
+}
+
+md-icon.navicon {
+  color: #ffffff!important;
+  font-size: 30px;
+  width: 30px;
+  margin: 20px;
+}
+
+
+
+
 
 /******** layout elements - splashpage *********/
 .splashtile {

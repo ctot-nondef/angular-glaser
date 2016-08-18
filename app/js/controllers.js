@@ -40,16 +40,11 @@ GlaserControllers
 .controller('GlaserNav', function ($scope, $timeout, $mdSidenav, $log) {
     $scope.toggleLeft = function () {
         // Component lookup should always be available since we are not using `ng-if`
-        $mdSidenav('left').toggle()
+        //$('#sidebar').hide();
+        $mdSidenav('sidenav').toggle()
           .then(function () {
             $log.debug("toggle is done");
           });
     };
-    $scope.close = function () {
-      // Component lookup should always be available since we are not using `ng-if`
-      $mdSidenav('left').close()
-        .then(function () {
-          $log.debug("close LEFT is done");
-        });
-    };
+    //$scope.menu = 
   })
