@@ -1,32 +1,34 @@
-{
-	[
-		{
-			"caption":"Search & Browse",
-			"md-icon":"search",
-			"abstract":"",
-			"startpage":"",
-			"items":""
-		},
-		{
-			"caption":"Archeological Sites",
-			"md-icon":"map",
-			"abstract":"",
-			"startpage":"",
-			"items":""
-		},
-		{
-			"caption":"Archival materials",
-			"md-icon":"find_in_page",
-			"abstract":"",
-			"startpage":"",
-			"items":""
-		},
-		{
-			"caption":"Publications",
-			"md-icon":"local_library",
-			"abstract":"",
-			"startpage":"",
-			"items":""
-		}
-	]
-}
+[
+	{
+		"caption":"Search & Browse",
+		"arialabel":"",
+		"mdicon":"search",
+		"abstract":"",
+		"startpage":"gl.search",
+		"items":""
+	},
+	{
+		"caption":"Archeological Sites",
+		"arialabel":"",
+		"mdicon":"map",
+		"abstract":"",
+		"startpage":"",
+		"items":""
+	},
+	{
+		"caption":"Archival materials",
+		"arialabel":"",
+		"mdicon":"find_in_page",
+		"abstract":"",
+		"startpage":"",
+		"items":""
+	},
+	{
+		"caption":"Publications",
+		"arialabel":"",
+		"mdicon":"local_library",
+		"abstract":"",
+		"startpage":"",
+		"items":""
+	}
+]

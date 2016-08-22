@@ -1,10 +1,8 @@
 <div class="sidebar" hide-sm hide-xs layout="column" layout-align="start center" id="outersidebar">
-  <md-icon class="navicon" aria-label="Open Menu" ng-click="toggleLeft()">toc</md-icon>
+  <md-icon id="menuicon" class="navicon" aria-label="Open Menu" ng-click="toggleLeft()">toc</md-icon>
+  <md-icon id="closeicon" class="navicon" aria-label="Open Menu" ng-click="toggleLeft()">skip_previous</md-icon>
   <div id="quickmenu" layout="column" layout-align="start center">
-    <md-icon class="navicon" aria-label="Search">search</md-icon>
-    <md-icon class="navicon" aria-label="Browse Archeological Sites" >account_balance</md-icon>
-    <md-icon class="navicon" aria-label="Browse Archival Materials" >find_in_page</md-icon>
-    <md-icon class="navicon" aria-label="Browse Publications" >local_library</md-icon>
+    <md-icon class="navicon" ng-repeat="Icon in Model.Menu" aria-label="{{Icon.arialabel}}" ui-sref="{{Icon.startpage}}">{{Icon.mdicon}}</md-icon>
   </div>
   <div id="caption" layout="column" layout-align="start center">
     <h4>The</h4>
@@ -16,17 +14,6 @@
   </div>
 </div>
 <md-sidenav class="md-sidenav-left" md-component-id="sidenav" md-whiteframe="4">
-  <div id="innersidebar" class="sidebar">
-      <md-icon class="navicon" aria-label="Close Menu" ng-click="toggleLeft()">skip_previous</md-icon>
-      <div id="caption" layout="column" layout-align="start center">
-        <h4>The</h4>
-        <h4>Glaser</h4>
-        <h4>Collection</h4>
-      </div>
-      <div id="logos" layout="column" layout-align="start center">
-        <img src="media/OEAW_Logo_ACDH_w.png" width="60px">  
-      </div>
-  </div>
   <div id="menucontainer" layout="row" layout-align="space-between center">
     <h1 class="md-display-4 ">Headline</h1>
     <h2 class="md-display-2 ">Headline</h2>

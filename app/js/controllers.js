@@ -37,14 +37,19 @@ GlaserControllers
     //  $scope.mainImageUrl = imageUrl;
     //};
 }])
-.controller('GlaserNav', function ($scope, $timeout, $mdSidenav, $log) {
+.controller('GlaserNav', ['$scope', '$timeout', '$mdSidenav', '$http', '$log', function ($scope, $timeout, $mdSidenav, $http, $log) {
+    $scope.Model = {};
     $scope.toggleLeft = function () {
-        // Component lookup should always be available since we are not using `ng-if`
-        //$('#sidebar').hide();
-        $mdSidenav('sidenav').toggle()
-          .then(function () {
-            $log.debug("toggle is done");
-          });
+      if(!$mdSidenav('sidenav').isOpen()) {$('#outersidebar').addClass('open');}
+      else {$('#outersidebar').removeClass('open');}
+      $mdSidenav('sidenav').toggle();
     };
-    //$scope.menu = 
-  })
+    var getPromise = $http.get('static/menu.json');
+    getPromise.then(
+      function(res){
+        $scope.Model.Menu = res.data;
+        console.log($scope.Model.Menu);
+      },
+      function(err){ console.log('err: ', err); }
+    ); 
+}])

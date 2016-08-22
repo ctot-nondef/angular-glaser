@@ -6,7 +6,7 @@ var Config = {
     "baseURL":"http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?",
 }
 
-var AdlibServices = angular.module('AdlibServices', []);
+var AdlibServices = angular.module('AdlibServices', ['ngResource']);
 
 AdlibServices.service('opacsearch', ['$http', '$q', function($http, $q){
 	var deferrer = function(promise){
