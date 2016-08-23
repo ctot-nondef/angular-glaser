@@ -30,7 +30,7 @@ AdlibServices.service('opacsearch', ['$http', '$q', function($http, $q){
 		else console.log('Parameters Missing'); 	  
 		return deferrer(promise);
 	};
-	var getRecordsbyPointer = function(database, pointerfile, pagesize, page){console.log('getRecordsbyPointer Query: ', database, pointerfile, pagesize, page);
+	var getRecordsbyPointer = function(database, pointerfile, pagesize, page, brief){console.log('getRecordsbyPointer Query: ', database, pointerfile, pagesize, page);
 		if(!pagesize || !page) {pagesize = 50; page = 1;}
 		var skip = (page-1) * pagesize + 1;
 		console.log('skip',skip);
@@ -43,11 +43,20 @@ AdlibServices.service('opacsearch', ['$http', '$q', function($http, $q){
 		else console.log('Parameters Missing'); 
 		return deferrer(promise);
 	};
+	var getRecordsbyIndex = function(database, index, keyword, pagesize, page, brief){console.log('getRecordsbyPointer Query: ', database, pointerfile, pagesize, page);
+		if(!pagesize || !page) {pagesize = 50; page = 1;}
+		var skip = (page-1) * pagesize + 1;
+		console.log('skip',skip);
+		if(database && pointerfile) var promise = $http.get(Config.baseURL+"database="+database+"&search=pointer "+pointerfile+"&limit="+pagesize+"&startfrom="+skip+"&output=JSON");
+		else console.log('Parameters Missing'); 	  
+		return deferrer(promise);
+	};
 	return {
 	  	FullListbyDB: getFullListbyDB,
 	  	PointerList: getPointerList,
 	  	RecordsbyPointer: getRecordsbyPointer,
-	  	SingleRecordbyRef: getSingleRecordbyRef
+	  	SingleRecordbyRef: getSingleRecordbyRef,
+	  	RecordsbyIndex: getRecordsbyIndex
   	};
 }]);
 

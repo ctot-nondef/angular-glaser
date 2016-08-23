@@ -21,12 +21,22 @@ GlaserControllers
   );
   $scope.onList = function(){
     $scope.uiview.list = true;
-    $scope.uiview.grid = false;  //console.log('$scope.uiview: ', $scope.uiview);
+    $scope.uiview.grid = false;
   };
   $scope.onGrid = function(){
     $scope.uiview.list = false;
-    $scope.uiview.grid = true;  //console.log('$scope.uiview: ', $scope.uiview);
+    $scope.uiview.grid = true;
   };
+}])
+.controller('GlaserSearch',['$scope','$http', '$state', 'opacsearch', function($scope, $http, $state, opacsearch){
+  $scope.Model = {};
+  //this needs to contain normalization routines, autocompleters, keeping search results persistent within one session, ?
+  $scope.simpleSearch = function () {
+    
+  }
+  $scope.advancedSearch = function (argument) {
+    // body...
+  }
 }])
 .controller('GlaserSingleRecord', ['$scope', '$routeParams', 'opacsearch',
   function($scope, $routeParams, opacsearch) {

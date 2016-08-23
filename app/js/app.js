@@ -49,8 +49,8 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
         url: '/search',
         views: {
             'content@': {
-                templateUrl: 'partials/search.html',
-                controller: 'GlaserStartList'
+                templateUrl: 'partials/simplesearch.html',
+                controller: 'GlaserSearch'
             }
         }
     })
