@@ -17,25 +17,37 @@ AdlibServices.service('opacsearch', ['$http', '$q', function($http, $q){
 		);
 		return deferObject.promise;
 	};
-	var getFullList = function(database){console.log('getFullList Query: ', database);
-		if(database) var promise = $http.get(Config.baseURL+"database="+database+"&search=all&output=JSON&limit=1000");
+	var getFullListbyDB = function(database, pagesize, page){console.log('getFullList Query: ', database, pagesize, page);
+		if(!pagesize || !page) {pagesize = 50; page = 1}
+		var skip = (page-1) * pagesize + 1;
+		console.log('skip',skip);
+		if(database) var promise = $http.get(Config.baseURL+"database="+database+"&search=all&output=JSON&limit="+pagesize+"&startfrom="+skip);
 		else var promise = $http.get(Config.baseURL+"search=all&output=JSON&limit=1000");
 		return deferrer(promise);
 	};
 	var getPointerList = function(database, pointerfile){console.log('getPointerList Query: ', database, pointerfile);
-		if(database && pointerfile) var promise = $http.get(Config.baseURL+"database="+database+"&search=pointer "+pointerfile+"&output=JSON&limit=50");
+		if(database && pointerfile) var promise = $http.get(Config.baseURL+"database="+database+"&command=getpointerfile&number="+pointerfile+"output=JSON");
 		else console.log('Parameters Missing'); 	  
 		return deferrer(promise);
 	};
-	var getSingleRecord = function(database, reference){console.log('getSingleRecord Query: ', database, reference);
+	var getRecordsbyPointer = function(database, pointerfile, pagesize, page){console.log('getRecordsbyPointer Query: ', database, pointerfile, pagesize, page);
+		if(!pagesize || !page) {pagesize = 50; page = 1;}
+		var skip = (page-1) * pagesize + 1;
+		console.log('skip',skip);
+		if(database && pointerfile) var promise = $http.get(Config.baseURL+"database="+database+"&search=pointer "+pointerfile+"&limit="+pagesize+"&startfrom="+skip+"&output=JSON");
+		else console.log('Parameters Missing'); 	  
+		return deferrer(promise);
+	};
+	var getSingleRecordbyRef = function(database, reference){console.log('getSingleRecord Query: ', database, reference);
 		if(database && reference) var promise = $http.get(Config.baseURL+"action=search&database="+database+"&search=priref="+reference+"&output=JSON&limit=100");
 		else console.log('Parameters Missing'); 
 		return deferrer(promise);
 	};
 	return {
-	  	FullList: getFullList,
+	  	FullListbyDB: getFullListbyDB,
 	  	PointerList: getPointerList,
-	  	SingleRecord: getSingleRecord
+	  	RecordsbyPointer: getRecordsbyPointer,
+	  	SingleRecordbyRef: getSingleRecordbyRef
   	};
 }]);
 

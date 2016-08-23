@@ -26,7 +26,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
         views: {
             'content@': {
                 templateUrl: 'partials/start.html',
-                controller: 'GlaserFullList'
+                controller: 'GlaserStartList'
             }
         }
     })
@@ -50,7 +50,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
         views: {
             'content@': {
                 templateUrl: 'partials/search.html',
-                controller: 'GlaserFullList'
+                controller: 'GlaserStartList'
             }
         }
     })
@@ -59,7 +59,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
         views: {
             'content@': {
                 templateUrl: 'partials/advancedsearch.html',
-                controller: 'GlaserFullList'
+                controller: 'GlaserStartList'
             }
         }
     })
@@ -68,7 +68,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
         views: {
             'content@': {
                 templateUrl: 'partials/results.html',
-                controller: 'GlaserFullList'
+                controller: 'GlaserStartList'
             }
         }
     })
@@ -77,7 +77,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
         views: {
             'content@': {
                 templateUrl: 'partials/start.html',
-                controller: 'GlaserFullList'
+                controller: 'GlaserStartList'
             }
         }
     })

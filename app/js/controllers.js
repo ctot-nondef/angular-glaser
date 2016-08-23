@@ -5,14 +5,15 @@
 var GlaserControllers = angular.module('GlaserControllers', ['AdlibServices']);
 
 GlaserControllers
-.controller('GlaserFullList',['$scope','$http', '$state', 'opacsearch', function($scope, $http, $state, opacsearch){
+.controller('GlaserStartList',['$scope','$http', '$state', 'opacsearch', function($scope, $http, $state, opacsearch){
   $scope.Model = {};
   $scope.uiview = {};
   $scope.uiview.list = false;
   $scope.uiview.grid = true;
-  var getPromise = opacsearch.PointerList('archive','7');
+  var getPromise = opacsearch.RecordsbyPointer('archive','7','40','1');
   getPromise.then(
     function(res){
+      console.log(res);
       $scope.Model.PointerList = res.data.adlibJSON.recordList.record;
       console.log($scope.Model.PointerList);
     },
@@ -48,7 +49,7 @@ GlaserControllers
     getPromise.then(
       function(res){
         $scope.Model.Menu = res.data;
-        console.log($scope.Model.Menu);
+        //console.log($scope.Model.Menu);
       },
       function(err){ console.log('err: ', err); }
     ); 
