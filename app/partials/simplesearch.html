@@ -1,11 +1,11 @@
-<h2 class="md-display-2 ">Simple Search</h2>
-<md-content>
-  <div layout="column" layout-align="space-around start">
+<div layout="column" layout-align="center start">
+  <h2 class="md-display-2 ">Simple Search</h2>
+  <md-content>
     <div><span>This form will search the Glaser collection for the keywords below.</span></div>
-    <md-input-container>
-      <label>Search Keyword</label>
+    <md-input-container class="md-block" >
+      <label>Search Keyword(s)</label>
       <input ng-model="Model.keyword">
     </md-input-container>
     <md-button ng-click="simpleSearch()">Submit</md-button>
-  </div>
-</md-content>
+  </md-content>
+</div>

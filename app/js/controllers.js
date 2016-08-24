@@ -7,7 +7,6 @@ var ssFields = {
   "Archeological Site":"production.place"
 }
 
-
 /* Controllers */
 
 var GlaserControllers = angular.module('GlaserControllers', ['AdlibServices']);
@@ -85,7 +84,7 @@ GlaserControllers
     var getPromise = opacsearch.SingleRecordbyRef("archive", $stateParams.refID);
     getPromise.then(function(res){
       $scope.Model.SingleRecord = res.data.adlibJSON.recordList.record[0];
-      console.log($scope.Model.SingleRecord);
+      //console.log($scope.Model.SingleRecord);
     });
   }
 }])

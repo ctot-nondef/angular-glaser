@@ -12,6 +12,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+
 /******** navigation elements *********/
 md-sidenav {
   max-width: 100%!important;
@@ -23,7 +24,7 @@ md-backdrop {
   position: fixed!important;
 }
 
-.sidebar{
+#sidebar{
   width: 100px;
   height: 100vh;
   background-color: #0D47A1;
@@ -33,9 +34,14 @@ md-backdrop {
   left: 0px;
 }
 
+.ccontainer {
+  position: absolute;
+  margin: 15px;
+}
+
 #quickmenu {
   top: calc(100vh / 3);
-  left:0px;
+  left: 0px;
   position: absolute;
   width: 100px;
 }
@@ -51,7 +57,7 @@ md-backdrop {
 #logos {
   position: absolute;
   bottom: 20px;
-  left:0px;
+  left: 0px;
   width: 100px;
 }
 
@@ -188,31 +194,23 @@ md-icon.navicon {
 }
 
 @media (max-width: 1132px) {
-    .contentcontainer {
-        max-width: 880px;
-    }
+
 }
-@media (min-width: 912px) {
-    .sidenav {
-        display: none;
+@media (min-width: 960px) {
+    .ccontainer {
+      left: 100px;
+      width: calc(100vw - 100px);
     }
 }
 @media (max-width: 912px) {
-    .contentcontainer {
-        max-width: 700px;
+    #sidebar {
+      display: none;
     }
-    .navbar {
-        display: none;
+    .ccontainer {
+      left: 0px;
+      width: 100vw;
     }
 }
 @media (max-width: 692px) {
-    .contentcontainer {
-        max-width: 440px;
-    }
-    .projecttile {
-        width: calc(100% - 16px);
-    }
-    .desctext {
-      display: none;
-    }
+
 }
