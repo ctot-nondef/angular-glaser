@@ -33,7 +33,6 @@ AdlibServices.service('opacsearch', ['$http', '$q', function($http, $q){
 	var getRecordsbyPointer = function(database, pointerfile, pagesize, page, brief){console.log('getRecordsbyPointer Query: ', database, pointerfile, pagesize, page);
 		if(!pagesize || !page) {pagesize = 50; page = 1;}
 		var skip = (page-1) * pagesize + 1;
-		console.log('skip',skip);
 		if(database && pointerfile) var promise = $http.get(Config.baseURL+"database="+database+"&search=pointer "+pointerfile+"&limit="+pagesize+"&startfrom="+skip+"&output=JSON");
 		else console.log('Parameters Missing'); 	  
 		return deferrer(promise);
@@ -43,11 +42,20 @@ AdlibServices.service('opacsearch', ['$http', '$q', function($http, $q){
 		else console.log('Parameters Missing'); 
 		return deferrer(promise);
 	};
-	var getRecordsbyIndex = function(database, index, keyword, pagesize, page, brief){console.log('getRecordsbyPointer Query: ', database, pointerfile, pagesize, page);
+	var getRecordsbyIndex = function(database, index, logic, pagesize, page, brief){console.log('getRecordsbyIndex Query: ', database, index, logic, pagesize, page);
 		if(!pagesize || !page) {pagesize = 50; page = 1;}
+		if(!logic) {logic = "OR";}
 		var skip = (page-1) * pagesize + 1;
-		console.log('skip',skip);
-		if(database && pointerfile) var promise = $http.get(Config.baseURL+"database="+database+"&search=pointer "+pointerfile+"&limit="+pagesize+"&startfrom="+skip+"&output=JSON");
+		if(database && index) {
+			var searchstring = "";
+			index.forEach(function(query){
+				for(var key in query) {
+					if(searchstring != "") searchstring += "%20OR%20";
+					searchstring += key+"=%27"+query[key]+"%27";
+				}
+			});
+			var promise = $http.get(Config.baseURL+"database="+database+"&search="+searchstring+"&limit="+pagesize+"&startfrom="+skip+"&output=JSON");
+		}
 		else console.log('Parameters Missing'); 	  
 		return deferrer(promise);
 	};
@@ -57,6 +65,26 @@ AdlibServices.service('opacsearch', ['$http', '$q', function($http, $q){
 	  	RecordsbyPointer: getRecordsbyPointer,
 	  	SingleRecordbyRef: getSingleRecordbyRef,
 	  	RecordsbyIndex: getRecordsbyIndex
+  	};
+}]);
+
+AdlibServices.service('searchhistory', ['$http', '$q', function($http, $q){
+	var history = {"query":[],"result":[]};
+	var deferrer = function(promise){
+		var deferObject = $q.defer();
+		promise.then (
+			function(resp){ deferObject.resolve(resp); /*console.log('$state: ', $state); there should be some Query error handling here processing the response error field from adlib*/ },
+			function(errr){ deferObject.reject(errr); /*console.log('errr$state: ', $state);*/ }
+		);
+		return deferObject.promise;
+	};
+	var addtoHistory = function(query, result){console.log('addtoHistory: ', query, result);
+		history.query.push(query);
+		history.result.push(result);
+	};
+	return {
+		add: addtoHistory,
+		history: history
   	};
 }]);
 

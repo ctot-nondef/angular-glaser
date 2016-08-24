@@ -59,7 +59,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
         views: {
             'content@': {
                 templateUrl: 'partials/advancedsearch.html',
-                controller: 'GlaserStartList'
+                controller: 'GlaserSearch'
             }
         }
     })
@@ -67,8 +67,8 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
         url: '/results',
         views: {
             'content@': {
-                templateUrl: 'partials/results.html',
-                controller: 'GlaserStartList'
+                templateUrl: 'partials/result.html',
+                controller: 'GlaserResultList'
             }
         }
     })
