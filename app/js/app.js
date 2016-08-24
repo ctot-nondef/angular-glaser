@@ -72,17 +72,8 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
             }
         }
     })
-    .state('gl.test',{
-        url: '/test',
-        views: {
-            'content@': {
-                templateUrl: 'partials/start.html',
-                controller: 'GlaserStartList'
-            }
-        }
-    })
     .state('gl.singleRecord',{
-        url: '/:refID',
+        url: '/rec/:refID',
         views: {
             'content@': {
                 templateUrl: 'partials/singleRecord.html',

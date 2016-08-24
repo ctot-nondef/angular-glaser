@@ -79,15 +79,15 @@ GlaserControllers
     $scope.uiview.grid = true;
   };
 }])
-.controller('GlaserSingleRecord', ['$scope', '$routeParams', 'opacsearch',
-  function($scope, $routeParams, opacsearch) {
-    $scope.SingleRecord = opacsearch.get({reference: $routeParams.reference, database: $routeParams.database}, function(opacsearch) {
-      //$scope.mainImageUrl = phone.images[0];
+.controller('GlaserSingleRecord', ['$scope', '$stateParams', 'opacsearch', function($scope, $stateParams, opacsearch) {
+  $scope.Model = {};
+  if($stateParams.refID) {
+    var getPromise = opacsearch.SingleRecordbyRef("archive", $stateParams.refID);
+    getPromise.then(function(res){
+      $scope.Model.SingleRecord = res.data.adlibJSON.recordList.record[0];
+      console.log($scope.Model.SingleRecord);
     });
-
-    //$scope.setImage = function(imageUrl) {
-    //  $scope.mainImageUrl = imageUrl;
-    //};
+  }
 }])
 .controller('GlaserNav', ['$scope', '$timeout', '$mdSidenav', '$http', '$log', function ($scope, $timeout, $mdSidenav, $http, $log) {
     $scope.Model = {};
