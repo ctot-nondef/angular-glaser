@@ -38,6 +38,10 @@ md-backdrop {
   position: absolute;
   margin: 15px;
 }
+.pagewrapper {
+  height: 100%;
+  width: 100%;
+}
 
 #quickmenu {
   top: calc(100vh / 3);
@@ -200,6 +204,7 @@ md-icon.navicon {
     .ccontainer {
       left: 100px;
       width: calc(100vw - 100px);
+      height: 100vh;
     }
 }
 @media (max-width: 912px) {
@@ -209,6 +214,7 @@ md-icon.navicon {
     .ccontainer {
       left: 0px;
       width: 100vw;
+      height: 100vh;
     }
 }
 @media (max-width: 692px) {
