@@ -1,13 +1,41 @@
-<div class="pagewrapper" layout="column" layout-align="center center">
-  <div layout="column" layout-align="center start">
-    <h2 class="md-display-2 ">Simple Search</h2>
-    <md-content>
-      <div><span>This form will search the Glaser collection for the keywords below.</span></div>
-      <md-input-container class="md-block" >
-        <label>Search Keyword(s)</label>
-        <input ng-model="Model.keyword">
-      </md-input-container>
-      <md-button ng-click="simpleSearch()">Submit</md-button>
+<div class="pagewrapper" layout="row" layout-align="center start" layout-align-gt-sm="space-around center" layout-padding layout-wrap>
+  <md-whiteframe class="md-whiteframe-3dp card searchcard" layout="column" flex="noshrink" layout-align="start start" >
+    <md-content layout-padding>
+      <div>
+        <h2 class="md-display-2 ">Simple Search</h2>
+        <div><span>Search the Glaser Collection for a sequence of keywords. <br>
+        Separate them by SPACEs. Use * as wildcards.</span></div>
+        <md-input-container class="md-block" >
+          <label>Search Keyword(s)</label>
+          <input ng-model="Model.keyword">
+        </md-input-container>
+        <md-button ng-click="simpleSearch()">Submit</md-button>
+      </div>
     </md-content>
-  </div>
+  </md-whiteframe>
+  <md-whiteframe class="md-whiteframe-3dp card searchcard" layout="column" flex="noshrink" layout-align="start start">
+    <md-content layout-padding>
+      <div>
+        <h2 class="md-display-2 ">Information</h2>
+        <div><span>Simple Search currently queries the following Fields using an OR logic.</span></div>
+        
+      </div>
+    </md-content>
+  </md-whiteframe>
+  <md-whiteframe class="md-whiteframe-3dp card searchcard" layout="column" flex="noshrink" layout-align="start start">
+    <md-content layout-padding>
+      <div>
+        <h2 class="md-display-2 ">Previous Searches</h2>
+        <div><span>Searches are currently only saved within one session.</span></div>
+          <md-whiteframe class="md-whiteframe-11dp" layout layout-align="center center">
+            <md-list flex>
+              <md-list-item class="spinentry projectline md-3-line md-long-text" style="margin-top: 0px;" ng-repeat="search in Model.previousSearches" ui-sref="s-project({nID:{{pro['schema:name'].replace('dha:','')}}})" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50 + 's'}">
+                  <span>{{search}}</span>
+                  <md-divider ></md-divider>
+              </md-list-item>
+            </md-list>
+          </md-whiteframe>  
+      </div>
+    </md-content>
+  </md-whiteframe>
 </div>

@@ -37,6 +37,7 @@ GlaserControllers
 }])
 .controller('GlaserSearch',['$scope','$http', '$state', 'opacsearch', 'searchhistory', function($scope, $http, $state, opacsearch, searchhistory){
   $scope.Model = {};
+  $scope.Model.previousSearches = searchhistory.history.query;
   //this needs to contain normalization routines, autocompleters, keeping search results persistent within one session, ?
   $scope.simpleSearch = function () {
     $scope.Model.Result = {};
