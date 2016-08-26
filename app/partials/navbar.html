@@ -14,9 +14,12 @@
   </div>
 </div>
 <md-sidenav class="md-sidenav-left" md-component-id="sidenav" md-whiteframe="4">
-  <div id="menucontainer" layout="row" layout-align="space-between center">
-    <h1 class="md-display-4 ">Headline</h1>
-    <h2 class="md-display-2 ">Headline</h2>
-    <h1 class="md-display-1 ">Headline</h1>
+  <div id="navcontainer" layout="column" layout-align="start center">
+    <div id="menucontainer" layout="row" layout-align="space-between center" layout-wrap>
+      <div class="pointcontainer" ng-repeat="Icon in Model.Menu">
+        <md-icon class="menuicon" aria-label="{{Icon.arialabel}}" ui-sref="{{Icon.startpage}}">{{Icon.mdicon}}</md-icon>
+        <h2 class="md-display-2 ">{{Icon.caption}}</h2>
+      </div>
+    </div>
   </div>
 </md-sidenav>

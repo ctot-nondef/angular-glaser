@@ -92,8 +92,8 @@ GlaserControllers
 .controller('GlaserNav', ['$scope', '$timeout', '$mdSidenav', '$http', '$log', function ($scope, $timeout, $mdSidenav, $http, $log) {
     $scope.Model = {};
     $scope.toggleLeft = function () {
-      if(!$mdSidenav('sidenav').isOpen()) {$('#outersidebar').addClass('open');}
-      else {$('#outersidebar').removeClass('open');}
+      if(!$mdSidenav('sidenav').isOpen()) {$('#sidebar').addClass('open');}
+      else {$('#sidebar').removeClass('open');}
       $mdSidenav('sidenav').toggle();
     };
     var getPromise = $http.get('static/menu.json');
