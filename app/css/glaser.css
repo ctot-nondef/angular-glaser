@@ -214,7 +214,7 @@ md-icon.menuicon {
 }
 
 .searchcard {
-  width: 300px;
+  width: 250px;
   flex-grow: 1;
   min-height: 400px;
   max-height: calc(100% - 20px);
@@ -224,14 +224,14 @@ md-icon.menuicon {
 
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1279px) {
 
 }
 
 @media (min-width: 960px) {
 
 }
-@media (max-width: 960px) {
+@media (max-width: 959px) {
 
 }
 
@@ -245,7 +245,7 @@ md-icon.menuicon {
     height:100%;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 599px) {
   #sidebar {
     display: none;
   }
