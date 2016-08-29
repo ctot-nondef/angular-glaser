@@ -1,5 +1,5 @@
-<div class="pagewrapper" layout="row" layout-align="center start" layout-align-gt-sm="space-around center" layout-padding layout-wrap>
-  <md-whiteframe class="md-whiteframe-2dp card searchcard" layout="column" flex="noshrink" layout-align="start start" >
+<div class="pagewrapper" layout="row" layout-align="center start" layout-padding layout-wrap>
+  <div class="maincard card" layout="column" flex="noshrink" layout-align="start start" >
     <md-content layout-padding>
       <div>
         <h2 class="md-display-1">Simple Search</h2>
@@ -12,8 +12,8 @@
         <md-button ng-click="simpleSearch()">Submit</md-button>
       </div>
     </md-content>
-  </md-whiteframe>
-  <md-whiteframe class="md-whiteframe-1dp card searchcard" layout="column" flex="noshrink" layout-align="start start">
+  </div>
+  <md-whiteframe class="md-whiteframe-3dp card subcard" layout="column" flex="noshrink" layout-align="start start">
     <md-content layout-padding>
       <div>
         <h2 class="md-display-1">Information</h2>
@@ -22,14 +22,14 @@
       </div>
     </md-content>
   </md-whiteframe>
-  <md-whiteframe class="md-whiteframe-1dp card searchcard" layout="column" flex="noshrink" layout-align="start start">
+  <md-whiteframe class="md-whiteframe-3dp card subcard" layout="column" flex="noshrink" layout-align="start start">
     <md-content layout-padding>
       <div>
         <h2 class="md-display-1">Previous Searches</h2>
         <div><span>Searches are currently only saved within one session.</span></div>
           <md-whiteframe class="md-whiteframe-11dp" layout layout-align="center center">
             <md-list flex>
-              <md-list-item class="spinentry projectline md-3-line md-long-text" style="margin-top: 0px;" ng-repeat="search in Model.previousSearches" ui-sref="s-project({nID:{{pro['schema:name'].replace('dha:','')}}})" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50 + 's'}">
+              <md-list-item class="spinentry projectline md-3-line md-long-text" style="margin-top: 0px;" ng-repeat="search in Model.previousSearches" ui-sref="gl.results({resID: {{$index+1}}})">
                   <span>{{search}}</span>
                   <md-divider ></md-divider>
               </md-list-item>

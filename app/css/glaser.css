@@ -200,22 +200,30 @@ md-icon.menuicon {
 }
 
 .pointcontainer {
-  min-width: 320px;
+  min-width: 330px;
   display: flex;
 }
 
 .pagewrapper {
   height: 100%;
   width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  overflow-x: hidden;
 }
 
 .card {
   margin: 5px;
 }
 
-.searchcard {
-  width: 271px;
+.maincard {
+  width: 100%;
+}
+
+.subcard {
+  width: 310px;
   flex-grow: 1;
+  flex-shrink: 1;
   min-height: 400px;
   max-height: calc(100% - 20px);
 }
@@ -229,13 +237,6 @@ md-icon.menuicon {
 }
 
 @media (min-width: 960px) {
-
-}
-@media (max-width: 959px) {
-
-}
-
-@media (min-width: 600px) {
   .ccontainer, .navcontainer {
     width: calc(100% - 100px);
     height: 100%;
@@ -245,7 +246,7 @@ md-icon.menuicon {
     height:100%;
   }
 }
-@media (max-width: 599px) {
+@media (max-width: 959px) {
   #sidebar {
     display: none;
   }
@@ -254,4 +255,11 @@ md-icon.menuicon {
     width: 100%;
     height: 100%;
   }
+}
+
+@media (min-width: 600px) {
+
+}
+@media (max-width: 599px) {
+
 }

@@ -64,7 +64,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
         }
     })
     .state('gl.results',{
-        url: '/results',
+        url: '/results/:resID',
         views: {
             'content@': {
                 templateUrl: 'partials/result.html',
