@@ -214,7 +214,7 @@ md-icon.menuicon {
 }
 
 .searchcard {
-  width: 250px;
+  width: 271px;
   flex-grow: 1;
   min-height: 400px;
   max-height: calc(100% - 20px);
