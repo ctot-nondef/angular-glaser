@@ -207,15 +207,22 @@ md-icon.menuicon {
 .pagewrapper {
   height: 100%;
   width: 100%;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .card {
   margin: 5px;
 }
 
-.searchcard {
-  width: 300px;
+.maincard {
+  width: 100%;
+}
+
+.subcard {
+  width: 310px;
   flex-grow: 1;
+  flex-shrink: 1;
   min-height: 400px;
   max-height: calc(100% - 20px);
 }
