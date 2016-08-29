@@ -200,7 +200,7 @@ md-icon.menuicon {
 }
 
 .pointcontainer {
-  min-width: 320px;
+  min-width: 330px;
   display: flex;
 }
 
@@ -224,18 +224,11 @@ md-icon.menuicon {
 
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1279px) {
 
 }
 
 @media (min-width: 960px) {
-
-}
-@media (max-width: 960px) {
-
-}
-
-@media (min-width: 600px) {
   .ccontainer, .navcontainer {
     width: calc(100% - 100px);
     height: 100%;
@@ -245,7 +238,7 @@ md-icon.menuicon {
     height:100%;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 959px) {
   #sidebar {
     display: none;
   }
@@ -254,4 +247,11 @@ md-icon.menuicon {
     width: 100%;
     height: 100%;
   }
+}
+
+@media (min-width: 600px) {
+
+}
+@media (max-width: 599px) {
+
 }
