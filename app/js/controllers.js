@@ -37,7 +37,7 @@ GlaserControllers
 }])
 .controller('GlaserSearch',['$scope','$http', '$state', 'opacsearch', 'searchhistory', function($scope, $http, $state, opacsearch, searchhistory){
   $scope.Model = {};
-  $scope.Model.previousSearches = searchhistory.history.query;
+  $scope.Model.previousSearches = searchhistory.history.querystring;
   //this needs to contain normalization routines, autocompleters, keeping search results persistent within one session, ?
   $scope.simpleSearch = function () {
     $scope.Model.Result = {};
@@ -52,8 +52,8 @@ GlaserControllers
       }
       var getPromise = opacsearch.RecordsbyIndex('archive',$scope.Model.Query,"OR",'40','1');
       getPromise.then(function(res){
-          searchhistory.add($scope.Model.Query, res);
-          $state.go('gl.results');
+          searchhistory.add($scope.Model.keyword, $scope.Model.Query, res);
+          $state.go('gl.results', {resID: searchhistory.history.result.length});
         },
         function(err){ console.log('err: ', err); }
       );
@@ -63,12 +63,13 @@ GlaserControllers
     // body...
   }
 }])
-.controller('GlaserResultList',['$scope','$http', '$state', 'searchhistory', function($scope, $http, $state, searchhistory){
+.controller('GlaserResultList',['$scope','$http', '$state', '$stateParams', 'searchhistory', function($scope, $http, $state, $stateParams, searchhistory){
   $scope.Model = {};
   $scope.uiview = {};
   $scope.uiview.list = false;
   $scope.uiview.grid = true;
-  if(searchhistory.history.result[searchhistory.history.result.length-1].data.adlibJSON.recordList) $scope.Model.Result = searchhistory.history.result[searchhistory.history.result.length-1].data.adlibJSON.recordList.record;
+  console.log(searchhistory.history.result[$stateParams.resID-1]);
+  if(searchhistory.history.result[$stateParams.resID-1].data.adlibJSON.recordList) $scope.Model.Result = searchhistory.history.result[$stateParams.resID-1].data.adlibJSON.recordList.record;
   console.log($scope.Model.Result);
   $scope.onList = function(){
     $scope.uiview.list = true;

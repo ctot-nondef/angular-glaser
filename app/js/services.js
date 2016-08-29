@@ -69,7 +69,7 @@ AdlibServices.service('opacsearch', ['$http', '$q', function($http, $q){
 }]);
 
 AdlibServices.service('searchhistory', ['$http', '$q', function($http, $q){
-	var history = {"query":[],"result":[]};
+	var history = {"querystring":[],"query":[],"result":[]};
 	var deferrer = function(promise){
 		var deferObject = $q.defer();
 		promise.then (
@@ -78,7 +78,8 @@ AdlibServices.service('searchhistory', ['$http', '$q', function($http, $q){
 		);
 		return deferObject.promise;
 	};
-	var addtoHistory = function(query, result){console.log('addtoHistory: ', query, result);
+	var addtoHistory = function(string, query, result){console.log('addtoHistory: ', query, result);
+		history.querystring.push(string);
 		history.query.push(query);
 		history.result.push(result);
 	};
