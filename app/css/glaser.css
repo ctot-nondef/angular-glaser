@@ -99,14 +99,15 @@ md-icon.menuicon {
   width: 220px;
 }
 
-/******** layout elements - projects page *********/
+/******** layout elements - singleRecord page *********/
 .projecttile {
   width: 320px;
   padding: 0px;
 }
 
-.projectline {
-  padding: 0px;
+.line {
+  padding-top: 15px!important;
+  padding-bottom: 5px!important; 
 }
 
 /******** spinentry animation class - to be replaced by ngAnimate + transitions? *********/
@@ -205,19 +206,23 @@ md-icon.menuicon {
 }
 
 .pagewrapper {
-  height: 100%;
+  padding: 5px
   width: 100%;
   max-width: 1000px;
   margin: auto;
-  overflow-x: hidden;
 }
 
 .card {
   margin: 5px;
+
 }
 
 .maincard {
-  width: 100%;
+  width: 95%;
+}
+
+.pagecover {
+  width: 100%
 }
 
 .subcard {
