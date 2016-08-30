@@ -1,8 +1,26 @@
-<div class="pagewrapper" layout="column" layout-align="start start">
+<div class="pagewrapper"  layout="row" layout-align="center start" layout-padding layout-wrap>
 	<div class="maincard card" layout="column" flex="noshrink" layout-align="start start">
 		<div>
 			<img style="width: calc(100% - 10px);" src="{{'http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value='+Model.SingleRecord['reproduction.reference'][0]+'&width=1000&height=200&scalemode=fill&fillmode=center&imageformat=jpg'}}">
 			<h2 class="md-display-1" style="color: #ffffff; position: relative; top: -40px; left: 10px;">{{Model.SingleRecord.title[0]}}</h2>
 		</div>
 	</div>
+	<md-whiteframe class="md-whiteframe-3dp card subcard" layout="column" flex="noshrink" layout-align="start start">
+	<md-content layout-padding>
+	  <div>
+	    <h2 class="md-display-1">Translation</h2>
+	    <div><span>{{Model.SingleRecord['inscription.translation'][0]}}</span></div>
+	 
+	  </div>
+	</md-content>
+	</md-whiteframe>
+	<md-whiteframe class="md-whiteframe-3dp card subcard" layout="column" flex="noshrink" layout-align="start start">
+	<md-content layout-padding>
+	  <div>
+	    <h2 class="md-display-1">Transliteration</h2>
+	    <div><span>{{Model.SingleRecord['inscription.transliteration'][0]}}</span></div>
+
+	  </div>
+	</md-content>
+	</md-whiteframe>
 </div>
