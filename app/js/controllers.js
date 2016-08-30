@@ -125,5 +125,5 @@ GlaserControllers
     var presenter = null;
     init3dhop();
     setup3dhop($scope.Model.scanID);
-    resizeCanvas(1000, 600);
+    resizeCanvas(window.innerWidth-100, window.innerHeight-4);
 }])
