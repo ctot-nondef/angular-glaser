@@ -8,7 +8,7 @@ var GlaserApp = angular.module('GlaserApp', [
   'ngSanitize',
   'ngMaterial',
   'GlaserControllers',
-  'GlaserFilters'  
+  'GlaserFilters'
 ]);
 
 
@@ -24,6 +24,10 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
     .state('start',{
         url: '/',
         views: {
+            'navbar': {
+                templateUrl: 'partials/navbar.html',
+                controller: 'GlaserNav'
+            },
             'content@': {
                 templateUrl: 'partials/start.html',
                 controller: 'GlaserStartList'

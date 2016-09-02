@@ -12,6 +12,8 @@
     "angular-resource":"1.5.x",
     "angular-animate":"1.5.x",
     "angular-material":"1.1.0-rc.5",
-    "angular-sanitize":"1.5.x"
+    "angular-sanitize":"1.5.x",
+    "ui-leaflet":"1.0.0",
+    "angular-cookies":"1.5.x"
   }
 }
