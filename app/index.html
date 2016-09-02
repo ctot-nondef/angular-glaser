@@ -21,9 +21,52 @@
   <script type="text/javascript" src="js/services.js"></script>
   <script type="text/javascript" src="js/controllers.js"></script>
   <script type="text/javascript" src="js/filters.js"></script>
+  <!--3D Hop File Requirements-->
+  <link type="text/css" rel="stylesheet" href="nonbower_components/minimal/stylesheet/3dhop.css"/>  
+  <!--SPIDERGL-->
+  <script type="text/javascript" src="nonbower_components/minimal/js/spidergl.js"></script>
+  <!--JQUERY-->
+  <script type="text/javascript" src="nonbower_components/minimal/js/jquery.js"></script>
+  <!--PRESENTER-->
+  <script type="text/javascript" src="nonbower_components/minimal/js/presenter.js"></script>
+  <!--3D MODELS LOADING AND RENDERING-->
+  <script type="text/javascript" src="nonbower_components/minimal/js/nexus.js"></script>
+  <script type="text/javascript" src="nonbower_components/minimal/js/ply.js"></script>
+  <!--TRACKBALLS-->
+  <script type="text/javascript" src="nonbower_components/minimal/js/trackball_sphere.js"></script>
+  <script type="text/javascript" src="nonbower_components/minimal/js/trackball_turntable.js"></script>
+  <script type="text/javascript" src="nonbower_components/minimal/js/trackball_turntable_pan.js"></script>
+  <script type="text/javascript" src="nonbower_components/minimal/js/trackball_pantilt.js"></script>
+  <!--UTILITY-->
+  <script type="text/javascript" src="nonbower_components/minimal/js/init.js"></script>
 </head>
 <body style="display: flex;">
       <div ui-view="navbar" class="ncontainer"></div>
       <div ui-view="content" class="ccontainer"></div>
 </body>
+<script type="text/javascript">
+var presenter = null;
+
+function setup3dhop(scan) { 
+  presenter = new Presenter("draw-canvas");
+
+  presenter.setScene({
+    meshes: {
+      "Laurana" : { url: "http://opacbasis.w07adlib1.arz.oeaw.ac.at/3D/" + scan + ".nxs" }
+    },
+    modelInstances : {
+      "Model1" : { mesh : "Laurana" } 
+    }
+  });
+  presenter.rotateLight(0, 0.35)
+}
+
+function actionsToolbar(action) {
+  if(action=='home') presenter.resetTrackball(); 
+  else if(action=='zoomin') presenter.zoomIn();
+  else if(action=='zoomout') presenter.zoomOut(); 
+  else if(action=='light' || action=='light_on') { presenter.enableLightTrackball(!presenter.isLightTrackballEnabled()); lightSwitch(); } 
+  else if(action=='full'  || action=='full_on') fullscreenSwitch(); 
+}
+</script>
 </html>

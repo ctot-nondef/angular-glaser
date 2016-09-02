@@ -81,6 +81,24 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
             }
         }
     })
+    .state('gl.fullImage',{
+        url: '/img/:imgID',
+        views: {
+            'content@': {
+                templateUrl: 'partials/fullImage.html',
+                controller: 'GlaserImage'
+            }
+        }
+    })
+    .state('gl.scan',{
+        url: '/scan/:scanID',
+        views: {
+            'content@': {
+                templateUrl: 'partials/3d.html',
+                controller: 'GlaserScan'
+            }
+        }
+    })
     $mdThemingProvider.theme('default')
         .primaryPalette('blue', {
           'default': '800', 
