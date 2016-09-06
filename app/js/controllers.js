@@ -13,6 +13,7 @@ var GlaserControllers = angular.module('GlaserControllers', ['AdlibServices']);
 
 GlaserControllers
 .controller('GlaserStartList',['$scope','$http', '$state', 'opacsearch', function($scope, $http, $state, opacsearch){
+  $scope.Model = {};
   opacsearch.RecordsbyPointer('archive','7','40','1').then(
     function(res){
       console.log(res);
@@ -36,8 +37,8 @@ GlaserControllers
           $scope.Model.Query.push(JSON.parse('{"'+ssFields[key]+'":"'+entry+'"}'));
         });
       }
-      var search = opacsearch.RecordsbyIndex('archive',$scope.Model.Query,"OR",'40','1');
-      opacsearch.updateHistory($scope.Model.keyword, $scope.Model.Query, search);
+      var search = opacsearch.RecordsbyIndex('archive',$scope.Model.Query,"OR", '1');
+      opacsearch.updateHistory($scope.Model.keyword, $scope.Model.Query, "1", search);
       $state.go('gl.results', {queryID: opacsearch.history.result.length, pageNo: "1"});
     }
   }
@@ -48,12 +49,38 @@ GlaserControllers
 .controller('GlaserResultList',['$scope','$http', '$state', '$stateParams', 'opacsearch', function($scope, $http, $state, $stateParams, opacsearch){
   $scope.Model = {};
   $scope.uiview = {};
-  $scope.uiview.list = false;
-  $scope.uiview.grid = true;
-  opacsearch.history.result[$stateParams.queryID-1].then(function(res){
+  $scope.selected = [];
+  $scope.uiview.list = true;
+  $scope.uiview.grid = false;
+  if (!$stateParams.queryID || !$stateParams.pageNo) $state.go('gl.search');
+  if(opacsearch.history.result[$stateParams.queryID-1] && opacsearch.history.result[$stateParams.queryID-1][$stateParams.pageNo]) { //if we cached it already
+    $scope.promise = opacsearch.history.result[$stateParams.queryID-1][$stateParams.pageNo];
+  }
+  else { // otherwise go get it and cache it
+    $scope.promise = opacsearch.RecordsbyIndex('archive', opacsearch.history.query[$stateParams.queryID-1],"OR", $stateParams.pageNo);
+    opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
+  }
+  $scope.promise.then(function(res){
+    $scope.Model.Total = res.data.adlibJSON.diagnostic.hits;
+    $scope.Model.Page = $stateParams.pageNo;
+    $scope.Model.Pagesize = res.data.adlibJSON.recordList.record.length;
     $scope.Model.Result = res.data.adlibJSON.recordList.record;
+    console.log($scope.Model.Result);
   });
-  console.log($scope.Model.Result);
+  $scope.getPage = function(a,b) {
+    if (opacsearch.pagesize != b) {
+      opacsearch.updateSize(b);
+      $scope.promise = opacsearch.RecordsbyIndex('archive', opacsearch.history.query[$stateParams.queryID-1],"OR", $stateParams.pageNo);
+      opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
+      $scope.promise.then(function(res){
+        $scope.Model.Total = res.data.adlibJSON.diagnostic.hits;
+        $scope.Model.Page = $stateParams.pageNo;
+        $scope.Model.Pagesize = res.data.adlibJSON.recordList.record.length;
+        $scope.Model.Result = res.data.adlibJSON.recordList.record;
+      });
+    }
+    else $state.go('gl.results', {queryID: $stateParams.queryID, pageNo: a});
+  };
   $scope.onList = function(){
     $scope.uiview.list = true;
     $scope.uiview.grid = false;

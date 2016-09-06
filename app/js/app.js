@@ -8,7 +8,8 @@ var GlaserApp = angular.module('GlaserApp', [
   'ngSanitize',
   'ngMaterial',
   'GlaserControllers',
-  'GlaserFilters'
+  'GlaserFilters',
+  'md.data.table'
 ]);
 
 
