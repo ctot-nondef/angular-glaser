@@ -217,6 +217,14 @@ md-icon.menuicon {
   transition: all 200ms ease-out; 
 }
 
+/******** layout elements - result page *********/
+
+.squeezeicon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
 /******** Containers *********/
 #sidebar{
   width: 100px;
@@ -251,6 +259,10 @@ md-icon.menuicon {
 .pointcontainer {
   min-width: 330px;
   display: flex;
+}
+
+md-table-container {
+  width:100%;
 }
 
 .pagewrapper {
@@ -352,7 +364,6 @@ md-icon.menuicon {
 }
 
 .pagewrapper {
-  padding: 5px
   width: 100%;
   max-width: 1000px;
   margin: auto;

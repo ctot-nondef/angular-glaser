@@ -52,34 +52,35 @@ GlaserControllers
   $scope.selected = [];
   $scope.uiview.list = true;
   $scope.uiview.grid = false;
-  if (!$stateParams.queryID || !$stateParams.pageNo) $state.go('gl.search');
-  if(opacsearch.history.result[$stateParams.queryID-1] && opacsearch.history.result[$stateParams.queryID-1][$stateParams.pageNo]) { //if we cached it already
-    $scope.promise = opacsearch.history.result[$stateParams.queryID-1][$stateParams.pageNo];
-  }
-  else { // otherwise go get it and cache it
-    $scope.promise = opacsearch.RecordsbyIndex('archive', opacsearch.history.query[$stateParams.queryID-1],"OR", $stateParams.pageNo);
-    opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
-  }
-  $scope.promise.then(function(res){
-    $scope.Model.Total = res.data.adlibJSON.diagnostic.hits;
-    $scope.Model.Page = $stateParams.pageNo;
-    $scope.Model.Pagesize = res.data.adlibJSON.recordList.record.length;
-    $scope.Model.Result = res.data.adlibJSON.recordList.record;
-    console.log($scope.Model.Result);
-  });
+  $scope.Model.Pagesize = opacsearch.pagesize;
+  $scope.Model.Page = $stateParams.pageNo;
+  //************************************************************************
+  // when pageing
   $scope.getPage = function(a,b) {
     if (opacsearch.pagesize != b) {
       opacsearch.updateSize(b);
       $scope.promise = opacsearch.RecordsbyIndex('archive', opacsearch.history.query[$stateParams.queryID-1],"OR", $stateParams.pageNo);
       opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
-      $scope.promise.then(function(res){
-        $scope.Model.Total = res.data.adlibJSON.diagnostic.hits;
-        $scope.Model.Page = $stateParams.pageNo;
-        $scope.Model.Pagesize = res.data.adlibJSON.recordList.record.length;
-        $scope.Model.Result = res.data.adlibJSON.recordList.record;
-      });
+      $scope.promise.then($scope.update);
     }
     else $state.go('gl.results', {queryID: $stateParams.queryID, pageNo: a});
+  };
+  //************************************************************************
+  // when sorting 
+  $scope.getNewOrder = function(a) {
+    if(a.slice(0,1) == "-"){
+        console.log(a.slice(0,1));
+    }
+    else if(a.slice(0,1) != "-") {
+      console.log(a);
+    }
+  };
+  $scope.update = function(res) {
+    $scope.Model.Total = res.data.adlibJSON.diagnostic.hits;
+    $scope.Model.Page = $stateParams.pageNo;
+    $scope.Model.Pagesize = opacsearch.pagesize;
+    $scope.Model.Result = res.data.adlibJSON.recordList.record;
+    console.log($scope.Model.Result);
   };
   $scope.onList = function(){
     $scope.uiview.list = true;
@@ -89,6 +90,19 @@ GlaserControllers
     $scope.uiview.list = false;
     $scope.uiview.grid = true;
   };
+  //************************************************************************
+  // if the url is fucked up, go back to search
+  if (!$stateParams.queryID || !$stateParams.pageNo) $state.go('gl.search');
+  //************************************************************************
+  // if we got the page in question already in the history, take it, otherwise go get it and cache it
+  if(opacsearch.history.result[$stateParams.queryID-1] && opacsearch.history.result[$stateParams.queryID-1][$stateParams.pageNo]) { 
+    $scope.promise = opacsearch.history.result[$stateParams.queryID-1][$stateParams.pageNo];
+  }
+  else { 
+    $scope.promise = opacsearch.RecordsbyIndex('archive', opacsearch.history.query[$stateParams.queryID-1],"OR", $stateParams.pageNo);
+    opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
+  }
+  $scope.promise.then($scope.update);
 }])
 .controller('GlaserSingleRecord', ['$scope', '$stateParams', 'opacsearch', function($scope, $stateParams, opacsearch) {
   $scope.Model = {};
