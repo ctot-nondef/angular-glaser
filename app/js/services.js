@@ -37,7 +37,7 @@ AdlibServices.service('opacsearch', ['$http', function($http){
 		if(database && reference) return $http.get(Config.baseURL+"action=search&database="+database+"&search=priref="+reference+"&output=JSON");
 		else console.log('Parameters Missing'); 
 	};
-	var getRecordsbyIndex = function(database, index, logic, page, brief){console.log('getRecordsbyIndex Query: ', database, index, logic, page);
+	var getRecordsbyIndex = function(database, index, logic, page, fields){console.log('getRecordsbyIndex Query: ', database, index, logic, page, fields);
 		if(!this.pagesize || !page) {this.pagesize = 50; page = 1;}
 		if(!logic) {logic = "OR";}
 		var skip = (page-1) * this.pagesize + 1;
@@ -85,6 +85,7 @@ AdlibServices.service('opacsearch', ['$http', function($http){
 	  	updatePage: updatePage,
 	  	updateSize: updateSize,
 	  	pagesize: pagesize,
+	  	updateSorting: updateSorting,
 	  	sortField: sortField,
 	  	sortOrder: sortOrder,
 		history: history

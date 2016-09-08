@@ -47,6 +47,7 @@ GlaserControllers
   }
 }])
 .controller('GlaserResultList',['$scope','$http', '$state', '$stateParams', 'opacsearch', function($scope, $http, $state, $stateParams, opacsearch){
+  //********* DECLARATIVE PART *********************************************
   $scope.Model = {};
   $scope.uiview = {};
   $scope.selected = [];
@@ -68,13 +69,14 @@ GlaserControllers
   //************************************************************************
   // when sorting 
   $scope.getNewOrder = function(a) {
-    if(a.slice(0,1) == "-"){
-        console.log(a.slice(0,1));
-    }
-    else if(a.slice(0,1) != "-") {
-      console.log(a);
-    }
+    if(a.slice(0,1) == "-") opacsearch.updateSorting('descending',a.slice(1));
+    else if(a.slice(0,1) != "-") opacsearch.updateSorting('ascending',a);
+    $scope.promise = opacsearch.RecordsbyIndex('archive', opacsearch.history.query[$stateParams.queryID-1],"OR", $stateParams.pageNo);
+    opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
+    $scope.promise.then($scope.update);
   };
+  //************************************************************************
+  // generic page update 
   $scope.update = function(res) {
     $scope.Model.Total = res.data.adlibJSON.diagnostic.hits;
     $scope.Model.Page = $stateParams.pageNo;
@@ -82,6 +84,8 @@ GlaserControllers
     $scope.Model.Result = res.data.adlibJSON.recordList.record;
     console.log($scope.Model.Result);
   };
+  //************************************************************************
+  // UI-switching
   $scope.onList = function(){
     $scope.uiview.list = true;
     $scope.uiview.grid = false;
@@ -90,6 +94,7 @@ GlaserControllers
     $scope.uiview.list = false;
     $scope.uiview.grid = true;
   };
+  //********* END OF DECLARATIVE PART **************************************
   //************************************************************************
   // if the url is fucked up, go back to search
   if (!$stateParams.queryID || !$stateParams.pageNo) $state.go('gl.search');
