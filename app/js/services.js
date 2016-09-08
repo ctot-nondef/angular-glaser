@@ -6,7 +6,8 @@ var Config = {
     "baseURL":"http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?",
     "pagesize": 10,
     "sortField":"title",
-    "sortOrder":"ascending"
+    "sortOrder":"ascending",
+    "currentView":"list"
 }
 
 var AdlibServices = angular.module('AdlibServices', ['ngResource']);

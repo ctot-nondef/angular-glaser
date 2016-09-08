@@ -1,5 +1,6 @@
-<div ng-if="uiview.grid">
+<div ng-if="uiview.currentView=='grid'">
 	<h2 class="md-display-1">Search Results</h2>
+	<md-table-pagination md-limit="Model.Pagesize" md-limit-options="[10, 20, 40, 100]" md-page="Model.Page" md-total="{{Model.Total}}" md-on-paginate="getPage" md-page-select></md-table-pagination>
 	<md-grid-list
 	    md-cols="2" md-cols-sm="3" md-cols-md="5" md-cols-gt-md="8"
 	    md-row-height-gt-md="1:1" md-row-height="1:1"
@@ -18,7 +19,7 @@
 		</md-grid-tile>
 	</md-grid-list>
 </div>
-<div ng-if="uiview.list" class="pagewrapper" layout="column" layout-align="start start" layout-padding>
+<div ng-if="uiview.currentView=='list'" class="pagewrapper" layout="column" layout-align="start start" layout-padding>
 	<h2 class="md-display-1">Search Results</h2>
 	<md-table-pagination md-limit="Model.Pagesize" md-limit-options="[10, 20, 40, 100]" md-page="Model.Page" md-total="{{Model.Total}}" md-on-paginate="getPage" md-page-select></md-table-pagination>
 	<md-table-container>
@@ -50,4 +51,25 @@
 	    </tbody>
 	  </table>
 	</md-table-container>
+</div>
+<div class="viewmenu">
+	<md-fab-speed-dial ng-cloak md-open="uiview.menuOpen" md-direction="up" class="md-scale" ng-mouseenter="uiview.menuOpen=true" ng-mouseleave="uiview.menuOpen=false">
+		<md-fab-trigger >
+			<md-button aria-label="menu" class="md-fab md-warn">
+				<md-icon aria-label="{{Icon.arialabel}}">pageview</md-icon>
+			</md-button>
+		</md-fab-trigger>
+
+		<md-fab-actions>
+			<md-button aria-label="List" class="md-fab md-raised md-mini" ng-click="onGrid()">
+				<md-icon aria-label="{{Icon.arialabel}}">view_comfy</md-icon>
+			</md-button>
+			<md-button aria-label="List" class="md-fab md-raised md-mini" ng-click="onList()">
+				<md-icon aria-label="{{Icon.arialabel}}">view_list</md-icon>
+			</md-button>
+			<md-button aria-label="List" class="md-fab md-raised md-mini" ng-click="onMap()">
+				<md-icon aria-label="{{Icon.arialabel}}">map</md-icon>
+			</md-button>
+		</md-fab-actions>
+	</md-fab-speed-dial>
 </div>

@@ -77,6 +77,12 @@ md-icon.menuicon {
   display: block;
 }
 
+.viewmenu {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
 /******** layout elements - splashpage *********/
 .splashtile {
   margin: 8px;

@@ -49,8 +49,9 @@ GlaserControllers
 .controller('GlaserResultList',['$scope','$http', '$state', '$stateParams', 'opacsearch', function($scope, $http, $state, $stateParams, opacsearch){
   //********* DECLARATIVE PART *********************************************
   $scope.Model = {};
-  $scope.uiview = {};
+  $scope.uiview = {"menuOpen":false};
   $scope.selected = [];
+  $scope.uiview.currentView = Config.currentView;
   $scope.uiview.list = true;
   $scope.uiview.grid = false;
   $scope.Model.Pagesize = opacsearch.pagesize;
@@ -87,13 +88,18 @@ GlaserControllers
   //************************************************************************
   // UI-switching
   $scope.onList = function(){
-    $scope.uiview.list = true;
-    $scope.uiview.grid = false;
+    $scope.uiview.currentView = 'list';
+    Config.currentView = 'list';
   };
   $scope.onGrid = function(){
-    $scope.uiview.list = false;
-    $scope.uiview.grid = true;
-  };
+    $scope.uiview.currentView = 'grid';
+    Config.currentView = 'grid';
+    };
+  $scope.vmToggle = function(){
+    console.log($scope.uiview.menuOpen);
+    if($scope.uiview.menuOpen) $scope.uiview.menuOpen=false;
+    else $scope.uiview.menuOpen=true;
+  }
   //********* END OF DECLARATIVE PART **************************************
   //************************************************************************
   // if the url is fucked up, go back to search
