@@ -17,7 +17,7 @@ AdlibServices.service('opacsearch', ['$http', function($http){
 	var pagesize = Config.pagesize;
 	var sortField = Config.sortField;
 	var sortOrder = Config.sortOrder;
-	var getFullListbyDB = function(database, page){console.log('getFullList Query: ', database, pagesize, page);
+	var getFullListbyDB = function(database, page){console.log('getFullList Query: ', database, page);
 		if(!this.pagesize || !page) {this.pagesize = 50; page = 1}
 		var skip = (page-1) * this.pagesize + 1;
 		console.log('skip',skip);
@@ -28,7 +28,7 @@ AdlibServices.service('opacsearch', ['$http', function($http){
 		if(database && pointerfile) return $http.get(Config.baseURL+"database="+database+"&command=getpointerfile&number="+pointerfile+"output=JSON");
 		else console.log('Parameters Missing'); 	  
 	};
-	var getRecordsbyPointer = function(database, pointerfile, page, brief){console.log('getRecordsbyPointer Query: ', database, pointerfile, this.pagesize, page);
+	var getRecordsbyPointer = function(database, pointerfile, page, fields){console.log('getRecordsbyPointer Query: ', database, pointerfile, this.pagesize, page);
 		if(!pagesize || !page) {this.pagesize = 50; page = 1;}
 		var skip = (page-1) * this.pagesize + 1;
 		if(database && pointerfile) return $http.get(Config.baseURL+"database="+database+"&search=pointer "+pointerfile+"&limit="+this.pagesize+"&startfrom="+skip+"&output=JSON");
