@@ -15,8 +15,8 @@
 </div>
 <md-sidenav class="md-sidenav-left" md-component-id="sidenav" md-whiteframe="4">
   <div class="navcontainer" layout="column" layout-align="start center">
-    <div id="menucontainer" layout="row" layout-align="space-between center" layout-wrap>
-      <div class="pointcontainer" ng-repeat="Icon in Model.Menu">
+    <div id="menucontainer" layout="row" layout-align="space-between center" ng-click="toggleLeft()" layout-wrap>
+      <div class="pointcontainer" ng-repeat="Icon in Model.Menu" ui-sref="{{Icon.startpage}}">
         <md-icon class="menuicon" aria-label="{{Icon.arialabel}}" ui-sref="{{Icon.startpage}}">{{Icon.mdicon}}</md-icon>
         <h2 class="md-display-1">{{Icon.caption}}</h2>
       </div>

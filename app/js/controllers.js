@@ -26,6 +26,7 @@ GlaserControllers
 .controller('GlaserSearch',['$scope','$http', '$state', 'opacsearch', function($scope, $http, $state, opacsearch){
   $scope.Model = {};
   $scope.Model.previousSearches = opacsearch.history.querystring;
+  console.log(opacsearch.history.querystring);
   //this needs to contain normalization routines, autocompleters, keeping search results persistent within one session, ?
   $scope.simpleSearch = function () {
     $scope.Model.Result = {};
@@ -39,11 +40,15 @@ GlaserControllers
       }
       var search = opacsearch.RecordsbyIndex('archive',$scope.Model.Query,"OR", '1');
       opacsearch.updateHistory($scope.Model.keyword, $scope.Model.Query, "1", search);
-      $state.go('gl.results', {queryID: opacsearch.history.result.length, pageNo: "1"});
+      $state.go('gl.results', {queryID: "1", pageNo: "1"});
     }
   }
   $scope.advancedSearch = function (argument) {
     // body...
+  }
+  $scope.clearHistory = function(){
+    opacsearch.clearHistory();
+    $state.reload();
   }
 }])
 .controller('GlaserResultList',['$scope','$http', '$state', '$stateParams', 'opacsearch', function($scope, $http, $state, $stateParams, opacsearch){
@@ -106,7 +111,8 @@ GlaserControllers
   if (!$stateParams.queryID || !$stateParams.pageNo) $state.go('gl.search');
   //************************************************************************
   // if we got the page in question already in the history, take it, otherwise go get it and cache it
-  if(opacsearch.history.result[$stateParams.queryID-1] && opacsearch.history.result[$stateParams.queryID-1][$stateParams.pageNo]) { 
+  if(opacsearch.history.result[$stateParams.queryID-1][$stateParams.pageNo]['$$state'] && opacsearch.history.result[$stateParams.queryID-1][$stateParams.pageNo]['$$state']['status'] == 1) {
+    console.log(opacsearch.history.result[$stateParams.queryID-1]);
     $scope.promise = opacsearch.history.result[$stateParams.queryID-1][$stateParams.pageNo];
   }
   else { 

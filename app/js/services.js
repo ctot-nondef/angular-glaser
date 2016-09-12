@@ -10,10 +10,14 @@ var Config = {
     "currentView":"list"
 }
 
-var AdlibServices = angular.module('AdlibServices', ['ngResource']);
+var AdlibServices = angular.module('AdlibServices', ['ngStorage']);
 
-AdlibServices.service('opacsearch', ['$http', function($http){
-	var history = {"querystring":[],"query":[],"result":[]};
+AdlibServices.service('opacsearch', ['$http', '$localStorage' ,function($http,$localStorage){
+	if($localStorage.history) var history = $localStorage.history;
+	else {
+		$localStorage.history = {"querystring":[],"query":[],"result":[]};
+		var history = $localStorage.history;
+	}	
 	var pagesize = Config.pagesize;
 	var sortField = Config.sortField;
 	var sortOrder = Config.sortOrder;
@@ -56,12 +60,16 @@ AdlibServices.service('opacsearch', ['$http', function($http){
 		else console.log('Parameters Missing');
 	};
 	var updateHistory = function(string, query, page, result){console.log('addtoHistory: ', query, result);
-		this.history.querystring.push(string);
-		this.history.query.push(query);
+		this.history.querystring.unshift(string);
+		this.history.query.unshift(query);
 		var obj = {};
 		obj[page] = result;
-		this.history.result.push(obj);
+		this.history.result.unshift(obj);
 	};
+	var clearHistory = function(){console.log('clearing History upon user request.');
+		$localStorage.history = {"querystring":[],"query":[],"result":[]};
+		var history = $localStorage.history;
+	}
 	var updatePage = function(queryno, page, result){console.log('updatePage: ', queryno, page, result);
 		if(this.history.result[queryno]) {
 			this.history.result[queryno][page] = result;
@@ -83,6 +91,7 @@ AdlibServices.service('opacsearch', ['$http', function($http){
 	  	SingleRecordbyRef: getSingleRecordbyRef,
 	  	RecordsbyIndex: getRecordsbyIndex,
 	  	updateHistory: updateHistory,
+	  	clearHistory: clearHistory,
 	  	updatePage: updatePage,
 	  	updateSize: updateSize,
 	  	pagesize: pagesize,
