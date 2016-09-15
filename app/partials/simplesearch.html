@@ -28,7 +28,7 @@
         <h3 class="md-title">Previous Searches</h3><md-button class="md-raised md-warn" ng-click="clearHistory()">Clear Search History</md-button>
         <div><span>Searches are currently only saved within one session.</span></div>
             <md-list flex>
-              <md-list-item class="spinentry projectline" style="margin-top: 0px;" ng-repeat="search in Model.previousSearches" ui-sref="gl.results({queryID: {{$index+1}}, pageNo: '1'})">
+              <md-list-item class="spinentry projectline" style="margin-top: 0px;" ng-repeat="search in Model.osData.history.querystring" ui-sref="gl.results({queryID: {{$index+1}}, pageNo: '1'})">
                   <span>{{search}}</span>
                   <md-divider ></md-divider>
               </md-list-item>

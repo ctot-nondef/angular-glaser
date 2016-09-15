@@ -68,7 +68,7 @@ AdlibServices.service('opacsearch', ['$http', '$localStorage' ,function($http,$l
 	};
 	var clearHistory = function(){console.log('clearing History upon user request.');
 		$localStorage.history = {"querystring":[],"query":[],"result":[]};
-		var history = $localStorage.history;
+		this.history = $localStorage.history;
 	}
 	var updatePage = function(queryno, page, result){console.log('updatePage: ', queryno, page, result);
 		if(this.history.result[queryno]) {
