@@ -25,10 +25,10 @@
   <md-whiteframe class="md-whiteframe-3dp card subcard" layout="column" flex="noshrink" layout-align="start start">
     <md-content layout-padding>
       <div>
-        <h3 class="md-title">Previous Searches</h3><md-button class="md-raised md-warn" ng-click="clearHistory()">Clear Search History</md-button>
-        <div><span>Searches are currently only saved within one session.</span></div>
+        <h3 class="md-title"><md-icon class="panelicon">youtube_searched_for</md-icon>Previous Searches</h3>
+        <div><span>Searches are currently saved in your browsers <a target="_blank" href="https://developer.mozilla.org/en/docs/Web/API/Window/localStorage">local storage service</a>. To clear these you can either clear your browsers cache or delete it <a href="" ng-click="clearHistory()">here</a></span></div>
             <md-list flex>
-              <md-list-item class="spinentry projectline" style="margin-top: 0px;" ng-repeat="search in Model.osData.history.querystring" ui-sref="gl.results({queryID: {{$index+1}}, pageNo: '1'})">
+              <md-list-item class="vspinentry projectline" style="margin-top: 0px;" ng-repeat="search in Model.osData.history.querystring track by $index" ui-sref="gl.results({queryID: {{$index+1}}, pageNo: '1'})">
                   <span>{{search}}</span>
                   <md-divider ></md-divider>
               </md-list-item>
