@@ -74,10 +74,16 @@ AdlibServices.service('opacsearch', ['$http', '$localStorage' ,function($http,$l
 		if(this.history.result[queryno]) {
 			this.history.result[queryno][page] = result;
 		}
+		else {
+			var obj = {};
+			obj[page] = result;
+			this.history.result[queryno] = obj;
+		}
 	};
 	var updateSize = function(newsize){console.log('updateSize: ', newsize);
 		this.pagesize = newsize;
-		this.history.result = [];
+		$localStorage.history.result = [];
+		this.history = $localStorage.history;
 	};
 	var updateSorting = function(sort, field){console.log('updateSorting: ', sort, field);
 		this.sortOrder = sort;
