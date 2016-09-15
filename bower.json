@@ -13,7 +13,6 @@
     "angular-material":"1.1.0-rc.5",
     "angular-sanitize":"1.5.x",
     "ui-leaflet":"1.0.0",
-    "angular-cookies":"1.5.x",
     "angular-material-data-table":"0.10.9",
     "ngstorage":"0.3.11"
   }
