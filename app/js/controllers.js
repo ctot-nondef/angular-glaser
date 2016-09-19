@@ -14,7 +14,7 @@ var GlaserControllers = angular.module('GlaserControllers', ['AdlibServices']);
 GlaserControllers
 .controller('GlaserStartList',['$scope','$http', '$state', 'opacsearch', function($scope, $http, $state, opacsearch){
   $scope.Model = {};
-  opacsearch.RecordsbyPointer('archive','7','40','1').then(
+  opacsearch.RecordsbyPointer('collect.inf','7','40','1').then(
     function(res){
       console.log(res);
       $scope.Model.PointerList = res.data.adlibJSON.recordList.record;
@@ -38,7 +38,8 @@ GlaserControllers
           $scope.Model.Query.push(JSON.parse('{"'+ssFields[key]+'":"'+entry+'"}'));
         });
       }
-      var search = opacsearch.RecordsbyIndex('archive',$scope.Model.Query,"OR", '1');
+      var fields = ['a'];
+      var search = opacsearch.RecordsbyIndex('collect.inf',$scope.Model.Query,"OR", '1', [],"7" );
       opacsearch.updateHistory($scope.Model.keyword, $scope.Model.Query, "1", search);
       $state.go('gl.results', {queryID: "1", pageNo: "1"});
     }
@@ -65,7 +66,7 @@ GlaserControllers
   $scope.getPage = function(a,b) {
     if (opacsearch.pagesize != b) {
       opacsearch.updateSize(b);
-      $scope.promise = opacsearch.RecordsbyIndex('archive', opacsearch.history.query[$stateParams.queryID-1],"OR", $stateParams.pageNo);
+      $scope.promise = opacsearch.RecordsbyIndex('collect.inf', opacsearch.history.query[$stateParams.queryID-1],"OR", $stateParams.pageNo, [], "7");
       opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
       $scope.promise.then($scope.update);
     }
@@ -76,7 +77,7 @@ GlaserControllers
   $scope.getNewOrder = function(a) {
     if(a.slice(0,1) == "-") opacsearch.updateSorting('descending',a.slice(1));
     else if(a.slice(0,1) != "-") opacsearch.updateSorting('ascending',a);
-    $scope.promise = opacsearch.RecordsbyIndex('archive', opacsearch.history.query[$stateParams.queryID-1],"OR", $stateParams.pageNo);
+    $scope.promise = opacsearch.RecordsbyIndex('collect.inf', opacsearch.history.query[$stateParams.queryID-1],"OR", $stateParams.pageNo, [], "7");
     opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
     $scope.promise.then($scope.update);
   };
@@ -115,7 +116,7 @@ GlaserControllers
     $scope.promise = opacsearch.history.result[$stateParams.queryID-1][$stateParams.pageNo];
   }
   else { 
-    $scope.promise = opacsearch.RecordsbyIndex('archive', opacsearch.history.query[$stateParams.queryID-1],"OR", $stateParams.pageNo);
+    $scope.promise = opacsearch.RecordsbyIndex('collect.inf', opacsearch.history.query[$stateParams.queryID-1],"OR", $stateParams.pageNo, [], "7");
     opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
   }
   $scope.promise.then($scope.update);

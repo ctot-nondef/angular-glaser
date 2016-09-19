@@ -42,7 +42,7 @@ AdlibServices.service('opacsearch', ['$http', '$localStorage' ,function($http,$l
 		if(database && reference) return $http.get(Config.baseURL+"action=search&database="+database+"&search=priref="+reference+"&output=JSON");
 		else console.log('Parameters Missing'); 
 	};
-	var getRecordsbyIndex = function(database, index, logic, page, fields){console.log('getRecordsbyIndex Query: ', database, index, logic, page, fields);
+	var getRecordsbyIndex = function(database, index, logic, page, fields, pointer){console.log('getRecordsbyIndex Query: ', database, index, logic, page, fields, pointer);
 		if(!this.pagesize || !page) {this.pagesize = 50; page = 1;}
 		if(!logic) {logic = "OR";}
 		var skip = (page-1) * this.pagesize + 1;
@@ -54,7 +54,14 @@ AdlibServices.service('opacsearch', ['$http', '$localStorage' ,function($http,$l
 					searchstring += key+"=%27"+query[key]+"%27";
 				}
 			});
+			searchstring = "("+searchstring+")";
 			searchstring += "%20sort%20"+this.sortField+"%20"+this.sortOrder;
+			if(fields && fields != []) {
+				//parse field selection
+			}
+			if(pointer) {
+				searchstring = "(pointer%20"+pointer+")%20AND%20"+searchstring;
+			}
 			return $http.get(Config.baseURL+"database="+database+"&search="+searchstring+"&limit="+this.pagesize+"&startfrom="+skip+"&output=JSON");
 		}
 		else console.log('Parameters Missing');
