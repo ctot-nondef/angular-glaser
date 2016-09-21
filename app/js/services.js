@@ -29,11 +29,11 @@ AdlibServices.service('opacsearch', ['$http', '$localStorage' ,function($http,$l
 		else return $http.get(Config.baseURL+"search=all&output=JSON&limit=1000");
 	};
 	var getPointerList = function(database, pointerfile){console.log('getPointerList Query: ', database, pointerfile);
-		if(database && pointerfile) return $http.get(Config.baseURL+"database="+database+"&command=getpointerfile&number="+pointerfile+"output=JSON");
+		if(database && pointerfile) return $http.get(Config.baseURL+"database="+database+"&command=getpointerfile&number="+pointerfile+"&output=JSON");
 		else console.log('Parameters Missing'); 	  
 	};
 	var getRecordsbyPointer = function(database, pointerfile, page, fields){console.log('getRecordsbyPointer Query: ', database, pointerfile, this.pagesize, page);
-		if(!pagesize || !page) {this.pagesize = 50; page = 1;}
+		if(!pagesize || !page) {this.pagesize = 40; page = 1;}
 		var skip = (page-1) * this.pagesize + 1;
 		if(database && pointerfile) return $http.get(Config.baseURL+"database="+database+"&search=pointer "+pointerfile+"&limit="+this.pagesize+"&startfrom="+skip+"&output=JSON");
 		else console.log('Parameters Missing'); 	  
@@ -98,7 +98,7 @@ AdlibServices.service('opacsearch', ['$http', '$localStorage' ,function($http,$l
 	}
 	return {
 	  	FullListbyDB: getFullListbyDB,
-	  	PointerList: getPointerList,
+	  	getPointerList: getPointerList,
 	  	RecordsbyPointer: getRecordsbyPointer,
 	  	SingleRecordbyRef: getSingleRecordbyRef,
 	  	RecordsbyIndex: getRecordsbyIndex,

@@ -33,10 +33,11 @@ md-backdrop {
 
 #caption {
   position: absolute;
-  bottom: 80px;
+  bottom: 150px;
   left: 0px;
   width: 100px;
   color: #ffffff;
+  cursor: pointer;
 }
 
 #logos {

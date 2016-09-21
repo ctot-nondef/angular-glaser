@@ -14,7 +14,8 @@ var GlaserControllers = angular.module('GlaserControllers', ['AdlibServices']);
 GlaserControllers
 .controller('GlaserStartList',['$scope','$http', '$state', 'opacsearch', function($scope, $http, $state, opacsearch){
   $scope.Model = {};
-  opacsearch.RecordsbyPointer('archive','7','40','1').then(
+  opacsearch.updateSize("40");
+  opacsearch.RecordsbyPointer('archive','7','1').then(
     function(res){
       console.log(res);
       $scope.Model.PointerList = res.data.adlibJSON.recordList.record;
@@ -25,6 +26,11 @@ GlaserControllers
 }])
 .controller('GlaserSearch',['$scope','$http', '$state', 'opacsearch', function($scope, $http, $state, opacsearch){
   $scope.Model = {};
+  $scope.Model.total = "counting..."
+  opacsearch.getPointerList('archive','7').then(function(res){
+    console.log(res);
+    $scope.Model.total = res.data.adlibJSON.recordList.record[0]['hits'][0];
+  });
   $scope.Model.osData = opacsearch;
   console.log($scope.Model.osData.history);
   //this needs to contain normalization routines, autocompleters, keeping search results persistent within one session, ?
@@ -37,7 +43,7 @@ GlaserControllers
           $scope.Model.Query.push(JSON.parse('{"s1":"'+entry+'"}'));
         });
         $scope.Model.Query.push(JSON.parse('{"part_of_reference":"*BA-3-27-A*"}'));
-      var search = opacsearch.RecordsbyIndex('archive',$scope.Model.Query,"AND", '1');
+      var search = opacsearch.RecordsbyIndex('collect.inf',$scope.Model.Query,"AND", '1');
       opacsearch.updateHistory($scope.Model.keyword, $scope.Model.Query, "1", search);
       $state.go('gl.results', {queryID: "1", pageNo: "1"});
     }

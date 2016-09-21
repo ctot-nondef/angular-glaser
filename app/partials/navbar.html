@@ -4,13 +4,14 @@
   <div id="quickmenu" layout="column" layout-align="start center">
     <md-icon class="navicon" ng-repeat="Icon in Model.Menu" aria-label="{{Icon.arialabel}}" ui-sref="{{Icon.startpage}}">{{Icon.mdicon}}</md-icon>
   </div>
-  <div id="caption" layout="column" layout-align="start center">
+  <div id="caption" layout="column" layout-align="start center" ui-sref="start">
     <h4>The</h4>
     <h4>Glaser</h4>
     <h4>Collection</h4>
   </div>
   <div id="logos" layout="column" layout-align="start center">
-    <img src="media/OEAW_Logo_ACDH_w.png" width="60px">  
+    <img src="media/logo-ibex-transp.png" width="60px">
+    <img src="media/OEAW_Logo_ACDH_w.png" width="60px">
   </div>
 </div>
 <md-sidenav class="md-sidenav-left" md-component-id="sidenav" md-whiteframe="4">
