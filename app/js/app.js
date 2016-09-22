@@ -9,7 +9,8 @@ var GlaserApp = angular.module('GlaserApp', [
   'ngMaterial',
   'GlaserControllers',
   'GlaserFilters',
-  'md.data.table'
+  'md.data.table',
+  'ui-leaflet'
 ]);
 
 
@@ -101,6 +102,15 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
             'content@': {
                 templateUrl: 'partials/3d.html',
                 controller: 'GlaserScan'
+            }
+        }
+    })
+    .state('gl.map',{
+        url: '/map',
+        views: {
+            'content@': {
+                templateUrl: 'partials/map.html',
+                controller: 'GlaserMap'
             }
         }
     })

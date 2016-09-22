@@ -17,19 +17,19 @@ GlaserControllers
   opacsearch.updateSize("40");
   opacsearch.RecordsbyPointer('archive','7','1').then(
     function(res){
-      console.log(res);
       $scope.Model.PointerList = res.data.adlibJSON.recordList.record;
-      console.log($scope.Model.PointerList);
     },
     function(err){ console.log('err: ', err); }
   );
 }])
 .controller('GlaserSearch',['$scope','$http', '$state', 'opacsearch', function($scope, $http, $state, opacsearch){
   $scope.Model = {};
-  $scope.Model.total = "counting..."
+  $scope.Model.total,$scope.Model.totalURI  = "counting..."
   opacsearch.getPointerList('archive','7').then(function(res){
-    console.log(res);
     $scope.Model.total = res.data.adlibJSON.recordList.record[0]['hits'][0];
+  });
+  opacsearch.getPointerList('archive','10').then(function(res){
+    $scope.Model.totalURI = res.data.adlibJSON.recordList.record[0]['hits'][0];
   });
   $scope.Model.osData = opacsearch;
   console.log($scope.Model.osData.history);
@@ -142,6 +142,28 @@ GlaserControllers
       console.log($scope.Model.SingleRecord);
     });
   }
+}])
+.controller('GlaserMap', ['$scope', '$stateParams', 'opacsearch',  "leafletData", "leafletBoundsHelpers", function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers) {
+  $scope.Model = {};
+  $scope.Model.total = opacsearch.getPointerList('archive','7');
+  $scope.Model.totalURI = opacsearch.getPointerList('archive','10');
+  $scope.Model.totalURI.then(function(res){
+    console.log($scope.Model.totalURI);
+    var bounds = leafletBoundsHelpers.createBoundsFromArray([
+        [ 51.508742458803326, -0.087890625 ],
+        [ 51.508742458803326, -0.087890625 ]
+    ]);
+    console.log(bounds);
+    angular.extend($scope, {
+        bounds: bounds,
+        center: {}
+    });
+    console.log(angular.element("mapdiv"));
+  });
+  $scope.$on('leafletDirectiveMap.resize', function(event){
+      console.log(event);
+  });
+
 }])
 .controller('GlaserNav', ['$scope', '$timeout', '$mdSidenav', '$http', '$log', function ($scope, $timeout, $mdSidenav, $http, $log) {
     $scope.Model = {};
