@@ -150,15 +150,18 @@ GlaserControllers
   $scope.Model.totalURI.then(function(res){
     console.log($scope.Model.totalURI);
     var bounds = leafletBoundsHelpers.createBoundsFromArray([
-        [ 51.508742458803326, -0.087890625 ],
-        [ 51.508742458803326, -0.087890625 ]
+        [ 10.0976624, 47.8352462 ],
+        [ 20.0976624, 47.8352462 ]
     ]);
     console.log(bounds);
     angular.extend($scope, {
         bounds: bounds,
         center: {}
     });
-    console.log(angular.element("mapdiv"));
+    leafletData.getMap().then(function(map) {
+      console.log(map);
+      map.invalidateSize();
+    });
   });
   $scope.$on('leafletDirectiveMap.resize', function(event){
       console.log(event);
