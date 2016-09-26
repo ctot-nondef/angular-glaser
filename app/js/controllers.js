@@ -9,13 +9,13 @@ var ssFields = {
 
 /* Controllers */
 
-var GlaserControllers = angular.module('GlaserControllers', ['AdlibServices']);
+var GlaserControllers = angular.module('GlaserControllers', ['AdlibServices','GeoNamesServices']);
 
 GlaserControllers
 .controller('GlaserStartList',['$scope','$http', '$state', 'opacsearch', function($scope, $http, $state, opacsearch){
   $scope.Model = {};
   opacsearch.updateSize("40");
-  opacsearch.RecordsbyPointer('archive','7','1').then(
+  opacsearch.getRecordsbyPointer('archive','7',[] ,'1','40').then(
     function(res){
       $scope.Model.PointerList = res.data.adlibJSON.recordList.record;
     },
@@ -32,8 +32,8 @@ GlaserControllers
     $scope.Model.totalURI = res.data.adlibJSON.recordList.record[0]['hits'][0];
   });
   $scope.Model.osData = opacsearch;
-  console.log($scope.Model.osData.history);
-  //this needs to contain normalization routines, autocompleters, keeping search results persistent within one session, ?
+  //this needs to contain normalization routines, autocompleters....
+  //current setup: parsing querying composite index s1 for all terms entered
   $scope.simpleSearch = function () {
     $scope.Model.Result = {};
     $scope.Model.Query  = [];
@@ -43,7 +43,7 @@ GlaserControllers
           $scope.Model.Query.push(JSON.parse('{"s1":"'+entry+'"}'));
         });
         $scope.Model.Query.push(JSON.parse('{"part_of_reference":"*BA-3-27-A*"}'));
-      var search = opacsearch.RecordsbyIndex('collect.inf',$scope.Model.Query,"AND", '1');
+      var search = opacsearch.getRecordsbyIndex('collect.inf',$scope.Model.Query,"AND");
       opacsearch.updateHistory($scope.Model.keyword, $scope.Model.Query, "1", search);
       $state.go('gl.results', {queryID: "1", pageNo: "1"});
     }
@@ -57,58 +57,58 @@ GlaserControllers
 }])
 .controller('GlaserResultList',['$scope','$http', '$state', '$stateParams', 'opacsearch', function($scope, $http, $state, $stateParams, opacsearch){
   //********* DECLARATIVE PART *********************************************
-  $scope.Model = {};
-  $scope.uiview = {"menuOpen":false};
-  $scope.selected = [];
-  $scope.uiview.currentView = Config.currentView;
-  $scope.uiview.list = true;
-  $scope.uiview.grid = false;
-  $scope.Model.Pagesize = opacsearch.pagesize;
-  $scope.Model.Page = $stateParams.pageNo;
-  //************************************************************************
-  // when pageing
-  $scope.getPage = function(a,b) {
-    if (opacsearch.pagesize != b) {
-      opacsearch.updateSize(b);
-      $scope.promise = opacsearch.RecordsbyIndex('collect.inf', opacsearch.history.query[$stateParams.queryID-1],"AND", $stateParams.pageNo);
+    $scope.Model = {};
+    $scope.uiview = {"menuOpen":false};
+    $scope.selected = [];
+    $scope.uiview.currentView = Config.currentView;
+    $scope.uiview.list = true;
+    $scope.uiview.grid = false;
+    $scope.Model.Pagesize = opacsearch.pagesize;
+    $scope.Model.Page = $stateParams.pageNo;
+    //************************************************************************
+    // when pageing
+    $scope.getPage = function(a,b) {
+      if (opacsearch.pagesize != b) {
+        opacsearch.updateSize(b);
+        $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', opacsearch.history.query[$stateParams.queryID-1],"AND",undefined,[],$stateParams.pageNo);
+        opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
+        $scope.promise.then($scope.update);
+      }
+      else $state.go('gl.results', {queryID: $stateParams.queryID, pageNo: a});
+    };
+    //************************************************************************
+    // when sorting 
+    $scope.getNewOrder = function(a) {
+      if(a.slice(0,1) == "-") opacsearch.updateSorting('descending',a.slice(1));
+      else if(a.slice(0,1) != "-") opacsearch.updateSorting('ascending',a);
+      $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', opacsearch.history.query[$stateParams.queryID-1],"AND",undefined,[],$stateParams.pageNo);
       opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
       $scope.promise.then($scope.update);
-    }
-    else $state.go('gl.results', {queryID: $stateParams.queryID, pageNo: a});
-  };
-  //************************************************************************
-  // when sorting 
-  $scope.getNewOrder = function(a) {
-    if(a.slice(0,1) == "-") opacsearch.updateSorting('descending',a.slice(1));
-    else if(a.slice(0,1) != "-") opacsearch.updateSorting('ascending',a);
-    $scope.promise = opacsearch.RecordsbyIndex('collect.inf', opacsearch.history.query[$stateParams.queryID-1],"AND", $stateParams.pageNo);
-    opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
-    $scope.promise.then($scope.update);
-  };
-  //************************************************************************
-  // generic page update 
-  $scope.update = function(res) {
-    $scope.Model.Total = res.data.adlibJSON.diagnostic.hits;
-    $scope.Model.Page = $stateParams.pageNo;
-    $scope.Model.Pagesize = opacsearch.pagesize;
-    $scope.Model.Result = res.data.adlibJSON.recordList.record;
-    console.log($scope.Model.Result);
-  };
-  //************************************************************************
-  // UI-switching
-  $scope.onList = function(){
-    $scope.uiview.currentView = 'list';
-    Config.currentView = 'list';
-  };
-  $scope.onGrid = function(){
-    $scope.uiview.currentView = 'grid';
-    Config.currentView = 'grid';
     };
-  $scope.vmToggle = function(){
-    console.log($scope.uiview.menuOpen);
-    if($scope.uiview.menuOpen) $scope.uiview.menuOpen=false;
-    else $scope.uiview.menuOpen=true;
-  }
+    //************************************************************************
+    // generic page update 
+    $scope.update = function(res) {
+      $scope.Model.Total = res.data.adlibJSON.diagnostic.hits;
+      $scope.Model.Page = $stateParams.pageNo;
+      $scope.Model.Pagesize = opacsearch.pagesize;
+      $scope.Model.Result = res.data.adlibJSON.recordList.record;
+      console.log($scope.Model.Result);
+    };
+    //************************************************************************
+    // UI-switching
+    $scope.onList = function(){
+      $scope.uiview.currentView = 'list';
+      Config.currentView = 'list';
+    };
+    $scope.onGrid = function(){
+      $scope.uiview.currentView = 'grid';
+      Config.currentView = 'grid';
+    };
+    $scope.vmToggle = function(){
+      console.log($scope.uiview.menuOpen);
+      if($scope.uiview.menuOpen) $scope.uiview.menuOpen=false;
+      else $scope.uiview.menuOpen=true;
+    }
   //********* END OF DECLARATIVE PART **************************************
   //************************************************************************
   // if the url is fucked up, go back to search
@@ -120,7 +120,7 @@ GlaserControllers
     $scope.promise = opacsearch.history.result[$stateParams.queryID-1][$stateParams.pageNo];
   }
   else { 
-    $scope.promise = opacsearch.RecordsbyIndex('collect.inf', opacsearch.history.query[$stateParams.queryID-1],"AND", $stateParams.pageNo);
+    $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', opacsearch.history.query[$stateParams.queryID-1],"AND",undefined,[],$stateParams.pageNo);
     opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
   }
   $scope.promise.then($scope.update);
@@ -128,7 +128,7 @@ GlaserControllers
 .controller('GlaserSingleRecord', ['$scope', '$stateParams', 'opacsearch', function($scope, $stateParams, opacsearch) {
   $scope.Model = {};
   if($stateParams.refID) {
-    opacsearch.SingleRecordbyRef("archive", $stateParams.refID).then(function(res){
+    opacsearch.getSingleRecordbyRef("archive", $stateParams.refID, []).then(function(res){
       //splitting these by line, should be delivered by API this way in the next version
       if(res.data.adlibJSON.recordList.record[0]['inscription.translation']) {
         res.data.adlibJSON.recordList.record[0]['inscription.translation'] = res.data.adlibJSON.recordList.record[0]['inscription.translation'][0].split(/\d\./);
@@ -139,32 +139,31 @@ GlaserControllers
         }
       }
       $scope.Model.SingleRecord = res.data.adlibJSON.recordList.record[0];
-      console.log($scope.Model.SingleRecord);
     });
   }
 }])
-.controller('GlaserMap', ['$scope', '$stateParams', 'opacsearch',  "leafletData", "leafletBoundsHelpers", function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers) {
-  $scope.Model = {};
-  $scope.Model.total = opacsearch.getPointerList('archive','7');
-  $scope.Model.totalURI = opacsearch.getPointerList('archive','10');
-  $scope.Model.totalURI.then(function(res){
-    console.log($scope.Model.totalURI);
-    var bounds = leafletBoundsHelpers.createBoundsFromArray([
-        [ 10.0976624, 47.8352462 ],
-        [ 20.0976624, 47.8352462 ]
-    ]);
-    console.log(bounds);
-    angular.extend($scope, {
-        bounds: bounds,
-        center: {}
-    });
-    leafletData.getMap().then(function(map) {
-      console.log(map);
-      map.invalidateSize();
-    });
+.controller('GlaserMap', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'GeoNamesServices', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, GeoNamesServices) {
+  var bounds = leafletBoundsHelpers.createBoundsFromArray([[ 19.5, 42.4 ],[ 12.2, 54 ]]); //creating yemen bounds - maybe get coordinates from GeoNames as well?
+  angular.extend($scope, {
+    markers: GeoNamesServices.geocache,
+    bounds: bounds,
+    center: {},
+    Model: {}
   });
-  $scope.$on('leafletDirectiveMap.resize', function(event){
-      console.log(event);
+  $scope.osData = GeoNamesServices;
+  $scope.Model.total = opacsearch.getPointerList('archive','7');
+  $scope.Model.totalURI = opacsearch.getRecordsbyPointer('archive','10', ['priref','production.place','production.place.lref','production.place.context','production.place.uri'], 1, 100);
+  $scope.Model.totalURI.then(function(res){
+    res.data.adlibJSON.recordList.record.forEach(function(record){
+      if(!$scope.osData.geocache[record['production.place.uri'][0]]){
+        GeoNamesServices.getByID(record['production.place.uri'][0]).then(function(res){
+          console.log(res);
+          GeoNamesServices.addtoCache(res.data);
+        });
+      }
+    });
+    console.log($scope.osData.geocache);
+    leafletData.getMap().then(function(map) {map.invalidateSize();});
   });
 
 }])

@@ -4,104 +4,132 @@
 
 var Config = {
     "baseURL":"http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?",
-    "pagesize": 10,
+    "pagesize": 40,
     "sortField":"title",
     "sortOrder":"ascending",
-    "currentView":"list"
+    "currentView":"list",
+    "localStorage":"GlaserStorage",
+    "geoNamesID":"oeaw_adlib"
 }
+
 
 var AdlibServices = angular.module('AdlibServices', ['ngStorage']);
 
 AdlibServices.service('opacsearch', ['$http', '$localStorage' ,function($http,$localStorage){
-	if($localStorage.history) var history = $localStorage.history;
+	if(!$localStorage[Config.localStorage]) $localStorage[Config.localStorage] = {};
+	if($localStorage[Config.localStorage]['history']) var history = $localStorage[Config.localStorage]['history'];
 	else {
-		$localStorage.history = {"querystring":[],"query":[],"result":[]};
-		var history = $localStorage.history;
+		var obj = {"history":{"querystring":[],"query":[],"result":[]}}
+		$localStorage[Config.localStorage] = obj;
+		var history = $localStorage[Config.localStorage]['history'];
 	}	
 	var pagesize = Config.pagesize;
 	var sortField = Config.sortField;
 	var sortOrder = Config.sortOrder;
-	var getFullListbyDB = function(database, page){console.log('getFullList Query: ', database, page);
-		if(!this.pagesize || !page) {this.pagesize = 50; page = 1}
-		var skip = (page-1) * this.pagesize + 1;
-		console.log('skip',skip);
-		if(database) return $http.get(Config.baseURL+"database="+database+"&search=all&output=JSON&limit="+this.pagesize+"&startfrom="+skip);
-		else return $http.get(Config.baseURL+"search=all&output=JSON&limit=1000");
-	};
-	var getPointerList = function(database, pointerfile){console.log('getPointerList Query: ', database, pointerfile);
-		if(database && pointerfile) return $http.get(Config.baseURL+"database="+database+"&command=getpointerfile&number="+pointerfile+"&output=JSON");
-		else console.log('Parameters Missing'); 	  
-	};
-	var getRecordsbyPointer = function(database, pointerfile, page, fields){console.log('getRecordsbyPointer Query: ', database, pointerfile, this.pagesize, page);
-		if(!pagesize || !page) {this.pagesize = 40; page = 1;}
-		var skip = (page-1) * this.pagesize + 1;
-		if(database && pointerfile) return $http.get(Config.baseURL+"database="+database+"&search=pointer "+pointerfile+"&limit="+this.pagesize+"&startfrom="+skip+"&output=JSON");
-		else console.log('Parameters Missing'); 	  
-	};
-	var getSingleRecordbyRef = function(database, reference){console.log('getSingleRecord Query: ', database, reference);
-		if(database && reference) return $http.get(Config.baseURL+"action=search&database="+database+"&search=priref="+reference+"&output=JSON");
-		else console.log('Parameters Missing'); 
-	};
-	var getRecordsbyIndex = function(database, index, logic, page, fields, pointer){console.log('getRecordsbyIndex Query: ', database, index, logic, page, fields, pointer);
-		if(!this.pagesize || !page) {this.pagesize = 50; page = 1;}
-		if(!logic) {logic = "OR";}
-		var skip = (page-1) * this.pagesize + 1;
-		if(database && index) {
-			var searchstring = "";
-			index.forEach(function(query){
-				for(var key in query) {
-					if(searchstring != "") searchstring += "%20"+logic+"%20";
-					searchstring += key+"=%27"+query[key]+"%27";
-				}
-			});
-			searchstring += "%20sort%20"+this.sortField+"%20"+this.sortOrder;
+	//////////Parameter Parsers///////////////////////////////
+		var parseFields = function(fields){
+			var fieldstring = "";
 			if(fields && fields != []) {
-				//parse field selection
+				fieldstring +="&fields=";
+				fields.forEach(function(field){
+					fieldstring += field+",%20"
+				})
 			}
-			if(pointer) {
-				searchstring = "(pointer%20"+pointer+")%20AND%20"+searchstring;
+			return fieldstring;
+		}
+		var parseLimit = function(limit,page){
+			var limitstring = "";
+			if (!limit) var limit = this.pagesize; 
+			if (!page) var page = 1;
+			var skip = (page-1) * limit + 1;
+			limitstring = "&limit="+limit+"&skip="+skip;
+			return limitstring;
+		}
+		var parseDB = function(database){
+			var dbString = "";
+			if(database && database != "") dbString += "&database="+database;
+			return dbString;
+		}
+		var parseSorting = function(){
+			var sortString = "";
+			return "%20sort%20"+this.sortField+"%20"+this.sortOrder;
+		}
+	//////////Callable retrieval functions///////////////////////////////
+		var getFullListbyDB = function(database, fields, page, limit){console.log('getFullList Query: ', database, fields, page, limit);
+			return $http.get(Config.baseURL+"&action=search&search=all"+this.parseSorting()+"&output=JSON"+this.parseLimit(limit,page)+this.parseDB(database)+this.parseFields(fields));
+		}
+		var getPointerList = function(database, pointerfile ){console.log('getPointerList Query: ', database, pointerfile );
+			if(pointerfile) return $http.get(Config.baseURL+"&command=getpointerfile&number="+pointerfile+"&output=JSON"+this.parseDB(database));
+			else console.log('Parameters Missing'); 	  
+		}
+		var getRecordsbyPointer = function(database, pointerfile, fields, page, limit){console.log('getRecordsbyPointer Query: ', database, pointerfile, fields, page, limit);
+			if(pointerfile) return $http.get(Config.baseURL+"&action=search&search=pointer "+pointerfile+"&output=JSON"+this.parseLimit(limit,page)+this.parseDB(database)+this.parseFields(fields));
+			else console.log('Parameters Missing'); 	  
+		}
+		var getSingleRecordbyRef = function(database, reference, fields){console.log('getSingleRecord Query: ', database, reference, fields);
+			if(reference) return $http.get(Config.baseURL+"&action=search&search=priref="+reference+"&output=JSON"+this.parseDB(database)+this.parseFields(fields));
+			else console.log('Parameters Missing'); 
+		}
+		var getRecordsbyIndex = function(database, index, logic, pointer, fields, page, limit){console.log('getRecordsbyIndex Query: ', database, index, logic, pointer, page, fields, limit);
+			if(!logic) logic = "OR";
+			if(index) {
+				var searchstring = "";
+				index.forEach(function(query){
+					for(var key in query) {
+						if(searchstring != "") searchstring += "%20"+logic+"%20";
+						searchstring += key+"=%27"+query[key]+"%27";
+					}
+				});
+				if(pointer) {
+					searchstring = "(pointer%20"+pointer+")%20AND%20"+searchstring;
+				}
+				return $http.get(Config.baseURL+"&action=search&search="+searchstring+this.parseSorting()+"&output=JSON"+this.parseLimit(limit,page)+this.parseDB(database)+this.parseFields(fields));
 			}
-			return $http.get(Config.baseURL+"database="+database+"&search="+searchstring+"&limit="+this.pagesize+"&startfrom="+skip+"&output=JSON");
+			else console.log('Parameters Missing');
 		}
-		else console.log('Parameters Missing');
-	};
-	var updateHistory = function(string, query, page, result){console.log('addtoHistory: ', query, result);
-		this.history.querystring.unshift(string);
-		this.history.query.unshift(query);
-		var obj = {};
-		obj[page] = result;
-		this.history.result.unshift(obj);
-	};
-	var clearHistory = function(){console.log('clearing History upon user request.');
-		$localStorage.history = {"querystring":[],"query":[],"result":[]};
-		this.history = $localStorage.history;
-	}
-	var updatePage = function(queryno, page, result){console.log('updatePage: ', queryno, page, result);
-		if(this.history.result[queryno]) {
-			this.history.result[queryno][page] = result;
-		}
-		else {
+	//////////// Parameter getters / setters ///////////////////////////////
+		var updateHistory = function(string, query, page, result){console.log('addtoHistory: ', query, result);
+			this.history.querystring.unshift(string);
+			this.history.query.unshift(query);
 			var obj = {};
 			obj[page] = result;
-			this.history.result[queryno] = obj;
+			this.history.result.unshift(obj);
 		}
-	};
-	var updateSize = function(newsize){console.log('updateSize: ', newsize);
-		this.pagesize = newsize;
-		$localStorage.history.result = [];
-		this.history = $localStorage.history;
-	};
-	var updateSorting = function(sort, field){console.log('updateSorting: ', sort, field);
-		this.sortOrder = sort;
-		this.sortField = field;
-		this.history.result = [];
-	}
+		var clearHistory = function(){console.log('clearing History upon user request.');
+			$localStorage[Config.localStorage]['history'] = {"querystring":[],"query":[],"result":[]};
+			this.history = $localStorage[Config.localStorage]['history'];
+		}
+		var updatePage = function(queryno, page, result){console.log('updatePage: ', queryno, page, result);
+			if(this.history.result[queryno]) {
+				this.history.result[queryno][page] = result;
+			}
+			else {
+				var obj = {};
+				obj[page] = result;
+				this.history.result[queryno] = obj;
+			}
+		}
+		var updateSize = function(newsize){console.log('updateSize: ', newsize);
+			this.pagesize = newsize;
+			$localStorage[Config.localStorage]['history']['result'] = [];
+			this.history = $localStorage[Config.localStorage]['history'];
+		};
+		var updateSorting = function(sort, field){console.log('updateSorting: ', sort, field);
+			this.sortOrder = sort;
+			this.sortField = field;
+			this.history.result = [];
+		}
+	///////////////// return Object //////////////////////////////////////////
 	return {
-	  	FullListbyDB: getFullListbyDB,
+		parseFields: parseFields,
+		parseLimit: parseLimit,
+		parseDB: parseDB,
+		parseSorting: parseSorting,
+	  	getFullListbyDB: getFullListbyDB,
 	  	getPointerList: getPointerList,
-	  	RecordsbyPointer: getRecordsbyPointer,
-	  	SingleRecordbyRef: getSingleRecordbyRef,
-	  	RecordsbyIndex: getRecordsbyIndex,
+	  	getRecordsbyPointer: getRecordsbyPointer,
+	  	getSingleRecordbyRef: getSingleRecordbyRef,
+	  	getRecordsbyIndex: getRecordsbyIndex,
 	  	updateHistory: updateHistory,
 	  	clearHistory: clearHistory,
 	  	updatePage: updatePage,
@@ -124,5 +152,42 @@ AdlibServices.service('contentrtrvl', ['$http', '$q', function($http, $q){
 	  	FullList: getFullList,
 	  	PointerList: getPointerList,
 	  	SingleRecord: getSingleRecord
+  	};
+}]);
+
+
+///////////////// GeoNames Service Module
+//TODO: move to separate file
+var GeoNamesServices = angular.module('GeoNamesServices', ['ngStorage']);
+
+GeoNamesServices.service('GeoNamesServices', ['$http', '$localStorage', '$q', function($http, $localStorage, $q){
+	if(!$localStorage[Config.localStorage]) $localStorage[Config.localStorage] = {};
+	if($localStorage[Config.localStorage]['geocache']) var geocache = $localStorage[Config.localStorage]['geocache'];
+	else {
+		$localStorage[Config.localStorage]['geocache'] = {};
+		var geocache = $localStorage[Config.localStorage]['cache'];
+	}
+	var getByID = function(id){console.log('GeoNames getByID: ', id);
+		if(id && !this.geocache.id && Number.isInteger(id)) {
+			var promise = $http.get("http://api.geonames.org/getJSON?formatted=true&geonameId="+id+"&username="+Config.geoNamesID);
+			return promise;
+		}
+		if(id && this.geocache.id) return this.geocache.id;
+		if(!Number.isInteger(id)) return $q.reject("invalid Parameters");
+	}
+	var addtoCache = function(record){console.log('addtoCache', record);
+		if(record.geonameId){
+			geocache[record.geonameId] = record;
+		}
+	}
+	var clearCache = function(){console.log('clearing geocache upon user request');
+		if($localStorage[Config.localStorage]['geocache']) $localStorage[Config.localStorage]['geocache'] = {};
+		this.geocache = $localStorage[Config.localStorage]['geocache'];
+	}
+	return {
+	  	getByID: getByID,
+	  	addtoCache: addtoCache,
+	  	geocache: geocache,
+	  	clearCache: clearCache
   	};
 }]);
