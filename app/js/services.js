@@ -42,7 +42,7 @@ AdlibServices.service('opacsearch', ['$http', '$localStorage' ,function($http,$l
 			if (!limit) var limit = this.pagesize; 
 			if (!page) var page = 1;
 			var skip = (page-1) * limit + 1;
-			limitstring = "&limit="+limit+"&skip="+skip;
+			limitstring = "&limit="+limit+"&startfrom="+skip;
 			return limitstring;
 		}
 		var parseDB = function(database){
@@ -81,7 +81,7 @@ AdlibServices.service('opacsearch', ['$http', '$localStorage' ,function($http,$l
 					}
 				});
 				if(pointer) {
-					searchstring = "(pointer%20"+pointer+")%20AND%20"+searchstring;
+					searchstring = "(pointer%20"+pointer+")%20AND%20("+searchstring +")";
 				}
 				return $http.get(Config.baseURL+"&action=search&search="+searchstring+this.parseSorting()+"&output=JSON"+this.parseLimit(limit,page)+this.parseDB(database)+this.parseFields(fields));
 			}
@@ -91,9 +91,12 @@ AdlibServices.service('opacsearch', ['$http', '$localStorage' ,function($http,$l
 		var updateHistory = function(string, query, page, result){console.log('addtoHistory: ', query, result);
 			this.history.querystring.unshift(string);
 			this.history.query.unshift(query);
-			var obj = {};
-			obj[page] = result;
-			this.history.result.unshift(obj);
+			if(page && result) {
+				var obj = {};
+				obj[page] = result;
+				this.history.result.unshift(obj);
+			}
+			else this.history.result.unshift({});
 		}
 		var clearHistory = function(){console.log('clearing History upon user request.');
 			$localStorage[Config.localStorage]['history'] = {"querystring":[],"query":[],"result":[]};
@@ -168,7 +171,7 @@ GeoNamesServices.service('GeoNamesServices', ['$http', '$localStorage', '$q', fu
 		var geocache = $localStorage[Config.localStorage]['cache'];
 	}
 	var getByID = function(id){console.log('GeoNames getByID: ', id);
-		if(id && !this.geocache.id && Number.isInteger(id)) {
+		if(id && !this.geocache[id]) {
 			var promise = $http.get("http://api.geonames.org/getJSON?formatted=true&geonameId="+id+"&username="+Config.geoNamesID);
 			return promise;
 		}
@@ -177,7 +180,7 @@ GeoNamesServices.service('GeoNamesServices', ['$http', '$localStorage', '$q', fu
 	}
 	var addtoCache = function(record){console.log('addtoCache', record);
 		if(record.geonameId){
-			geocache[record.geonameId] = record;
+			this.geocache[record.geonameId] = record;
 		}
 	}
 	var clearCache = function(){console.log('clearing geocache upon user request');

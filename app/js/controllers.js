@@ -39,12 +39,11 @@ GlaserControllers
     $scope.Model.Query  = [];
     if ($scope.Model.keyword) {
       $scope.Model.keywords = $scope.Model.keyword.split(" ");
-        $scope.Model.keywords.forEach(function(entry){
-          $scope.Model.Query.push(JSON.parse('{"s1":"'+entry+'"}'));
-        });
-        $scope.Model.Query.push(JSON.parse('{"part_of_reference":"*BA-3-27-A*"}'));
-      var search = opacsearch.getRecordsbyIndex('collect.inf',$scope.Model.Query,"AND");
-      opacsearch.updateHistory($scope.Model.keyword, $scope.Model.Query, "1", search);
+      $scope.Model.keywords.forEach(function(entry){
+        $scope.Model.Query.push(JSON.parse('{"s1":"'+entry+'"}'));
+      });
+      $scope.Model.Query.push(JSON.parse('{"part_of_reference":"*BA-3-27-A*"}'));
+      opacsearch.updateHistory($scope.Model.keyword, $scope.Model.Query, undefined, undefined);
       $state.go('gl.results', {queryID: "1", pageNo: "1"});
     }
   }
@@ -88,6 +87,7 @@ GlaserControllers
     //************************************************************************
     // generic page update 
     $scope.update = function(res) {
+      console.log(res);
       $scope.Model.Total = res.data.adlibJSON.diagnostic.hits;
       $scope.Model.Page = $stateParams.pageNo;
       $scope.Model.Pagesize = opacsearch.pagesize;
@@ -145,7 +145,6 @@ GlaserControllers
 .controller('GlaserMap', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'GeoNamesServices', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, GeoNamesServices) {
   var bounds = leafletBoundsHelpers.createBoundsFromArray([[ 19.5, 42.4 ],[ 12.2, 54 ]]); //creating yemen bounds - maybe get coordinates from GeoNames as well?
   angular.extend($scope, {
-    markers: GeoNamesServices.geocache,
     bounds: bounds,
     center: {},
     Model: {}
@@ -162,10 +161,11 @@ GlaserControllers
         });
       }
     });
+    //GeoNamesServices.clearCache();
     console.log($scope.osData.geocache);
-    leafletData.getMap().then(function(map) {map.invalidateSize();});
-  });
-
+    leafletData.getMap().then(function(map) {
+      map.invalidateSize();});
+    });
 }])
 .controller('GlaserNav', ['$scope', '$timeout', '$mdSidenav', '$http', '$log', function ($scope, $timeout, $mdSidenav, $http, $log) {
     $scope.Model = {};
