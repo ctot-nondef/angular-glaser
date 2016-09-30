@@ -178,9 +178,9 @@ GeoNamesServices.service('GeoNamesServices', ['$http', '$localStorage', '$q', fu
 		if(id && this.geocache.id) return this.geocache.id;
 		if(!Number.isInteger(id)) return $q.reject("invalid Parameters");
 	}
-	var addtoCache = function(record){console.log('addtoCache', record);
-		if(record.geonameId){
-			this.geocache[record.geonameId] = record;
+	var addtoCache = function(ID, promise){console.log('addtoCache', promise);
+		if(ID && promise ){
+			this.geocache[ID] = promise;
 		}
 	}
 	var clearCache = function(){console.log('clearing geocache upon user request');

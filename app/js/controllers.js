@@ -155,10 +155,8 @@ GlaserControllers
   $scope.Model.totalURI.then(function(res){
     res.data.adlibJSON.recordList.record.forEach(function(record){
       if(!$scope.osData.geocache[record['production.place.uri'][0]]){
-        GeoNamesServices.getByID(record['production.place.uri'][0]).then(function(res){
-          console.log(res);
-          GeoNamesServices.addtoCache(res.data);
-        });
+        var promise = GeoNamesServices.getByID(record['production.place.uri'][0]);
+        GeoNamesServices.addtoCache(record['production.place.uri'][0], promise);
       }
     });
     //GeoNamesServices.clearCache();

@@ -476,3 +476,9 @@ md-table-container {
 @media (max-width: 599px) {
 
 }
+
+@media (max-height: 750px) {
+  #quickmenu {
+    display: none;
+  }
+}
