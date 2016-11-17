@@ -147,23 +147,29 @@ GlaserControllers
   angular.extend($scope, {
     bounds: bounds,
     center: {},
-    Model: {}
+    Model: {},
+    markers: {}
   });
-  $scope.osData = GeoNamesServices;
   $scope.Model.total = opacsearch.getPointerList('archive','7');
   $scope.Model.totalURI = opacsearch.getRecordsbyPointer('archive','10', ['priref','production.place','production.place.lref','production.place.context','production.place.uri'], 1, 100);
   $scope.Model.totalURI.then(function(res){
     res.data.adlibJSON.recordList.record.forEach(function(record){
-      if(!$scope.osData.geocache[record['production.place.uri'][0]]){
-        var promise = GeoNamesServices.getByID(record['production.place.uri'][0]);
-        GeoNamesServices.addtoCache(record['production.place.uri'][0], promise);
+      var recID = record['production.place.uri'][0];
+      if(!GeoNamesServices.geocache[recID] || !GeoNamesServices.geocache[recID]['$$state'] ){
+        var promise = GeoNamesServices.getByID(recID);
+        GeoNamesServices.addtoCache(recID, promise);
       }
+      GeoNamesServices.geocache[recID].then(function(c){
+        $scope.markers[record['priref'][0]] = {"lat":parseInt(c.data.lat), "lng":parseInt(c.data.lng), "message":record['priref'][0]}
+        console.log($scope.markers);
+      });
+      leafletData.getMap().then(function(map) {
+        map.invalidateSize();
+      });    
     });
-    //GeoNamesServices.clearCache();
-    console.log($scope.osData.geocache);
-    leafletData.getMap().then(function(map) {
-      map.invalidateSize();});
-    });
+  });
+  console.log(GeoNamesServices.geocache);
+ 
 }])
 .controller('GlaserNav', ['$scope', '$timeout', '$mdSidenav', '$http', '$log', function ($scope, $timeout, $mdSidenav, $http, $log) {
     $scope.Model = {};

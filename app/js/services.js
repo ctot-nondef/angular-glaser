@@ -171,7 +171,7 @@ GeoNamesServices.service('GeoNamesServices', ['$http', '$localStorage', '$q', fu
 		var geocache = $localStorage[Config.localStorage]['cache'];
 	}
 	var getByID = function(id){console.log('GeoNames getByID: ', id);
-		if(id && !this.geocache[id]) {
+		if(Number.isInteger(parseInt(id)) && (!this.geocache[id] || !this.geocache[id]['$$status'])) {
 			var promise = $http.get("http://api.geonames.org/getJSON?formatted=true&geonameId="+id+"&username="+Config.geoNamesID);
 			return promise;
 		}

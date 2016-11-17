@@ -20,7 +20,7 @@
 		"arialabel":"",
 		"mdicon":"find_in_page",
 		"abstract":"",
-		"startpage":"",
+		"startpage":"gl.search",
 		"items":""
 	},
 	{
@@ -28,7 +28,7 @@
 		"arialabel":"",
 		"mdicon":"local_library",
 		"abstract":"",
-		"startpage":"",
+		"startpage":"gl.search",
 		"items":""
 	}
 ]
