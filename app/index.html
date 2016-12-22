@@ -2,6 +2,7 @@
 <html lang="en" ng-app="GlaserApp">
 <head>
   <meta charset="utf-8">
+  <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OeAW BAS:IS - Glaser Collection of Ancient South Arabian Squeezes</title>
   <link rel="icon" type="image/png" href="media/logo-ibex-bw-favicon.png">
@@ -15,7 +16,7 @@
   <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
   <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-  <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script> 
+  <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
   <script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
   <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
   <script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
@@ -52,7 +53,7 @@
 <script type="text/javascript">
   var presenter = null;
 
-  function setup3dhop(scan) { 
+  function setup3dhop(scan) {
     presenter = new Presenter("draw-canvas");
 
     presenter.setScene({
@@ -60,18 +61,18 @@
         "Laurana" : { url: "http://opacbasis.w07adlib1.arz.oeaw.ac.at/3D/" + scan + ".nxs" }
       },
       modelInstances : {
-        "Model1" : { mesh : "Laurana" } 
+        "Model1" : { mesh : "Laurana" }
       }
     });
     presenter.rotateLight(0, 0.35)
   }
 
   function actionsToolbar(action) {
-    if(action=='home') presenter.resetTrackball(); 
+    if(action=='home') presenter.resetTrackball();
     else if(action=='zoomin') presenter.zoomIn();
-    else if(action=='zoomout') presenter.zoomOut(); 
-    else if(action=='light' || action=='light_on') { presenter.enableLightTrackball(!presenter.isLightTrackballEnabled()); lightSwitch(); } 
-    else if(action=='full'  || action=='full_on') fullscreenSwitch(); 
+    else if(action=='zoomout') presenter.zoomOut();
+    else if(action=='light' || action=='light_on') { presenter.enableLightTrackball(!presenter.isLightTrackballEnabled()); lightSwitch(); }
+    else if(action=='full'  || action=='full_on') fullscreenSwitch();
   }
 </script>
 </html>

@@ -114,15 +114,15 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
             }
         }
     })
+    $locationProvider.html5Mode(true);
     $mdThemingProvider.theme('default')
         .primaryPalette('blue', {
-          'default': '800', 
-          'hue-1': '600', 
-          'hue-2': '700', 
-          'hue-3': 'A200' 
+          'default': '800',
+          'hue-1': '600',
+          'hue-2': '700',
+          'hue-3': 'A200'
         })
         .accentPalette('red', {
           'default': '800'
         });
 }
-
