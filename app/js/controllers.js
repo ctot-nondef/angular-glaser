@@ -71,6 +71,7 @@ GlaserControllers
         opacsearch.updateSize(b);
         $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', opacsearch.history.query[$stateParams.queryID-1],"AND",undefined,[],$stateParams.pageNo);
         opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
+        console.log($scope.promise);
         $scope.promise.then($scope.update);
       }
       else $state.go('gl.results', {queryID: $stateParams.queryID, pageNo: a});
