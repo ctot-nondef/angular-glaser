@@ -9,7 +9,7 @@ var ssFields = {
 
 /* Controllers */
 
-var GlaserControllers = angular.module('GlaserControllers', ['AdlibServices','GeoNamesServices']);
+var GlaserControllers = angular.module('GlaserControllers', ['AdlibServices','GeoNamesServices','ZoteroService']);
 
 GlaserControllers
 .controller('GlaserStartList',['$scope','$http', '$state', 'opacsearch', function($scope, $http, $state, opacsearch){
@@ -77,7 +77,7 @@ GlaserControllers
       else $state.go('gl.results', {queryID: $stateParams.queryID, pageNo: a});
     };
     //************************************************************************
-    // when sorting 
+    // when sorting
     $scope.getNewOrder = function(a) {
       if(a.slice(0,1) == "-") opacsearch.updateSorting('descending',a.slice(1));
       else if(a.slice(0,1) != "-") opacsearch.updateSorting('ascending',a);
@@ -86,7 +86,7 @@ GlaserControllers
       $scope.promise.then($scope.update);
     };
     //************************************************************************
-    // generic page update 
+    // generic page update
     $scope.update = function(res) {
       console.log(res);
       $scope.Model.Total = res.data.adlibJSON.diagnostic.hits;
@@ -120,7 +120,7 @@ GlaserControllers
     console.log(opacsearch.history.result[$stateParams.queryID-1]);
     $scope.promise = opacsearch.history.result[$stateParams.queryID-1][$stateParams.pageNo];
   }
-  else { 
+  else {
     $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', opacsearch.history.query[$stateParams.queryID-1],"AND",undefined,[],$stateParams.pageNo);
     opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
   }
@@ -166,11 +166,11 @@ GlaserControllers
       });
       leafletData.getMap().then(function(map) {
         map.invalidateSize();
-      });    
+      });
     });
   });
   console.log(GeoNamesServices.geocache);
- 
+
 }])
 .controller('GlaserNav', ['$scope', '$timeout', '$mdSidenav', '$http', '$log', function ($scope, $timeout, $mdSidenav, $http, $log) {
     $scope.Model = {};
@@ -179,7 +179,7 @@ GlaserControllers
         $scope.Model.Menu = res.data;
       },
       function(err){ console.log('err: ', err); }
-    ); 
+    );
     $scope.toggleLeft = function () {
       if(!$mdSidenav('sidenav').isOpen()) {$('#sidebar').addClass('open');}
       else {$('#sidebar').removeClass('open');}
@@ -189,6 +189,47 @@ GlaserControllers
 .controller('GlaserImage', ['$scope', '$timeout', '$stateParams', '$http', '$log', function ($scope, $timeout, $stateParams, $http, $log) {
     $scope.Model = {};
     $scope.Model.imgID = $stateParams.imgID;
+}])
+.controller('GlaserBib', ['$scope', '$http', '$log', 'ZoteroService', function ($scope, $http, $log, ZoteroService) {
+  //********* DECLARATIVE PART *********************************************
+    $scope.Model = {Page:1};
+    $scope.uiview = {"menuOpen":false};
+    $scope.selected = [];
+    $scope.uiview.currentView = Config.currentView;
+    $scope.uiview.list = true;
+    $scope.uiview.grid = false;
+    $scope.Model.Pagesize = ZoteroService.ZoteroConfig.BASEPARAMS.limit;
+    //************************************************************************
+    // when pageing
+    $scope.getPage = function(a,b) {
+      console.log(a,b);
+      if (ZoteroService.ZoteroConfig.BASEPARAMS.limit != b) {
+        ZoteroService.updateSize(b);
+      }
+      if (ZoteroService.ZoteroConfig.BASEPARAMS.start != a*b) {
+        ZoteroService.updateStart((a-1)*b);
+      }
+      $scope.Model.Page = a;
+      $scope.promise = ZoteroService.getList({path:'users/3808523/items/'}).then($scope.update);
+    };
+    //************************************************************************
+    // when sorting
+    $scope.getNewOrder = function(a) {
+      if(a.slice(0,1) == "-") ZoteroService.updateSorting('desc',a.slice(1));
+      else if(a.slice(0,1) != "-") ZoteroService.updateSorting('asc',a);
+      $scope.promise = ZoteroService.getList({path:'users/3808523/items/'}).then($scope.update);
+    };
+    //************************************************************************
+    // generic page update
+    $scope.update = function(res) {
+      console.log(res);
+      $scope.Model.Total = res.headers('Total-Results');
+      $scope.Model.Pagesize = ZoteroService.ZoteroConfig.BASEPARAMS.limit;
+      $scope.Model.Result = res.data;
+      console.log($scope.Model.Result);
+    };
+  //********* END OF DECLARATIVE PART **************************************
+  $scope.promise = ZoteroService.getList({path:'users/3808523/items/'}).then($scope.update);
 }])
 .controller('GlaserScan', ['$scope', '$timeout', '$stateParams', '$http', '$log', function ($scope, $timeout, $stateParams, $http, $log) {
     $scope.Model = {};

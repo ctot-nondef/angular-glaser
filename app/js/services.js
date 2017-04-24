@@ -173,3 +173,83 @@ GeoNamesServices.service('GeoNamesServices', ['$http', '$localStorage', '$q', fu
 	  	clearCache: clearCache
   	};
 }]);
+
+/**
+ * Service providing convenience Methods and Cacheing for the zotero webservices API
+ */
+var ZoteroService = angular.module('ZoteroService', ['ngStorage']);
+ZoteroService.service('ZoteroService', function($http, $localStorage, $q, $log){
+	this.ZoteroConfig = {
+		BASEURL : "https://api.zotero.org/",
+		BASEPARAMS : {
+      "format":"json",
+      "sort":"title",
+      "limit":10,
+      "direction":"asc",
+      "start":0
+		}
+	}
+	this.initStorage = function(){$log.debug('initializing local storage');
+		if(!$localStorage[Config.LOCALSTORAGE]) $localStorage[Config.LOCALSTORAGE] = {};
+		if($localStorage[Config.LOCALSTORAGE]['zoterocache']) this.zoterocache = $localStorage[Config.LOCALSTORAGE]['zoterocache'];
+		else {
+			$localStorage[Config.LOCALSTORAGE]['zoterocache'] = {};
+			this.zoterocache = $localStorage[Config.LOCALSTORAGE]['zoterocache'];
+		}
+	}
+  this.getList = function(inputparams){$log.debug('GeoNames getList: ', inputparams);
+		var params = JSON.parse(JSON.stringify(this.ZoteroConfig.BASEPARAMS));
+		Object.assign(params, inputparams);
+		return $q(function(resolve, reject){
+			$http.get(
+				this.ZoteroConfig.BASEURL+params.path,
+				{
+					params: params
+				}
+			).then(
+			function(res){
+        resolve(res);
+			}.bind(this),
+			function(err){
+				reject(err);
+			});
+		}.bind(this));
+	}
+	this.getByID = function(inputparams){$log.debug('GeoNames getByID: ', inputparams);
+		var params = JSON.parse(JSON.stringify(this.GeoConfig.BASEPARAMS));
+		Object.assign(params, inputparams);
+		return $q(function(resolve, reject){
+			if(this.zoterocache[params.geonameId]) resolve(this.zoterocache[params.geonameId]);
+			else if(!this.zoterocache[params.geonameId]) {
+				$http.get(
+					this.GeoConfig.BASEURL+"/getJSON",
+					{
+						params: params
+					}
+				).then(
+				function(res){
+					if(res.data.status) reject(res.data.status.message);
+					else {
+						this.zoterocache[params.geonameId] = res.data;
+						resolve(res.data);
+					}
+				}.bind(this),
+				function(err){
+					reject(err);
+				});
+			}
+		}.bind(this));
+	}
+  this.updateSize = function(newsize){
+    this.ZoteroConfig.BASEPARAMS.limit = newsize;
+    return this.ZoteroConfig.BASEPARAMS.limit;
+  }
+  this.updateSorting = function(direction,param){
+    this.ZoteroConfig.BASEPARAMS.direction = direction;
+    this.ZoteroConfig.BASEPARAMS.sort = param;
+  }
+  this.updateStart = function(start){
+    this.ZoteroConfig.BASEPARAMS.start = start;
+  }
+  this.initStorage();
+});

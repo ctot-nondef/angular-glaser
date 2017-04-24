@@ -24,11 +24,11 @@
 		"items":""
 	},
 	{
-		"caption":"Publications",
+		"caption":"Bibliography",
 		"arialabel":"",
 		"mdicon":"local_library",
 		"abstract":"",
-		"startpage":"gl.search",
+		"startpage":"gl.bibliography",
 		"items":""
 	}
 ]

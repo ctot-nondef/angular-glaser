@@ -114,6 +114,15 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
             }
         }
     })
+    .state('gl.bibliography',{
+        url: '/bibliography',
+        views: {
+            'content@': {
+                templateUrl: 'partials/bibliography.html',
+                controller: 'GlaserBib'
+            }
+        }
+    })
     $locationProvider.html5Mode(true);
     $mdThemingProvider.theme('default')
         .primaryPalette('blue', {
