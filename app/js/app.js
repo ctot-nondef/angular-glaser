@@ -123,6 +123,15 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
             }
         }
     })
+    .state('gl.singleBib',{
+        url: '/bib/:user/:key',
+        views: {
+            'content@': {
+                templateUrl: 'partials/singlebib.html',
+                controller: 'GlaserSingleBib'
+            }
+        }
+    })
     $locationProvider.html5Mode(true);
     $mdThemingProvider.theme('default')
         .primaryPalette('blue', {

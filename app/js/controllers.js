@@ -231,6 +231,15 @@ GlaserControllers
   //********* END OF DECLARATIVE PART **************************************
   $scope.promise = ZoteroService.getList({path:'users/3808523/items/'}).then($scope.update);
 }])
+.controller('GlaserSingleBib', ['$scope', '$stateParams', 'ZoteroService', function($scope, $stateParams, ZoteroService) {
+  $scope.Model = {};
+  if($stateParams.key && $stateParams.user) {
+    ZoteroService.getItem('users/'+$stateParams.user+'/items/'+$stateParams.key).then(function(res){
+      $scope.Model.SingleRecord = res;
+      console.log($scope.Model.SingleRecord);
+    });
+  }
+}])
 .controller('GlaserScan', ['$scope', '$timeout', '$stateParams', '$http', '$log', function ($scope, $timeout, $stateParams, $http, $log) {
     $scope.Model = {};
     $scope.Model.scanID = $stateParams.scanID;

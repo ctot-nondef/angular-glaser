@@ -1,0 +1,53 @@
+<div class="pagewrapper" layout="column" layout-align="start start">
+  <div layout="row" layout-align="center start" layout-wrap>
+  	<div class="pagecover" layout="column" flex="noshrink" layout-align="start center">
+  		<div>
+  			<img style="width: calc(100% - 10px);" src="{{''}}">
+  			<h2 class="md-display-1" style="position: relative; left: 10px;">{{Model.SingleRecord.data.title}}</h2>
+  		</div>
+  	</div>
+  	<div class="card subcard" layout="row" flex="noshrink" layout-align="start start">
+  		<div style="width: 100%;" layout-padding>
+  		    <md-list class="md-dense" flex>
+  				<md-list-item class="vspinentry">
+  				  	<h3 class="md-title" style="width:40%; padding-right: 15px;text-align: right;">Author: </h3>
+  				  <p style="width: 60%; text-align: justify;">{{Model.SingleRecord.data.creators[0].lastName}}, {{Model.SingleRecord.data.creators[0].firstName}}</p>
+  				  <md-divider></md-divider>
+  				</md-list-item>
+  				<md-list-item class="vspinentry">
+  				  	<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Published: </h3>
+  				  <p style="width: 60%; text-align: justify;">{{Model.SingleRecord.data.date}} / {{Model.SingleRecord.data.place}}</p>
+  				  <md-divider></md-divider>
+  				</md-list-item>
+          <md-list-item class="vspinentry">
+  				  	<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Publisher: </h3>
+  				  <p style="width: 60%; text-align: justify;">{{Model.SingleRecord.data.publisher}}</p>
+  				  <md-divider></md-divider>
+  				</md-list-item>
+  				<md-list-item class="vspinentry">
+  				  	<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Series: </h3>
+  				  <p style="width: 60%; text-align: justify;">{{Model.SingleRecord.data.series}}</p>
+  				  <md-divider></md-divider>
+  				</md-list-item>
+  				<md-list-item class="vspinentry">
+  				  	<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Volume: </h3>
+  				  <p style="width: 60%; text-align: justify;">{{Model.SingleRecord.data.seriesNumber}}/{{Model.SingleRecord.data.numberOfVolumes}}</p>
+  				  <md-divider></md-divider>
+  				</md-list-item>
+  				<md-list-item class="vspinentry">
+  				  	<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Pages: </h3>
+  				  <p style="width: 60%; text-align: justify;">{{Model.SingleRecord.data.pages}}</p>
+  				  <md-divider></md-divider>
+  				</md-list-item>
+  			</md-list>
+  		</div>
+  	</div>
+  	<md-whiteframe class="md-whiteframe-3dp card subcard" layout="column" flex="noshrink" layout-align="start start">
+  	    <md-content layout-padding>
+  	      <div>
+  	        <h3 class="md-title"></h3>
+  	      </div>
+  	    </md-content>
+    </md-whiteframe>
+  </div>
+</div>

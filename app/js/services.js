@@ -215,24 +215,19 @@ ZoteroService.service('ZoteroService', function($http, $localStorage, $q, $log){
 			});
 		}.bind(this));
 	}
-	this.getByID = function(inputparams){$log.debug('GeoNames getByID: ', inputparams);
-		var params = JSON.parse(JSON.stringify(this.GeoConfig.BASEPARAMS));
-		Object.assign(params, inputparams);
+	this.getItem = function(path){$log.debug('GeoNames getByID: ', path);
 		return $q(function(resolve, reject){
-			if(this.zoterocache[params.geonameId]) resolve(this.zoterocache[params.geonameId]);
-			else if(!this.zoterocache[params.geonameId]) {
+			if(this.zoterocache[path]) resolve(this.zoterocache[path]);
+			else if(!this.zoterocache[path]) {
 				$http.get(
-					this.GeoConfig.BASEURL+"/getJSON",
+					this.ZoteroConfig.BASEURL+path,
 					{
-						params: params
 					}
 				).then(
 				function(res){
-					if(res.data.status) reject(res.data.status.message);
-					else {
-						this.zoterocache[params.geonameId] = res.data;
-						resolve(res.data);
-					}
+            console.log(res);
+            resolve(res.data);
+            //this.zoterocache[params.geonameId] = res.data;
 				}.bind(this),
 				function(err){
 					reject(err);
