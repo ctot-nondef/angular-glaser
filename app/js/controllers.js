@@ -131,16 +131,27 @@ GlaserControllers
   if($stateParams.refID) {
     opacsearch.getSingleRecordbyRef("archive", $stateParams.refID, []).then(function(res){
       //splitting these by line, should be delivered by API this way in the next version
+      var rec = res.data.adlibJSON.recordList.record[0];
       if(res.data.adlibJSON.recordList.record[0]['inscription.translation']) {
-        res.data.adlibJSON.recordList.record[0]['inscription.translation'] = res.data.adlibJSON.recordList.record[0]['inscription.translation'][0].split(/\d\./);
-        res.data.adlibJSON.recordList.record[0]['inscription.transliteration'] = res.data.adlibJSON.recordList.record[0]['inscription.transliteration'][0].split(/\d\./);
-        if(res.data.adlibJSON.recordList.record[0]['inscription.transliteration'].length > 1) {
-          res.data.adlibJSON.recordList.record[0]['inscription.transliteration'].shift();
-          res.data.adlibJSON.recordList.record[0]['inscription.translation'].shift();
+        rec['inscription.translation'] = rec['inscription.translation'][0].split(/\d\./);
+        rec['inscription.transliteration'] = rec['inscription.transliteration'][0].split(/\d\./);
+        if(rec['inscription.transliteration'].length > 1) {
+          rec['inscription.transliteration'].shift();
+          rec['inscription.translation'].shift();
         }
       }
-      $scope.Model.SingleRecord = res.data.adlibJSON.recordList.record[0];
+      if(rec['inscription.interpretation'][0]){
+        var re = /\[bib:[A-Z0-9]*\]/g;
+        var matches = rec['inscription.interpretation'][0].match(re);
+        $scope.references = matches.filter( onlyUnique );
+        console.log($scope.references);
+      }
+      $scope.Model.SingleRecord = rec;
     });
+    //helper function, this should go elsewhere, i smell scope soup
+    function onlyUnique(value, index, self) {
+      return self.indexOf(value) === index;
+    }
   }
 }])
 .controller('GlaserMap', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'GeoNamesServices', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, GeoNamesServices) {
