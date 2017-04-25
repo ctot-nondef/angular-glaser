@@ -17,11 +17,11 @@ var AdlibServices = angular.module('AdlibServices', ['ngStorage']);
 
 AdlibServices.service('opacsearch', ['$http', '$localStorage' ,function($http,$localStorage){
 	if(!$localStorage[Config.localStorage]) $localStorage[Config.localStorage] = {};
-	if($localStorage[Config.localStorage]['history']) var history = $localStorage[Config.localStorage]['history'];
+	if($localStorage[Config.localStorage]['history']) this.history = $localStorage[Config.localStorage]['history'];
 	else {
 		var obj = {"history":{"querystring":[],"query":[],"result":[]}}
 		$localStorage[Config.localStorage] = obj;
-		var history = $localStorage[Config.localStorage]['history'];
+		this.history = $localStorage[Config.localStorage]['history'];
 	}
 	this.pagesize = Config.pagesize;
 	this.sortField = Config.sortField;
@@ -186,7 +186,8 @@ ZoteroService.service('ZoteroService', function($http, $localStorage, $q, $log){
       "sort":"title",
       "limit":10,
       "direction":"asc",
-      "start":0
+      "start":0,
+      "defaultlib":3808523
 		}
 	}
 	this.initStorage = function(){$log.debug('initializing local storage');

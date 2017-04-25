@@ -130,7 +130,9 @@ GlaserControllers
   $scope.Model = {};
   if($stateParams.refID) {
     opacsearch.getSingleRecordbyRef("archive", $stateParams.refID, []).then(function(res){
-      //splitting these by line, should be delivered by API this way in the next version
+      //splitting translation/transliteration by line,
+      //should be delivered by API this way in the next version
+      //--> to be xferred to exist API
       var rec = res.data.adlibJSON.recordList.record[0];
       if(res.data.adlibJSON.recordList.record[0]['inscription.translation']) {
         rec['inscription.translation'] = rec['inscription.translation'][0].split(/\d\./);
@@ -140,6 +142,7 @@ GlaserControllers
           rec['inscription.translation'].shift();
         }
       }
+      //filtering out Zotero citations from the interpretation field
       if(rec['inscription.interpretation'][0]){
         var re = /\[bib:[A-Z0-9]*\]/g;
         var matches = rec['inscription.interpretation'][0].match(re);
@@ -148,7 +151,8 @@ GlaserControllers
       }
       $scope.Model.SingleRecord = rec;
     });
-    //helper function, this should go elsewhere, i smell scope soup
+    //******************* helpers ***************************************************
+    //helper function for deduplication, this should go elsewhere, i smell scope soup
     function onlyUnique(value, index, self) {
       return self.indexOf(value) === index;
     }
@@ -251,6 +255,15 @@ GlaserControllers
     });
   }
 }])
+.controller("BibByPath", function($scope, RestService, $attrs, ZoteroService) {
+	$scope.entity = {};
+	$attrs.$observe('path', function(val){
+    ZoteroService.getItem(val).then(function(res){
+      $scope.bib = res;
+      console.log($scope.bib);
+    });
+	});
+})
 .controller('GlaserScan', ['$scope', '$timeout', '$stateParams', '$http', '$log', function ($scope, $timeout, $stateParams, $http, $log) {
     $scope.Model = {};
     $scope.Model.scanID = $stateParams.scanID;
