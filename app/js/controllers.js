@@ -128,6 +128,7 @@ GlaserControllers
 }])
 .controller('GlaserSingleRecord', ['$scope', '$stateParams', 'opacsearch', function($scope, $stateParams, opacsearch) {
   $scope.Model = {};
+  $scope.references = [];
   if($stateParams.refID) {
     opacsearch.getSingleRecordbyRef("archive", $stateParams.refID, []).then(function(res){
       //splitting translation/transliteration by line,
@@ -144,9 +145,12 @@ GlaserControllers
       }
       //filtering out Zotero citations from the interpretation field
       if(rec['inscription.interpretation'][0]){
-        var re = /\[bib:[A-Z0-9]*\]/g;
+        var re = /(bib:[A-Z0-9]*)/g;
         var matches = rec['inscription.interpretation'][0].match(re);
-        $scope.references = matches.filter( onlyUnique );
+        matches = matches.filter( onlyUnique );
+        matches.forEach(function(r){
+          $scope.references.push(r.split(':')[1]);
+        });
         console.log($scope.references);
       }
       $scope.Model.SingleRecord = rec;
@@ -255,12 +259,18 @@ GlaserControllers
     });
   }
 }])
-.controller("BibByPath", function($scope, RestService, $attrs, ZoteroService) {
+.controller("BibByPath", function($scope, $attrs, ZoteroService) {
 	$scope.entity = {};
 	$attrs.$observe('path', function(val){
-    ZoteroService.getItem(val).then(function(res){
+    try {
+			var obj = JSON.parse(val);
+		} catch (e) {
+      console.log("template error:", e);
+			return {};
+		}
+    if(!obj.users || obj.users=="") obj.users = ZoteroService.ZoteroConfig.BASEPARAMS.defaultlib;
+    ZoteroService.getItem('users/'+obj.users+'/items/'+obj.items).then(function(res){
       $scope.bib = res;
-      console.log($scope.bib);
     });
 	});
 })

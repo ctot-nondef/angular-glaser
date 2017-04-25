@@ -75,9 +75,9 @@
 	<div class="card maincard" layout="row" flex="noshrink" layout-align="start start">
 		<div style="width: 100%;" layout-padding>
 			<h3 class="md-title">References</h3>
-				<md-list-item ng-repeat="ref in references" class="vspinentry"  >
-					<p style="width: 20%;">ref</p>
-					<p style="width: 40%;">{{Model.SingleRecord['inscription.interpretation'][0]}}</p>
+				<md-list-item ng-repeat="ref in references" class="vspinentry" ng-controller="BibByPath" path='{"users":"","items":"{{ref}}"}' ui-sref="gl.singleBib({key:'{{ref}}',user:3808523})">
+					<p style="width: 20%;">{{bib.data.creators[0].lastName}}/{{bib.data.creators[0].firstName}}</p>
+					<p style="width: 50%;">{{bib.data.title}}</p>
 					<md-divider></md-divider>
 				</md-list-item>
 		</div>

@@ -15,7 +15,7 @@
 	      <tr md-row
 	      		md-select="bib"
 	      		ng-repeat="bib in Model.Result"
-	      		ui-sref="gl.singleBib({key: '{{bib.key}}', user: {{bib.library.id}}})"
+	      		ui-sref="gl.singleBib({key:'{{bib.key}}',user:{{bib.library.id}}})"
 	      		class="vspinentry" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50+'s','overflow':'hidden'}" >
 	        <td md-cell>{{bib.data.title}}</td>
 	        <td md-cell>{{bib.data.date}}</td>

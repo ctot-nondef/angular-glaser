@@ -187,7 +187,7 @@ ZoteroService.service('ZoteroService', function($http, $localStorage, $q, $log){
       "limit":10,
       "direction":"asc",
       "start":0,
-      "defaultlib":3808523
+      "defaultlib":"3808523"
 		}
 	}
 	this.initStorage = function(){$log.debug('initializing local storage');
