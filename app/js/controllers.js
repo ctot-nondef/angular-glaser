@@ -147,11 +147,16 @@ GlaserControllers
       if(rec['inscription.interpretation'][0]){
         var re = /(bib:[A-Z0-9]*)/g;
         var matches = rec['inscription.interpretation'][0].match(re);
-        matches = matches.filter( onlyUnique );
-        matches.forEach(function(r){
-          $scope.references.push(r.split(':')[1]);
-        });
-        console.log($scope.references);
+        if(matches){
+          var i = 1;
+          matches = matches.filter( onlyUnique );
+          matches.forEach(function(r){
+            $scope.references.push(r.split(':')[1]);
+            rec['inscription.interpretation'][0] = rec['inscription.interpretation'][0].replace(r, '-> Reference '+i+'\n');
+            i++;
+          });
+          console.log($scope.references);
+        }
       }
       $scope.Model.SingleRecord = rec;
     });
