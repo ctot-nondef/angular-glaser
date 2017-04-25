@@ -255,13 +255,31 @@ GlaserControllers
   //********* END OF DECLARATIVE PART **************************************
   $scope.promise = ZoteroService.getList({path:'users/3808523/items/'}).then($scope.update);
 }])
-.controller('GlaserSingleBib', ['$scope', '$stateParams', 'ZoteroService', function($scope, $stateParams, ZoteroService) {
+.controller('GlaserSingleBib', ['$scope', '$stateParams', 'ZoteroService','opacsearch', function($scope, $stateParams, ZoteroService, opacsearch) {
   $scope.Model = {};
+  //************************************************************************
+  // when sorting
+  $scope.getNewOrder = function(a) {
+    if(a.slice(0,1) == "-") opacsearch.updateSorting('descending',a.slice(1));
+    else if(a.slice(0,1) != "-") opacsearch.updateSorting('ascending',a);
+    $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', [{"s1":"[bib:"+$stateParams.key+"]"},{"part_of_reference":"*BA-3-27-A*"}],"AND",undefined,[],1,100).then($scope.update);
+  };
+  //************************************************************************
+  // generic page update
+  $scope.update = function(res) {
+    console.log(res);
+    $scope.Model.Total = res.data.adlibJSON.diagnostic.hits;
+    $scope.Model.Page = 1;
+    $scope.Model.Pagesize = 100;
+    $scope.Model.Result = res.data.adlibJSON.recordList.record;
+    console.log($scope.Model.Result);
+  };
   if($stateParams.key && $stateParams.user) {
     ZoteroService.getItem('users/'+$stateParams.user+'/items/'+$stateParams.key).then(function(res){
       $scope.Model.SingleRecord = res;
       console.log($scope.Model.SingleRecord);
     });
+    $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', [{"s1":"[bib:"+$stateParams.key+"]"},{"part_of_reference":"*BA-3-27-A*"}],"AND",undefined,[],1,100).then($scope.update);
   }
 }])
 .controller("BibByPath", function($scope, $attrs, ZoteroService) {
