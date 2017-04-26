@@ -3,7 +3,7 @@
 
 /******** base styles ***********/
 body {
-  
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -14,10 +14,11 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /******** navigation elements *********/
-md-sidenav {
+md-sidenav.mainnav {
   max-width: 100%!important;
   width: 100%!important;
   position: fixed!important;
+  z-index: 100;
 }
 
 md-backdrop {
@@ -168,7 +169,13 @@ md-icon.menuicon {
 
 .line {
   padding-top: 15px!important;
-  padding-bottom: 5px!important; 
+  padding-bottom: 5px!important;
+}
+
+/******** layout elements - singleRecord page *********/
+.map {
+  height: 100%;
+  width: calc(100%-320px);
 }
 
 /******** spinentry animation class - to be replaced by ngAnimate + transitions? *********/
@@ -265,7 +272,7 @@ md-icon.menuicon {
  .red {
   background: #ff8a80; }
  md-grid-tile {
-  transition: all 200ms ease-out; 
+  transition: all 200ms ease-out;
 }
 
 /******** layout elements - result page *********/
@@ -375,7 +382,7 @@ md-table-container {
  .red {
   background: #ff8a80; }
  md-grid-tile {
-  transition: all 200ms ease-out; 
+  transition: all 200ms ease-out;
 }
 
 /******** Containers *********/

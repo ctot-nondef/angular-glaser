@@ -167,7 +167,7 @@ GlaserControllers
     }
   }
 }])
-.controller('GlaserMap', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'GeoNamesServices', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, GeoNamesServices) {
+.controller('GlaserMap', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'GeoNamesServices', '$mdMedia', '$mdSidenav', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, GeoNamesServices, $mdMedia, $mdSidenav) {
   var bounds = leafletBoundsHelpers.createBoundsFromArray([[ 19.5, 42.4 ],[ 12.2, 54 ]]); //creating yemen bounds - maybe get coordinates from GeoNames as well?
   angular.extend($scope, {
     bounds: bounds,
@@ -186,7 +186,6 @@ GlaserControllers
       }
       GeoNamesServices.geocache[recID].then(function(c){
         $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":record['production.place'][0]}
-        console.log($scope.markers);
       });
       leafletData.getMap().then(function(map) {
         map.invalidateSize();
@@ -194,7 +193,6 @@ GlaserControllers
     });
   });
   console.log(GeoNamesServices.geocache);
-
 }])
 .controller('GlaserNav', ['$scope', '$timeout', '$mdSidenav', '$http', '$log', function ($scope, $timeout, $mdSidenav, $http, $log) {
     $scope.Model = {};

@@ -106,7 +106,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
         }
     })
     .state('gl.map',{
-        url: '/map',
+        url: '/map/:placeID',
         views: {
             'content@': {
                 templateUrl: 'partials/map.html',
