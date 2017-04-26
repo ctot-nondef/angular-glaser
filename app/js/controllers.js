@@ -185,7 +185,7 @@ GlaserControllers
         GeoNamesServices.addtoCache(recID, promise);
       }
       GeoNamesServices.geocache[recID].then(function(c){
-        $scope.markers[record['priref'][0]] = {"lat":parseInt(c.data.lat), "lng":parseInt(c.data.lng), "message":record['priref'][0]}
+        $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":record['production.place'][0]}
         console.log($scope.markers);
       });
       leafletData.getMap().then(function(map) {
