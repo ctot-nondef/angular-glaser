@@ -188,15 +188,25 @@ GlaserControllers
         GeoNamesServices.addtoCache(recID, promise);
       }
       GeoNamesServices.geocache[recID].then(function(c){
-        $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":record['production.place'][0], "id": recID};
+        if(!$scope.markers[recID]){
+          $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":record['production.place'][0], "id": recID};
+        }
         if($stateParams.placeID && $scope.markers[$stateParams.placeID] && m == "") {
           m = leafletData.getMap().then(function(map) {
             $scope.ssite = $stateParams.placeID;
             $scope.selSite($stateParams.placeID);
+            $scope.$on('leafletDirectiveMarker.click', function(event, args){
+              $scope.selSite(args.modelName);
+            });
             map.invalidateSize();
           });
         }
-        else if(!$stateParams.placeID && m == "") m = leafletData.getMap().then(function(map) {map.invalidateSize();});
+        else if(!$stateParams.placeID && m == "") m = leafletData.getMap().then(function(map) {
+          map.invalidateSize();
+          $scope.$on('leafletDirectiveMarker.click', function(event, args){
+            $scope.selSite(args.modelName);
+          });
+        });
       });
     });
   });
