@@ -192,6 +192,10 @@ GlaserControllers
       });
     });
   });
+  $scope.$watch(function() { return $mdMedia('gt-sm'); }, function(big) {
+    $scope.big = big;
+    console.log(big);
+  });
   console.log(GeoNamesServices.geocache);
 }])
 .controller('GlaserNav', ['$scope', '$timeout', '$mdSidenav', '$http', '$log', function ($scope, $timeout, $mdSidenav, $http, $log) {

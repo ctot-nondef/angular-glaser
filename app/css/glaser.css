@@ -175,7 +175,7 @@ md-icon.menuicon {
 /******** layout elements - singleRecord page *********/
 .map {
   height: 100%;
-  width: calc(100%-320px);
+  width: 100%;
 }
 
 /******** spinentry animation class - to be replaced by ngAnimate + transitions? *********/
@@ -296,6 +296,7 @@ md-icon.menuicon {
 
 .ccontainer {
   border: 15px;
+  position: relative;
 }
 
 #menucontainer {
