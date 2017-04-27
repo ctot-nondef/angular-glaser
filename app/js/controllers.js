@@ -189,6 +189,7 @@ GlaserControllers
       GeoNamesServices.geocache[recID].then(function(c){
         $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":record['production.place'][0], "id": recID};
         if($stateParams.placeID && $scope.markers[$stateParams.placeID] && !$scope.promise) {
+          $scope.ssite = $stateParams.placeID;
           $scope.selSite($stateParams.placeID);
         }
       });
@@ -198,10 +199,12 @@ GlaserControllers
     });
   });
   $scope.selSite = function(site){
-    $scope.ssite = site;
+    $scope.markers[$scope.ssite].focus = false;
     $state.go('gl.map',{placeID: site},{notify:false});
     $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', [{"production.place":$scope.markers[site].message},{"part_of_reference":"*BA-3-27-A*"}],"AND",undefined,[],1,100).then($scope.update);
+    $scope.markers[site].focus = true;
     $scope.activeTab = 1;
+    $scope.ssite = site;
   }
   //************************************************************************
   //Squeeze list
