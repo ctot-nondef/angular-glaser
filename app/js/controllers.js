@@ -126,8 +126,10 @@ GlaserControllers
   }
   $scope.promise.then($scope.update);
 }])
-.controller('GlaserSingleRecord', ['$scope', '$stateParams', 'opacsearch', function($scope, $stateParams, opacsearch) {
+.controller('GlaserSingleRecord', ['$scope', '$stateParams', 'opacsearch','GeoNamesServices','leafletData', 'leafletBoundsHelpers', function($scope, $stateParams, opacsearch, GeoNamesServices, leafletData, leafletBoundsHelpers) {
   $scope.Model = {};
+  $scope.markers = [];
+  $scope.center = {"lat":15,"lng":10,"zoom":6};
   $scope.references = [];
   if($stateParams.refID) {
     opacsearch.getSingleRecordbyRef("archive", $stateParams.refID, []).then(function(res){
@@ -155,10 +157,22 @@ GlaserControllers
             rec['inscription.interpretation'][0] = rec['inscription.interpretation'][0].replace(r, '-> Reference '+i+'\n');
             i++;
           });
-          console.log($scope.references);
         }
       }
       $scope.Model.SingleRecord = rec;
+      var recID = rec['production.place.uri'][0];
+      if(!GeoNamesServices.geocache[recID] || !GeoNamesServices.geocache[recID]['$$state'] ){
+        var promise = GeoNamesServices.getByID(recID);
+        GeoNamesServices.addtoCache(recID, promise);
+      }
+      GeoNamesServices.geocache[recID].then(function(c){
+        $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":rec['production.place'][0], "id": recID};
+        leafletData.getMap().then(function(map) {
+          map.invalidateSize();
+          $scope.markers[recID].focus = true;
+          $scope.center = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "zoom":4};
+        });
+      });
     });
     //******************* helpers ***************************************************
     //helper function for deduplication, this should go elsewhere, i smell scope soup
