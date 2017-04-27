@@ -177,6 +177,7 @@ GlaserControllers
     ssite:"",
     activeTab:0
   });
+  var m = "";
   $scope.Model.total = opacsearch.getPointerList('archive','7');
   $scope.Model.totalURI = opacsearch.getRecordsbyPointer('archive','10', ['priref','production.place','production.place.lref','production.place.context','production.place.uri'], 1, 100);
   $scope.Model.totalURI.then(function(res){
@@ -188,18 +189,19 @@ GlaserControllers
       }
       GeoNamesServices.geocache[recID].then(function(c){
         $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":record['production.place'][0], "id": recID};
-        if($stateParams.placeID && $scope.markers[$stateParams.placeID] && !$scope.promise) {
-          $scope.ssite = $stateParams.placeID;
-          $scope.selSite($stateParams.placeID);
+        if($stateParams.placeID && $scope.markers[$stateParams.placeID] && m == "") {
+          m = leafletData.getMap().then(function(map) {
+            $scope.ssite = $stateParams.placeID;
+            $scope.selSite($stateParams.placeID);
+            map.invalidateSize();
+          });
         }
-      });
-      leafletData.getMap().then(function(map) {
-        map.invalidateSize();
+        else if(!$stateParams.placeID && m == "") m = leafletData.getMap().then(function(map) {map.invalidateSize();});
       });
     });
   });
   $scope.selSite = function(site){
-    $scope.markers[$scope.ssite].focus = false;
+    if($scope.ssite) $scope.markers[$scope.ssite].focus = false;
     $state.go('gl.map',{placeID: site},{notify:false});
     $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', [{"production.place":$scope.markers[site].message},{"part_of_reference":"*BA-3-27-A*"}],"AND",undefined,[],1,100).then($scope.update);
     $scope.markers[site].focus = true;
@@ -217,12 +219,10 @@ GlaserControllers
   //************************************************************************
   // generic page update
   $scope.update = function(res) {
-    console.log(res);
     $scope.Model.Total = res.data.adlibJSON.diagnostic.hits;
     $scope.Model.Page = 1;
     $scope.Model.Pagesize = 100;
     $scope.Model.Result = res.data.adlibJSON.recordList.record;
-    console.log($scope.Model.Result);
   };
   // is-locked-open doesn't seem to work in
   $scope.$watch(function() { return $mdMedia('gt-sm'); }, function(big) {
