@@ -167,13 +167,15 @@ GlaserControllers
     }
   }
 }])
-.controller('GlaserMap', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'GeoNamesServices', '$mdMedia', '$mdSidenav', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, GeoNamesServices, $mdMedia, $mdSidenav) {
+.controller('GlaserMap', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'GeoNamesServices', '$mdMedia', '$mdSidenav', '$state', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, GeoNamesServices, $mdMedia, $mdSidenav, $state) {
   var bounds = leafletBoundsHelpers.createBoundsFromArray([[ 19.5, 42.4 ],[ 12.2, 54 ]]); //creating yemen bounds - maybe get coordinates from GeoNames as well?
   angular.extend($scope, {
     bounds: bounds,
     center: {},
     Model: {},
-    markers: {}
+    markers: {},
+    ssite:"",
+    activeTab:0
   });
   $scope.Model.total = opacsearch.getPointerList('archive','7');
   $scope.Model.totalURI = opacsearch.getRecordsbyPointer('archive','10', ['priref','production.place','production.place.lref','production.place.context','production.place.uri'], 1, 100);
@@ -185,7 +187,10 @@ GlaserControllers
         GeoNamesServices.addtoCache(recID, promise);
       }
       GeoNamesServices.geocache[recID].then(function(c){
-        $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":record['production.place'][0], "id": recID}
+        $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":record['production.place'][0], "id": recID};
+        if($stateParams.placeID && $scope.markers[$stateParams.placeID] && !$scope.promise) {
+          $scope.selSite($stateParams.placeID);
+        }
       });
       leafletData.getMap().then(function(map) {
         map.invalidateSize();
@@ -193,8 +198,29 @@ GlaserControllers
     });
   });
   $scope.selSite = function(site){
-    console.log(site);
+    $scope.ssite = site;
+    $state.go('gl.map',{placeID: site},{notify:false});
+    $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', [{"production.place":$scope.markers[site].message},{"part_of_reference":"*BA-3-27-A*"}],"AND",undefined,[],1,100).then($scope.update);
+    $scope.activeTab = 1;
   }
+  //************************************************************************
+  //Squeeze list
+  // when sorting
+  $scope.getNewOrder = function(a) {
+    if(a.slice(0,1) == "-") opacsearch.updateSorting('descending',a.slice(1));
+    else if(a.slice(0,1) != "-") opacsearch.updateSorting('ascending',a);
+    $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', [{"s1":"[bib:"+$stateParams.key+"]"},{"part_of_reference":"*BA-3-27-A*"}],"AND",undefined,[],1,100).then($scope.update);
+  };
+  //************************************************************************
+  // generic page update
+  $scope.update = function(res) {
+    console.log(res);
+    $scope.Model.Total = res.data.adlibJSON.diagnostic.hits;
+    $scope.Model.Page = 1;
+    $scope.Model.Pagesize = 100;
+    $scope.Model.Result = res.data.adlibJSON.recordList.record;
+    console.log($scope.Model.Result);
+  };
   // is-locked-open doesn't seem to work in
   $scope.$watch(function() { return $mdMedia('gt-sm'); }, function(big) {
     $scope.big = big;
