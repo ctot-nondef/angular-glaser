@@ -185,16 +185,19 @@ GlaserControllers
         GeoNamesServices.addtoCache(recID, promise);
       }
       GeoNamesServices.geocache[recID].then(function(c){
-        $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":record['production.place'][0]}
+        $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":record['production.place'][0], "id": recID}
       });
       leafletData.getMap().then(function(map) {
         map.invalidateSize();
       });
     });
   });
+  $scope.selSite = function(site){
+    console.log(site);
+  }
+  // is-locked-open doesn't seem to work in
   $scope.$watch(function() { return $mdMedia('gt-sm'); }, function(big) {
     $scope.big = big;
-    console.log(big);
   });
   console.log(GeoNamesServices.geocache);
 }])
