@@ -129,7 +129,6 @@ GlaserControllers
 .controller('GlaserSingleRecord', ['$scope', '$stateParams', 'opacsearch','GeoNamesServices','leafletData', 'leafletBoundsHelpers', function($scope, $stateParams, opacsearch, GeoNamesServices, leafletData, leafletBoundsHelpers) {
   $scope.Model = {};
   $scope.markers = [];
-  $scope.center = {"lat":15,"lng":10,"zoom":6};
   $scope.references = [];
   if($stateParams.refID) {
     opacsearch.getSingleRecordbyRef("archive", $stateParams.refID, []).then(function(res){
@@ -169,8 +168,9 @@ GlaserControllers
         $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":rec['production.place'][0], "id": recID};
         leafletData.getMap().then(function(map) {
           map.invalidateSize();
+          map.panTo({"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng)});
+          map.setZoom(6);
           $scope.markers[recID].focus = true;
-          $scope.center = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "zoom":4};
         });
       });
     });
