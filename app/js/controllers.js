@@ -210,6 +210,8 @@ GlaserControllers
             $scope.ssite = $stateParams.placeID;
             $scope.selSite($stateParams.placeID);
             map.invalidateSize();
+            map.panTo({"lat":parseFloat('14.5'), "lng":parseFloat('45.5')});
+            map.setZoom(8);
           });
           $scope.$on('leafletDirectiveMarker.mainmap.click', function(event, args){
             $scope.selSite(args.modelName);
@@ -218,6 +220,8 @@ GlaserControllers
         else if(!$stateParams.placeID && m == ""){
           m = leafletData.getMap('mainmap').then(function(map) {
             map.invalidateSize();
+            map.panTo({"lat":parseFloat('14.5'), "lng":parseFloat('45.5')});
+            map.setZoom(8);
           });
           $scope.$on('leafletDirectiveMarker.mainmap.click', function(event, args){
             $scope.selSite(args.modelName);
