@@ -166,7 +166,7 @@ GlaserControllers
       }
       GeoNamesServices.geocache[recID].then(function(c){
         $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":rec['production.place'][0], "id": recID};
-        leafletData.getMap().then(function(map) {
+        leafletData.getMap('singlemap').then(function(map) {
           map.invalidateSize();
           map.panTo({"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng)});
           map.setZoom(6);
@@ -206,21 +206,23 @@ GlaserControllers
           $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":record['production.place'][0], "id": recID};
         }
         if($stateParams.placeID && $scope.markers[$stateParams.placeID] && m == "") {
-          m = leafletData.getMap().then(function(map) {
+          m = leafletData.getMap('mainmap').then(function(map) {
             $scope.ssite = $stateParams.placeID;
             $scope.selSite($stateParams.placeID);
-            $scope.$on('leafletDirectiveMarker.click', function(event, args){
-              $scope.selSite(args.modelName);
-            });
             map.invalidateSize();
           });
-        }
-        else if(!$stateParams.placeID && m == "") m = leafletData.getMap().then(function(map) {
-          map.invalidateSize();
-          $scope.$on('leafletDirectiveMarker.click', function(event, args){
+          $scope.$on('leafletDirectiveMarker.mainmap.click', function(event, args){
             $scope.selSite(args.modelName);
           });
-        });
+        }
+        else if(!$stateParams.placeID && m == ""){
+          m = leafletData.getMap('mainmap').then(function(map) {
+            map.invalidateSize();
+          });
+          $scope.$on('leafletDirectiveMarker.mainmap.click', function(event, args){
+            $scope.selSite(args.modelName);
+          });
+        }
       });
     });
   });
