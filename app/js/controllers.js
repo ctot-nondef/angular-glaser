@@ -174,9 +174,6 @@ GlaserControllers
         });
       });
     });
-    ExistService.getList().then(function(res){
-      ExistService.getItem('1110000009');
-    });
     //******************* helpers ***************************************************
     //helper function for deduplication, this should go elsewhere, i smell scope soup
     function onlyUnique(value, index, self) {
@@ -185,9 +182,7 @@ GlaserControllers
   }
 }])
 .controller('GlaserMap', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'GeoNamesServices', '$mdMedia', '$mdSidenav', '$state', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, GeoNamesServices, $mdMedia, $mdSidenav, $state) {
-  var bounds = leafletBoundsHelpers.createBoundsFromArray([[ 19.5, 42.4 ],[ 12.2, 54 ]]); //creating yemen bounds - maybe get coordinates from GeoNames as well?
   angular.extend($scope, {
-    bounds: bounds,
     center: {},
     Model: {},
     markers: {},
@@ -261,7 +256,6 @@ GlaserControllers
   $scope.$watch(function() { return $mdMedia('gt-sm'); }, function(big) {
     $scope.big = big;
   });
-  console.log(GeoNamesServices.geocache);
 }])
 .controller('GlaserNav', ['$scope', '$timeout', '$mdSidenav', '$http', '$log', function ($scope, $timeout, $mdSidenav, $http, $log) {
     $scope.Model = {};
@@ -372,3 +366,29 @@ GlaserControllers
     setup3dhop($scope.Model.scanID);
     resizeCanvas(window.innerWidth-100, window.innerHeight-4);
 }])
+.controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state) {
+  ExistService.getList().then(function(res){
+    $scope.Manifest = res;
+    console.log($scope.Manifest);
+  });
+  $scope.selSite = function(rec){
+    ExistService.getItem(rec).then(function(res){
+      $scope.transcription = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["0"];
+      $scope.translation = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["1"];
+      console.log($scope.transcription);
+    });
+  }
+  // is-locked-open doesn't seem to work in
+  $scope.$watch(function() { return $mdMedia('gt-sm'); }, function(big) {
+    $scope.big = big;
+  });
+}])
+.controller("SqueezeByAttr", function($scope, opacsearch, $attrs) {
+	$scope.squeeze = {};
+	$attrs.$observe('squeezeid', function(val){
+    opacsearch.getSingleRecordbyRef("archive", val, []).then(function(res){
+      console.log(res);
+      $scope.squeeze = res.data.adlibJSON.recordList.record[0];
+    });
+	});
+})

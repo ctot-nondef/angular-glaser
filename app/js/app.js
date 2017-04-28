@@ -132,6 +132,15 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
             }
         }
     })
+    .state('gl.tei',{
+        url: '/tei/:id',
+        views: {
+            'content@': {
+                templateUrl: 'partials/tei.html',
+                controller: 'GlaserTei'
+            }
+        }
+    })
     $locationProvider.html5Mode(true);
     $mdThemingProvider.theme('default')
         .primaryPalette('blue', {

@@ -300,9 +300,7 @@ ExistService.service('ExistService', function($http, $localStorage, $q, $log){
 					}
 				).then(
 				function(res){
-            console.log(res);
             resolve(res.data);
-            //this.existcache[params.geonameId] = res.data;
 				}.bind(this),
 				function(err){
 					reject(err);
