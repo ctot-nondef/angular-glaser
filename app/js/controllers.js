@@ -9,7 +9,7 @@ var ssFields = {
 
 /* Controllers */
 
-var GlaserControllers = angular.module('GlaserControllers', ['AdlibServices','GeoNamesServices','ZoteroService']);
+var GlaserControllers = angular.module('GlaserControllers', ['AdlibServices','GeoNamesServices','ZoteroService', 'ExistService']);
 
 GlaserControllers
 .controller('GlaserStartList',['$scope','$http', '$state', 'opacsearch', function($scope, $http, $state, opacsearch){
@@ -126,7 +126,7 @@ GlaserControllers
   }
   $scope.promise.then($scope.update);
 }])
-.controller('GlaserSingleRecord', ['$scope', '$stateParams', 'opacsearch','GeoNamesServices','leafletData', 'leafletBoundsHelpers', function($scope, $stateParams, opacsearch, GeoNamesServices, leafletData, leafletBoundsHelpers) {
+.controller('GlaserSingleRecord', ['$scope', '$stateParams', 'opacsearch','GeoNamesServices','leafletData', 'leafletBoundsHelpers','ExistService', function($scope, $stateParams, opacsearch, GeoNamesServices, leafletData, leafletBoundsHelpers, ExistService) {
   $scope.Model = {};
   $scope.markers = [];
   $scope.references = [];
@@ -173,6 +173,9 @@ GlaserControllers
           $scope.markers[recID].focus = true;
         });
       });
+    });
+    ExistService.getList().then(function(res){
+      ExistService.getItem('1110000009');
     });
     //******************* helpers ***************************************************
     //helper function for deduplication, this should go elsewhere, i smell scope soup

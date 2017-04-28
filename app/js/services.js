@@ -249,3 +249,66 @@ ZoteroService.service('ZoteroService', function($http, $localStorage, $q, $log){
   }
   this.initStorage();
 });
+
+/**
+ * Service providing convenience Methods and Cacheing for the zotero webservices API
+ */
+var ExistService = angular.module('ExistService', ['ngStorage']);
+ExistService.service('ExistService', function($http, $localStorage, $q, $log){
+	this.ExistConfig = {
+		BASEURL : "https://glaser-tei.acdh.oeaw.ac.at/exist/restxq/glaser-tei/done/",
+		BASEPARAMS : {
+		}
+	}
+  this.Manifest = {};
+	this.initStorage = function(){$log.debug('initializing local storage');
+		if(!$localStorage[Config.LOCALSTORAGE]) $localStorage[Config.LOCALSTORAGE] = {};
+		if($localStorage[Config.LOCALSTORAGE]['existcache']) this.existcache = $localStorage[Config.LOCALSTORAGE]['existcache'];
+		else {
+			$localStorage[Config.LOCALSTORAGE]['existcache'] = {};
+			this.existcache = $localStorage[Config.LOCALSTORAGE]['existcache'];
+		}
+	}
+  this.getList = function(){$log.debug('fetching Exist Manifest');
+		return $q(function(resolve, reject){
+			$http.get(
+				this.ExistConfig.BASEURL+'json',
+				{
+				}
+			).then(
+			function(res){
+        var idx = res.data.entry.length;
+        while(idx--){
+          var key = res.data.entry[idx].ID.split('_')[0];
+          this.Manifest[key] = res.data.entry[idx];
+        }
+        resolve(this.Manifest);
+			}.bind(this),
+			function(err){
+				reject(err);
+			});
+		}.bind(this));
+	}
+	this.getItem = function(id, format){$log.debug('Exist getByID: ', id, format);
+    if(!format) var format = "xml";
+		return $q(function(resolve, reject){
+			if(this.existcache[id]) resolve(this.existcache[id]);
+			else if(!this.existcache[id]) {
+				$http.get(
+					this.ExistConfig.BASEURL+this.Manifest[id].ID+'/'+format,
+					{
+					}
+				).then(
+				function(res){
+            console.log(res);
+            resolve(res.data);
+            //this.existcache[params.geonameId] = res.data;
+				}.bind(this),
+				function(err){
+					reject(err);
+				});
+			}
+		}.bind(this));
+	}
+  this.initStorage();
+});

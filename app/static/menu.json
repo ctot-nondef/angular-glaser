@@ -16,19 +16,19 @@
 		"items":""
 	},
 	{
-		"caption":"Archival Materials",
-		"arialabel":"",
-		"mdicon":"find_in_page",
-		"abstract":"",
-		"startpage":"gl.search",
-		"items":""
-	},
-	{
 		"caption":"Bibliography",
 		"arialabel":"",
 		"mdicon":"local_library",
 		"abstract":"",
 		"startpage":"gl.bibliography",
+		"items":""
+	},
+	{
+		"caption":"TEI Encodings",
+		"arialabel":"",
+		"mdicon":"code",
+		"abstract":"",
+		"startpage":"gl.search",
 		"items":""
 	}
 ]
