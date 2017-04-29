@@ -251,7 +251,7 @@ ZoteroService.service('ZoteroService', function($http, $localStorage, $q, $log){
 });
 
 /**
- * Service providing convenience Methods and Cacheing for the zotero webservices API
+ * Service providing convenience Methods and Cacheing for the ExistDB API
  */
 var ExistService = angular.module('ExistService', ['ngStorage']);
 ExistService.service('ExistService', function($http, $localStorage, $q, $log){

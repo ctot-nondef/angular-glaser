@@ -9,9 +9,7 @@ var ssFields = {
 
 /* Controllers */
 
-var GlaserControllers = angular.module('GlaserControllers', ['AdlibServices','GeoNamesServices','ZoteroService', 'ExistService']);
-
-GlaserControllers
+GlaserApp
 .controller('GlaserStartList',['$scope','$http', '$state', 'opacsearch', function($scope, $http, $state, opacsearch){
   $scope.Model = {};
   opacsearch.updateSize("40");

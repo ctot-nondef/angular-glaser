@@ -7,10 +7,13 @@ var GlaserApp = angular.module('GlaserApp', [
   'ngAnimate',
   'ngSanitize',
   'ngMaterial',
-  'GlaserControllers',
-  'GlaserFilters',
   'md.data.table',
-  'ui-leaflet'
+  'ui-leaflet',
+  'MaterialTEI',
+  'AdlibServices',
+  'GeoNamesServices',
+  'ZoteroService',
+  'ExistService'
 ]);
 
 
