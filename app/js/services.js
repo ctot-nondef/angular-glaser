@@ -243,9 +243,11 @@ ZoteroService.service('ZoteroService', function($http, $localStorage, $q, $log){
   this.updateSorting = function(direction,param){
     this.ZoteroConfig.BASEPARAMS.direction = direction;
     this.ZoteroConfig.BASEPARAMS.sort = param;
+    return {direction:this.ZoteroConfig.BASEPARAMS.direction, sort:this.ZoteroConfig.BASEPARAMS.sort  }
   }
   this.updateStart = function(start){
     this.ZoteroConfig.BASEPARAMS.start = start;
+    return this.ZoteroConfig.BASEPARAMS.start;
   }
   this.initStorage();
 });
