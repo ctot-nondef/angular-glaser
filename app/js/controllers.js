@@ -366,13 +366,7 @@ GlaserApp
   });
   $scope.selSite = function(rec){
     ExistService.getItem(rec).then(function(res){
-      $scope.test = new CETEIceanService();
-      console.log(angular.element(angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"]).html());
-      $scope.transcription = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["0"];
-      $scope.translation = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["1"];
-      console.log($scope.transcription);
-      var tei = angular.element(angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"]).html();
-      console.log($scope.test.getHTML5(tei));
+      $scope.test = res;
     });
   }
   // is-locked-open doesn't seem to work in

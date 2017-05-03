@@ -544,3 +544,25 @@ MaterialTEI.service('CETEIceanService', function($http, $localStorage, $q, $log)
     }();
     return r;
 });
+
+MaterialTEI.directive('md-tei', function ($compile, CETEIceanService, $attrs) {
+    var CETEI = new CETEIceanService();
+    console.log($attrs.source);
+    if($attrs.source) {
+      var tei = angular.element(angular.element(jQuery.parseXML($attrs.source))["0"].children["0"].children["0"]).html();
+      var template =  CETEI.getHTML5(tei);
+    }
+    var linker = function(scope, element){
+        element.html(template).show();
+        $compile(element.contents())(scope);
+    };
+
+    return {
+        restrict: "E",
+        replace: true,
+        link: linker,
+        scope: {
+            content:'='
+        }
+    };
+});
