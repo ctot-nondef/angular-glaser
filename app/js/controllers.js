@@ -359,16 +359,20 @@ GlaserApp
     setup3dhop($scope.Model.scanID);
     resizeCanvas(window.innerWidth-100, window.innerHeight-4);
 }])
-.controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state) {
+.controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', 'CETEIceanService', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state, CETEIceanService) {
   ExistService.getList().then(function(res){
     $scope.Manifest = res;
     console.log($scope.Manifest);
   });
   $scope.selSite = function(rec){
     ExistService.getItem(rec).then(function(res){
+      $scope.test = new CETEIceanService();
+      console.log(angular.element(angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"]).html());
       $scope.transcription = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["0"];
       $scope.translation = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["1"];
       console.log($scope.transcription);
+      var tei = angular.element(angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"]).html();
+      console.log($scope.test.getHTML5(tei));
     });
   }
   // is-locked-open doesn't seem to work in

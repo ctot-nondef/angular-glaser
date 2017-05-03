@@ -170,21 +170,9 @@ MaterialTEI.service('CETEIceanService', function($http, $localStorage, $q, $log)
           return e.createClass(r, [{
               key: "getHTML5",
               value: function(e, t, r) {
+                  // used to contain XMLHttpRequest-wrapper, retrieves already retrieved xml/TEI file  now
                   var a = this;
-                  window.location.href.startsWith(this.base) && e.indexOf("/") >= 0 && (this.base = e.replace(/\/[^\/]*$/, "/"));
-                  var n = new Promise(function(t, r) {
-                      var a = new XMLHttpRequest;
-                      a.open("GET", e), a.send(), a.onload = function() {
-                          this.status >= 200 && this.status < 300 ? t(this.response) : r(this.statusText)
-                      }, a.onerror = function() {
-                          r(this.statusText)
-                      }
-                  })["catch"](function(e) {
-                      console.log(e)
-                  });
-                  return n.then(function(e) {
-                      return a.makeHTML5(e, t, r)
-                  })
+                  return a.makeHTML5(e, t, r);
               }
           }, {
               key: "makeHTML5",
