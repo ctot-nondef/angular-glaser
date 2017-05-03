@@ -172,11 +172,6 @@ GlaserApp
         });
       });
     });
-    //******************* helpers ***************************************************
-    //helper function for deduplication, this should go elsewhere, i smell scope soup
-    function onlyUnique(value, index, self) {
-      return self.indexOf(value) === index;
-    }
   }
 }])
 .controller('GlaserMap', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'GeoNamesServices', '$mdMedia', '$mdSidenav', '$state', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, GeoNamesServices, $mdMedia, $mdSidenav, $state) {
@@ -390,3 +385,8 @@ GlaserApp
     });
 	});
 })
+//******************* helpers ***************************************************
+//helper function for deduplication, this should go elsewhere, i smell scope soup
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
