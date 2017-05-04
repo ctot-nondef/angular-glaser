@@ -5,6 +5,25 @@ var MaterialTEI = angular.module('MaterialTEI', [
   'md.data.table'
 ]);
 
+
+MaterialTEI.directive('mdtei', ['$compile', 'CETEIceanService',   function ($compile, CETEIceanService) {
+    function link(scope, element, attrs){
+      attrs.$observe('source', function(val){
+        var CETEI = new CETEIceanService();
+        console.log(attrs.source);
+        if(attrs.source) {
+          var tei = angular.element(angular.element(jQuery.parseXML(attrs.source))["0"].children["0"].children["0"]).html();
+          var template =  CETEI.getHTML5(tei);
+        }
+        element.html(template).show();
+        $compile(element.contents())(scope);
+      });
+    };
+    return {
+        link: link,
+    };
+}]);
+
 // ******************************************************************************
 // ** wraps https://github.com/TEIC/CETEIcean/blob/master/src/CETEI.js as an
 // ** injectable AngularJS Service
@@ -543,26 +562,4 @@ MaterialTEI.service('CETEIceanService', function($http, $localStorage, $q, $log)
           }]), r
     }();
     return r;
-});
-
-MaterialTEI.directive('md-tei', function ($compile, CETEIceanService, $attrs) {
-    var CETEI = new CETEIceanService();
-    console.log($attrs.source);
-    if($attrs.source) {
-      var tei = angular.element(angular.element(jQuery.parseXML($attrs.source))["0"].children["0"].children["0"]).html();
-      var template =  CETEI.getHTML5(tei);
-    }
-    var linker = function(scope, element){
-        element.html(template).show();
-        $compile(element.contents())(scope);
-    };
-
-    return {
-        restrict: "E",
-        replace: true,
-        link: linker,
-        scope: {
-            content:'='
-        }
-    };
 });

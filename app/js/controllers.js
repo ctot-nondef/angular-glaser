@@ -378,7 +378,7 @@ GlaserApp
 	$scope.squeeze = {};
 	$attrs.$observe('squeezeid', function(val){
     opacsearch.getSingleRecordbyRef("archive", val, []).then(function(res){
-      console.log(res);
+      //console.log(res);
       $scope.squeeze = res.data.adlibJSON.recordList.record[0];
     });
 	});
