@@ -1,4 +1,19 @@
-<mdtei source="{{test}}"></mdtei>
+<div class="pagewrapper" layout="column" layout-align="start start">
+  <md-tabs md-dynamic-height md-border-bottom md-selected="0" md-stretch-tabs="always" style="width: 100%;">
+    <md-tab label="Transliteration" >
+        <div class="card maincard" layout="row" flex="noshrink" layout-align="start start">
+         <div style="width: 100%;" layout-padding ng-bind-html="Model.transliteration">
+         </div>
+       </div>
+    </md-tab>
+   <md-tab label="Translation">
+     <div class="card maincard" layout="row" flex="noshrink" layout-align="start start">
+      <div style="width: 100%;" layout-padding ng-bind-html="Model.translation">
+      </div>
+    </div>
+   </md-tab>
+  </md-tabs>
+</div>
 <md-sidenav
     class="md-sidenav-right md-whiteframe-0dp"
     md-component-id="right"

@@ -359,15 +359,33 @@ GlaserApp
     setup3dhop($scope.Model.scanID);
     resizeCanvas(window.innerWidth-100, window.innerHeight-4);
 }])
-.controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', 'CETEIceanService', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state, CETEIceanService) {
+.controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state',  function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state) {
   ExistService.getList().then(function(res){
     $scope.Manifest = res;
     console.log($scope.Manifest);
   });
-  $scope.selSite = function(rec){
-    ExistService.getItem(rec).then(function(res){
-      $scope.test = res;
+  $scope.selSite = function(id){
+    ExistService.getItem(id).then(function(res){
+      $scope.transcription = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["0"].children["2"];
+      $scope.translation = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["1"].children["2"];
+      console.log($scope.transcription, $scope.translation);
+      $scope.Model = {translation:"<h3>loading TEI</h3>",transliteration:"<h3>loading TEI</h3>"};
+      $scope.Model.transliteration = $scope.makeMarkup($scope.transcription);
+      console.log($scope.Model.transliteration);
     });
+  }
+  $scope.makeMarkup = function(tei){
+    var markup="";
+    var idx = tei.children.length;
+    var le = tei.children.length-1;
+    while(idx--) {
+      var a = tei.children[le-idx];
+      console.log(tei.children);
+      if(a.nodeName=="tei:lb") markup = markup + "<br><br>";
+      else if (a.nodeName=="w") markup = markup + "<a href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(a.innerHTML) +"'>"+ a.innerHTML +"</a>"
+      else if (a.nodeName=="w" && a.children.length==0) markup = markup + "<a href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(a.innerHTML) +"'>"+ a.innerHTML +"</a>"
+    }
+    return markup;
   }
   // is-locked-open doesn't seem to work in
   $scope.$watch(function() { return $mdMedia('gt-sm'); }, function(big) {
