@@ -184,7 +184,7 @@ GlaserApp
   });
   var m = "";
   $scope.Model.total = opacsearch.getPointerList('archive','7');
-  $scope.Model.totalURI = opacsearch.getRecordsbyPointer('archive','10', ['priref','production.place','production.place.lref','production.place.context','production.place.uri'], 1, 100);
+  $scope.Model.totalURI = opacsearch.getRecordsbyPointer('archive','10', ['priref','production.place','production.place.lref','production.place.context','production.place.uri'], 1, 1000);
   $scope.Model.totalURI.then(function(res){
     res.data.adlibJSON.recordList.record.forEach(function(record){
       var recID = record['production.place.uri'][0];
@@ -370,7 +370,7 @@ GlaserApp
       $state.go('gl.tei',{id: id},{notify:false});
       $scope.transcription = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["0"].children["2"];
       $scope.translation = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["1"].children["2"];
-      $scope.Model = {translation:"<h3>loading TEI</h3>",transliteration:"<h3>loading TEI</h3>"};
+      $scope.Model = {translation:"<h3>in preparation</h3>",transliteration:"<h3>loading TEI</h3>"};
       $scope.Model.transliteration = $scope.makeMarkup($scope.transcription);
     });
   }
@@ -382,8 +382,8 @@ GlaserApp
       var a = tei.children[le-idx];
       console.log(a);
       if(a.nodeName=="tei:lb") markup = markup + "<br><br>";
-      else if (a.nodeName=="w") markup = markup + "<a href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(a.innerHTML) +"'>"+ a.innerHTML +"</a>"
-      else if (a.nodeName=="w" && a.children.length==0) markup = markup + "<a href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(a.innerHTML) +"'>"+ a.innerHTML +"</a>"
+      else if (a.nodeName=="w") markup = markup + "<a target='_blank' href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(a.innerHTML) +"'>"+ a.innerHTML +"</a>"
+      else if (a.nodeName=="w" && a.children.length==0) markup = markup + "<a target='_blank' href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(a.innerHTML) +"'>"+ a.innerHTML +"</a>"
     }
     return markup;
   }
