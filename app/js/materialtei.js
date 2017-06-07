@@ -23,7 +23,6 @@ MaterialTEI.service('TEI', function($http, $localStorage, $q, $log){
     for (var a in this.CONFIG.ra) {
       n = n.replace(a, this.CONFIG.ra[a]);
     }
-    console.log(n);
     return n;
   }
   this.init();

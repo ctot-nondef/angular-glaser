@@ -365,6 +365,7 @@ GlaserApp
     resizeCanvas(window.innerWidth-100, window.innerHeight-4);
 }])
 .controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', 'TEI',  function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state, TEI) {
+  $scope.Model = {id: $stateParams.id};
   ExistService.getList().then(function(res){
     $scope.Manifest = res;
     if($stateParams.id) $scope.selSite($stateParams.id);

@@ -1,4 +1,11 @@
 <div class="pagewrapper" layout="column" layout-align="start start">
+  <div class="card maincard" layout="row" layout-align="center center">
+    <div>For more details, please also consider the squeezes</div>
+    <md-button class="md-primary md-raised" aria-label="TEI encoded texts" ui-sref="gl.singleRecord({refID:'{{Model.id}}'})">
+      <md-icon>description</md-icon>
+      Full record
+    </md-button>
+  </div>
   <md-tabs md-dynamic-height md-border-bottom md-selected="0" md-stretch-tabs="always" style="width: 100%;">
     <md-tab label="Transliteration" >
         <div class="card maincard" layout="row" flex="noshrink" layout-align="start start">
