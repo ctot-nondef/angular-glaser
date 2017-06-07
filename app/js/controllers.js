@@ -365,13 +365,14 @@ GlaserApp
     resizeCanvas(window.innerWidth-100, window.innerHeight-4);
 }])
 .controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', 'TEI',  function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state, TEI) {
-  $scope.Model = {id: $stateParams.id};
+  $scope.id = $stateParams.id;
   ExistService.getList().then(function(res){
     $scope.Manifest = res;
     if($stateParams.id) $scope.selSite($stateParams.id);
     //console.log($scope.Manifest);
   });
   $scope.selSite = function(id){
+    $scope.id = id;
     ExistService.getItem(id).then(function(res){
       $state.go('gl.tei',{id: id},{notify:false});
       $scope.transcription = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["0"].children["2"];
