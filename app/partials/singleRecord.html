@@ -110,8 +110,15 @@
 	 	</div>
 	 </md-tab>
 	 <md-tab label="Transcription / Translation">
+		 <div class="card maincard" layout="row" layout-align="center center" ng-if="hasTEI(Model.refID)">
+			 <div>The transcription and translation have also been encoded as </div>
+			 <md-button class="md-warn md-raised" aria-label="TEI encoded texts" ui-sref="gl.tei({id:'{{Model.refID}}'})">
+				 <md-icon>code</md-icon>
+				 TEI documents
+			 </md-button>
+		 </div>
 		 <div class="card maincard" layout="row" flex="noshrink" layout-align="start start">
-	 		<div style="width: 100%;" layout-padding>
+			<div style="width: 100%;" layout-padding>
 	 		    <md-list flex>
 	 		      <md-list-item class="line vspinentry" style="margin-top: 0px;">
 	 		          <h3 class="md-title" style="width: 50%; text-align: justify; padding-right: 15px;">Transliteration</h3>

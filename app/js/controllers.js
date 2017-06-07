@@ -125,9 +125,13 @@ GlaserApp
   $scope.promise.then($scope.update);
 }])
 .controller('GlaserSingleRecord', ['$scope', '$stateParams', 'opacsearch','GeoNamesServices','leafletData', 'leafletBoundsHelpers','ExistService', function($scope, $stateParams, opacsearch, GeoNamesServices, leafletData, leafletBoundsHelpers, ExistService) {
-  $scope.Model = {};
+  $scope.Model = {refID: $stateParams.refID};
   $scope.markers = [];
   $scope.references = [];
+  $scope.hasTEI = function(){
+    if($scope.Manifest[$stateParams.refID]) return true;
+    else return false;
+  }
   if($stateParams.refID) {
     opacsearch.getSingleRecordbyRef("archive", $stateParams.refID, []).then(function(res){
       //splitting translation/transliteration by line,
@@ -172,6 +176,7 @@ GlaserApp
         });
       });
     });
+    ExistService.getList().then(function(res){$scope.Manifest = res;});
   }
 }])
 .controller('GlaserMap', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'GeoNamesServices', '$mdMedia', '$mdSidenav', '$state', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, GeoNamesServices, $mdMedia, $mdSidenav, $state) {
