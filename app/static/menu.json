@@ -30,5 +30,13 @@
 		"abstract":"",
 		"startpage":"gl.tei",
 		"items":""
+	},
+	{
+		"caption":"About the Project",
+		"arialabel":"",
+		"mdicon":"info_outline",
+		"abstract":"",
+		"startpage":"gl.about",
+		"items":""
 	}
 ]
