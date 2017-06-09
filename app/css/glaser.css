@@ -418,6 +418,15 @@ md-table-container {
   left: 100px;
   position: absolute;
 }
+.loadscreen {
+  position: absolute;
+  left: 100px;
+  top: 0px;
+  width: calc(100% - 100px);
+  height: 100%;
+  z-index: 10000;
+  background-color: white;
+}
 
 .pointcontainer {
   min-width: 330px;

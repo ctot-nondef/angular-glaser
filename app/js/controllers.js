@@ -10,18 +10,21 @@ var ssFields = {
 /* Controllers */
 
 GlaserApp
-.controller('GlaserStartList',['$scope','$http', '$state', 'opacsearch', function($scope, $http, $state, opacsearch){
+.controller('GlaserStartList',['$scope','$http', '$state', 'opacsearch','$rootScope', function($scope, $http, $state, opacsearch, $rootScope){
   $scope.Model = {};
+  $rootScope.loading.progress = true;
   opacsearch.updateSize("40");
   opacsearch.getRecordsbyPointer('archive','7',[] ,'1','40').then(
     function(res){
       $scope.Model.PointerList = res.data.adlibJSON.recordList.record;
+      $rootScope.loading.progress = false;
     },
     function(err){ console.log('err: ', err); }
   );
 }])
 .controller('GlaserSearch',['$scope','$http', '$state', 'opacsearch', function($scope, $http, $state, opacsearch){
   $scope.Model = {};
+
   $scope.Model.total,$scope.Model.totalURI  = "counting..."
   opacsearch.getPointerList('archive','7').then(function(res){
     $scope.Model.total = res.data.adlibJSON.recordList.record[0]['hits'][0];
@@ -179,7 +182,8 @@ GlaserApp
     ExistService.getList().then(function(res){$scope.Manifest = res;});
   }
 }])
-.controller('GlaserMap', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'GeoNamesServices', '$mdMedia', '$mdSidenav', '$state', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, GeoNamesServices, $mdMedia, $mdSidenav, $state) {
+.controller('GlaserMap', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'GeoNamesServices', '$mdMedia', '$mdSidenav', '$state', '$rootScope', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, GeoNamesServices, $mdMedia, $mdSidenav, $state, $rootScope) {
+  $rootScope.loading.progress = true;
   angular.extend($scope, {
     center: {},
     Model: {},
@@ -191,6 +195,7 @@ GlaserApp
   $scope.Model.total = opacsearch.getPointerList('archive','7');
   $scope.Model.totalURI = opacsearch.getRecordsbyPointer('archive','10', ['priref','production.place','production.place.lref','production.place.context','production.place.uri'], 1, 1000);
   $scope.Model.totalURI.then(function(res){
+    $rootScope.loading.progress = false;
     res.data.adlibJSON.recordList.record.forEach(function(record){
       var recID = record['production.place.uri'][0];
       if(!GeoNamesServices.geocache[recID] || !GeoNamesServices.geocache[recID]['$$state'] ){
@@ -255,8 +260,9 @@ GlaserApp
     $scope.big = big;
   });
 }])
-.controller('GlaserNav', ['$scope', '$timeout', '$mdSidenav', '$http', '$log', function ($scope, $timeout, $mdSidenav, $http, $log) {
+.controller('GlaserNav', ['$scope', '$timeout', '$mdSidenav', '$http', '$log', '$rootScope', function ($scope, $timeout, $mdSidenav, $http, $log, $rootScope) {
     $scope.Model = {};
+    $rootScope.loading = {progress:false}
     $http.get('static/menu.json').then(
       function(res){
         $scope.Model.Menu = res.data;
