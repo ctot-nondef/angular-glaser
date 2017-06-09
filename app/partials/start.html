@@ -1,19 +1,18 @@
-<div>
-	<md-grid-list
-	    md-cols="2" md-cols-sm="3" md-cols-md="5" md-cols-gt-md="8"
-	    md-row-height-gt-md="1:1" md-row-height="1:1"
+<div style="height: 98%;overflow:hidden;">
+	<md-grid-list style="height: 100%; position:relative;"
+	    md-cols="2" md-cols-sm="3" md-cols-md="5" md-cols-gt-md="8" md-row-height="1:1"
 	    md-gutter="8px" md-gutter-gt-sm="4px" layout="row" layout-align="center start" ng-animate="'spinentry'">
-		<md-grid-tile ng-repeat="squeeze in Model.PointerList" style="cursor: pointer;"
-					  			ui-sref="gl.singleRecord({refID: {{squeeze.priref[0]}}})"
-		              md-rowspan="1"
-		              md-colspan="1"
-		              md-colspan-sm="1"
-		              md-colspan-xs="1"
-		              class="spinentry" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50+'s','overflow':'hidden'}">
-		  	<img preload-image default-image="media/preload.jpg" ng-src="{{'http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value='+squeeze['reproduction.reference'][0]+'&width=200&height=200&scalemode=fill&fillmode=center'}}" style="width:100%;" />
-		  	<md-grid-tile-footer layout="column" layout-align="center center">
-		  		<h5 >{{squeeze.title[0]}}</h5>
-		  	</md-grid-tile-footer>
-		</md-grid-tile>
+			<md-grid-tile ng-repeat="squeeze in Model.PointerList" style="cursor: pointer;"
+										ui-sref="gl.singleRecord({refID: {{squeeze.priref[0]}}})"
+										md-rowspan="1"
+										md-colspan="1"
+										md-colspan-sm="1"
+										md-colspan-xs="1"
+										class="spinentry" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50+'s','overflow':'hidden'}">
+					<img preload-image default-image="media/preload.jpg" ng-src="{{'http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value='+squeeze['reproduction.reference'][0]+'&width=200&height=200&scalemode=fill&fillmode=center'}}" style="width:100%;" />
+					<md-grid-tile-footer layout="column" layout-align="center center">
+						<h5 >{{squeeze.title[0]}}</h5>
+					</md-grid-tile-footer>
+			</md-grid-tile>
 	</md-grid-list>
 </div>
