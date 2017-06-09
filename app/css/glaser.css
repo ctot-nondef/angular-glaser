@@ -440,7 +440,9 @@ md-table-container {
 }
 
 .pagecover {
-  width: 100%
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
 }
 
 .subcard {

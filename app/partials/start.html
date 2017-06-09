@@ -10,7 +10,7 @@
 		              md-colspan-sm="1"
 		              md-colspan-xs="1"
 		              class="spinentry" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50+'s','overflow':'hidden'}">
-		  	<img ng-src="{{'http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value='+squeeze['reproduction.reference'][0]+'&width=200&height=200&scalemode=fill&fillmode=center'}}" style="width:100%;" />
+		  	<img preload-image default-image="media/preload.jpg" ng-src="{{'http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value='+squeeze['reproduction.reference'][0]+'&width=200&height=200&scalemode=fill&fillmode=center'}}" style="width:100%;" />
 		  	<md-grid-tile-footer layout="column" layout-align="center center">
 		  		<h5 >{{squeeze.title[0]}}</h5>
 		  	</md-grid-tile-footer>
