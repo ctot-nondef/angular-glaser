@@ -366,6 +366,7 @@ GlaserApp
 }])
 .controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', 'TEI',  function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state, TEI) {
   $scope.id = $stateParams.id;
+  if(!$stateParams.id) $scope.currentLink = "";
   ExistService.getList().then(function(res){
     $scope.Manifest = res;
     if($stateParams.id) $scope.selSite($stateParams.id);
@@ -374,7 +375,8 @@ GlaserApp
   $scope.selSite = function(id){
     $scope.id = id;
     ExistService.getItem(id).then(function(res){
-      $state.go('gl.tei',{id: id},{notify:false});
+      $scope.currentLink = $state.href("gl.singleRecord", {refID: id});
+      $state.go('gl.tei',{id: id});
       $scope.transcription = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["0"].children["2"];
       $scope.translation = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["1"].children["2"];
       $scope.Model = {translation:"<h3>in preparation</h3>",transliteration:"<h3>loading TEI</h3>"};
