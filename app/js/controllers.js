@@ -16,8 +16,15 @@ GlaserApp
   opacsearch.updateSize("40");
   opacsearch.getRecordsbyPointer('archive','7',[] ,'1','40').then(
     function(res){
-      $scope.Model.PointerList = res.data.adlibJSON.recordList.record;
-      $rootScope.loading.progress = false;
+      var tiles = res.data.adlibJSON.recordList.record;
+      $http.get('static/starttiles.json').then(function(ntiles){
+        for (var tile in ntiles.data) {
+          console.log(ntiles.data[tile]);
+          tiles[ntiles.data[tile].position] = ntiles.data[tile];
+        }
+        $scope.Model.PointerList = tiles;
+        $rootScope.loading.progress = false;
+      })
     },
     function(err){ console.log('err: ', err); }
   );
@@ -278,6 +285,9 @@ GlaserApp
 .controller('GlaserImage', ['$scope', '$timeout', '$stateParams', '$http', '$log', function ($scope, $timeout, $stateParams, $http, $log) {
     $scope.Model = {};
     $scope.Model.imgID = $stateParams.imgID;
+}])
+.controller('GlaserImage', ['$scope', '$timeout', '$stateParams', '$http', '$log', function ($scope, $timeout, $stateParams, $http, $log) {
+    $scope.Model = {};
 }])
 .controller('GlaserBib', ['$scope', '$http', '$log', 'ZoteroService', function ($scope, $http, $log, ZoteroService) {
   //********* DECLARATIVE PART *********************************************

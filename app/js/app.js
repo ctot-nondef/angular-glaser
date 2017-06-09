@@ -145,6 +145,15 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
             }
         }
     })
+    .state('gl.about',{
+        url: '/about',
+        views: {
+            'content@': {
+                templateUrl: 'partials/about.html',
+                controller: 'GlaserAbout'
+            }
+        }
+    })
     $locationProvider.html5Mode(true);
     $mdThemingProvider.theme('default')
         .primaryPalette('blue', {
