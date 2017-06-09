@@ -19,6 +19,7 @@ md-sidenav.mainnav {
   width: 100%!important;
   position: fixed!important;
   z-index: 100;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 md-backdrop {
@@ -313,6 +314,7 @@ md-icon.menuicon {
   height: 100%;
   left: 100px;
   position: absolute;
+  background: none!important;
 }
 
 .pointcontainer {
