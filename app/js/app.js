@@ -14,7 +14,8 @@ var GlaserApp = angular.module('GlaserApp', [
   'GeoNamesServices',
   'ZoteroService',
   'ExistService',
-  'angular-preload-image'
+  'angular-preload-image',
+  'imageViewer'
 ]);
 
 
