@@ -285,6 +285,9 @@ GlaserApp
     $scope.Model = {};
     $scope.Model.imgID = $stateParams.imgID;
 }])
+.controller('GlaserAbout', ['$scope', '$timeout', '$stateParams', '$http', '$log', function ($scope, $timeout, $stateParams, $http, $log) {
+    $scope.Model = {};
+}])
 .controller('GlaserBib', ['$scope', '$http', '$log', 'ZoteroService', function ($scope, $http, $log, ZoteroService) {
   //********* DECLARATIVE PART *********************************************
     $scope.Model = {Page:1};
