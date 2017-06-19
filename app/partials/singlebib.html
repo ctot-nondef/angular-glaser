@@ -76,7 +76,29 @@
   	        <td md-cell>{{squeeze.title[0]}}</td>
   	        <td md-cell>{{squeeze['inscription.language'][0]}}</td>
   	        <td md-cell>{{squeeze['production.place'][0]}}</td>
-  	        <td md-cell>{{squeeze['production.place'][0]}}</td>
+  	        <td md-cell>
+              <div class="tabletoolbar" layout="row" layout-align="end" ng-if="!squeeze.position" ng-click="$event.stopPropagation()">
+  							<md-button class="md-icon-button" aria-label="Details" ui-sref="{{'gl.singleRecord({refID: '+squeeze.priref[0]+'})'}}">
+  								<md-icon md-colors="{color: 'primary-800'}" >library_books</md-icon>
+  									<md-tooltip md-direction="bottom">
+  											Details
+  										</md-tooltip>
+  							</md-button>
+  							<md-button class="md-icon-button" aria-label="View Image" ui-sref="gl.fullImage({imgID: '{{squeeze['reproduction.reference'][0]}}'})">
+  								<md-icon md-colors="{color: 'primary-800'}" >code</md-icon>
+  									<md-tooltip md-direction="bottom">
+  											View Image
+  										</md-tooltip>
+  							</md-button>
+  							<md-button class="md-icon-button" aria-label="View Scan" ui-sref="gl.scan({scanID: '{{squeeze.object_number[0]}}'})">
+  								<md-icon md-colors="{color: 'primary-800'}" >3d_rotation</md-icon>
+  									<md-tooltip md-direction="bottom">
+  											View 3D Scan
+  										</md-tooltip>
+  							</md-button>
+  						</div>
+
+            </td>
   	      </tr>
   	    </tbody>
   	  </table>
