@@ -162,6 +162,33 @@ md-icon.menuicon {
   width: 220px;
 }
 
+.tiletoolbar {
+  background: rgba(0,0,0,.18);
+  opacity: 0.8;
+  -webkit-transition: height 0.3s; /* Safari */
+  transition: height 0.3s;
+  height: 0px;
+  overflow: hidden;
+  position: absolute;
+}
+
+md-grid-tile:hover .tiletoolbar {
+  height: 35px;
+}
+
+md-grid-tile:hover .tiletoolbar {
+  height: 35px;
+}
+
+.raise {
+  -webkit-transition: box-shadow 0.3s; /* Safari */
+  transition: box-shadow 0.3s;
+}
+
+.raise:hover {
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),0 6px 10px 0 rgba(0,0,0,.14),0 1px 18px 0 rgba(0,0,0,.12);
+}
+
 /******** layout elements - singleRecord page *********/
 .projecttile {
   width: 320px;
