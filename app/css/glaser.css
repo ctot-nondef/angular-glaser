@@ -217,6 +217,14 @@ tr:hover .tabletoolbar {
   width: 100%;
 }
 
+.nomap {
+  position: absolute;
+  z-index: 100000;
+  background-color: rgba(250,250,250,0.8);
+  top: 0;
+  width: 490px!important;
+}
+
 /******** spinentry animation class - to be replaced by ngAnimate + transitions? *********/
 .spinentry{
   -webkit-animation: spinentry 0.4s forwards; /* Safari, Chrome and Opera > 12.1 */

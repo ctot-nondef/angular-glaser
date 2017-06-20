@@ -43,9 +43,12 @@
 		 			</md-list>
 		 		</div>
 		 	</div>
-		 	<md-whiteframe class="md-whiteframe-3dp card subcard" >
-		 			<leaflet id="singlemap" markers="markers" width="100%" height="400px"></leaflet>
-		   </md-whiteframe>
+		 	<div class="md-whiteframe-3dp card subcard" >
+				<div class="nomap subcard" ng-if="!Model.SingleRecord['production.place.uri'][0]" layout="row" layout-align="center center">
+					<h3>No Geoinformation available for this Squeeze</h3>
+				</div>
+		 		<leaflet id="singlemap" markers="markers" width="100%" height="400px"></leaflet>
+			</div>
 			 <div class="card maincard" layout="row" flex="noshrink" layout-align="start start">
 		 		<div style="width: 100%;" layout-padding>
 		 			<h3 class="md-title">Notes & Description</h3>

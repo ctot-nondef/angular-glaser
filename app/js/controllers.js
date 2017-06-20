@@ -136,9 +136,10 @@ GlaserApp
 .controller('GlaserSingleRecord', ['$scope', '$stateParams', 'opacsearch','GeoNamesServices','leafletData', 'leafletBoundsHelpers','ExistService', function($scope, $stateParams, opacsearch, GeoNamesServices, leafletData, leafletBoundsHelpers, ExistService) {
   $scope.Model = {refID: $stateParams.refID};
   $scope.markers = [];
+  $scope.Manifest = [];
   $scope.references = [];
   $scope.hasTEI = function(){
-    if($scope.Manifest[$stateParams.refID]) return true;
+    if($scope.Manifest && $scope.Manifest[$stateParams.refID]) return true;
     else return false;
   }
   if($stateParams.refID) {
@@ -170,20 +171,23 @@ GlaserApp
         }
       }
       $scope.Model.SingleRecord = rec;
-      var recID = rec['production.place.uri'][0];
-      if(!GeoNamesServices.geocache[recID] || !GeoNamesServices.geocache[recID]['$$state'] ){
-        var promise = GeoNamesServices.getByID(recID);
-        GeoNamesServices.addtoCache(recID, promise);
-      }
-      GeoNamesServices.geocache[recID].then(function(c){
-        $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":rec['production.place'][0], "id": recID};
-        leafletData.getMap('singlemap').then(function(map) {
-          map.invalidateSize();
-          map.panTo({"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng)});
-          map.setZoom(6);
-          $scope.markers[recID].focus = true;
+      console.log(rec['production.place.uri']);
+      if(rec['production.place.uri'].length > 0 && rec['production.place.uri'][0] != "") {
+        var recID = rec['production.place.uri'][0];
+        if(!GeoNamesServices.geocache[recID] || !GeoNamesServices.geocache[recID]['$$state'] ){
+          var promise = GeoNamesServices.getByID(recID);
+          GeoNamesServices.addtoCache(recID, promise);
+        }
+        GeoNamesServices.geocache[recID].then(function(c){
+          $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":rec['production.place'][0], "id": recID};
+          leafletData.getMap('singlemap').then(function(map) {
+            map.invalidateSize();
+            map.panTo({"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng)});
+            map.setZoom(6);
+            $scope.markers[recID].focus = true;
+          });
         });
-      });
+      }
     });
     ExistService.getList().then(function(res){$scope.Manifest = res;});
   }
