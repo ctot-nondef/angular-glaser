@@ -396,6 +396,7 @@ GlaserApp
     ExistService.getItem(id).then(function(res){
       $scope.currentLink = $state.href("gl.singleRecord", {refID: id});
       $state.go('gl.tei',{id: id});
+      $scope.xmlstr = res;
       $scope.transcription = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["0"].children["2"];
       $scope.translation = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["1"].children["2"];
       $scope.Model = {translation:"<h3>in preparation</h3>",transliteration:"<h3>loading TEI</h3>"};
