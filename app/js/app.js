@@ -9,7 +9,7 @@ var GlaserApp = angular.module('GlaserApp', [
   'ngMaterial',
   'md.data.table',
   'ui-leaflet',
-  'MaterialTEI',
+  'ngTEI',
   'AdlibServices',
   'GeoNamesServices',
   'ZoteroService',

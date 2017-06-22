@@ -1,0 +1,9 @@
+{
+  "div[type]":{},
+  "teiHeader":{
+    "replEl":"md-whiteframe",
+    "attrib":{
+      "class":"md-whiteframe-3dp"
+    }
+  }
+}
