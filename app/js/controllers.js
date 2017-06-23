@@ -189,7 +189,7 @@ GlaserApp
         });
       }
     });
-    ExistService.getList().then(function(res){$scope.Manifest = res;});
+    ExistService.getPage(1,200).then(function(res){$scope.Manifest = res;});
   }
 }])
 .controller('GlaserMap', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'GeoNamesServices', '$mdMedia', '$mdSidenav', '$state', '$rootScope', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, GeoNamesServices, $mdMedia, $mdSidenav, $state, $rootScope) {
@@ -425,9 +425,9 @@ GlaserApp
     //************************************************************************
     // generic page update
     $scope.update = function(res) {
-      console.log(res);
       $scope.Model.Result = res;
       $scope.Model.Total = ExistService.Meta.HITS;
+      if($stateParams.id) $scope.selSite($stateParams.id);
     };
     //************************************************************************
     // prelim markup from TEI function
