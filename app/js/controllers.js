@@ -387,16 +387,15 @@ GlaserApp
   $scope.id = $stateParams.id;
   if(!$stateParams.id) $scope.currentLink = "";
   $scope.selSite = function(id){
-    console.log(id);
     $scope.id = id;
     ExistService.getItem(id).then(function(res){
       $scope.currentLink = $state.href("gl.singleRecord", {refID: id});
-      $state.go('gl.tei',{id: id});
+      $state.go('gl.tei',{id: id},{notify:false});
       $scope.xmlstr = res;
-      $scope.transcription = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["0"].children["2"];
+      $scope.transcription = angular.element(jQuery.parseXML(res))["0"].children["0"].children[2].children["0"].children["0"].children["2"];
       $scope.translation = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["1"].children["2"];
-      $scope.Model = {translation:"<h3>in preparation</h3>",transliteration:"<h3>loading TEI</h3>"};
-      $scope.Model.transliteration = $scope.makeMarkup($scope.transcription);
+      $scope.Model.markup = {translation:"<h3>in preparation</h3>",transliteration:"<h3>loading TEI</h3>"};
+      $scope.Model.markup.transliteration = $scope.makeMarkup($scope.transcription);
     });
   }
   //********* DECLARATIVE PART *********************************************
@@ -433,6 +432,7 @@ GlaserApp
     //************************************************************************
     // prelim markup from TEI function
     $scope.makeMarkup = function(tei){
+      console.log(tei);
       var markup="";
       var idx = tei.children.length;
       var le = tei.children.length-1;
