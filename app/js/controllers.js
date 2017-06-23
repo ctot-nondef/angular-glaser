@@ -386,12 +386,8 @@ GlaserApp
 .controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', 'replaceChars',  function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state, replaceChars) {
   $scope.id = $stateParams.id;
   if(!$stateParams.id) $scope.currentLink = "";
-  ExistService.getList().then(function(res){
-    $scope.Manifest = res;
-    if($stateParams.id) $scope.selSite($stateParams.id);
-    //console.log($scope.Manifest);
-  });
   $scope.selSite = function(id){
+    console.log(id);
     $scope.id = id;
     ExistService.getItem(id).then(function(res){
       $scope.currentLink = $state.href("gl.singleRecord", {refID: id});
@@ -403,24 +399,61 @@ GlaserApp
       $scope.Model.transliteration = $scope.makeMarkup($scope.transcription);
     });
   }
-  $scope.makeMarkup = function(tei){
-    var markup="";
-    var idx = tei.children.length;
-    var le = tei.children.length-1;
-    while(idx--) {
-      var a = tei.children[le-idx];
-      console.log(a);
-      if(a.nodeName=="tei:lb") markup = markup + "<br><br>";
-      else if (a.nodeName=="w") markup = markup + "<a target='_blank' href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(replaceChars.cleanString(a.innerHTML)) +"'>"+ a.innerHTML +"</a>"
-      else if (a.nodeName=="w" && a.children.length==0) markup = markup + "<a target='_blank' href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(replaceChars.cleanString(a.innerHTML)) +"'>"+ a.innerHTML +"</a>"
+  //********* DECLARATIVE PART *********************************************
+    $scope.Model = {};
+    $scope.Model.Pagesize = ExistService.ExistConfig.PAGESIZE;
+    $scope.Model.Page = 1;
+    //************************************************************************
+    // when pageing
+    $scope.getPage = function(a,b) {
+      console.log(a,b);
+      $scope.Model.Page = a;
+      ExistService.ExistConfig.PAGESIZE = b;
+      $scope.Model.Pagesize = b;
+      $scope.promise = ExistService.getPage(a, b);
+      $scope.promise.then($scope.update);
+    };
+    //************************************************************************
+    // when sorting
+    //TODO: awaiting peters implementation
+    // $scope.getNewOrder = function(a) {
+    //   if(a.slice(0,1) == "-") opacsearch.updateSorting('descending',a.slice(1));
+    //   else if(a.slice(0,1) != "-") opacsearch.updateSorting('ascending',a);
+    //   $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', opacsearch.history.query[$stateParams.queryID-1],"AND",undefined,[],$stateParams.pageNo);
+    //   opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
+    //   $scope.promise.then($scope.update);
+    // };
+    //************************************************************************
+    // generic page update
+    $scope.update = function(res) {
+      console.log(res);
+      $scope.Model.Result = res;
+      $scope.Model.Total = ExistService.Meta.HITS;
+    };
+    //************************************************************************
+    // prelim markup from TEI function
+    $scope.makeMarkup = function(tei){
+      var markup="";
+      var idx = tei.children.length;
+      var le = tei.children.length-1;
+      while(idx--) {
+        var a = tei.children[le-idx];
+        console.log(a);
+        if(a.nodeName=="tei:lb") markup = markup + "<br><br>";
+        else if (a.nodeName=="w") markup = markup + "<a target='_blank' href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(replaceChars.cleanString(a.innerHTML)) +"'>"+ a.innerHTML +"</a>"
+        else if (a.nodeName=="w" && a.children.length==0) markup = markup + "<a target='_blank' href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(replaceChars.cleanString(a.innerHTML)) +"'>"+ a.innerHTML +"</a>"
+      }
+      return markup;
     }
-    return markup;
-  }
+  ////////////////////////////////////////////////////////////////////////////
+  $scope.promise = ExistService.getPage();
+  $scope.promise.then($scope.update);
   // $mdMedia quickfix
   //TODO: find out why mdMedia return values are garbled in subscopes
   $scope.$watch(function() { return $mdMedia('gt-sm'); }, function(big) {
     $scope.big = big;
   });
+
 }])
 .controller("SqueezeByAttr", function($scope, opacsearch, $attrs) {
 	$scope.squeeze = {};

@@ -257,12 +257,12 @@ ZoteroService.service('ZoteroService', function($http, $localStorage, $q, $log){
  */
 var ExistService = angular.module('ExistService', ['ngStorage']);
 ExistService.service('ExistService', function($http, $localStorage, $q, $log){
-	this.ExistConfig = {
-		BASEURL : "https://glaser-tei.acdh.oeaw.ac.at/exist/restxq/glaser-tei/done/",
-		BASEPARAMS : {
-		}
-	}
   this.Manifest = {};
+  this.Meta = {HITS:0}
+  this.ExistConfig = {
+		BASEURL : "https://glaser-tei.acdh.oeaw.ac.at/exist/restxq/glaser-tei/done/",
+    PAGESIZE: 10
+	}
 	this.initStorage = function(){$log.debug('initializing local storage');
 		if(!$localStorage[Config.LOCALSTORAGE]) $localStorage[Config.LOCALSTORAGE] = {};
 		if($localStorage[Config.LOCALSTORAGE]['existcache']) this.existcache = $localStorage[Config.LOCALSTORAGE]['existcache'];
@@ -271,19 +271,23 @@ ExistService.service('ExistService', function($http, $localStorage, $q, $log){
 			this.existcache = $localStorage[Config.LOCALSTORAGE]['existcache'];
 		}
 	}
-  this.getList = function(){$log.debug('fetching Exist Manifest');
+  this.getPage = function(pageno, pagesize){$log.debug('fetching Exist Page', pageno, pagesize);
+    if(!pageno) pageno = 1;
+    if(!pagesize) pagesize = this.ExistConfig.PAGESIZE;
 		return $q(function(resolve, reject){
 			$http.get(
-				this.ExistConfig.BASEURL+'json',
+				this.ExistConfig.BASEURL+'json'+'?page[number]='+pageno+'&page[size]='+pagesize,
 				{
 				}
 			).then(
 			function(res){
-        var idx = res.data.entry.length;
+        this.Manifest = {};
+        var idx = res.data.data.length;
         while(idx--){
-          var key = res.data.entry[idx].ID.split('_')[0];
-          this.Manifest[key] = res.data.entry[idx];
+          var key = res.data.data[idx].id.split('_')[0];
+          this.Manifest[key] = res.data.data[idx];
         }
+        this.Meta.HITS = res.data.meta.hits;
         resolve(this.Manifest);
 			}.bind(this),
 			function(err){
@@ -297,7 +301,7 @@ ExistService.service('ExistService', function($http, $localStorage, $q, $log){
 			if(this.existcache[id]) resolve(this.existcache[id]);
 			else if(!this.existcache[id]) {
 				$http.get(
-					this.ExistConfig.BASEURL+this.Manifest[id].ID+'/'+format,
+					this.ExistConfig.BASEURL+this.Manifest[id].id+'/'+format,
 					{
 					}
 				).then(
@@ -310,5 +314,20 @@ ExistService.service('ExistService', function($http, $localStorage, $q, $log){
 			}
 		}.bind(this));
 	}
+  this.updatePage = function(queryno, page, result){console.log('updatePage: ', queryno, page, result);
+    if(this.history.result[queryno]) {
+      this.history.result[queryno][page] = result;
+    }
+    else {
+      var obj = {};
+      obj[page] = result;
+      this.history.result[queryno] = obj;
+    }
+  }
+  this.updateSize = function(newsize){console.log('updateSize: ', newsize);
+    this.pagesize = newsize;
+    $localStorage[Config.localStorage]['history']['result'] = [];
+    this.history = $localStorage[Config.localStorage]['history'];
+  };
   this.initStorage();
 });
