@@ -1,5 +1,5 @@
 var ngTEI = angular.module('ngTEI', [
-  'ngSanitize',
+  'ngSanitize', 'ngMaterial'
 ]);
 
 
@@ -33,6 +33,7 @@ ngTEI.directive('teidoc', ['$compile', '$http', '$q', function ($compile, $http,
     init();
     function init() {
       $http.get('http://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.json').then(function(res){
+        console.log(res);
         this.spec = res.data;
       }.bind(this),
       function(err){ console.log('err: ', err); }
@@ -43,13 +44,27 @@ ngTEI.directive('teidoc', ['$compile', '$http', '$q', function ($compile, $http,
       function(err){ console.log('err: ', err); }
       );
     };
-    function makeMarkup(xml){
+    function makeMarkup(doc){
+      var oParser = new DOMParser();
+      var oSerializer = new XMLSerializer();
+      //removing namespaces
+      doc = doc.replace(/<([a-zA-Z0-9 ]+)(?:xml)ns=\".*\"(.*)>/g, "<$1$2>");
+      var xml = oParser.parseFromString(doc, "text/xml").querySelector("TEI");
       for (var s in this.config) {
-        var els = xml.querySelectorAll(s);
+        var els = xml.querySelectorAll(String(s));
         console.log(els);
         if (els) {
+          //DELETE ATTRIBUTES FROM CONFIG
+          if(this.config[s].delAttr){
+            ida = this.config[s].delAttr.length;
+            while(ida--){
+              idx = els.length;
+              while(idx--){
+                els[idx].removeAttribute(delAttr[ida]);
+              }
+            }
+          }
           //SETTING ATTRIBUTES FROM CONFIG
-          console.log(this.config);
           if(this.config[s].attrib){
             for (var a in this.config[s].attrib) {
               var idx=els.length;
@@ -58,23 +73,51 @@ ngTEI.directive('teidoc', ['$compile', '$http', '$q', function ($compile, $http,
               }
             }
           }
-          //REPLACING ELEMENT NAME
+          // insert stuff before
+          if(this.config[s].insbef){
+            var idx=els.length;
+            while(idx--){
+              var el = document.createElement('div');
+              el.innerHTML=this.config[s].insbef;
+              els[idx].insertAdjacentElement('beforebegin', el);
+            }
+          }
+          // insert stuff thereafter
+          if(this.config[s].insaft){
+            var idx=els.length;
+            while(idx--){
+              var el = document.createElement('div');
+              el.innerHTML=this.config[s].insaft;
+              els[idx].insertAdjacentElement('beforeend', el);
+            }
+          }
+          //REPLACE DEFINED ELEMENTS
           if(this.config[s].replEl){
-
+            var idx=els.length;
+            while(idx--){
+              var newElement = document.createElement(this.config[s].replEl);
+              newElement.innerHTML = els[idx].innerHTML;
+              var ac = els[idx].attributes.length;
+              while(ac--){
+                newElement.setAttribute(els[idx].attributes[ac].nodeName, els[idx].attributes[ac].nodeValue);
+              }
+              console.log(newElement);
+              els[idx].parentElement.replaceChild(newElement, els[idx]);
+            }
           }
         }
+        xml = oParser.parseFromString(oSerializer.serializeToString(xml), "text/xml");
       }
+      return oSerializer.serializeToString(xml);
     }
     function link(scope, element, attrs){
-      var oParser = new DOMParser();
       attrs.$observe('source', function(val){
         if(val){
-          var doc = oParser.parseFromString(val, "text/xml").querySelector("TEI");
-          makeMarkup(doc);
+          var doc = makeMarkup(val);
           console.log(doc);
           //var template = doc.querySelectorAll("div[type]");
-          element.html(doc).show();
-          $compile(element.contents())(scope);
+          //element.html(doc).show();
+          element.html($compile(doc)(scope)).show();
         }
       }.bind(this));
     };

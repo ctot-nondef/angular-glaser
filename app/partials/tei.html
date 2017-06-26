@@ -1,4 +1,4 @@
-<div class="pagewrapper" layout="column" layout-align="start start">
+<div class="pagewrapper" style="height: 100vh;overflow-y: scroll; overflow-x: hidden;" layout="column" layout-align="start start" layout-padding>
   <div class="card maincard" layout="row" layout-align="center center">
     <div>For more details, please also consider the squeezes</div>
     <md-button class="md-primary md-raised" ng-disabled='{{currentLink==""}}' aria-label="TEI encoded texts" ng-href='{{currentLink}}'>
@@ -6,22 +6,8 @@
       Full record
     </md-button>
   </div>
-  <md-tabs md-dynamic-height md-border-bottom md-selected="0" md-stretch-tabs="always" style="width: 100%;">
-    <md-tab label="Transliteration" >
-        <div class="card maincard" layout="row" flex="noshrink" layout-align="start start">
-         <div style="width: 100%;" layout-padding ng-bind-html="Model.markup.transliteration">
-         </div>
-       </div>
-    </md-tab>
-   <md-tab label="Translation">
-     <div class="card maincard" layout="row" flex="noshrink" layout-align="start start">
-      <div style="width: 100%;" layout-padding ng-bind-html="Model.markup.translation">
-      </div>
-    </div>
-   </md-tab>
-  </md-tabs>
+  <teidoc source="{{xmlstr}}"></teidoc>
 </div>
-<!-- <teidoc source="{{xmlstr}}"></teidoc> -->
 <md-sidenav
     class="md-sidenav-right md-whiteframe-0dp"
     md-component-id="right"
