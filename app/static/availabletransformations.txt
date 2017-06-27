@@ -1,0 +1,7 @@
+removeAttribute
+setAttribute
+insertBeforeBegin
+insertBeforeEnd
+wrapElement
+wrapContent
+replaceElement

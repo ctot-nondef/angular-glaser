@@ -52,37 +52,46 @@ ngTEI.directive('teidoc', ['$compile', '$http', '$q', function ($compile, $http,
       var xml = oParser.parseFromString(doc, "text/xml").querySelector("TEI");
       for (var s in this.config) {
         var els = xml.querySelectorAll(String(s));
-        console.log(els);
         var idx = els.length;
         while(idx--){
           //DELETE ATTRIBUTES FROM CONFIG
-          if(this.config[s].delAttr){
-            ida = this.config[s].delAttr.length;
+          if(this.config[s].removeAttribute){
+            ida = this.config[s].removeAttribute.length;
             while(ida--){
-              els[idx].removeAttribute(delAttr[ida]);
+              els[idx].removeAttribute(removeAttribute[ida]);
             }
           }
           //SETTING ATTRIBUTES FROM CONFIG
-          if(this.config[s].attrib){
-            for (var a in this.config[s].attrib) {
-              els[idx].setAttribute(a, this.config[s].attrib[a]);
+          if(this.config[s].setAttribute){
+            for (var a in this.config[s].setAttribute) {
+              els[idx].setAttribute(a, this.config[s].setAttribute[a]);
             }
           }
-          //INSERTS A DIV AS FIRST CHILD
-          if(this.config[s].insbef){
+          //INSERTS A DIV WITH SPECIFIED MARKUP AS FIRST CHILD
+          if(this.config[s].insertBeforeBegin){
             var el = document.createElement('div');
-            el.innerHTML=this.config[s].insbef;
+            el.innerHTML=this.config[s].insertBeforeBegin;
             els[idx].insertAdjacentElement('beforebegin', el);
           }
-          //INSERTS A DIV AS LAST CHILD
-          if(this.config[s].insaft){
+          //INSERTS A DIV WITH SPECIFIED MARKUP AS LAST CHILD
+          if(this.config[s].insertBeforeEnd){
             var el = document.createElement('div');
-            el.innerHTML=this.config[s].insaft;
+            el.innerHTML=this.config[s].insertBeforeEnd;
             els[idx].insertAdjacentElement('beforeend', el);
           }
+          //WRAP IN A SPECIFIED ELEMENT
+          if(this.config[s].wrapElement){
+            var newElement = document.createElement(this.config[s].wrapElement);
+            newElement.innerHTML = els[idx].innerHTML;
+            var ac = els[idx].attributes.length;
+            while(ac--){
+              newElement.setAttribute(els[idx].attributes[ac].nodeName, els[idx].attributes[ac].nodeValue);
+            }
+            els[idx].parentElement.replaceChild(newElement, els[idx]);
+          }
           //REPLACE DEFINED ELEMENTS
-          if(this.config[s].replEl){
-            var newElement = document.createElement(this.config[s].replEl);
+          if(this.config[s].replaceElement){
+            var newElement = document.createElement(this.config[s].replaceElement);
             newElement.innerHTML = els[idx].innerHTML;
             var ac = els[idx].attributes.length;
             while(ac--){
@@ -99,9 +108,6 @@ ngTEI.directive('teidoc', ['$compile', '$http', '$q', function ($compile, $http,
       attrs.$observe('source', function(val){
         if(val){
           var doc = makeMarkup(val);
-          console.log(doc);
-          //var template = doc.querySelectorAll("div[type]");
-          //element.html(doc).show();
           element.html($compile(doc)(scope)).show();
         }
       }.bind(this));

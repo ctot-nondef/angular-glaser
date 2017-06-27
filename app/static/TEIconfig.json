@@ -1,39 +1,39 @@
 {
   "teiHeader":{
-    "replEl":"div",
-    "attrib":{
+    "replaceElement":"div",
+    "setAttribute":{
       "class":"md-whiteframe-3dp",
       "layout-padding":""
     }
   },
   "title[type=alt]":{
-    "replEl":"h4",
-    "insbef":"Alternative Title:",
-    "attrib":{
+    "replaceElement":"h4",
+    "insertBeforeBegin":"Alternative Title:",
+    "setAttribute":{
       "layout":"row",
       "layout-align":"start start"
     }
   },
   "title":{
-    "replEl":"h3",
-    "attrib":{
+    "replaceElement":"h3",
+    "setAttribute":{
     }
   },
   "title":{
-    "replEl":"h3",
-    "attrib":{
+    "replaceElement":"h3",
+    "setAttribute":{
     }
   },
   "facsimile":{
-    "replEl":"div",
-    "attrib":{
+    "replaceElement":"div",
+    "setAttribute":{
       "class":"md-whiteframe-3dp",
       "layout-padding":""
     }
   },
   "text":{
-    "replEl":"md-tabs",
-    "attrib":{
+    "replaceElement":"md-tabs",
+    "setAttribute":{
       "md-dynamic-height":"",
       "md-border-bottom":"",
       "md-selected":"0",
@@ -42,26 +42,26 @@
     }
   },
   "div[type=edition]":{
-    "replEl":"md-tab",
-    "attrib":{
+    "replaceElement":"md-tab",
+    "setAttribute":{
       "label":"Edition"
     }
   },
   "div[type=translation]":{
-    "replEl":"md-tab",
-    "attrib":{
+    "replaceElement":"md-tab",
+    "setAttribute":{
       "label":"Translation"
     }
   },
   "div[type=bibliography]":{
-    "replEl":"md-tab",
-    "attrib":{
+    "replaceElement":"md-tab",
+    "setAttribute":{
       "label":"Bibliography"
     }
   },
   "*|lb":{
-    "replEl":"br",
-    "attrib":{
+    "replaceElement":"br",
+    "setAttribute":{
     }
   }
 }
