@@ -51,7 +51,10 @@ ngTEI.directive('teidoc', ['$compile', '$http', '$q', function ($compile, $http,
       doc = doc.replace(/<([a-zA-Z0-9 ]+)(?:xml)ns=\".*\"(.*)>/g, "<$1$2>");
       var xml = oParser.parseFromString(doc, "text/xml").querySelector("TEI");
       for (var s in this.config) {
-        var els = xml.querySelectorAll(String(s));
+        var nl = xml.querySelectorAll(String(s));
+        var els = [];
+        for(var i = nl.length; i--; els.unshift(nl[i]));
+        console.log(els);
         var idx = els.length;
         while(idx--){
           //DELETE ATTRIBUTES FROM CONFIG
@@ -67,11 +70,31 @@ ngTEI.directive('teidoc', ['$compile', '$http', '$q', function ($compile, $http,
               els[idx].setAttribute(a, this.config[s].setAttribute[a]);
             }
           }
-          //INSERTS A DIV WITH SPECIFIED MARKUP AS FIRST CHILD
+          //WRAP IN A SPECIFIED ELEMENT
+          if(this.config[s].wrapElement){
+            var newElement = document.createElementNS('http://www.w3.org/1999/xhtml',this.config[s].wrapElement.tag);
+            for (var a in this.config[s].wrapElement.attributes) {
+              newElement.setAttribute(a, this.config[s].wrapElement.attributes[a]);
+              newElement.setAttribute('id', 'wrapper');
+            }
+            newElement.innerHTML = els[idx].outerHTML;            
+            els[idx].replaceWith(newElement);
+            console.log(els[idx]);
+            els[idx] = xml.querySelector('[id=wrapper]').firstElementChild;
+            console.log(els[idx]);
+          }
+          //INSERTS A DIV WITH SPECIFIED MARKUP AS PREVIOUS SIBLING
           if(this.config[s].insertBeforeBegin){
             var el = document.createElement('div');
             el.innerHTML=this.config[s].insertBeforeBegin;
+            console.log(els[idx]);
             els[idx].insertAdjacentElement('beforebegin', el);
+          }
+          //INSERTS A DIV WITH SPECIFIED MARKUP AS FIRST CHILD
+          if(this.config[s].insertAfterBegin){
+            var el = document.createElement('div');
+            el.innerHTML=this.config[s].insertAfterBegin;
+            els[idx].insertAdjacentElement('afterbegin', el);
           }
           //INSERTS A DIV WITH SPECIFIED MARKUP AS LAST CHILD
           if(this.config[s].insertBeforeEnd){
@@ -79,17 +102,14 @@ ngTEI.directive('teidoc', ['$compile', '$http', '$q', function ($compile, $http,
             el.innerHTML=this.config[s].insertBeforeEnd;
             els[idx].insertAdjacentElement('beforeend', el);
           }
-          //WRAP IN A SPECIFIED ELEMENT
-          if(this.config[s].wrapElement){
-            var newElement = document.createElement(this.config[s].wrapElement);
-            newElement.innerHTML = els[idx].innerHTML;
-            var ac = els[idx].attributes.length;
-            while(ac--){
-              newElement.setAttribute(els[idx].attributes[ac].nodeName, els[idx].attributes[ac].nodeValue);
-            }
-            els[idx].parentElement.replaceChild(newElement, els[idx]);
+          //INSERTS A DIV WITH SPECIFIED MARKUP AS NEXT SIBLING
+          if(this.config[s].insertAfterEnd){
+            var el = document.createElement('div');
+            el.innerHTML=this.config[s].insertAfterEnd;
+            els[idx].insertAdjacentElement('afterend', el);
           }
           //REPLACE DEFINED ELEMENTS
+          //THIS MUST BE DONE LAST, AS IT RENDERS THE LOOP VARS UNUSABLE
           if(this.config[s].replaceElement){
             var newElement = document.createElement(this.config[s].replaceElement);
             newElement.innerHTML = els[idx].innerHTML;

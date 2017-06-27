@@ -392,10 +392,6 @@ GlaserApp
       $scope.currentLink = $state.href("gl.singleRecord", {refID: id});
       $state.go('gl.tei',{id: id},{notify:false});
       $scope.xmlstr = res;
-      $scope.transcription = angular.element(jQuery.parseXML(res))["0"].children["0"].children[2].children["0"].children["0"].children["2"];
-      $scope.translation = angular.element(jQuery.parseXML(res))["0"].children["0"].children["0"].children["0"].children[2].children["0"].children["1"].children["2"];
-      $scope.Model.markup = {translation:"<h3>in preparation</h3>",transliteration:"<h3>loading TEI</h3>"};
-      $scope.Model.markup.transliteration = $scope.makeMarkup($scope.transcription);
     });
   }
   //********* DECLARATIVE PART *********************************************
@@ -438,7 +434,7 @@ GlaserApp
       var le = tei.children.length-1;
       while(idx--) {
         var a = tei.children[le-idx];
-        console.log(a);
+        //console.log(a);
         if(a.nodeName=="tei:lb") markup = markup + "<br><br>";
         else if (a.nodeName=="w") markup = markup + "<a target='_blank' href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(replaceChars.cleanString(a.innerHTML)) +"'>"+ a.innerHTML +"</a>"
         else if (a.nodeName=="w" && a.children.length==0) markup = markup + "<a target='_blank' href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(replaceChars.cleanString(a.innerHTML)) +"'>"+ a.innerHTML +"</a>"

@@ -7,22 +7,17 @@
     }
   },
   "title[type=alt]":{
-    "replaceElement":"h4",
-    "insertBeforeBegin":"Alternative Title:",
-    "setAttribute":{
-      "layout":"row",
-      "layout-align":"start start"
-    }
+    "wrapElement":{
+      "tag":"div",
+      "attributes":{
+        "layout":"row",
+        "layout-align":"start start"
+      }
+    },
+    "insertBeforeBegin":"<h5>Alternative Title: </h5>"
   },
   "title":{
-    "replaceElement":"h3",
-    "setAttribute":{
-    }
-  },
-  "title":{
-    "replaceElement":"h3",
-    "setAttribute":{
-    }
+    "replaceElement":"h3"
   },
   "facsimile":{
     "replaceElement":"div",
