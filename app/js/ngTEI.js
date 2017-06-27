@@ -53,57 +53,42 @@ ngTEI.directive('teidoc', ['$compile', '$http', '$q', function ($compile, $http,
       for (var s in this.config) {
         var els = xml.querySelectorAll(String(s));
         console.log(els);
-        if (els) {
+        var idx = els.length;
+        while(idx--){
           //DELETE ATTRIBUTES FROM CONFIG
           if(this.config[s].delAttr){
             ida = this.config[s].delAttr.length;
             while(ida--){
-              idx = els.length;
-              while(idx--){
-                els[idx].removeAttribute(delAttr[ida]);
-              }
+              els[idx].removeAttribute(delAttr[ida]);
             }
           }
           //SETTING ATTRIBUTES FROM CONFIG
           if(this.config[s].attrib){
             for (var a in this.config[s].attrib) {
-              var idx=els.length;
-              while(idx--){
-                els[idx].setAttribute(a, this.config[s].attrib[a]);
-              }
+              els[idx].setAttribute(a, this.config[s].attrib[a]);
             }
           }
-          // insert stuff before
+          //INSERTS A DIV AS FIRST CHILD
           if(this.config[s].insbef){
-            var idx=els.length;
-            while(idx--){
-              var el = document.createElement('div');
-              el.innerHTML=this.config[s].insbef;
-              els[idx].insertAdjacentElement('beforebegin', el);
-            }
+            var el = document.createElement('div');
+            el.innerHTML=this.config[s].insbef;
+            els[idx].insertAdjacentElement('beforebegin', el);
           }
-          // insert stuff thereafter
+          //INSERTS A DIV AS LAST CHILD
           if(this.config[s].insaft){
-            var idx=els.length;
-            while(idx--){
-              var el = document.createElement('div');
-              el.innerHTML=this.config[s].insaft;
-              els[idx].insertAdjacentElement('beforeend', el);
-            }
+            var el = document.createElement('div');
+            el.innerHTML=this.config[s].insaft;
+            els[idx].insertAdjacentElement('beforeend', el);
           }
           //REPLACE DEFINED ELEMENTS
           if(this.config[s].replEl){
-            var idx=els.length;
-            while(idx--){
-              var newElement = document.createElement(this.config[s].replEl);
-              newElement.innerHTML = els[idx].innerHTML;
-              var ac = els[idx].attributes.length;
-              while(ac--){
-                newElement.setAttribute(els[idx].attributes[ac].nodeName, els[idx].attributes[ac].nodeValue);
-              }
-              console.log(newElement);
-              els[idx].parentElement.replaceChild(newElement, els[idx]);
+            var newElement = document.createElement(this.config[s].replEl);
+            newElement.innerHTML = els[idx].innerHTML;
+            var ac = els[idx].attributes.length;
+            while(ac--){
+              newElement.setAttribute(els[idx].attributes[ac].nodeName, els[idx].attributes[ac].nodeValue);
             }
+            els[idx].parentElement.replaceChild(newElement, els[idx]);
           }
         }
         xml = oParser.parseFromString(oSerializer.serializeToString(xml), "text/xml");

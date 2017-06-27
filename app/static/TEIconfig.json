@@ -7,14 +7,12 @@
     }
   },
   "title[type=alt]":{
+    "replEl":"h4",
     "insbef":"Alternative Title:",
     "attrib":{
       "layout":"row",
       "layout-align":"start start"
     }
-  },
-  "title[type=alt]":{
-    "replEl":"h4"
   },
   "title":{
     "replEl":"h3",
