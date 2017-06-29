@@ -11,10 +11,10 @@
       "tag":"div",
       "attributes":{
         "layout":"row",
-        "layout-align":"start start"
+        "layout-align":"start center"
       }
     },
-    "insertBeforeBegin":"<h5>Alternative Title: </h5>"
+    "insertBeforeBegin":"<h3 class=\"md-subheader\"><md-icon class=\"panelicon\">bookmark</md-icon>Alternative Title:</h3>"
   },
   "title":{
     "replaceElement":"h3"
