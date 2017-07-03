@@ -401,7 +401,6 @@ GlaserApp
     //************************************************************************
     // when pageing
     $scope.getPage = function(a,b) {
-      console.log(a,b);
       $scope.Model.Page = a;
       ExistService.ExistConfig.PAGESIZE = b;
       $scope.Model.Pagesize = b;

@@ -270,6 +270,18 @@ ExistService.service('ExistService', function($http, $localStorage, $q, $log){
 			$localStorage[Config.LOCALSTORAGE]['existcache'] = {};
 			this.existcache = $localStorage[Config.LOCALSTORAGE]['existcache'];
 		}
+    //TODO: make TEI records queryable by ID
+    //as the single record id_s are not trivial since they contain the ingest time/database
+    //well have to fetch the entire manifest in the beginning to have the proper urls independent of the current page
+    //if these get more, the manifest will have to become a proper promise... :/
+    $http.get(this.ExistConfig.BASEURL+'json?page[number]=1&page[size]=1000').then(function(res){
+      var idx = res.data.data.length;
+      while(idx--){
+        var key = res.data.data[idx].id.split('_')[0];
+        this.Manifest[key] = res.data.data[idx];
+      }
+      this.Meta.HITS = res.data.meta.hits;
+    }.bind(this));
 	}
   this.getPage = function(pageno, pagesize){$log.debug('fetching Exist Page', pageno, pagesize);
     if(!pageno) pageno = 1;
@@ -281,25 +293,26 @@ ExistService.service('ExistService', function($http, $localStorage, $q, $log){
 				}
 			).then(
 			function(res){
-        this.Manifest = {};
+        this.Page = {};
         var idx = res.data.data.length;
         while(idx--){
           var key = res.data.data[idx].id.split('_')[0];
-          this.Manifest[key] = res.data.data[idx];
+          this.Page[key] = res.data.data[idx];
         }
         this.Meta.HITS = res.data.meta.hits;
-        resolve(this.Manifest);
+        resolve(this.Page);
 			}.bind(this),
 			function(err){
 				reject(err);
 			});
 		}.bind(this));
 	}
-	this.getItem = function(id, format){$log.debug('Exist getByID: ', id, format);
+	this.getItem = function(id, format){console.log('Exist getByID: ', id, format);
     if(!format) var format = "xml";
 		return $q(function(resolve, reject){
 			if(this.existcache[id]) resolve(this.existcache[id]);
 			else if(!this.existcache[id]) {
+        console.log(this.Manifest);
 				$http.get(
 					this.ExistConfig.BASEURL+this.Manifest[id].id+'/'+format,
 					{

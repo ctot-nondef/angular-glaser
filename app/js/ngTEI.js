@@ -77,10 +77,10 @@ ngTEI.directive('teidoc', ['$compile', '$http', '$q', function ($compile, $http,
               newElement.setAttribute(a, this.config[s].wrapElement.attributes[a]);
               newElement.setAttribute('id', 'wrapper');
             }
-            newElement.innerHTML = els[idx].outerHTML;            
+            newElement.innerHTML = els[idx].outerHTML;
             els[idx].replaceWith(newElement);
-            console.log(els[idx]);
             els[idx] = xml.querySelector('[id=wrapper]').firstElementChild;
+            els[idx].removeAttribute('id');
             console.log(els[idx]);
           }
           //INSERTS A DIV WITH SPECIFIED MARKUP AS PREVIOUS SIBLING
