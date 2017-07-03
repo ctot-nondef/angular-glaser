@@ -83,6 +83,16 @@ ngTEI.directive('teidoc', ['$compile', '$http', '$q', function ($compile, $http,
             els[idx].removeAttribute('id');
             console.log(els[idx]);
           }
+          //WRAP CONTENT IN A SPECIFIED ELEMENT
+          if(this.config[s].wrapContent){
+            var newElement = document.createElementNS('http://www.w3.org/1999/xhtml',this.config[s].wrapElement.tag);
+            for (var a in this.config[s].wrapElement.attributes) {
+              newElement.setAttribute(a, this.config[s].wrapElement.attributes[a]);
+              newElement.setAttribute('id', 'wrapper');
+            }
+            newElement.innerHTML = els[idx].innerHTML;
+            els[idx].innerHTML = newElement.outerHTML;
+          }
           //INSERTS A DIV WITH SPECIFIED MARKUP AS PREVIOUS SIBLING
           if(this.config[s].insertBeforeBegin){
             var el = document.createElement('div');

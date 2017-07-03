@@ -257,7 +257,7 @@ ZoteroService.service('ZoteroService', function($http, $localStorage, $q, $log){
  */
 var ExistService = angular.module('ExistService', ['ngStorage']);
 ExistService.service('ExistService', function($http, $localStorage, $q, $log){
-  this.Manifest = {};
+  this.Manifest = $q;
   this.Meta = {HITS:0}
   this.ExistConfig = {
 		BASEURL : "https://glaser-tei.acdh.oeaw.ac.at/exist/restxq/glaser-tei/done/",
@@ -273,14 +273,17 @@ ExistService.service('ExistService', function($http, $localStorage, $q, $log){
     //TODO: make TEI records queryable by ID
     //as the single record id_s are not trivial since they contain the ingest time/database
     //well have to fetch the entire manifest in the beginning to have the proper urls independent of the current page
-    //if these get more, the manifest will have to become a proper promise... :/
-    $http.get(this.ExistConfig.BASEURL+'json?page[number]=1&page[size]=1000').then(function(res){
-      var idx = res.data.data.length;
-      while(idx--){
-        var key = res.data.data[idx].id.split('_')[0];
-        this.Manifest[key] = res.data.data[idx];
-      }
-      this.Meta.HITS = res.data.meta.hits;
+    this.Manifest = $q(function(resolve, reject){
+      $http.get(this.ExistConfig.BASEURL+'json?page[number]=1&page[size]=1000').then(function(res){
+        var idx = res.data.data.length;
+        var m = {};
+        while(idx--){
+          var key = res.data.data[idx].id.split('_')[0];
+          m[key] = res.data.data[idx];
+        }
+        this.Meta.HITS = res.data.meta.hits;
+        resolve(m);
+      }.bind(this));
     }.bind(this));
 	}
   this.getPage = function(pageno, pagesize){$log.debug('fetching Exist Page', pageno, pagesize);
@@ -312,18 +315,17 @@ ExistService.service('ExistService', function($http, $localStorage, $q, $log){
 		return $q(function(resolve, reject){
 			if(this.existcache[id]) resolve(this.existcache[id]);
 			else if(!this.existcache[id]) {
-        console.log(this.Manifest);
-				$http.get(
-					this.ExistConfig.BASEURL+this.Manifest[id].id+'/'+format,
-					{
-					}
-				).then(
-				function(res){
-            resolve(res.data);
-				}.bind(this),
-				function(err){
-					reject(err);
-				});
+        this.Manifest.then(function(m){
+          $http.get(
+  					this.ExistConfig.BASEURL+m[id].id+'/'+format,
+  				).then(
+  				function(res){
+              resolve(res.data);
+  				}.bind(this),
+  				function(err){
+  					reject(err);
+  				});
+        }.bind(this));
 			}
 		}.bind(this));
 	}
