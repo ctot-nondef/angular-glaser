@@ -383,7 +383,7 @@ GlaserApp
     setup3dhop($scope.Model.scanID);
     resizeCanvas(window.innerWidth-100, window.innerHeight-4);
 }])
-.controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', 'replaceChars', 'TEI', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state, replaceChars, TEI) {
+.controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', 'TEI', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state, TEI) {
   $scope.id = $stateParams.id;
   if(!$stateParams.id) $scope.currentLink = "";
   $scope.selSite = function(id){
@@ -435,8 +435,8 @@ GlaserApp
         var a = tei.children[le-idx];
         //console.log(a);
         if(a.nodeName=="tei:lb") markup = markup + "<br><br>";
-        else if (a.nodeName=="w") markup = markup + "<a target='_blank' href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(replaceChars.cleanString(a.innerHTML)) +"'>"+ a.innerHTML +"</a>"
-        else if (a.nodeName=="w" && a.children.length==0) markup = markup + "<a target='_blank' href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(replaceChars.cleanString(a.innerHTML)) +"'>"+ a.innerHTML +"</a>"
+        else if (a.nodeName=="w") markup = markup + "<a target='_blank' href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(TEI.cleanString(a.innerHTML)) +"'>"+ a.innerHTML +"</a>"
+        else if (a.nodeName=="w" && a.children.length==0) markup = markup + "<a target='_blank' href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(TEI.cleanString(a.innerHTML)) +"'>"+ a.innerHTML +"</a>"
       }
       return markup;
     }

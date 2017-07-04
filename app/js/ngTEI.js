@@ -4,32 +4,9 @@ var ngTEI = angular.module('ngTEI', [
 
 
 /**
- * Service providing a convenience Method to replace specified characters in a Text
- * TODO:
- */
-ngTEI.service('replaceChars', function($http, $localStorage, $q, $log){
-	this.CONFIG = {}
-  this.init = function(){
-    $http.get('static/coderep.json').then(function(res){
-      console.log(res);
-      this.CONFIG.ra = res.data;
-    }.bind(this),
-    function(err){ console.log('err: ', err); }
-    );
-  }
-  this.cleanString = function(s) {
-    var n = angular.copy(s);
-    for (var a in this.CONFIG.ra) {
-      n = n.replace(a, this.CONFIG.ra[a]);
-    }
-    return n;
-  }
-});
-
-/**
  * Service providing a set convenience Methods to transform a TEI document
  * into a compilable template
- * TODO:
+ * init() needs to be called from router before use!
  */
 ngTEI.service('TEI', function($http, $localStorage, $q, $log){
 	this.CONFIG = {
@@ -39,7 +16,7 @@ ngTEI.service('TEI', function($http, $localStorage, $q, $log){
       TEISpecObject:'http://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.json'
     }
   }
-  //init function, should be called before controller initialisation (resolve param)
+  //init function, should be called before controller initialisation (resolve param in router!!)
   //loads all nec configurations
   this.init = function(){
     return $q(function(resolve, reject){
@@ -68,7 +45,6 @@ ngTEI.service('TEI', function($http, $localStorage, $q, $log){
       let tr = this.CONFIG.TEIConfigObject[s];
       let els = [];
       for(var i = nl.length; i--; els.unshift(nl[i]));
-      console.log(els);
       let idx = els.length;
       while(idx--){
         //DELETE ATTRIBUTES FROM CONFIG
@@ -95,7 +71,6 @@ ngTEI.service('TEI', function($http, $localStorage, $q, $log){
           els[idx].replaceWith(newElement);
           els[idx] = xml.querySelector('[id=wrapper]').firstElementChild;
           els[idx].removeAttribute('id');
-          console.log(els[idx]);
         }
         //WRAP CONTENT IN A SPECIFIED ELEMENT
         if(tr.wrapContent){
@@ -130,6 +105,14 @@ ngTEI.service('TEI', function($http, $localStorage, $q, $log){
     }
     return oSerializer.serializeToString(xml);
   }
+  //preconfigurable convenience method to clean special characters from strings
+  this.cleanString = function(s) {
+    var n = angular.copy(s);
+    for (var a in this.CONFIG.CharReplaceTable) {
+      n = n.replace(a, this.CONFIG.CharReplaceTable[a]);
+    }
+    return n;
+  }
 });
 
 ngTEI.directive('teidoc', ['$compile', '$http', '$q', 'TEI', function ($compile, $http, $q, TEI) {
@@ -145,3 +128,24 @@ ngTEI.directive('teidoc', ['$compile', '$http', '$q', 'TEI', function ($compile,
         link: link
     };
 }]);
+
+ngTEI.directive('teiheader', function () {
+    return {
+      transclude: true,
+      template: '<div class="md-whiteframe-3dp" layout-padding layout-margin ng-transclude></div>'
+    };
+});
+
+ngTEI.directive('facsimile', function () {
+    return {
+      transclude: true,
+      template: '<div class="md-whiteframe-3dp" layout-padding layout-margin ng-transclude></div>'
+    };
+});
+
+ngTEI.directive('title', function () {
+    return {
+      transclude: true,
+      template: '<h3><ng-transclude></ng-transclude></h3>'
+    };
+});

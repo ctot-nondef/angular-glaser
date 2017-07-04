@@ -1,11 +1,4 @@
 {
-  "teiHeader":{
-    "replaceElement":"div",
-    "setAttribute":{
-      "class":"md-whiteframe-3dp",
-      "layout-padding":""
-    }
-  },
   "title[type=alt]":{
     "wrapElement":{
       "tag":"div",
@@ -19,16 +12,6 @@
       "markup":"<h3 class=\"md-subheader\"><md-icon class=\"panelicon\">bookmark</md-icon>Alternative Title:</h3>"
     }
   },
-  "title":{
-    "replaceElement":"h3"
-  },
-  "facsimile":{
-    "replaceElement":"div",
-    "setAttribute":{
-      "class":"md-whiteframe-3dp",
-      "layout-padding":""
-    }
-  },
   "text":{
     "replaceElement":"md-tabs",
     "setAttribute":{
@@ -37,6 +20,10 @@
       "md-selected":"0",
       "md-stretch-tabs":"always",
       "style":"width: 100%;"
+    },
+    "insertElement":{
+      "position":"beforebegin",
+      "markup":"<div layout-padding></div>"
     }
   },
   "div[type=edition]":{
