@@ -383,7 +383,7 @@ GlaserApp
     setup3dhop($scope.Model.scanID);
     resizeCanvas(window.innerWidth-100, window.innerHeight-4);
 }])
-.controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', 'replaceChars',  function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state, replaceChars) {
+.controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', 'replaceChars', 'TEI', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state, replaceChars, TEI) {
   $scope.id = $stateParams.id;
   if(!$stateParams.id) $scope.currentLink = "";
   $scope.selSite = function(id){

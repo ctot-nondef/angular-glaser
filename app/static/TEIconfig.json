@@ -14,7 +14,10 @@
         "layout-align":"start center"
       }
     },
-    "insertBeforeBegin":"<h3 class=\"md-subheader\"><md-icon class=\"panelicon\">bookmark</md-icon>Alternative Title:</h3>"
+    "insertElement":{
+      "position":"beforebegin",
+      "markup":"<h3 class=\"md-subheader\"><md-icon class=\"panelicon\">bookmark</md-icon>Alternative Title:</h3>"
+    }
   },
   "title":{
     "replaceElement":"h3"

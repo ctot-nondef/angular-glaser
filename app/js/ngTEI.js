@@ -24,120 +24,119 @@ ngTEI.service('replaceChars', function($http, $localStorage, $q, $log){
     }
     return n;
   }
-  this.init();
 });
 
-ngTEI.directive('teidoc', ['$compile', '$http', '$q', function ($compile, $http, $q) {
-    this.spec = {};
-    this.config = {};
-    init();
-    function init() {
-      $http.get('http://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.json').then(function(res){
-        console.log(res);
-        this.spec = res.data;
-      }.bind(this),
-      function(err){ console.log('err: ', err); }
-      );
-      $http.get('static/TEIconfig.json').then(function(res){
-        this.config = res.data;
-      }.bind(this),
-      function(err){ console.log('err: ', err); }
-      );
-    };
-    function makeMarkup(doc){
-      var oParser = new DOMParser();
-      var oSerializer = new XMLSerializer();
-      //removing namespaces
-      doc = doc.replace(/<([a-zA-Z0-9 ]+)(?:xml)ns=\".*\"(.*)>/g, "<$1$2>");
-      var xml = oParser.parseFromString(doc, "text/xml").querySelector("TEI");
-      for (var s in this.config) {
-        var nl = xml.querySelectorAll(String(s));
-        var els = [];
-        for(var i = nl.length; i--; els.unshift(nl[i]));
-        console.log(els);
-        var idx = els.length;
-        while(idx--){
-          //DELETE ATTRIBUTES FROM CONFIG
-          if(this.config[s].removeAttribute){
-            ida = this.config[s].removeAttribute.length;
-            while(ida--){
-              els[idx].removeAttribute(removeAttribute[ida]);
-            }
-          }
-          //SETTING ATTRIBUTES FROM CONFIG
-          if(this.config[s].setAttribute){
-            for (var a in this.config[s].setAttribute) {
-              els[idx].setAttribute(a, this.config[s].setAttribute[a]);
-            }
-          }
-          //WRAP IN A SPECIFIED ELEMENT
-          if(this.config[s].wrapElement){
-            var newElement = document.createElementNS('http://www.w3.org/1999/xhtml',this.config[s].wrapElement.tag);
-            for (var a in this.config[s].wrapElement.attributes) {
-              newElement.setAttribute(a, this.config[s].wrapElement.attributes[a]);
-              newElement.setAttribute('id', 'wrapper');
-            }
-            newElement.innerHTML = els[idx].outerHTML;
-            els[idx].replaceWith(newElement);
-            els[idx] = xml.querySelector('[id=wrapper]').firstElementChild;
-            els[idx].removeAttribute('id');
-            console.log(els[idx]);
-          }
-          //WRAP CONTENT IN A SPECIFIED ELEMENT
-          if(this.config[s].wrapContent){
-            var newElement = document.createElementNS('http://www.w3.org/1999/xhtml',this.config[s].wrapElement.tag);
-            for (var a in this.config[s].wrapElement.attributes) {
-              newElement.setAttribute(a, this.config[s].wrapElement.attributes[a]);
-              newElement.setAttribute('id', 'wrapper');
-            }
-            newElement.innerHTML = els[idx].innerHTML;
-            els[idx].innerHTML = newElement.outerHTML;
-          }
-          //INSERTS A DIV WITH SPECIFIED MARKUP AS PREVIOUS SIBLING
-          if(this.config[s].insertBeforeBegin){
-            var el = document.createElement('div');
-            el.innerHTML=this.config[s].insertBeforeBegin;
-            console.log(els[idx]);
-            els[idx].insertAdjacentElement('beforebegin', el);
-          }
-          //INSERTS A DIV WITH SPECIFIED MARKUP AS FIRST CHILD
-          if(this.config[s].insertAfterBegin){
-            var el = document.createElement('div');
-            el.innerHTML=this.config[s].insertAfterBegin;
-            els[idx].insertAdjacentElement('afterbegin', el);
-          }
-          //INSERTS A DIV WITH SPECIFIED MARKUP AS LAST CHILD
-          if(this.config[s].insertBeforeEnd){
-            var el = document.createElement('div');
-            el.innerHTML=this.config[s].insertBeforeEnd;
-            els[idx].insertAdjacentElement('beforeend', el);
-          }
-          //INSERTS A DIV WITH SPECIFIED MARKUP AS NEXT SIBLING
-          if(this.config[s].insertAfterEnd){
-            var el = document.createElement('div');
-            el.innerHTML=this.config[s].insertAfterEnd;
-            els[idx].insertAdjacentElement('afterend', el);
-          }
-          //REPLACE DEFINED ELEMENTS
-          //THIS MUST BE DONE LAST, AS IT RENDERS THE LOOP VARS UNUSABLE
-          if(this.config[s].replaceElement){
-            var newElement = document.createElement(this.config[s].replaceElement);
-            newElement.innerHTML = els[idx].innerHTML;
-            var ac = els[idx].attributes.length;
-            while(ac--){
-              newElement.setAttribute(els[idx].attributes[ac].nodeName, els[idx].attributes[ac].nodeValue);
-            }
-            els[idx].parentElement.replaceChild(newElement, els[idx]);
+/**
+ * Service providing a set convenience Methods to transform a TEI document
+ * into a compilable template
+ * TODO:
+ */
+ngTEI.service('TEI', function($http, $localStorage, $q, $log){
+	this.CONFIG = {
+    load:{
+      CharReplaceTable:'static/coderep.json',
+      TEIConfigObject:'static/TEIconfig.json',
+      TEISpecObject:'http://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.json'
+    }
+  }
+  //init function, should be called before controller initialisation (resolve param)
+  //loads all nec configurations
+  this.init = function(){
+    return $q(function(resolve, reject){
+      var promises = {};
+      for (var url in this.CONFIG.load) {
+        promises[url] = $http.get(this.CONFIG.load[url]);
+      }
+      $q.all(promises).then((values) => {
+        for (var v in values) {
+          this.CONFIG[v] = values[v].data;
+        }
+        resolve(values);
+      })
+    }.bind(this));
+  }
+  //convenience method accepts and xml doc and returns markup acc to the config object
+  //in CONFIG.TEIConfigObject
+  this.makeMarkup = function(doc){
+    var oParser = new DOMParser();
+    var oSerializer = new XMLSerializer();
+    //removing namespaces
+    doc = doc.replace(/<([a-zA-Z0-9 ]+)(?:xml)ns=\".*\"(.*)>/g, "<$1$2>");
+    var xml = oParser.parseFromString(doc, "text/xml").querySelector("TEI");
+    for (var s in this.CONFIG.TEIConfigObject) {
+      let nl = xml.querySelectorAll(String(s));
+      let tr = this.CONFIG.TEIConfigObject[s];
+      let els = [];
+      for(var i = nl.length; i--; els.unshift(nl[i]));
+      console.log(els);
+      let idx = els.length;
+      while(idx--){
+        //DELETE ATTRIBUTES FROM CONFIG
+        if(tr.removeAttribute){
+          let ida = tr.removeAttribute.length;
+          while(ida--){
+            els[idx].removeAttribute(removeAttribute[ida]);
           }
         }
-        xml = oParser.parseFromString(oSerializer.serializeToString(xml), "text/xml");
+        //SETTING ATTRIBUTES FROM CONFIG
+        if(tr.setAttribute){
+          for (var a in tr.setAttribute) {
+            els[idx].setAttribute(a, tr.setAttribute[a]);
+          }
+        }
+        //WRAP IN A SPECIFIED ELEMENT
+        if(tr.wrapElement){
+          let newElement = document.createElementNS('http://www.w3.org/1999/xhtml',tr.wrapElement.tag);
+          for (var a in tr.wrapElement.attributes) {
+            newElement.setAttribute(a, tr.wrapElement.attributes[a]);
+            newElement.setAttribute('id', 'wrapper');
+          }
+          newElement.innerHTML = els[idx].outerHTML;
+          els[idx].replaceWith(newElement);
+          els[idx] = xml.querySelector('[id=wrapper]').firstElementChild;
+          els[idx].removeAttribute('id');
+          console.log(els[idx]);
+        }
+        //WRAP CONTENT IN A SPECIFIED ELEMENT
+        if(tr.wrapContent){
+          let newElement = document.createElementNS('http://www.w3.org/1999/xhtml',tr.wrapElement.tag);
+          for (var a in tr.wrapElement.attributes) {
+            newElement.setAttribute(a, tr.wrapElement.attributes[a]);
+          }
+          newElement.innerHTML = els[idx].innerHTML;
+          els[idx].innerHTML = newElement.outerHTML;
+        }
+        //INSERTS A DIV WITH SPECIFIED MARKUP AT SPECIFIED POSITION
+        //SEE LIST OF AVAILABLE POSITIONS AT https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement
+        if(tr.insertElement){
+          let el = document.createElement('div');
+          el.innerHTML = tr.insertElement.markup;
+          els[idx].insertAdjacentElement(tr.insertElement.position, el);
+        }
+        //REPLACE DEFINED ELEMENTS
+        //THIS MUST BE DONE LAST, AS IT RENDERS THE LOOP VARS UNUSABLE
+        if(tr.replaceElement){
+          let newElement = document.createElementNS('http://www.w3.org/1999/xhtml',tr.replaceElement);
+          newElement.innerHTML = els[idx].innerHTML;
+          let ac = els[idx].attributes.length;
+          while(ac--){
+            newElement.setAttribute(els[idx].attributes[ac].nodeName, els[idx].attributes[ac].nodeValue);
+          }
+          els[idx].parentElement.replaceChild(newElement, els[idx]);
+        }
       }
-      return oSerializer.serializeToString(xml);
+      //reparse object for every config entry
+      xml = oParser.parseFromString(oSerializer.serializeToString(xml), "text/xml");
     }
+    return oSerializer.serializeToString(xml);
+  }
+});
+
+ngTEI.directive('teidoc', ['$compile', '$http', '$q', 'TEI', function ($compile, $http, $q, TEI) {
     function link(scope, element, attrs){
       attrs.$observe('source', function(val){
         if(val){
-          var doc = makeMarkup(val);
+          var doc = TEI.makeMarkup(val);
           element.html($compile(doc)(scope)).show();
         }
       }.bind(this));

@@ -51,6 +51,11 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
                 templateUrl: 'partials/navbar.html',
                 controller: 'GlaserNav'
             }
+        },
+        resolve:{
+          TEI:function(TEI){
+            return TEI.init();
+          }
         }
     })
     ////////////////////////////////////////////////////////
