@@ -1,4 +1,11 @@
 {
+  "teiHeader":{
+    "replaceElement":"div",
+    "setAttribute":{
+      "class":"md-whiteframe-3dp",
+      "layout-padding":""
+    }
+  },
   "title[type=alt]":{
     "wrapElement":{
       "tag":"div",
@@ -6,10 +13,72 @@
         "layout":"row",
         "layout-align":"start center"
       }
+    }
+  },
+  "title[type=alt]_2":{
+    "insertElement":{
+      "position":"beforebegin",
+      "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">bookmark</md-icon>Alternative Title:</h3>"
+    },
+    "replaceElement":"h5"
+  },
+  "respstmt":{
+    "wrapContent":{
+      "tag":"div",
+      "attributes":{
+        "layout":"row",
+        "layout-align":"start center"
+      }
+    }
+  },
+  "persname":{
+    "insertElement":{
+      "position":"beforebegin",
+      "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">person</md-icon>Responsible:</h3>"
+    }
+  },
+  "persname_2":{
+    "insertElement":{
+      "position":"afterend",
+      "markup":"<span> / </span>"
+    },
+    "wrapElement":{
+      "tag":"h5"
+    }
+  },
+  "resp":{
+    "wrapElement":{
+      "tag":"h5"
+    }
+  },
+  "title":{
+    "replaceElement":"h3"
+  },
+  "publicationstmt":{
+    "wrapElement":{
+      "tag":"div",
+      "attributes":{
+        "layout":"row",
+        "layout-align":"start center"
+      }
+    }
+  },
+  "authority_2":{
+    "insertElement":{
+      "position":"beforebegin",
+      "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">bookmark</md-icon>License:</h3>"
+    },
+    "replaceElement":"h5"
+  },
+  "facsimile":{
+    "replaceElement":"div",
+    "setAttribute":{
+      "class":"md-whiteframe-3dp",
+      "layout-padding":""
     },
     "insertElement":{
       "position":"beforebegin",
-      "markup":"<h3 class=\"md-subheader\"><md-icon class=\"panelicon\">bookmark</md-icon>Alternative Title:</h3>"
+      "markup":"<div layout-padding></div>"
     }
   },
   "text":{
