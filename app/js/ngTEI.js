@@ -85,7 +85,6 @@ ngTEI.service('TEI', function($http, $localStorage, $q, $log){
           //INSERTS A DIV WITH SPECIFIED MARKUP AT SPECIFIED POSITION
           //SEE LIST OF AVAILABLE POSITIONS AT https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement
           if(tr.insertElement){
-            console.log('insert', els[idx]);
             let el = document.createElement('div');
             el.innerHTML = tr.insertElement.markup;
             els[idx].insertAdjacentElement(tr.insertElement.position, el);
@@ -93,18 +92,15 @@ ngTEI.service('TEI', function($http, $localStorage, $q, $log){
           //THESE MUST BE DONE LAST, AS REPLACEMENT OF THE ELEMENT IN QUESTION RENDERS THE LOOP UNUSABLE
           //WRAP IN A SPECIFIED ELEMENT
           if(tr.wrapElement){
-            console.log("wrap", els[idx]);
             let newElement = document.createElementNS('http://www.w3.org/1999/xhtml',tr.wrapElement.tag);
             for (var a in tr.wrapElement.attributes) {
               newElement.setAttribute(a, tr.wrapElement.attributes[a]);
               newElement.setAttribute('wrapper', '');
             }
             newElement.innerHTML = els[idx].outerHTML;
-            console.log('newElement', newElement);
             els[idx].replaceWith(newElement);
             els[idx] = xml.querySelector('[wrapper]').firstElementChild;
             els[idx].removeAttribute('wrapper');
-            console.log("wrap", xml.querySelectorAll('[wrapper]'));
           }
           //REPLACE DEFINED ELEMENTS
           if(tr.replaceElement){

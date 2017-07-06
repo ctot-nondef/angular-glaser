@@ -299,7 +299,7 @@ ExistService.service('ExistService', function($http, $localStorage, $q, $log){
         this.Page = {};
         var idx = res.data.data.length;
         while(idx--){
-          var key = res.data.data[idx].id.split('_')[0];
+          var key = res.data.data[idx].id.split('.')[0];
           this.Page[key] = res.data.data[idx];
         }
         this.Meta.HITS = res.data.meta.hits;
@@ -317,7 +317,7 @@ ExistService.service('ExistService', function($http, $localStorage, $q, $log){
 			else if(!this.existcache[id]) {
         this.Manifest.then(function(m){
           $http.get(
-  					this.ExistConfig.BASEURL+m[id].id+'/'+format,
+  					this.ExistConfig.BASEURL+id+'.xml/'+format,
   				).then(
   				function(res){
               resolve(res.data);

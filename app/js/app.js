@@ -22,7 +22,7 @@ var GlaserApp = angular.module('GlaserApp', [
 GlaserApp.config(config);
 function config($stateProvider, $urlRouterProvider, $locationProvider, $compileProvider,$logProvider,$mdThemingProvider){
   $compileProvider.debugInfoEnabled(true);
-  $logProvider.debugEnabled(true);
+  $logProvider.debugEnabled(false);
   $urlRouterProvider.otherwise('/');
     $stateProvider
     /////////////////

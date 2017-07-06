@@ -14,6 +14,49 @@
     ]
   },
   {
+    "selector":"facsimile",
+    "actions":[
+      {
+        "setAttribute":{
+          "class":"md-whiteframe-3dp",
+          "layout-padding":""
+        }
+      },
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"<div layout-padding></div>"
+        }
+      },
+      {
+        "replaceElement":"div"
+      }
+    ]
+  },
+  {
+    "selector":"text",
+    "actions":[
+      {
+        "setAttribute":{
+          "md-dynamic-height":"",
+          "md-border-bottom":"",
+          "md-selected":"0",
+          "md-stretch-tabs":"always",
+          "style":"width: 100%;"
+        }
+      },
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"<div layout-padding></div>"
+        }
+      },
+      {
+        "replaceElement":"md-tabs"
+      }
+    ]
+  },
+  {
     "selector":"title[type=alt]",
     "actions":[
         {
@@ -51,7 +94,7 @@
     ]
   },
   {
-    "selector":"persname",
+    "selector":"respstmt>div>persname",
     "actions":[
       {
         "insertElement":{
@@ -115,49 +158,6 @@
       },
       {
         "replaceElement":"h5"
-      }
-    ]
-  },
-  {
-    "selector":"facsimile",
-    "actions":[
-      {
-        "setAttribute":{
-          "class":"md-whiteframe-3dp",
-          "layout-padding":""
-        }
-      },
-      {
-        "insertElement":{
-          "position":"beforebegin",
-          "markup":"<div layout-padding></div>"
-        }
-      },
-      {
-        "replaceElement":"div"
-      }
-    ]
-  },
-  {
-    "selector":"text",
-    "actions":[
-      {
-        "setAttribute":{
-          "md-dynamic-height":"",
-          "md-border-bottom":"",
-          "md-selected":"0",
-          "md-stretch-tabs":"always",
-          "style":"width: 100%;"
-        }
-      },
-      {
-        "insertElement":{
-          "position":"beforebegin",
-          "markup":"<div layout-padding></div>"
-        }
-      },
-      {
-        "replaceElement":"md-tabs"
       }
     ]
   },
