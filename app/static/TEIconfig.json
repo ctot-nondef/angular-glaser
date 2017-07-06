@@ -1,121 +1,211 @@
-{
-  "teiHeader":{
-    "replaceElement":"div",
-    "setAttribute":{
-      "class":"md-whiteframe-3dp",
-      "layout-padding":""
-    }
+[
+  {
+    "selector":"teiHeader",
+    "actions":[
+        {
+          "setAttribute":{
+            "class":"md-whiteframe-3dp",
+            "layout-padding":""
+          }
+        },
+        {
+          "replaceElement":"div"
+        }
+    ]
   },
-  "title[type=alt]":{
-    "wrapElement":{
-      "tag":"div",
-      "attributes":{
-        "layout":"row",
-        "layout-align":"start center"
+  {
+    "selector":"title[type=alt]",
+    "actions":[
+        {
+          "wrapElement":{
+            "tag":"div",
+            "attributes":{
+              "layout":"row",
+              "layout-align":"start center"
+            }
+          }
+        },
+        {
+          "insertElement":{
+            "position":"beforebegin",
+            "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">bookmark</md-icon>Alternative Title:&nbsp;</h3>"
+          }
+        },
+        {
+          "replaceElement":"h5"
+        }
+    ]
+  },
+  {
+    "selector":"respstmt",
+    "actions":[
+      {
+        "wrapContent":{
+          "tag":"div",
+          "attributes":{
+            "layout":"row",
+            "layout-align":"start center"
+          }
+        }
       }
-    }
+    ]
   },
-  "title[type=alt]_2":{
-    "insertElement":{
-      "position":"beforebegin",
-      "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">bookmark</md-icon>Alternative Title:</h3>"
-    },
-    "replaceElement":"h5"
-  },
-  "respstmt":{
-    "wrapContent":{
-      "tag":"div",
-      "attributes":{
-        "layout":"row",
-        "layout-align":"start center"
+  {
+    "selector":"persname",
+    "actions":[
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">person</md-icon>Responsible:&nbsp;</h3>"
+        }
+      },
+      {
+        "insertElement":{
+          "position":"afterend",
+          "markup":"<span>&nbsp;/&nbsp;</span>"
+        }
+      },
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
       }
-    }
+    ]
   },
-  "persname":{
-    "insertElement":{
-      "position":"beforebegin",
-      "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">person</md-icon>Responsible:</h3>"
-    }
-  },
-  "persname_2":{
-    "insertElement":{
-      "position":"afterend",
-      "markup":"<span> / </span>"
-    },
-    "wrapElement":{
-      "tag":"h5"
-    }
-  },
-  "resp":{
-    "wrapElement":{
-      "tag":"h5"
-    }
-  },
-  "title":{
-    "replaceElement":"h3"
-  },
-  "publicationstmt":{
-    "wrapElement":{
-      "tag":"div",
-      "attributes":{
-        "layout":"row",
-        "layout-align":"start center"
+  {
+    "selector":"resp",
+    "actions":[
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
       }
-    }
+    ]
   },
-  "authority_2":{
-    "insertElement":{
-      "position":"beforebegin",
-      "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">bookmark</md-icon>License:</h3>"
-    },
-    "replaceElement":"h5"
+  {
+    "selector":"title",
+    "actions":[
+      {
+        "replaceElement":"h3"
+      }
+    ]
   },
-  "facsimile":{
-    "replaceElement":"div",
-    "setAttribute":{
-      "class":"md-whiteframe-3dp",
-      "layout-padding":""
-    },
-    "insertElement":{
-      "position":"beforebegin",
-      "markup":"<div layout-padding></div>"
-    }
+  {
+    "selector":"publicationstmt",
+    "actions":[
+      {
+        "wrapContent":{
+          "tag":"div",
+          "attributes":{
+            "layout":"row",
+            "layout-align":"start center"
+          }
+        }
+      }
+    ]
   },
-  "text":{
-    "replaceElement":"md-tabs",
-    "setAttribute":{
-      "md-dynamic-height":"",
-      "md-border-bottom":"",
-      "md-selected":"0",
-      "md-stretch-tabs":"always",
-      "style":"width: 100%;"
-    },
-    "insertElement":{
-      "position":"beforebegin",
-      "markup":"<div layout-padding></div>"
-    }
+  {
+    "selector":"authority",
+    "actions":[
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">bookmark</md-icon>License:&nbsp;</h3>"
+        }
+      },
+      {
+        "replaceElement":"h5"
+      }
+    ]
   },
-  "div[type=edition]":{
-    "replaceElement":"md-tab",
-    "setAttribute":{
-      "label":"Edition"
-    }
+  {
+    "selector":"facsimile",
+    "actions":[
+      {
+        "setAttribute":{
+          "class":"md-whiteframe-3dp",
+          "layout-padding":""
+        }
+      },
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"<div layout-padding></div>"
+        }
+      },
+      {
+        "replaceElement":"div"
+      }
+    ]
   },
-  "div[type=translation]":{
-    "replaceElement":"md-tab",
-    "setAttribute":{
-      "label":"Translation"
-    }
+  {
+    "selector":"text",
+    "actions":[
+      {
+        "setAttribute":{
+          "md-dynamic-height":"",
+          "md-border-bottom":"",
+          "md-selected":"0",
+          "md-stretch-tabs":"always",
+          "style":"width: 100%;"
+        }
+      },
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"<div layout-padding></div>"
+        }
+      },
+      {
+        "replaceElement":"md-tabs"
+      }
+    ]
   },
-  "div[type=bibliography]":{
-    "replaceElement":"md-tab",
-    "setAttribute":{
-      "label":"Bibliography"
-    }
+  {
+    "selector":"div[type=edition]",
+    "actions":[
+      {
+        "setAttribute":{
+          "label":"Edition"
+        }
+      },
+      {
+        "replaceElement":"md-tab"
+      }
+    ]
   },
-  "*|lb":{
-    "replaceElement":"br",
-    "setAttribute":{
-    }
+  {
+    "selector":"div[type=translation]",
+    "actions":[
+      {
+        "setAttribute":{
+          "label":"Translation"
+        }
+      },
+      {
+        "replaceElement":"md-tab"
+      }
+    ]
+  },
+  {
+    "selector":"div[type=bibliography]",
+    "actions":[
+      {
+        "setAttribute":{
+          "label":"Bibliography"
+        }
+      },
+      {
+        "replaceElement":"md-tab"
+      }
+    ]
+  },
+  {
+    "selector":"*|lb",
+    "actions":[
+      {
+        "replaceElement":"br"
+      }
+    ]
   }
-}
+]

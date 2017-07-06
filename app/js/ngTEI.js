@@ -28,6 +28,13 @@ ngTEI.service('TEI', function($http, $localStorage, $q, $log){
         for (var v in values) {
           this.CONFIG[v] = values[v].data;
         }
+        var idx = this.CONFIG.TEISpecObject.members.length;
+        var spec = this.CONFIG.TEISpecObject.members;
+        var s = {};
+        while(idx--){
+          if(spec[idx].type == "elementSpec") s[spec[idx].ident] = spec[idx];
+        }
+        this.CONFIG.elements = s;
         resolve(values);
       })
     }.bind(this));
@@ -39,69 +46,76 @@ ngTEI.service('TEI', function($http, $localStorage, $q, $log){
     var oSerializer = new XMLSerializer();
     //removing namespaces
     doc = doc.replace(/<([a-zA-Z0-9 ]+)(?:xml)ns=\".*\"(.*)>/g, "<$1$2>");
-    var xml = oParser.parseFromString(doc, "text/xml").querySelector("TEI");
-    for (var s in this.CONFIG.TEIConfigObject) {
-      let nl = xml.querySelectorAll(String(s).split('_')[0]);
-      let tr = this.CONFIG.TEIConfigObject[s];
-      let els = [];
-      for(var i = nl.length; i--; els.unshift(nl[i]));
-      let idx = els.length;
-      while(idx--){
-        //DELETE ATTRIBUTES FROM CONFIG
-        if(tr.removeAttribute){
-          let ida = tr.removeAttribute.length;
-          while(ida--){
-            els[idx].removeAttribute(removeAttribute[ida]);
+    let xml = oParser.parseFromString(doc, "text/xml").querySelector("TEI");
+    let ti = this.CONFIG.TEIConfigObject.length;
+    let tidx = this.CONFIG.TEIConfigObject.length;
+    while(tidx--) {
+      let s = this.CONFIG.TEIConfigObject[ti-tidx-1];
+      let ai = s.actions.length;
+      let aidx = s.actions.length;
+      while(aidx--) {
+        let tr = s.actions[ai-aidx-1];
+        let nl = xml.querySelectorAll(s.selector);
+        let els = [];
+        for(var i = nl.length; i--; els.unshift(nl[i]));
+        let idx = els.length;
+        while(idx--){
+          //DELETE ATTRIBUTES FROM CONFIG
+          if(tr.removeAttribute){
+            let ida = tr.removeAttribute.length;
+            while(ida--){
+              els[idx].removeAttribute(removeAttribute[ida]);
+            }
           }
-        }
-        //SETTING ATTRIBUTES FROM CONFIG
-        if(tr.setAttribute){
-          for (var a in tr.setAttribute) {
-            els[idx].setAttribute(a, tr.setAttribute[a]);
+          //SETTING ATTRIBUTES FROM CONFIG
+          if(tr.setAttribute){
+            for (var a in tr.setAttribute) {
+              els[idx].setAttribute(a, tr.setAttribute[a]);
+            }
           }
-        }
-        //WRAP CONTENT IN A SPECIFIED ELEMENT
-        if(tr.wrapContent){
-          let newElement = document.createElementNS('http://www.w3.org/1999/xhtml',tr.wrapContent.tag);
-          for (var a in tr.wrapContent.attributes) {
-            newElement.setAttribute(a, tr.wrapContent.attributes[a]);
+          //WRAP CONTENT IN A SPECIFIED ELEMENT
+          if(tr.wrapContent){
+            let newElement = document.createElementNS('http://www.w3.org/1999/xhtml',tr.wrapContent.tag);
+            for (var a in tr.wrapContent.attributes) {
+              newElement.setAttribute(a, tr.wrapContent.attributes[a]);
+            }
+            newElement.innerHTML = els[idx].innerHTML;
+            els[idx].innerHTML = newElement.outerHTML;
           }
-          newElement.innerHTML = els[idx].innerHTML;
-          els[idx].innerHTML = newElement.outerHTML;
-        }
-        //INSERTS A DIV WITH SPECIFIED MARKUP AT SPECIFIED POSITION
-        //SEE LIST OF AVAILABLE POSITIONS AT https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement
-        if(tr.insertElement){
-          console.log('insert', els[idx]);
-          let el = document.createElement('div');
-          el.innerHTML = tr.insertElement.markup;
-          els[idx].insertAdjacentElement(tr.insertElement.position, el);
-        }
-        //THESE MUST BE DONE LAST, AS REPLACEMENT OF THE ELEMENT IN QUESTION RENDERS THE LOOP UNUSABLE
-        //WRAP IN A SPECIFIED ELEMENT
-        if(tr.wrapElement){
-          console.log("wrap", els[idx]);
-          let newElement = document.createElementNS('http://www.w3.org/1999/xhtml',tr.wrapElement.tag);
-          for (var a in tr.wrapElement.attributes) {
-            newElement.setAttribute(a, tr.wrapElement.attributes[a]);
-            newElement.setAttribute('wrapper', '');
+          //INSERTS A DIV WITH SPECIFIED MARKUP AT SPECIFIED POSITION
+          //SEE LIST OF AVAILABLE POSITIONS AT https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement
+          if(tr.insertElement){
+            console.log('insert', els[idx]);
+            let el = document.createElement('div');
+            el.innerHTML = tr.insertElement.markup;
+            els[idx].insertAdjacentElement(tr.insertElement.position, el);
           }
-          newElement.innerHTML = els[idx].outerHTML;
-          console.log('newElement', newElement);
-          els[idx].replaceWith(newElement);
-          els[idx] = xml.querySelector('[wrapper]').firstElementChild;
-          els[idx].removeAttribute('wrapper');
-          console.log("wrap", xml.querySelectorAll('[wrapper]'));
-        }
-        //REPLACE DEFINED ELEMENTS
-        if(tr.replaceElement){
-          let newElement = document.createElementNS('http://www.w3.org/1999/xhtml',tr.replaceElement);
-          newElement.innerHTML = els[idx].innerHTML;
-          let ac = els[idx].attributes.length;
-          while(ac--){
-            newElement.setAttribute(els[idx].attributes[ac].nodeName, els[idx].attributes[ac].nodeValue);
+          //THESE MUST BE DONE LAST, AS REPLACEMENT OF THE ELEMENT IN QUESTION RENDERS THE LOOP UNUSABLE
+          //WRAP IN A SPECIFIED ELEMENT
+          if(tr.wrapElement){
+            console.log("wrap", els[idx]);
+            let newElement = document.createElementNS('http://www.w3.org/1999/xhtml',tr.wrapElement.tag);
+            for (var a in tr.wrapElement.attributes) {
+              newElement.setAttribute(a, tr.wrapElement.attributes[a]);
+              newElement.setAttribute('wrapper', '');
+            }
+            newElement.innerHTML = els[idx].outerHTML;
+            console.log('newElement', newElement);
+            els[idx].replaceWith(newElement);
+            els[idx] = xml.querySelector('[wrapper]').firstElementChild;
+            els[idx].removeAttribute('wrapper');
+            console.log("wrap", xml.querySelectorAll('[wrapper]'));
           }
-          els[idx].parentElement.replaceChild(newElement, els[idx]);
+          //REPLACE DEFINED ELEMENTS
+          if(tr.replaceElement){
+            let newElement = document.createElementNS('http://www.w3.org/1999/xhtml',tr.replaceElement);
+            newElement.innerHTML = els[idx].innerHTML;
+            let ac = els[idx].attributes.length;
+            while(ac--){
+              newElement.setAttribute(els[idx].attributes[ac].nodeName, els[idx].attributes[ac].nodeValue);
+            }
+            els[idx].parentElement.replaceChild(newElement, els[idx]);
+          }
         }
       }
       //reparse object for every config entry
