@@ -142,3 +142,17 @@ ngTEI.directive('teidoc', ['$compile', '$http', '$q', 'TEI', function ($compile,
         link: link
     };
 }]);
+
+// ngTEI.directive('ab', ['$compile', '$http', '$q', 'TEI', function ($compile, $http, $q, TEI) {
+//     function link(scope, element, attrs){
+//       attrs.$observe('source', function(val){
+//         if(val){
+//           var doc = TEI.makeMarkup(val);
+//           element.html($compile(doc)(scope)).show();
+//         }
+//       }.bind(this));
+//     };
+//     return {
+//         link: link
+//     };
+// }]);

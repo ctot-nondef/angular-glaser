@@ -8,6 +8,7 @@ var GlaserApp = angular.module('GlaserApp', [
   'ngSanitize',
   'ngMaterial',
   'md.data.table',
+  'material.components.expansionPanels',
   'ui-leaflet',
   'ngTEI',
   'AdlibServices',

@@ -4,60 +4,87 @@
     "actions":[
         {
           "setAttribute":{
-            "class":"md-whiteframe-3dp",
+            "md-component-id":"teiHeader",
             "layout-padding":""
           }
         },
         {
-          "replaceElement":"div"
+          "wrapContent":{
+            "tag":"md-expansion-panel-content"
+          }
+        },
+        {
+          "insertElement":{
+            "position":"afterbegin",
+            "markup":"<md-expansion-panel-header><md-icon class=\"panelicon\">settings_ethernet</md-icon><div class=\"md-title\">TEI Header Information</div><div class=\"md-summary\">Expanded Summary</div><md-expansion-panel-icon></md-expansion-panel-icon></md-expansion-panel-header>"
+          }
+        },
+        {
+          "insertElement":{
+            "position":"beforeend",
+            "markup":"<md-expansion-panel-footer><div flex></div><md-button class=\"md-warn\" ng-click=\"$panel.collapse()\">Collapse</md-button></md-expansion-panel-footer>"
+          }
+        },
+        {
+          "wrapContent":{
+            "tag":"md-expansion-panel-expanded"
+          }
+        },
+        {
+          "insertElement":{
+            "position":"afterbegin",
+            "markup":"<md-expansion-panel-collapsed><md-icon class=\"panelicon\">settings_ethernet</md-icon><div class=\"md-title\">TEI Header Information</div><div class=\"md-summary\">Summary</div><md-expansion-panel-icon></md-expansion-panel-icon></md-expansion-panel-collapsed>"
+          }
+        },
+        {
+          "replaceElement":"md-expansion-panel"
         }
     ]
   },
   {
     "selector":"facsimile",
     "actions":[
-      {
-        "setAttribute":{
-          "class":"md-whiteframe-3dp",
-          "layout-padding":""
+        {
+          "setAttribute":{
+            "md-component-id":"facsimile",
+            "layout-padding":""
+          }
+        },
+        {
+          "wrapContent":{
+            "tag":"md-expansion-panel-content"
+          }
+        },
+        {
+          "insertElement":{
+            "position":"afterbegin",
+            "markup":"<md-expansion-panel-header><md-icon class=\"panelicon\">chrome_reader_mode</md-icon><div class=\"md-title\">Facsimile</div><div class=\"md-summary\">Expanded Summary</div><md-expansion-panel-icon></md-expansion-panel-icon></md-expansion-panel-header>"
+          }
+        },
+        {
+          "insertElement":{
+            "position":"beforeend",
+            "markup":"<md-expansion-panel-footer><div flex></div><md-button class=\"md-warn\" ng-click=\"$panel.collapse()\">Collapse</md-button></md-expansion-panel-footer>"
+          }
+        },
+        {
+          "wrapContent":{
+            "tag":"md-expansion-panel-expanded"
+          }
+        },
+        {
+          "insertElement":{
+            "position":"afterbegin",
+            "markup":"<md-expansion-panel-collapsed><md-icon class=\"panelicon\">chrome_reader_mode</md-icon><div class=\"md-title\">Facsimile</div><div class=\"md-summary\">Summary</div><md-expansion-panel-icon></md-expansion-panel-icon></md-expansion-panel-collapsed>"
+          }
+        },
+        {
+          "replaceElement":"md-expansion-panel"
         }
-      },
-      {
-        "insertElement":{
-          "position":"beforebegin",
-          "markup":"<div layout-padding></div>"
-        }
-      },
-      {
-        "replaceElement":"div"
-      }
     ]
   },
   {
-    "selector":"text",
-    "actions":[
-      {
-        "setAttribute":{
-          "md-dynamic-height":"",
-          "md-border-bottom":"",
-          "md-selected":"0",
-          "md-stretch-tabs":"always",
-          "style":"width: 100%;"
-        }
-      },
-      {
-        "insertElement":{
-          "position":"beforebegin",
-          "markup":"<div layout-padding></div>"
-        }
-      },
-      {
-        "replaceElement":"md-tabs"
-      }
-    ]
-  },
-  {
-    "selector":"title[type=alt]",
+    "selector":"title",
     "actions":[
         {
           "wrapElement":{
@@ -71,7 +98,7 @@
         {
           "insertElement":{
             "position":"beforebegin",
-            "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">bookmark</md-icon>Alternative Title:&nbsp;</h3>"
+            "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">bookmark</md-icon>Title:&nbsp;</h3>"
           }
         },
         {
@@ -99,7 +126,7 @@
       {
         "insertElement":{
           "position":"beforebegin",
-          "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">person</md-icon>Responsible:&nbsp;</h3>"
+          "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">person</md-icon>Responsible Person:&nbsp;</h3>"
         }
       },
       {
@@ -116,20 +143,12 @@
     ]
   },
   {
-    "selector":"resp",
+    "selector":"respstmt>div>resp",
     "actions":[
       {
         "wrapElement":{
           "tag":"h5"
         }
-      }
-    ]
-  },
-  {
-    "selector":"title",
-    "actions":[
-      {
-        "replaceElement":"h3"
       }
     ]
   },
@@ -148,25 +167,423 @@
     ]
   },
   {
-    "selector":"authority",
+    "selector":"publicationstmt>div>authority",
     "actions":[
       {
         "insertElement":{
           "position":"beforebegin",
-          "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">bookmark</md-icon>License:&nbsp;</h3>"
+          "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">bookmark</md-icon>Publication:&nbsp;</h3>"
         }
       },
       {
-        "replaceElement":"h5"
+        "insertElement":{
+          "position":"afterend",
+          "markup":"<span>&nbsp;/&nbsp;</span>"
+        }
+      },
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
       }
     ]
   },
   {
-    "selector":"div[type=edition]",
+    "selector":"publicationstmt>div>availability",
+    "actions":[
+      {
+        "insertElement":{
+          "position":"afterend",
+          "markup":"<span>&nbsp;/&nbsp;</span>"
+        }
+      },
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
+      }
+    ]
+  },
+  {
+    "selector":"publicationstmt>div>idno",
+    "actions":[
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
+      }
+    ]
+  },
+  {
+    "selector":"msidentifier",
+    "actions":[
+      {
+        "wrapContent":{
+          "tag":"div",
+          "attributes":{
+            "layout":"row",
+            "layout-align":"start center"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "selector":"msidentifier>div>settlement",
+    "actions":[
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">bookmark</md-icon>Manuscript ID:&nbsp;</h3>"
+        }
+      },
+      {
+        "insertElement":{
+          "position":"afterend",
+          "markup":"<span>&nbsp;/&nbsp;</span>"
+        }
+      },
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
+      }
+    ]
+  },
+  {
+    "selector":"msidentifier>div>repository",
+    "actions":[
+      {
+        "insertElement":{
+          "position":"afterend",
+          "markup":"<span>&nbsp;/&nbsp;</span>"
+        }
+      },
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
+      }
+    ]
+  },
+  {
+    "selector":"msidentifier>div>collection",
+    "actions":[
+      {
+        "insertElement":{
+          "position":"afterend",
+          "markup":"<span>&nbsp;/&nbsp;</span>"
+        }
+      },
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
+      }
+    ]
+  },
+  {
+    "selector":"msidentifier>div>idno",
+    "actions":[
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
+      }
+    ]
+  },
+  {
+    "selector":"mscontents>summary",
+    "actions":[
+      {
+        "wrapContent":{
+          "tag":"div",
+          "attributes":{
+            "layout":"row",
+            "layout-align":"start center"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "selector":"mscontents>summary>div>rs",
+    "actions":[
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">bookmark</md-icon>Manuscript Contents:&nbsp;</h3>"
+        }
+      },
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
+      }
+    ]
+  },
+  {
+    "selector":"mscontents>summary>div>seg",
+    "actions":[
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"&nbsp;/&nbsp;"
+        }
+      },
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
+      }
+    ]
+  },
+  {
+    "selector":"physdesc>objectdesc>supportdesc>support",
+    "actions":[
+      {
+        "wrapContent":{
+          "tag":"div",
+          "attributes":{
+            "layout":"row",
+            "layout-align":"start center"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "selector":"physdesc>objectdesc>supportdesc>support>div>objecttype",
+    "actions":[
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">bookmark</md-icon>Object description:&nbsp;</h3>"
+        }
+      },
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
+      }
+    ]
+  },
+  {
+    "selector":"physdesc>objectdesc>supportdesc>support>div>material",
+    "actions":[
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"&nbsp;/&nbsp;"
+        }
+      },
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
+      }
+    ]
+  },
+  {
+    "selector":"physdesc>objectdesc>supportdesc>support>div>measuregrp",
+    "actions":[
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"&nbsp;/&nbsp;"
+        }
+      },
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
+      }
+    ]
+  },
+  {
+    "selector":"physdesc>objectdesc>layoutdesc>layout",
+    "actions":[
+      {
+        "wrapContent":{
+          "tag":"div",
+          "attributes":{
+            "layout":"row",
+            "layout-align":"start center"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "selector":"physdesc>objectdesc>layoutdesc>layout>div>rs:first-child",
+    "actions":[
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">bookmark</md-icon>Layout:&nbsp;</h3>"
+        }
+      },
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
+      }
+    ]
+  },
+  {
+    "selector":"physdesc>objectdesc>layoutdesc>layout>div>rs",
+    "actions":[
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"&nbsp;/&nbsp;"
+        }
+      },
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
+      }
+    ]
+  },
+  {
+    "selector":"handdesc>handnote",
+    "actions":[
+      {
+        "wrapContent":{
+          "tag":"div",
+          "attributes":{
+            "layout":"row",
+            "layout-align":"start center"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "selector":"handdesc>handnote>div>height",
+    "actions":[
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">bookmark</md-icon>Hand / Style:&nbsp;</h3>"
+        }
+      },
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
+      }
+    ]
+  },
+  {
+    "selector":"handdesc>handnote>div>rs",
+    "actions":[
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"&nbsp;/&nbsp;"
+        }
+      },
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
+      }
+    ]
+  },
+  {
+    "selector":"history",
+    "actions":[
+      {
+        "wrapContent":{
+          "tag":"div",
+          "attributes":{
+            "layout":"row",
+            "layout-align":"start center"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "selector":"history>div>provenance",
+    "actions":[
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"<h3 class=\"md-subheader\"><md-icon class=\"labelicon\">bookmark</md-icon>Provenance:&nbsp;</h3>"
+        }
+      },
+      {
+        "wrapContent":{
+          "tag":"div",
+          "attributes":{
+            "layout":"row",
+            "layout-align":"start center"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "selector":"history>div>provenance>div>placename",
+    "actions":[
+      {
+        "insertElement":{
+          "position":"afterend",
+          "markup":"&nbsp;/&nbsp;"
+        }
+      },
+      {
+        "wrapElement":{
+          "tag":"h5"
+        }
+      }
+    ]
+  },
+  {
+    "selector":"profiledesc",
+    "actions":[
+      {
+        "wrapContent":{
+          "tag":"div",
+          "attributes":{
+            "style":"display: none;"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "selector":"div[type]",
     "actions":[
       {
         "setAttribute":{
-          "label":"Edition"
+          "md-dynamic-height":"",
+          "md-border-bottom":"",
+          "md-selected":"1",
+          "md-stretch-tabs":"always",
+          "style":"width: 100%;"
+        }
+      },
+      {
+        "insertElement":{
+          "position":"beforebegin",
+          "markup":"<div layout-padding></div>"
+        }
+      },
+      {
+        "replaceElement":"md-tabs"
+      }
+    ]
+  },
+  {
+    "selector":"*|ab[type=formal-markup]",
+    "actions":[
+      {
+        "setAttribute":{
+          "label":"Formal Markup"
         }
       },
       {
@@ -175,11 +592,11 @@
     ]
   },
   {
-    "selector":"div[type=translation]",
+    "selector":"*|ab[type=semantic-markup]",
     "actions":[
       {
         "setAttribute":{
-          "label":"Translation"
+          "label":"Semantic Markup"
         }
       },
       {
@@ -188,15 +605,28 @@
     ]
   },
   {
-    "selector":"div[type=bibliography]",
+    "selector":"*|ab[type=syntactic-markup]",
     "actions":[
       {
         "setAttribute":{
-          "label":"Bibliography"
+          "label":"Syntactic Markup"
         }
       },
       {
         "replaceElement":"md-tab"
+      }
+    ]
+  },
+  {
+    "selector":"*|ab[type=adlib-orig]",
+    "actions":[
+      {
+        "wrapContent":{
+          "tag":"div",
+          "attributes":{
+            "style":"display: none;"
+          }
+        }
       }
     ]
   },
