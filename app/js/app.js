@@ -8,7 +8,6 @@ var GlaserApp = angular.module('GlaserApp', [
   'ngSanitize',
   'ngMaterial',
   'md.data.table',
-  'material.components.expansionPanels',
   'ui-leaflet',
   'ngTEI',
   'AdlibServices',
@@ -23,7 +22,7 @@ var GlaserApp = angular.module('GlaserApp', [
 GlaserApp.config(config);
 function config($stateProvider, $urlRouterProvider, $locationProvider, $compileProvider,$logProvider,$mdThemingProvider){
   $compileProvider.debugInfoEnabled(true);
-  $logProvider.debugEnabled(false);
+  $logProvider.debugEnabled(true);
   $urlRouterProvider.otherwise('/');
     $stateProvider
     /////////////////
@@ -52,11 +51,6 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
                 templateUrl: 'partials/navbar.html',
                 controller: 'GlaserNav'
             }
-        },
-        resolve:{
-          TEI:function(TEI){
-            return TEI.init();
-          }
         }
     })
     ////////////////////////////////////////////////////////
