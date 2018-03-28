@@ -384,17 +384,6 @@ GlaserApp
     resizeCanvas(window.innerWidth-100, window.innerHeight-4);
 }])
 .controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state) {
-  $scope.id = $stateParams.id;
-  if(!$stateParams.id) $scope.currentLink = null;
-  $scope.selSite = function(id){
-    $scope.id = id;
-    ExistService.getItem(id).then(function(res){
-      $state.go('gl.tei',{id: id},{notify:false});
-      $scope.currentLink = $state.href("gl.singleRecord", {refID: id});
-      console.log($scope.currentLink);
-      $scope.xmlstr = res;
-    });
-  }
   //********* DECLARATIVE PART *********************************************
     $scope.Model = {};
     //TEI.init();
@@ -415,7 +404,19 @@ GlaserApp
       $scope.Model.Total = ExistService.Meta.HITS;
       if($stateParams.id) $scope.selSite($stateParams.id);
     };
+    // squeeze selection
+    $scope.selSite = function(id){
+      $scope.id = id;
+      ExistService.getItem(id).then(function(res){
+        $state.go('gl.tei',{id: id},{notify:false});
+        $scope.currentLink = $state.href("gl.singleRecord", {refID: id});
+        console.log($scope.currentLink);
+        $scope.xmlstr = res;
+      });
+    }
   ////////////////////////////////////////////////////////////////////////////
+  $scope.id = $stateParams.id;
+  if(!$stateParams.id) $scope.currentLink = null;
   $scope.promise = ExistService.getPage();
   $scope.promise.then($scope.update);
   // $mdMedia quickfix
