@@ -15,7 +15,8 @@ var GlaserApp = angular.module('GlaserApp', [
   'ZoteroService',
   'ExistService',
   'angular-preload-image',
-  'imageViewer'
+  'imageViewer',
+  'material.components.expansionPanels'
 ]);
 
 

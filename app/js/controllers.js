@@ -389,8 +389,8 @@ GlaserApp
   $scope.selSite = function(id){
     $scope.id = id;
     ExistService.getItem(id).then(function(res){
-      $scope.currentLink = $state.href("gl.singleRecord", {refID: id});
       $state.go('gl.tei',{id: id},{notify:false});
+      $scope.currentLink = $state.href("gl.singleRecord", {refID: id});
       $scope.xmlstr = res;
     });
   }
