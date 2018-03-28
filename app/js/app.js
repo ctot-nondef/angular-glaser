@@ -146,6 +146,7 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
                 controller: 'GlaserTei'
             }
         },
+        reloadOnSearch: false,
         resolve: {
           // Dependencies are annotated in "Inline Array Annotation"
           myAsyncData: ['TEI', function(TEI) {

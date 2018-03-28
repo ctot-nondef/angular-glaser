@@ -385,12 +385,13 @@ GlaserApp
 }])
 .controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state) {
   $scope.id = $stateParams.id;
-  if(!$stateParams.id) $scope.currentLink = "";
+  if(!$stateParams.id) $scope.currentLink = null;
   $scope.selSite = function(id){
     $scope.id = id;
     ExistService.getItem(id).then(function(res){
       $state.go('gl.tei',{id: id},{notify:false});
       $scope.currentLink = $state.href("gl.singleRecord", {refID: id});
+      console.log($scope.currentLink);
       $scope.xmlstr = res;
     });
   }
