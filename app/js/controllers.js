@@ -383,7 +383,7 @@ GlaserApp
     setup3dhop($scope.Model.scanID);
     resizeCanvas(window.innerWidth-100, window.innerHeight-4);
 }])
-.controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', 'TEI', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state, TEI) {
+.controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state) {
   $scope.id = $stateParams.id;
   if(!$stateParams.id) $scope.currentLink = "";
   $scope.selSite = function(id){
@@ -396,6 +396,7 @@ GlaserApp
   }
   //********* DECLARATIVE PART *********************************************
     $scope.Model = {};
+    //TEI.init();
     $scope.Model.Pagesize = ExistService.ExistConfig.PAGESIZE;
     $scope.Model.Page = 1;
     //************************************************************************

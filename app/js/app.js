@@ -144,6 +144,13 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
                 templateUrl: 'partials/tei.html',
                 controller: 'GlaserTei'
             }
+        },
+        resolve: {
+          // Dependencies are annotated in "Inline Array Annotation"
+          myAsyncData: ['TEI', function(TEI) {
+            // Return a promise (async) for the data
+            return TEI.init();
+          }]
         }
     })
     .state('gl.about',{
