@@ -82,6 +82,13 @@ ngTEI.service('TEI', function($http, $localStorage, $q, $log){
             newElement.innerHTML = els[idx].innerHTML;
             els[idx].innerHTML = newElement.outerHTML;
           }
+          //WRAP CONTENT IN A SPECIFIED ELEMENT
+          if(tr.wrapAsLink){
+            let newElement = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+            newElement.setAttribute('href', tr.wrapAsLink.baseURL + encodeURIComponent(this.cleanString(els[idx].innerHTML)));
+            newElement.innerHTML = els[idx].innerHTML;
+            els[idx].innerHTML = newElement.outerHTML;
+          }
           //INSERTS A DIV WITH SPECIFIED MARKUP AT SPECIFIED POSITION
           //SEE LIST OF AVAILABLE POSITIONS AT https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement
           if(tr.insertElement){

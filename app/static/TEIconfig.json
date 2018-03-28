@@ -605,6 +605,16 @@
     ]
   },
   {
+    "selector":"w",
+    "actions":[
+      {
+        "wrapAsLink":{
+          "baseURL":"http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="
+        }
+      }
+    ]
+  },
+  {
     "selector":"*|ab[type=syntactic-markup]",
     "actions":[
       {
