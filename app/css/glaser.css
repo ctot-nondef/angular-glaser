@@ -372,9 +372,6 @@ md-table-container {
   width:100%;
 }
 
-.pagewrapper {
-}
-
 /******** spinentry animation class - to be replaced by ngAnimate + transitions? *********/
 .spinentry{
   -webkit-animation: spinentry 0.4s forwards; /* Safari, Chrome and Opera > 12.1 */
