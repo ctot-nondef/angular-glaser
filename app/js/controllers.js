@@ -408,39 +408,12 @@ GlaserApp
       $scope.promise = ExistService.getPage(a, b);
       $scope.promise.then($scope.update);
     };
-    //************************************************************************
-    // when sorting
-    //TODO: awaiting peters implementation
-    // $scope.getNewOrder = function(a) {
-    //   if(a.slice(0,1) == "-") opacsearch.updateSorting('descending',a.slice(1));
-    //   else if(a.slice(0,1) != "-") opacsearch.updateSorting('ascending',a);
-    //   $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', opacsearch.history.query[$stateParams.queryID-1],"AND",undefined,[],$stateParams.pageNo);
-    //   opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
-    //   $scope.promise.then($scope.update);
-    // };
-    //************************************************************************
     // generic page update
     $scope.update = function(res) {
       $scope.Model.Result = res;
       $scope.Model.Total = ExistService.Meta.HITS;
       if($stateParams.id) $scope.selSite($stateParams.id);
     };
-    //************************************************************************
-    // prelim markup from TEI function
-    $scope.makeMarkup = function(tei){
-      console.log(tei);
-      var markup="";
-      var idx = tei.children.length;
-      var le = tei.children.length-1;
-      while(idx--) {
-        var a = tei.children[le-idx];
-        //console.log(a);
-        if(a.nodeName=="tei:lb") markup = markup + "<br><br>";
-        else if (a.nodeName=="w") markup = markup + "<a target='_blank' href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(TEI.cleanString(a.innerHTML)) +"'>"+ a.innerHTML +"</a>"
-        else if (a.nodeName=="w" && a.children.length==0) markup = markup + "<a target='_blank' href='http://www.ruzicka.net:8180/kalam/servlet/kalam?op=showhtml&dictionary=yes&word="+ encodeURIComponent(TEI.cleanString(a.innerHTML)) +"'>"+ a.innerHTML +"</a>"
-      }
-      return markup;
-    }
   ////////////////////////////////////////////////////////////////////////////
   $scope.promise = ExistService.getPage();
   $scope.promise.then($scope.update);
