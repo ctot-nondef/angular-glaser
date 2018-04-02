@@ -140,13 +140,17 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
     })
     .state('gl.tei',{
         url: '/tei/:id',
+        params: {
+          id: {
+            dynamic: true
+          }
+        },
         views: {
             'content@': {
                 templateUrl: 'partials/tei.html',
                 controller: 'GlaserTei'
             }
         },
-        reloadOnSearch: false,
         resolve: {
           // Dependencies are annotated in "Inline Array Annotation"
           myAsyncData: ['TEI', function(TEI) {

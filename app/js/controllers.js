@@ -407,16 +407,19 @@ GlaserApp
     // squeeze selection
     $scope.selSite = function(id){
       $scope.id = id;
+      console.log(!$scope.currentLink);
       ExistService.getItem(id).then(function(res){
-        $state.go('gl.tei',{id: id},{notify:false});
-        $scope.currentLink = $state.href("gl.singleRecord", {refID: id});
-        console.log($scope.currentLink);
+        $state.go('.',{id: id});
+        $scope.currentLink = $state.href("gl.singleRecord", {refID: $scope.id});
+        console.log(!$scope.currentLink);
         $scope.xmlstr = res;
       });
     }
   ////////////////////////////////////////////////////////////////////////////
   $scope.id = $stateParams.id;
+  console.log($stateParams, $scope.id);
   if(!$stateParams.id) $scope.currentLink = null;
+  else $scope.currentLink = $state.href("gl.singleRecord", {refID: $scope.id});
   $scope.promise = ExistService.getPage();
   $scope.promise.then($scope.update);
   // $mdMedia quickfix
