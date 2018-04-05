@@ -113,6 +113,11 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
     })
     .state('gl.map',{
         url: '/map/:placeID',
+        params: {
+          placeID: {
+            dynamic: true
+          }
+        },
         views: {
             'content@': {
                 templateUrl: 'partials/map.html',

@@ -228,7 +228,7 @@ GlaserApp
             $scope.selSite(args.modelName);
           });
         }
-        else if(!$stateParams.placeID && m == ""){
+        else if($stateParams.placeID == 0 && m == ""){
           m = leafletData.getMap('mainmap').then(function(map) {
             map.invalidateSize();
             map.panTo({"lat":parseFloat('14.5'), "lng":parseFloat('45.5')});
@@ -243,7 +243,7 @@ GlaserApp
   });
   $scope.selSite = function(site){
     if($scope.ssite) $scope.markers[$scope.ssite].focus = false;
-    $state.go('gl.map',{placeID: site},{notify:false});
+    $state.go('gl.map',{placeID: site});
     $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', [{"production.place":$scope.markers[site].message},{"part_of_reference":"*BA-3-27-A*"}],"AND",undefined,[],1,100).then($scope.update);
     $scope.markers[site].focus = true;
     $scope.activeTab = 1;
