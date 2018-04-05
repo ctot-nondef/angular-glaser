@@ -7,7 +7,7 @@
         Separate them by SPACEs. Use * as wildcards.</span></div>
         <md-input-container class="md-block" >
           <label>Search Keyword(s)</label>
-          <input ng-model="Model.keyword">
+          <input ng-model="Model.keyword" ng-keypress="searchEnter($event)">
         </md-input-container>
         <md-button class="md-raised md-warn" ng-click="simpleSearch()">Submit</md-button>
       </div>
@@ -35,7 +35,7 @@
                   <p></p>
                   <span class="md-title">Hits</span>
                   <md-divider ></md-divider>
-              </md-list-item>            
+              </md-list-item>
               <md-list-item class="vspinentry projectline" style="margin-top: 0px;" ng-repeat="search in Model.osData.history.querystring track by $index" ui-sref="gl.results({queryID: {{$index+1}}, pageNo: '1'})">
                   <p>{{search}}</p>
                   <p></p>

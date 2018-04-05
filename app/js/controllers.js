@@ -55,6 +55,12 @@ GlaserApp
       $state.go('gl.results', {queryID: "1", pageNo: "1"});
     }
   }
+  $scope.searchEnter = function($event){
+    var keyCode = $event.which || $event.keyCode;
+    if (keyCode === 13) {
+        $scope.simpleSearch();
+    }
+  };
   $scope.advancedSearch = function (argument) {
     // body...
   }
