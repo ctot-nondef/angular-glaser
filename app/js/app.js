@@ -93,6 +93,15 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
             }
         }
     })
+    .state('gl.singlePrint',{
+        url: '/print/:refID',
+        views: {
+            'content@': {
+                templateUrl: 'partials/singlePrint.html',
+                controller: 'GlaserSinglePrint'
+            }
+        }
+    })
     .state('gl.fullImage',{
         url: '/img/:imgID',
         views: {

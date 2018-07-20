@@ -145,7 +145,7 @@ GlaserApp
   $scope.Manifest = [];
   $scope.references = [];
   $scope.hasTEI = function(){
-    if($scope.Manifest && $scope.Manifest[$stateParams.refID]) return true;
+    if($scope.Manifest && $scope.Manifest["adlib"+$stateParams.refID]) return true;
     else return false;
   }
   if($stateParams.refID) {
@@ -177,7 +177,6 @@ GlaserApp
         }
       }
       $scope.Model.SingleRecord = rec;
-      console.log(rec['production.place.uri']);
       if(rec['production.place.uri'].length > 0 && rec['production.place.uri'][0] != "") {
         var recID = rec['production.place.uri'][0];
         if(!GeoNamesServices.geocache[recID] || !GeoNamesServices.geocache[recID]['$$state'] ){
@@ -413,19 +412,16 @@ GlaserApp
     // squeeze selection
     $scope.selSite = function(id){
       $scope.id = id;
-      console.log(!$scope.currentLink);
       ExistService.getItem(id).then(function(res){
         $state.go('.',{id: id});
-        $scope.currentLink = $state.href("gl.singleRecord", {refID: $scope.id});
-        console.log(!$scope.currentLink);
+        $scope.currentLink = $state.href("gl.singleRecord", {refID: $scope.id.substr(5)});
         $scope.xmlstr = res;
       });
     }
   ////////////////////////////////////////////////////////////////////////////
   $scope.id = $stateParams.id;
-  console.log($stateParams, $scope.id);
   if(!$stateParams.id) $scope.currentLink = null;
-  else $scope.currentLink = $state.href("gl.singleRecord", {refID: $scope.id});
+  else $scope.currentLink = $state.href("gl.singleRecord", {refID: $scope.id.substr(5)});
   $scope.promise = ExistService.getPage();
   $scope.promise.then($scope.update);
   // $mdMedia quickfix
@@ -444,6 +440,65 @@ GlaserApp
     });
 	});
 })
+.controller('GlaserSinglePrint', ['$scope', '$stateParams', 'opacsearch','GeoNamesServices','leafletData', 'leafletBoundsHelpers','ExistService', function($scope, $stateParams, opacsearch, GeoNamesServices, leafletData, leafletBoundsHelpers, ExistService) {
+  $scope.Model = {refID: $stateParams.refID};
+  $scope.markers = [];
+  $scope.Manifest = [];
+  $scope.references = [];
+  if($stateParams.refID) {
+    opacsearch.getSingleRecordbyRef("archive", $stateParams.refID, []).then(function(res){
+      //splitting translation/transliteration by line,
+      //should be delivered by API this way in the next version
+      //--> to be xferred to exist API
+      var rec = res.data.adlibJSON.recordList.record[0];
+      if(res.data.adlibJSON.recordList.record[0]['inscription.translation']) {
+        rec['inscription.translation'] = rec['inscription.translation'][0].split(/\d\./);
+        rec['inscription.transliteration'] = rec['inscription.transliteration'][0].split(/\d\./);
+        if(rec['inscription.transliteration'].length > 1) {
+          rec['inscription.transliteration'].shift();
+          rec['inscription.translation'].shift();
+        }
+      }
+      //filtering out Zotero citations from the interpretation field
+      if(rec['inscription.interpretation'][0]){
+        var re = /(bib:[A-Z0-9]*)/g;
+        var matches = rec['inscription.interpretation'][0].match(re);
+        if(matches){
+          var i = 1;
+          matches = matches.filter( onlyUnique );
+          matches.forEach(function(r){
+            $scope.references.push(r.split(':')[1]);
+            rec['inscription.interpretation'][0] = rec['inscription.interpretation'][0].replace(r, '-> Reference '+i+'\n');
+            i++;
+          });
+        }
+      }
+      $scope.Model.SingleRecord = rec;
+      if(rec['production.place.uri'].length > 0 && rec['production.place.uri'][0] != "") {
+        var recID = rec['production.place.uri'][0];
+        if(!GeoNamesServices.geocache[recID] || !GeoNamesServices.geocache[recID]['$$state'] ){
+          var promise = GeoNamesServices.getByID(recID);
+          GeoNamesServices.addtoCache(recID, promise);
+        }
+        GeoNamesServices.geocache[recID].then(function(c){
+          $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":rec['production.place'][0], "id": recID};
+          leafletData.getMap('singlemap').then(function(map) {
+            map.invalidateSize();
+            map.panTo({"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng)});
+            map.setZoom(6);
+            $scope.markers[recID].focus = true;
+            window.setTimeout(function(){ window.print(); }, 1500);
+          });
+        })
+        .catch(function(error) {
+          console.log(error);
+          window.setTimeout(function(){ window.print(); }, 1500);
+        });
+      }
+      else {window.setTimeout(function(){ window.print(); }, 1000);}
+    });
+  }
+}])
 //******************* helpers ***************************************************
 //helper function for deduplication, this should go elsewhere, i smell scope soup
 function onlyUnique(value, index, self) {
