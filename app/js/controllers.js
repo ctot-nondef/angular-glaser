@@ -14,7 +14,7 @@ GlaserApp
   $scope.Model = {};
   $rootScope.loading.progress = true;
   opacsearch.updateSize("40");
-  opacsearch.getRecordsbyPointer('archive','7',[] ,'1','40').then(
+  opacsearch.getRecordsbyPointer('archive','1809',[] ,'1','40').then(
     function(res){
       var tiles = res.data.adlibJSON.recordList.record;
       $http.get('static/starttiles.json').then(function(ntiles){
