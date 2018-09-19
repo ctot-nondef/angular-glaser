@@ -421,7 +421,10 @@ GlaserApp
   ////////////////////////////////////////////////////////////////////////////
   $scope.id = $stateParams.id;
   if(!$stateParams.id) $scope.currentLink = null;
-  else $scope.currentLink = $state.href("gl.singleRecord", {refID: $scope.id.substr(5)});
+  else {
+    $scope.currentLink = $state.href("gl.singleRecord", {refID: $scope.id.substr(5)});
+    $scope.TEIlink = "https://id.acdh.oeaw.ac.at/glasersqueezes2015/rec"+ $scope.id.substr(5) +"/"+$scope.id +".xml?format=customTEI2HTML";
+  }
   $scope.promise = ExistService.getPage();
   $scope.promise.then($scope.update);
   // $mdMedia quickfix

@@ -5,6 +5,10 @@
       <md-icon>description</md-icon>
       Full record
     </md-button>
+    <md-button class="md-primary md-raised" ng-disabled='{{!TEIlink}}' aria-label="TEI encoded texts" ng-href='{{TEIlink}}'>
+      <md-icon>code</md-icon>
+      Original TEI XML
+    </md-button>
   </div>
   <teidoc class="maincard" source="{{xmlstr}}"></teidoc>
 </div>

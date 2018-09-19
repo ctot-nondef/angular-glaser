@@ -182,6 +182,15 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
             }
         }
     })
+    .state('gl.others',{
+        url: '/others',
+        views: {
+            'content@': {
+                templateUrl: 'partials/related.html',
+                controller: 'GlaserAbout'
+            }
+        }
+    })
     $locationProvider.html5Mode(true);
     $mdThemingProvider.theme('default')
         .primaryPalette('blue', {

@@ -38,5 +38,13 @@
 		"abstract":"",
 		"startpage":"gl.about",
 		"items":""
+	},
+	{
+		"caption":"Other Projects",
+		"arialabel":"",
+		"mdicon":"launch",
+		"abstract":"",
+		"startpage":"gl.others",
+		"items":""
 	}
 ]
