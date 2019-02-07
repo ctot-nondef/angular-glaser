@@ -36,7 +36,7 @@ GlaserApp
   opacsearch.getPointerList('archive','7').then(function(res){
     $scope.Model.total = res.data.adlibJSON.recordList.record[0]['hits'][0];
   });
-  opacsearch.getPointerList('archive','10').then(function(res){
+  opacsearch.getPointerList('archive','1000').then(function(res){
     $scope.Model.totalURI = res.data.adlibJSON.recordList.record[0]['hits'][0];
   });
   $scope.Model.osData = opacsearch;
@@ -208,7 +208,7 @@ GlaserApp
   });
   var m = "";
   $scope.Model.total = opacsearch.getPointerList('archive','7');
-  $scope.Model.totalURI = opacsearch.getRecordsbyPointer('archive','10', ['priref','production.place','production.place.lref','production.place.context','production.place.uri'], 1, 1000);
+  $scope.Model.totalURI = opacsearch.getRecordsbyPointer('archive','1000', ['priref','production.place','production.place.lref','production.place.context','production.place.uri'], 1, 1000);
   $scope.Model.totalURI.then(function(res){
     $rootScope.loading.progress = false;
     res.data.adlibJSON.recordList.record.forEach(function(record){
