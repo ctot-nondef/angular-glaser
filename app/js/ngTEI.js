@@ -13,7 +13,7 @@ ngTEI.service('TEI', function($http, $localStorage, $q, $log){
     load:{
       CharReplaceTable:'static/coderep.json',
       TEIConfigObject:'static/TEIconfig.json',
-      TEISpecObject:'http://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.json'
+      TEISpecObject:'http://glaser.acdh.oeaw.ac.at/p5subset.json'
     }
   }
   //init function, should be called before controller initialisation (resolve param in router!!)
