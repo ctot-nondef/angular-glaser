@@ -84,6 +84,15 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
             }
         }
     })
+    .state('gl.kwicresults',{
+        url: '/kwicresults/:querystring',
+        views: {
+            'content@': {
+                templateUrl: 'partials/KWICresult.html',
+                controller: 'GlaserKWICList'
+            }
+        }
+    })
     .state('gl.singleRecord',{
         url: '/rec/:refID',
         views: {

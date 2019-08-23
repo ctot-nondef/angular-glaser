@@ -1,0 +1,25 @@
+<div class="pagewrapper" layout="column" layout-align="start start" layout-padding>
+	<h2 class="md-display-1">Search Results</h2>
+	<md-table-pagination md-limit="Model.Pagesize" md-limit-options="[10, 20, 40, 100]" md-page="Model.Page" md-total="{{Model.Total}}" md-on-paginate="getPage" md-page-select></md-table-pagination>
+	<md-table-container>
+	  <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+	    <thead md-head md-order="" md-on-reorder="getNewOrder">
+	      <tr md-row>
+	        <th md-column md-order-by="title"><span>ID</span></th>
+	        <th md-column md-order-by="inscription.language"><span>Match</span></th>
+	      </tr>
+	    </thead>
+	    <tbody md-body>
+	      <tr md-row
+	      		md-select="squeeze"
+	      		md-select-id="{{squeeze.id}}"
+	      		ng-repeat="squeeze in Model.Result"
+	      		ui-sref="gl.singleRecord({refID: {{squeeze.id.substr(5, 10)}}})"
+	      		class="vspinentry" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50+'s','overflow':'hidden'}" >
+	        <td md-cell>{{squeeze.id}}</td>
+			  <td md-cell><span>{{squeeze.hl.p.span[0]['#text']}}</span><span><b>{{squeeze.hl.p.span[1]['#text']}}</b></span><span>{{squeeze.hl.p.span[2]['#text']}}</span></td>
+	      </tr>
+	    </tbody>
+	  </table>
+	</md-table-container>
+</div>

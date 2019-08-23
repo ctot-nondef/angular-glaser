@@ -54,11 +54,20 @@ GlaserApp
       opacsearch.updateHistory($scope.Model.keyword, $scope.Model.Query, undefined, undefined);
       $state.go('gl.results', {queryID: "1", pageNo: "1"});
     }
-  }
+  };
+  $scope.KWICSearch = function () {
+    $state.go('gl.kwicresults', {querystring: $scope.Model.kwickeyword});
+  };
   $scope.searchEnter = function($event){
     var keyCode = $event.which || $event.keyCode;
     if (keyCode === 13) {
         $scope.simpleSearch();
+    }
+  };
+  $scope.KWICsearchEnter = function($event){
+    var keyCode = $event.which || $event.keyCode;
+    if (keyCode === 13) {
+      $scope.KWICSearch();
     }
   };
   $scope.advancedSearch = function (argument) {
@@ -138,6 +147,27 @@ GlaserApp
     opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
   }
   $scope.promise.then($scope.update);
+}])
+.controller('GlaserKWICList',['$scope','$http', '$state', '$stateParams', 'opacsearch', function($scope, $http, $state, $stateParams, opacsearch){
+  //********* DECLARATIVE PART *********************************************
+  $scope.Model = {};
+  $scope.selected = [];
+  $scope.Model.Pagesize = 100;
+  $scope.Model.Page = 1;
+  //********* END OF DECLARATIVE PART **************************************
+  //************************************************************************
+  // if the url is fucked up, go back to search
+  if (!$stateParams.querystring) $state.go('gl.search');
+  else {
+    $http.get('https://konde-existdb.minerva.arz.oeaw.ac.at/exist/restxq/glaser-tei/api/kwic/collections/done?q=' + $stateParams.querystring).then(
+        function(res){
+          $scope.Model.Result = res.data.hits;
+          $scope.Model.Pagesize = res.data.amount;
+        },
+        function(err){ console.log('err: ', err); }
+    );
+    console.log($stateParams.querystring);
+  }
 }])
 .controller('GlaserSingleRecord', ['$scope', '$stateParams', 'opacsearch','GeoNamesServices','leafletData', 'leafletBoundsHelpers','ExistService', function($scope, $stateParams, opacsearch, GeoNamesServices, leafletData, leafletBoundsHelpers, ExistService) {
   $scope.Model = {refID: $stateParams.refID};
