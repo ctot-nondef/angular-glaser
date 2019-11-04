@@ -195,7 +195,7 @@ GlaserApp
     if (!$stateParams.did) $state.go('gl.diaries');
     console.log($stateParams.did);
     var myUV;
-    if(UV) {
+    if(typeof UV !== "undefined" )  {
       myUV = createUV('#uv', {
         iiifResourceUri: `/static/manifest_${$stateParams.did}.json`
       }, new UV.URLDataProvider());
