@@ -15,7 +15,7 @@
                 md-select="squeeze"
                 md-select-id="{{squeeze.priref[0]}}"
                 ng-repeat="squeeze in Model.Result"
-                ui-sref="gl.diariesingle({did:{{squeeze.object_number[0]}}})"
+                ui-sref="{{'gl.diariesingle({did: \''+squeeze.object_number[0]+'\'})'}}"
                 class="vspinentry" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50+'s','overflow':'hidden'}" >
                 <td md-cell>{{squeeze.title[0]}}</td>
                 <td md-cell>{{squeeze.object_number[0]}}</td>
