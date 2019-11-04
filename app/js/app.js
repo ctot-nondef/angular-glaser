@@ -84,6 +84,24 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
             }
         }
     })
+    .state('gl.diaries',{
+        url: '/diaries',
+        views: {
+            'content@': {
+                templateUrl: 'partials/diaries.html',
+                controller: 'GlaserDiaryList'
+            }
+        }
+    })
+    .state('gl.diariesingle',{
+        url: '/diariesingle/:did',
+        views: {
+            'content@': {
+                templateUrl: 'partials/diarysingle.html',
+                controller: 'GlaserDiarySingle'
+            }
+        }
+    })
     .state('gl.kwicresults',{
         url: '/kwicresults/:querystring',
         views: {

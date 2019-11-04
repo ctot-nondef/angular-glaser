@@ -1,0 +1,43 @@
+<div class="pagewrapper" layout="column" layout-align="start start" layout-padding>
+    <h2 class="md-display-1">Diaries</h2>
+    <md-table-container>
+        <table md-table md-progress="promise">
+            <thead md-head >
+            <tr md-row>
+                <th md-column><span>Title</span></th>
+                <th md-column ><span>ID</span></th>
+                <th md-column ><span>Production Dates</span></th>
+                <th md-column ><span>Actions</span></th>
+            </tr>
+            </thead>
+            <tbody md-body>
+            <tr md-row
+                md-select="squeeze"
+                md-select-id="{{squeeze.priref[0]}}"
+                ng-repeat="squeeze in Model.Result"
+                ui-sref="gl.diariesingle({did:{{squeeze.object_number[0]}}})"
+                class="vspinentry" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50+'s','overflow':'hidden'}" >
+                <td md-cell>{{squeeze.title[0]}}</td>
+                <td md-cell>{{squeeze.object_number[0]}}</td>
+                <td md-cell>{{squeeze['production.date.start'][0]}} - {{squeeze['production.date.end'][0]}}</td>
+                <td md-cell>
+                    <div layout="row" layout-align="end" ng-if="!squeeze.position" ng-click="$event.stopPropagation()">
+                        <md-button class="md-icon-button" aria-label="Details" ui-sref="{{'gl.diariesingle({did: \''+squeeze.object_number[0]+'\'})'}}">
+                            <md-icon md-colors="{color: 'primary-800'}" >library_books</md-icon>
+                            <md-tooltip md-direction="bottom">
+                                Details
+                            </md-tooltip>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="Download Scan" href="{{'http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value=' + squeeze.digital_reference[0]}}" target="_blank" >
+                            <md-icon md-colors="{color: 'primary-800'}" >file_download</md-icon>
+                            <md-tooltip md-direction="bottom">
+                                Download Diary
+                            </md-tooltip>
+                        </md-button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </md-table-container>
+</div>

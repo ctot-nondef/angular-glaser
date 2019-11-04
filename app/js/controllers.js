@@ -50,7 +50,7 @@ GlaserApp
       $scope.Model.keywords.forEach(function(entry){
         $scope.Model.Query.push(JSON.parse('{"s1":"'+entry+'"}'));
       });
-      $scope.Model.Query.push(JSON.parse('{"part_of_reference":"*BA-3-27-A*"}'));
+      $scope.Model.Query.push(JSON.parse('{"part_of_reference":"*BA-3-27*"}'));
       opacsearch.updateHistory($scope.Model.keyword, $scope.Model.Query, undefined, undefined);
       $state.go('gl.results', {queryID: "1", pageNo: "1"});
     }
@@ -168,6 +168,43 @@ GlaserApp
     );
     console.log($stateParams.querystring);
   }
+}])
+.controller('GlaserDiaryList',['$scope','$http', '$state', '$stateParams', 'opacsearch', function($scope, $http, $state, $stateParams, opacsearch){
+  //********* DECLARATIVE PART *********************************************
+  $scope.Model = {};
+  $scope.selected = [];
+  $scope.Model.Pagesize = 100;
+  $scope.Model.Page = 1;
+  //********* END OF DECLARATIVE PART **************************************
+  //************************************************************************
+  opacsearch.getRecordsbyPointer('archive','1001',[] ,'1','40').then(function(res){
+    $scope.Model.Total = res.data.adlibJSON.diagnostic.hits;
+    $scope.Model.Pagesize = opacsearch.pagesize;
+    $scope.Model.Result = res.data.adlibJSON.recordList.record;
+  });
+}])
+.controller('GlaserDiarySingle',['$scope','$http', '$state', '$stateParams', 'opacsearch', function($scope, $http, $state, $stateParams, opacsearch){
+  //********* DECLARATIVE PART *********************************************
+  $scope.Model = {};
+  $scope.selected = [];
+  $scope.Model.Pagesize = 100;
+  $scope.Model.Page = 1;
+  //********* END OF DECLARATIVE PART **************************************
+  //************************************************************************
+  // if the url is fucked up, go back to search
+    if (!$stateParams.did) $state.go('gl.diaries');
+    console.log($stateParams.did);
+    var myUV;
+    if(UV) {
+      myUV = createUV('#uv', {
+        iiifResourceUri: `/static/manifest_${$stateParams.did}.json`
+      }, new UV.URLDataProvider());
+    }
+    window.addEventListener('uvLoaded', function (e) {
+        myUV = createUV('#uv', {
+            iiifResourceUri: `/static/manifest_${$stateParams.did}.json`
+        }, new UV.URLDataProvider());
+    }, false);
 }])
 .controller('GlaserSingleRecord', ['$scope', '$stateParams', 'opacsearch','GeoNamesServices','leafletData', 'leafletBoundsHelpers','ExistService', function($scope, $stateParams, opacsearch, GeoNamesServices, leafletData, leafletBoundsHelpers, ExistService) {
   $scope.Model = {refID: $stateParams.refID};

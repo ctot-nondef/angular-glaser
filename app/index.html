@@ -50,6 +50,10 @@
   <script type="text/javascript" src="nonbower_components/minimal/js/trackball_pantilt.js"></script>
   <!--UTILITY-->
   <script type="text/javascript" src="nonbower_components/minimal/js/init.js"></script>
+  <link rel="stylesheet" type="text/css" href="app/uv/uv.css">
+  <script src="/uv/lib/offline.js"></script>
+  <script src="/uv/helpers.js"></script>
+  <script src="/uv/uv.js"></script>
 </head>
 <body style="display: flex;">
       <div ui-view="navbar" class="ncontainer"></div>
@@ -80,4 +84,5 @@
     else if(action=='full'  || action=='full_on') fullscreenSwitch();
   }
 </script>
+
 </html>
