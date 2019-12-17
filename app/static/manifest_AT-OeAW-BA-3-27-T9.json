@@ -1,0 +1,96 @@
+{
+  "viewingDirection": "",
+  "metadata": [],
+  "@type": "sc:Manifest",
+  "attribution": "",
+  "structures": [
+    {
+      "canvases": [
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0001",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0002"
+      ],
+      "@type": "sc:Range",
+      "@id": "http://glaser.acdh.oeaw.ac.at/iiif/range/AT-OeAW-BA-3-27-T9",
+      "label": "AT-OeAW-BA-3-27-T9"
+    }
+  ],
+  "description": "",
+  "logo": "",
+  "@id": "",
+  "label": "",
+  "sequences": [
+    {
+      "canvases": [
+        {
+          "@type": "sc:Canvas",
+          "width": 4062,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0001",
+          "label": "Umschlag",
+          "height": 3242,
+          "images": [
+            {
+              "resource": {
+                "@type": "dctypes:Image",
+                "service": {
+                  "profile": "http://iiif.io/api/image/2/level1.json",
+                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T9_MASTER_0001",
+                  "@context": "http://iiif.io/api/image/2/context.json"
+                },
+                "format": "image/jpg",
+                "width": 4062,
+                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T9_MASTER_0001",
+                "height": 3242
+              },
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0001"
+            }
+          ],
+          "metadata": [
+            {
+              "label": "description",
+              "value": "IX Proben der Dialekte von Mahrâ, Ẓafar und Soḳoṭrâ aufgenommen in den Jahren 1888 - 1894 von Eduard Glaser (Blatt 1-186)"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 4050,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0002",
+          "label": "Umschlag",
+          "height": 3234,
+          "images": [
+            {
+              "resource": {
+                "@type": "dctypes:Image",
+                "service": {
+                  "profile": "http://iiif.io/api/image/2/level1.json",
+                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T9_MASTER_0002",
+                  "@context": "http://iiif.io/api/image/2/context.json"
+                },
+                "format": "image/jpg",
+                "width": 4050,
+                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T9_MASTER_0002",
+                "height": 3234
+              },
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0002"
+            }
+          ],
+          "metadata": [
+            {
+              "label": "description",
+              "value": "Note by Maria Höfner: \"A 1001 siehe Inventarzettel\". "
+            }
+          ]
+        }
+      ],
+      "@type": "sc:Sequence",
+      "@id": "http://glaser.acdh.oeaw.ac.at/iiif/sequence/AT-OeAW-BA-3-27-T9",
+      "label": "AT-OeAW-BA-3-27-T9"
+    }
+  ],
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "seeAlso": ""
+}

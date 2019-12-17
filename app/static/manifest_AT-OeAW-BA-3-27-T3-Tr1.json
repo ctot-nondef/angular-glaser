@@ -1,0 +1,1342 @@
+{
+  "viewingDirection": "",
+  "metadata": [],
+  "@type": "sc:Manifest",
+  "attribution": "",
+  "structures": [
+    {
+      "canvases": [
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0001",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0002",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0003",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0004",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0005",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0006",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0007",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0008",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0009",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0010",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0011",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0012",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0013",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0014",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0015",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0016",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0017",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0018",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0019",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0020",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0021",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0022",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0023",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0024",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0025",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0026",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0027",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0028",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0029",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0030",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0031",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0032",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0033",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0034",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0035",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0036",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0037",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0038",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0039",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0040",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0041",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0042",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0043",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0044",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0045",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0046",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0047",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0048",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0049",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0050",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0051",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0052",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0053",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0054",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0055",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0056",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0057",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0058",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0059",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0060",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0061",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0062",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0063",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0064",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0065",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0066",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0067",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0068",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0069",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0070",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0071",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0072",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0073",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0074",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0075",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0076",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0077",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0078",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0079",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0080",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0081",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0082",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0083",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0084",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0085",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0086",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0087",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0088",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0089",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0090",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0091",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0092",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0093",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0094",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0095",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0096",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0097",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0098",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0099",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0100",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0101",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0102",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0103",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0104",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0105",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0106",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0107",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0108",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0109",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0110",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0111",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0112",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0113",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0114",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0115",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0116",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0117",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0118",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0119",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0120",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0121",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0122",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0123",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0124",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0125",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0126",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0127",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0128",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0129",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0130",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0131",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0132",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0133",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0134",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0135",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0136",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0137",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0138",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0139",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0140",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0141",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0142",
+        "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0143"
+      ],
+      "@type": "sc:Range",
+      "@id": "http://glaser.acdh.oeaw.ac.at/iiif/range/AT-OeAW-BA-3-27-T3-Tr1",
+      "label": "AT-OeAW-BA-3-27-T3-Tr1"
+    }
+  ],
+  "description": "",
+  "logo": "",
+  "@id": "",
+  "label": "",
+  "sequences": [
+    {
+      "canvases": [
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0001",
+          "label": "1 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "maschinengeschrieben"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0002",
+          "label": "2 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0003",
+          "label": "3 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0004",
+          "label": "4 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0005",
+          "label": "5 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0006",
+          "label": "6 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0007",
+          "label": "7 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0008",
+          "label": "8 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0009",
+          "label": "9 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0010",
+          "label": "10 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0011",
+          "label": "11 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0012",
+          "label": "12 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0013",
+          "label": "13 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0014",
+          "label": "14 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0015",
+          "label": "15 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0016",
+          "label": "16 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0017",
+          "label": "17 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0018",
+          "label": "18 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0019",
+          "label": "19 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0020",
+          "label": "20 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0021",
+          "label": "21 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0022",
+          "label": "22 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0023",
+          "label": "23 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0024",
+          "label": "24 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0025",
+          "label": "25 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0026",
+          "label": "26 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0027",
+          "label": "27 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0028",
+          "label": "28 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0029",
+          "label": "29 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0030",
+          "label": "30 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0031",
+          "label": "31 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0032",
+          "label": "32 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0033",
+          "label": "33 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0034",
+          "label": "34 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0035",
+          "label": "35 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0036",
+          "label": "36 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0037",
+          "label": "37 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0038",
+          "label": "38 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0039",
+          "label": "39 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0040",
+          "label": "40 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0041",
+          "label": "41 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0042",
+          "label": "42 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0043",
+          "label": "43 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0044",
+          "label": "44 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0045",
+          "label": "45 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0046",
+          "label": "46 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0047",
+          "label": "47 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0048",
+          "label": "48 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0049",
+          "label": "49 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0050",
+          "label": "50 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0051",
+          "label": "51 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0052",
+          "label": "52 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0053",
+          "label": "53 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0054",
+          "label": "54 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0055",
+          "label": "55 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0056",
+          "label": "56 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0057",
+          "label": "57 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0058",
+          "label": "58 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0059",
+          "label": "59 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0060",
+          "label": "60 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0061",
+          "label": "61 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0062",
+          "label": "62 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0063",
+          "label": "63 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0064",
+          "label": "64 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0065",
+          "label": "65 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0066",
+          "label": "66 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0067",
+          "label": "67 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0068",
+          "label": "68 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0069",
+          "label": "69 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0070",
+          "label": "70 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0071",
+          "label": "71 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0072",
+          "label": "72 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0073",
+          "label": "73 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0074",
+          "label": "74 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0075",
+          "label": "75 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0076",
+          "label": "76 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0077",
+          "label": "77 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0078",
+          "label": "78 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0079",
+          "label": "79 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0080",
+          "label": "80 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0081",
+          "label": "81 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0082",
+          "label": "82 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0083",
+          "label": "83 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0084",
+          "label": "84 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0085",
+          "label": "85 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0086",
+          "label": "86 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0087",
+          "label": "87 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0088",
+          "label": "88 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0089",
+          "label": "89 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0090",
+          "label": "90 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0091",
+          "label": "91 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0092",
+          "label": "92 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0093",
+          "label": "93 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0094",
+          "label": "94 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0095",
+          "label": "95 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0096",
+          "label": "96 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0097",
+          "label": "97 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0098",
+          "label": "98 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "Gl. 17-36; Gl 45ff."
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0099",
+          "label": "99 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "detto"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0100",
+          "label": "100 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "GL 28, 22,18,29"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0101",
+          "label": "101 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0102",
+          "label": "102 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "GL 37, 38"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0103",
+          "label": "103 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0104",
+          "label": "104 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "zu drei Inschriften"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0105",
+          "label": "105 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "GL 37-38"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0106",
+          "label": "106 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0107",
+          "label": "107 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": " zu Gl 40,41"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0108",
+          "label": "108 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "cf. München 17-36, zu wadi ###"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0109",
+          "label": "109 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0110",
+          "label": "110 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0111",
+          "label": "111 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0112",
+          "label": "112 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0113",
+          "label": "113 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "Teil von GL 65"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0114",
+          "label": "114 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "dazu gehört GL 63, 64, 63-85"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0115",
+          "label": "115 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "Schrift wie GL 68"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0116",
+          "label": "116 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "Schrift wie GL 68,69"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0117",
+          "label": "117 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0118",
+          "label": "118 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "wie GL 80"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0119",
+          "label": "119 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0120",
+          "label": "120 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "GL 93, 94"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0121",
+          "label": "121 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "GL 94, 98"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0122",
+          "label": "122 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0123",
+          "label": "123 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "GL 102"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0124",
+          "label": "124 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "zu den Felsinschriften"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0125",
+          "label": "125 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0126",
+          "label": "126 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0127",
+          "label": "127 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0128",
+          "label": "128 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0129",
+          "label": "129 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "beginnt mit GL 1636, vorher reichten sie bis 1630"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0130",
+          "label": "130 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0131",
+          "label": "131 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "zu GL 1644, 1646"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0132",
+          "label": "132 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "Felsinschrift"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0133",
+          "label": "133 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0134",
+          "label": "134 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "zu GL 1656-1659 "
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0135",
+          "label": "135 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "zu GL 1662, 1661,01083"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0136",
+          "label": "136 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0137",
+          "label": "137 - image not found",
+          "height": 0
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0138",
+          "label": "138 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "GL 1638"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0139",
+          "label": "139 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "Wiener Steine und Bronzen"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0140",
+          "label": "140 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "zu GL 1801"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0141",
+          "label": "141 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "griechische Münzen (Athene und Eule)"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0142",
+          "label": "142 - image not found",
+          "height": 0,
+          "metadata": [
+            {
+              "label": "description",
+              "value": "griechische Münzen (Athene und Eule)"
+            }
+          ]
+        },
+        {
+          "@type": "sc:Canvas",
+          "width": 0,
+          "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0143",
+          "label": "143 - image not found",
+          "height": 0
+        }
+      ],
+      "@type": "sc:Sequence",
+      "@id": "http://glaser.acdh.oeaw.ac.at/iiif/sequence/AT-OeAW-BA-3-27-T3-Tr1",
+      "label": "AT-OeAW-BA-3-27-T3-Tr1"
+    }
+  ],
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "seeAlso": ""
+}
