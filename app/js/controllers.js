@@ -230,7 +230,7 @@ GlaserApp
         }
       }
       //filtering out Zotero citations from the interpretation field
-      if(rec['inscription.interpretation'][0]){
+      if(rec['inscription.interpretation'] && rec['inscription.interpretation'][0]){
         var re = /(bib:[A-Z0-9]*)/g;
         var matches = rec['inscription.interpretation'][0].match(re);
         if(matches){
