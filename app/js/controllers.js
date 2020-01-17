@@ -211,6 +211,7 @@ GlaserApp
   $scope.markers = [];
   $scope.Manifest = [];
   $scope.references = [];
+  $scope.activeTab = 0;
   $scope.hasTEI = function(){
     if($scope.Manifest && $scope.Manifest["adlib"+$stateParams.refID]) return true;
     else return false;
@@ -244,6 +245,7 @@ GlaserApp
         }
       }
       $scope.Model.SingleRecord = rec;
+      if($scope.Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A') $scope.activeTab = 1;
       if(rec['production.place.uri'].length > 0 && rec['production.place.uri'][0] != "") {
         var recID = rec['production.place.uri'][0];
         if(!GeoNamesServices.geocache[recID] || !GeoNamesServices.geocache[recID]['$$state'] ){
