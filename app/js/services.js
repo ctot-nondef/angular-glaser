@@ -2390,7 +2390,6 @@ const sites  = {
 };
 
 var AdlibServices = angular.module('AdlibServices', ['ngStorage']);
-
 AdlibServices.service('opacsearch', ['$http', '$localStorage' ,function($http,$localStorage){
 	if(!$localStorage[Config.localStorage]) $localStorage[Config.localStorage] = {};
 	if($localStorage[Config.localStorage]['history']) this.history = $localStorage[Config.localStorage]['history'];
@@ -2499,7 +2498,6 @@ AdlibServices.service('opacsearch', ['$http', '$localStorage' ,function($http,$l
 			this.history.result = [];
 		}
 }]);
-
 AdlibServices.service('contentrtrvl', ['$http', '$q', function($http, $q){
 	var getImage = function(id,width,height,scalemode,fillmode){console.log('getFullList Query: ', database);
 		if(database) var promise = $http.get(Config.baseURL+"database="+database+"&search=all&output=JSON&limit=1000");
@@ -2517,7 +2515,6 @@ AdlibServices.service('contentrtrvl', ['$http', '$q', function($http, $q){
 ///////////////// GeoNames Service Module
 //TODO: move to separate file
 var GeoNamesServices = angular.module('GeoNamesServices', ['ngStorage']);
-
 GeoNamesServices.service('GeoNamesServices', ['$http', '$localStorage', '$q', function($http, $localStorage, $q){
 	const staticcache = sites;
 	if(!$localStorage[Config.localStorage]) $localStorage[Config.localStorage] = {};

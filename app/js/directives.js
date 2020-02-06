@@ -89,8 +89,9 @@ angular.module('imageViewer',[]).directive('imageViewer',function($sce){
                     <md-button id="carregar" class="md-icon-button md-primary" ng-disabled="noImage"><md-icon>undo</md-icon></md-button>\
                   </div>\
 				          <div id="image-zoom" style="height: 100%; width: 100%;overflow: hidden;">\
-				          <h2 class="text-center text-danger" id="error-message" style="border:1px solid #000;display:none;padding:20px">Image Not Available</h2>\
-                  <canvas id="canvas" data-girar="0" style="z-index:555555;cursor:grab; height: calc(100% - 10px); width: calc(100% - 10px);padding: 5px;">sdsd</canvas>\
+				          <h2 class="text-center" id="error-message" style="border:1px solid #000;display:none;padding:20px">Image Not Available</h2>\
+				          <h2 class="text-center text-danger" id="load-message" style="border:1px solid #000;padding:20px">Retrieving Image</h2>\
+                  <canvas id="canvas" data-girar="0" style="z-index:555555;cursor:grab; height: calc(100% - 10px); width: calc(100% - 10px);padding: 5px;"></canvas>\
                   <img ng-src="{{image}}" id="image" style="display:none" /> </div>',
     link: function(scope,element,attr){
       scope.image = attr.path;
@@ -102,7 +103,7 @@ angular.module('imageViewer',[]).directive('imageViewer',function($sce){
   		var element = canvas.getContext("2d");
   		var angleInDegrees = 0;
   		var zoomDelta = 0.1;
-  		var currentScale = 1;
+  		var currentScale = 0.3;
   		var currentAngle = 0;
   		var canvasWidth = 600;
   		var novosDadosTRBL;
@@ -113,39 +114,40 @@ angular.module('imageViewer',[]).directive('imageViewer',function($sce){
   		scope.flag=1;
 
 
-
-
   		//set the width of the canvas
   		setTimeout(function(){
   			canvas.width = angular.element('#image-zoom').width();
-        canvas.height = angular.element('#image-zoom').height();
+        	canvas.height = angular.element('#image-zoom').height();
 
   			//append the image in canvas
   			document.getElementById('carregar').click();
+
   		},0);
 
-  		//method to reset the image to its original position
-  		angular.element('#carregar').click(function () {
+		angular.element('#image')
+		.on('load',() => {
+			angular.element('#load-message').hide();
+			console.log('load', currentScale);
+			resetImage();
+			currentScale = 0.3;
+			drawImage();
+		})
+		//if the image is not loaded
+		.on('error', function() {
+			//hide the canvas
+			angular.element('#canvas').hide();
 
-  			//check the image load
-  			angular.element('#image').on('load',resetImage())
+			//disable the buttons
+			scope.noImage = true;
 
-  			//if the image is not loaded
-  			.on('error', function() {
-  				//hide the canvas
-  				angular.element('#canvas').hide();
-
-  				//disable the buttons
-  				scope.noImage = true;
-
-  				//display the image not loaded text
-  				angular.element('#error-message').show();
-  				console.log("error loading image"); });
-
-  		});
+			//display the image not loaded text
+			angular.element('#error-message').show();
+			console.log("error loading image");
+		});
 
   		//method to reset the image
   		function resetImage(){
+  				console.log('reset-load');
   				//load the  image in canvas if the image is loaded successfully
   				image = document.getElementById('image');
   				element = canvas.getContext("2d");
@@ -191,6 +193,7 @@ angular.module('imageViewer',[]).directive('imageViewer',function($sce){
   		//method to zoom in the image
   		angular.element('#zoomIn').click(function () {
   			currentScale += zoomDelta;
+  			console.log(currentScale);
   			drawImage();
   		});
 
