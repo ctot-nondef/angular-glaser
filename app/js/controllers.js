@@ -15,9 +15,9 @@ GlaserApp
   $rootScope.loading.progress = true;
   opacsearch.updateSize("40");
   opacsearch.getRecordsbyPointer('archive','1809',[] ,'1','40').then(
-    function(res){
+    (res) => {
       var tiles = res.data.adlibJSON.recordList.record;
-      $http.get('static/starttiles.json').then(function(ntiles){
+      $http.get('static/starttiles.json').then((ntiles) => {
         for (var tile in ntiles.data) {
           console.log(ntiles.data[tile]);
           tiles[ntiles.data[tile].position] = ntiles.data[tile];
@@ -48,7 +48,7 @@ GlaserApp
     if ($scope.Model.keyword) {
       $scope.Model.keywords = $scope.Model.keyword.split(" ");
       $scope.Model.keywords.forEach(function(entry){
-        $scope.Model.Query.push(JSON.parse('{"s1":"'+entry+'"}'));
+        $scope.Model.Query.push(JSON.parse('{"s1":"'+entry+'*"}'));
       });
       $scope.Model.Query.push(JSON.parse('{"part_of_reference":"*BA-3-27*"}'));
       opacsearch.updateHistory($scope.Model.keyword, $scope.Model.Query, undefined, undefined);
@@ -273,52 +273,92 @@ GlaserApp
     Model: {},
     markers: {},
     ssite:"",
-    activeTab:0
+    activeTab:0,
+    allsites: {}
   });
   var m = "";
   $scope.Model.total = opacsearch.getPointerList('archive','7');
-  $scope.Model.totalURI = opacsearch.getRecordsbyPointer('archive','1000', ['priref','production.place','production.place.lref','production.place.context','production.place.uri'], 1, 1000);
+  $scope.Model.totalURI = opacsearch.getRecordsbyPointer('archive','10004', ['priref','production.place','production.place.lref','production.place.context','production.place.uri'], 1, 1000);
   $scope.Model.totalURI.then(function(res){
     $rootScope.loading.progress = false;
     res.data.adlibJSON.recordList.record.forEach(function(record){
       var recID = record['production.place.uri'][0];
-      if(!GeoNamesServices.geocache[recID] || !GeoNamesServices.geocache[recID]['$$state'] ){
+      if(!GeoNamesServices.staticcache[recID] && (!GeoNamesServices.geocache[recID] || !GeoNamesServices.geocache[recID]['$$state'])){
         var promise = GeoNamesServices.getByID(recID);
         GeoNamesServices.addtoCache(recID, promise);
       }
-      GeoNamesServices.geocache[recID].then(function(c){
-        if(!$scope.markers[recID]){
-          $scope.markers[recID] = {"lat":parseFloat(c.data.lat), "lng":parseFloat(c.data.lng), "message":record['production.place'][0], "id": recID};
-        }
-        if($stateParams.placeID && $scope.markers[$stateParams.placeID] && m == "") {
-          m = leafletData.getMap('mainmap').then(function(map) {
-            $scope.ssite = $stateParams.placeID;
-            $scope.selSite($stateParams.placeID);
-            map.invalidateSize();
-            map.panTo({"lat":parseFloat('14.5'), "lng":parseFloat('45.5')});
-            map.setZoom(8);
-          });
-          $scope.$on('leafletDirectiveMarker.mainmap.click', function(event, args){
-            $scope.selSite(args.modelName);
-          });
-        }
-        else if($stateParams.placeID == 0 && m == ""){
-          m = leafletData.getMap('mainmap').then(function(map) {
-            map.invalidateSize();
-            map.panTo({"lat":parseFloat('14.5'), "lng":parseFloat('45.5')});
-            map.setZoom(8);
-          });
-          $scope.$on('leafletDirectiveMarker.mainmap.click', function(event, args){
-            $scope.selSite(args.modelName);
-          });
-        }
-      });
+      if(GeoNamesServices.staticcache[recID]) {
+          if (!$scope.markers[recID]) {
+            $scope.markers[recID] = {
+              "lat": parseFloat(GeoNamesServices.staticcache[recID].lat),
+              "lng": parseFloat(GeoNamesServices.staticcache[recID].lng),
+              "message": record['production.place'][0],
+              "id": recID
+            };
+          }
+          if ($stateParams.placeID && $scope.markers[$stateParams.placeID] && m == "") {
+            m = leafletData.getMap('mainmap').then(function (map) {
+              $scope.ssite = $stateParams.placeID;
+              $scope.selSite($stateParams.placeID);
+              map.invalidateSize();
+              map.panTo({"lat": parseFloat('14.5'), "lng": parseFloat('45.5')});
+              map.setZoom(8);
+            });
+            $scope.$on('leafletDirectiveMarker.mainmap.click', function (event, args) {
+              $scope.selSite(args.modelName);
+            });
+          } else if ($stateParams.placeID == 0 && m == "") {
+            m = leafletData.getMap('mainmap').then(function (map) {
+              map.invalidateSize();
+              map.panTo({"lat": parseFloat('14.5'), "lng": parseFloat('45.5')});
+              map.setZoom(8);
+            });
+            $scope.$on('leafletDirectiveMarker.mainmap.click', function (event, args) {
+              $scope.selSite(args.modelName);
+            });
+          }
+      }
+      if(!GeoNamesServices.staticcache[recID] && GeoNamesServices.geocache[recID]) {
+        GeoNamesServices.geocache[recID].then(function (c) {
+          if (!$scope.markers[recID]) {
+            $scope.markers[recID] = {
+              "lat": parseFloat(c.data.lat),
+              "lng": parseFloat(c.data.lng),
+              "message": record['production.place'][0],
+              "id": recID
+            };
+            $scope.allsites[recID] = c.data;
+          }
+          if ($stateParams.placeID && $scope.markers[$stateParams.placeID] && m == "") {
+            m = leafletData.getMap('mainmap').then(function (map) {
+              $scope.ssite = $stateParams.placeID;
+              $scope.selSite($stateParams.placeID);
+              map.invalidateSize();
+              map.panTo({"lat": parseFloat('14.5'), "lng": parseFloat('45.5')});
+              map.setZoom(8);
+            });
+            $scope.$on('leafletDirectiveMarker.mainmap.click', function (event, args) {
+              $scope.selSite(args.modelName);
+            });
+          } else if ($stateParams.placeID == 0 && m == "") {
+            m = leafletData.getMap('mainmap').then(function (map) {
+              map.invalidateSize();
+              map.panTo({"lat": parseFloat('14.5'), "lng": parseFloat('45.5')});
+              map.setZoom(8);
+            });
+            $scope.$on('leafletDirectiveMarker.mainmap.click', function (event, args) {
+              $scope.selSite(args.modelName);
+              console.log(JSON.stringify($scope.allsites));
+            });
+          }
+        });
+      }
     });
   });
   $scope.selSite = function(site){
     if($scope.ssite) $scope.markers[$scope.ssite].focus = false;
     $state.go('gl.map',{placeID: site});
-    $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', [{"production.place":$scope.markers[site].message},{"part_of_reference":"*BA-3-27-A*"}],"AND",undefined,[],1,100).then($scope.update);
+    $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', [{"production.place":$scope.markers[site].message},{"part_of_reference":"*BA-3-27-*"}],"AND",undefined,[],1,100).then($scope.update);
     $scope.markers[site].focus = true;
     $scope.activeTab = 1;
     $scope.ssite = site;
@@ -431,7 +471,7 @@ GlaserApp
       $scope.Model.SingleRecord = res;
       console.log($scope.Model.SingleRecord);
     });
-    $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', [{"s1":"[bib:"+$stateParams.key+"]"},{"part_of_reference":"*BA-3-27-A*"}],"AND",undefined,[],1,100).then($scope.update);
+    $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', [{"s1":"[bib:"+$stateParams.key+"]*"},{"part_of_reference":"*BA-3-27-*"}],"AND",undefined,[],1,100).then($scope.update);
   }
 }])
 .controller("BibByPath", function($scope, $attrs, ZoteroService) {

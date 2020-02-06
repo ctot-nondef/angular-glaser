@@ -11,18 +11,18 @@
           </md-input-container>
           <md-button class="md-raised md-warn" ng-click="simpleSearch()">Submit</md-button>
       </div>
-  </md-content>
-      <md-content layout-padding>
-          <div>
-              <h2 class="md-display-1">KWIC Search</h2>
-              <div><span>Search the Glaser Squeeze Transcriptions for a sequence of keywords. </div>
-              <md-input-container class="md-block" >
-                  <label>Search Keyword(s)</label>
-                  <input ng-model="Model.kwickeyword" ng-keypress="KWICsearchEnter($event)">
-              </md-input-container>
-              <md-button class="md-raised md-warn" ng-click="KWICSearch()">Submit</md-button>
-          </div>
-      </md-content>
+    </md-content>
+    <md-content layout-padding>
+      <div>
+        <h2 class="md-display-1">KWIC Search</h2>
+        <div><span>Search the Glaser Squeeze Transcriptions for a sequence of keywords.</div>
+        <md-input-container class="md-block">
+          <label>Search Keyword(s)</label>
+          <input ng-model="Model.kwickeyword" ng-keypress="KWICsearchEnter($event)">
+        </md-input-container>
+        <md-button class="md-raised md-warn" ng-click="KWICSearch()">Submit</md-button>
+      </div>
+    </md-content>
   </div>
   <md-whiteframe class="md-whiteframe-3dp card subcard" layout="column" flex="noshrink" layout-align="start start">
     <md-content layout-padding>
