@@ -1,60 +1,98 @@
 <div class="pagewrapper" layout="row" layout-align="center start" layout-padding layout-wrap>
-  <div class="maincard card" layout="row" flex="noshrink" layout-align="start start" >
-    <md-content layout-padding>
+  <md-tabs md-dynamic-height md-border-bottom md-selected="activeTab" md-stretch-tabs="always">
+    <md-tab label="Metadata Search">
+      <div layout="row" layout-align="start start" layout-wrap>
+        <md-content layout-padding>
       <div>
-          <h2 class="md-display-1">Metadata Search</h2>
           <div><span>Search the Glaser Collection Metadata for a sequence of keywords. <br>
         Separate them by SPACEs. Use * as wildcards.</span></div>
           <md-input-container class="md-block" >
-              <label>Search Keyword(s)</label>
-              <input ng-model="Model.keyword" ng-keypress="searchEnter($event)">
+            <label>Search Keyword(s)</label>
+            <input ng-model="Model.keyword" ng-keypress="searchEnter($event)">
+          </md-input-container>
+          <md-input-container class="md-block" >
+          <label>Searchscope</label>
+            <md-select ng-model="Model.searchscope"  class="">
+              <md-option value="AT-OeAW-BA-3-27*">Entire Collection</md-option>
+              <md-option value="AT-OeAW-BA-3-27-P*">Glass plate negatives and -positives, photographs</md-option>
+              <md-option value="AT-OeAW-BA-3-27-A*">Squeezes</md-option>
+              <md-option value="AT-OeAW-BA-3-27-T*">Diaries & Transcripts</md-option>
+            </md-select>
           </md-input-container>
           <md-button class="md-raised md-warn" ng-click="simpleSearch()">Submit</md-button>
       </div>
     </md-content>
-    <md-content layout-padding>
-      <div>
-        <h2 class="md-display-1">KWIC Search</h2>
-        <div><span>Search the Glaser Squeeze Transcriptions for a sequence of keywords.</div>
-        <md-input-container class="md-block">
-          <label>Search Keyword(s)</label>
-          <input ng-model="Model.kwickeyword" ng-keypress="KWICsearchEnter($event)">
-        </md-input-container>
-        <md-button class="md-raised md-warn" ng-click="KWICSearch()">Submit</md-button>
       </div>
-    </md-content>
-  </div>
+    </md-tab>
+    <md-tab label="Transcription Search">
+      <div layout="row" layout-align="start start" layout-wrap>
+        <md-content layout-padding>
+          <div>
+            <div><span>Search the Glaser Squeeze Transcriptions for a sequence of keywords.</div>
+            <md-input-container class="md-block">
+              <label>Search Keyword(s)</label>
+              <input ng-model="Model.kwickeyword" ng-keypress="KWICsearchEnter($event)">
+            </md-input-container>
+            <md-button class="md-raised md-warn" ng-click="KWICSearch()">Submit</md-button>
+          </div>
+        </md-content>
+      </div>
+    </md-tab>
+  </md-tabs>
   <md-whiteframe class="md-whiteframe-3dp card subcard" layout="column" flex="noshrink" layout-align="start start">
     <md-content layout-padding>
       <div>
-        <h3 class="md-title"><md-icon class="panelicon">info</md-icon>Information</h3>
-        <div><span>Simple Search currently queries the Fields 'Title' and 'Translation' using an OR logic. And advanced search interface allowing for more complex queries will be available shortly.</span><br><br>
-        <span>The Database currently contains Data on <br><h2>{{Model.total}}</h2> Squeezes.</span>
-        <span>Of these <br><h2>{{Model.totalURI}}</h2> are georeferenced and can be viewed on a Map.</span>
-        </div>
+        <h3 class="md-title"><md-icon class="panelicon">youtube_searched_for</md-icon>Previous Searches</h3>
+        <div style="text-align: justify;"><span>Searches cached in <a target="_blank" href="https://developer.mozilla.org/en/docs/Web/API/Window/localStorage">local storage service</a>.</span></div>
+        <md-list flex style="width: 100%;">
+          <md-list-item class="vspinentry projectline" style="margin-top: 0px;">
+            <p class="md-title">Term(s)</p>
+            <p></p>
+            <span class="md-title">Hits</span>
+            <md-divider ></md-divider>
+          </md-list-item>
+          <md-list-item class="vspinentry projectline" style="margin-top: 0px;" ng-repeat="search in Model.osData.history.querystring | limitTo:5 track by $index" ui-sref="gl.results({queryID: {{$index+1}}, pageNo: '1'})">
+            <p>{{search}}</p>
+            <p></p>
+            {{Model.osData.history.result[$index]["1"].$$state.value.data.adlibJSON.diagnostic.hits || "not cached"}}
+            <md-divider ></md-divider>
+          </md-list-item>
+        </md-list>
+        <md-button class="md-raised md-warn" ng-click="clearHistory()" ng-disabled="Model.osData.history.querystring.length == 0">Clear</md-button>
       </div>
     </md-content>
   </md-whiteframe>
   <md-whiteframe class="md-whiteframe-3dp card subcard" layout="column" flex="noshrink" layout-align="start start">
     <md-content layout-padding>
+      <h3 class="md-title"><md-icon class="panelicon">info</md-icon>Scope of the digitized Collection</h3>
       <div>
-        <h3 class="md-title"><md-icon class="panelicon">youtube_searched_for</md-icon>Previous Searches</h3>
-        <div style="text-align: justify;"><span>Searches are currently saved in your browsers <a target="_blank" href="https://developer.mozilla.org/en/docs/Web/API/Window/localStorage">local storage service</a>. To clear these you can either clear your browsers cache or delete it <a href="" ng-click="clearHistory()">here</a>. Note that depending on your OS it may also be cleared at any time, especially on mobile devices!</span></div>
-            <md-list flex>
-              <md-list-item class="vspinentry projectline" style="margin-top: 0px;">
-                  <p class="md-title">Term(s)</p>
-                  <p></p>
-                  <span class="md-title">Hits</span>
-                  <md-divider ></md-divider>
-              </md-list-item>
-              <md-list-item class="vspinentry projectline" style="margin-top: 0px;" ng-repeat="search in Model.osData.history.querystring track by $index" ui-sref="gl.results({queryID: {{$index+1}}, pageNo: '1'})">
-                  <p>{{search}}</p>
-                  <p></p>
-                  {{Model.osData.history.result[$index]["1"].$$state.value.data.adlibJSON.diagnostic.hits || "not cached"}}
-                  <md-divider ></md-divider>
-              </md-list-item>
-            </md-list>
+        <span>
+        As catalogueing and digitization are ongoing, the records available in this app do not (yet) reflect the full
+        extend of the Glaser Collection at the ÖAW. Of the Materials listed below <b>~ <span>{{ Model.geo }}</span> % are
+          georeferenced</b> and visible in the <a ui-sref="gl.map({placeID: 0})">Map search.</a> Bear in mind that
+          non-georeferenced materials are ommited there.
+        </span>
       </div>
+      <md-list class="md-dense" flex>
+        <md-list-item class="md-dense" ng-click="simpleSearch('3-27-A', 'AT-OeAW-BA-3-27-A*')">
+          <md-icon>layers</md-icon>
+          <h3 class="md-title" style="width:70%;padding-right: 15px;">Squeezes: </h3>
+          <p style="width: 30%; text-align: justify;">{{Model.totalA || "counting"}}</p>
+          <md-divider></md-divider>
+        </md-list-item>
+        <md-list-item class="md-dense" ng-click="simpleSearch(null, 'AT-OeAW-BA-3-27-P*')">
+          <md-icon>image</md-icon>
+          <h3 class="md-title" style="width:70%;padding-right: 15px;">Glass plate negatives etc: </h3>
+          <p style="width: 30%; text-align: justify;">{{Model.totalP || "counting"}}</p>
+          <md-divider></md-divider>
+        </md-list-item>
+        <md-list-item class="md-dense" ng-click="simpleSearch('3-27-T', 'AT-OeAW-BA-3-27-T*')">
+          <md-icon>library_books</md-icon>
+          <h3 class="md-title" style="width:70%;padding-right: 15px;">Diaries & Transcripts: </h3>
+          <p style="width: 30%; text-align: justify;">{{Model.totalT || "counting"}}</p>
+          <md-divider></md-divider>
+        </md-list-item>
+      </md-list>
     </md-content>
   </md-whiteframe>
 </div>

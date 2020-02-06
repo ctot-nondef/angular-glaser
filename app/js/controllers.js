@@ -30,30 +30,51 @@ GlaserApp
   );
 }])
 .controller('GlaserSearch',['$scope','$http', '$state', 'opacsearch', function($scope, $http, $state, opacsearch){
-  $scope.Model = {};
+  $scope.Model = {
+    searchscope: null,
+    total: 1,
+    totalGeo: 0,
+    geo: 0
+  };
 
-  $scope.Model.total,$scope.Model.totalURI  = "counting..."
-  opacsearch.getPointerList('archive','7').then(function(res){
-    $scope.Model.total = res.data.adlibJSON.recordList.record[0]['hits'][0];
+
+
+
+  opacsearch.getPointerList('archive','10000').then(function(res){
+    $scope.Model.total = parseInt(res.data.adlibJSON.recordList.record[0]['hits'][0], 10);
+    $scope.Model.geo =  Math.round( $scope.Model.totalGeo / $scope.Model.total * 100);
   });
-  opacsearch.getPointerList('archive','1000').then(function(res){
-    $scope.Model.totalURI = res.data.adlibJSON.recordList.record[0]['hits'][0];
+  opacsearch.getPointerList('archive','10002').then(function(res){
+    $scope.Model.totalA = parseInt(res.data.adlibJSON.recordList.record[0]['hits'][0], 10);
+  });
+  opacsearch.getPointerList('archive','10001').then(function(res){
+    $scope.Model.totalP = parseInt(res.data.adlibJSON.recordList.record[0]['hits'][0], 10);
+  });
+  opacsearch.getPointerList('archive','10003').then(function(res){
+    $scope.Model.totalT = parseInt(res.data.adlibJSON.recordList.record[0]['hits'][0], 10);
+  });
+  opacsearch.getPointerList('archive','10004').then(function(res){
+    $scope.Model.totalGeo = parseInt(res.data.adlibJSON.recordList.record[0]['hits'][0], 10);
+    $scope.Model.geo =  Math.round($scope.Model.totalGeo / $scope.Model.total * 100);
+    console.log($scope.Model.totalGeo, $scope.Model.total, $scope.Model.geo);
   });
   $scope.Model.osData = opacsearch;
   //this needs to contain normalization routines, autocompleters....
   //current setup: parsing querying composite index s1 for all terms entered
-  $scope.simpleSearch = function () {
+  $scope.simpleSearch = function (keyword, scope) {
     $scope.Model.Result = {};
     $scope.Model.Query  = [];
+    if(keyword) $scope.Model.keyword = keyword;
+    if(scope) $scope.Model.searchscope = scope;
     if ($scope.Model.keyword) {
       $scope.Model.keywords = $scope.Model.keyword.split(" ");
       $scope.Model.keywords.forEach(function(entry){
         $scope.Model.Query.push(JSON.parse('{"s1":"'+entry+'*"}'));
       });
-      $scope.Model.Query.push(JSON.parse('{"part_of_reference":"*BA-3-27*"}'));
-      opacsearch.updateHistory($scope.Model.keyword, $scope.Model.Query, undefined, undefined);
-      $state.go('gl.results', {queryID: "1", pageNo: "1"});
     }
+    $scope.Model.Query.push({"part_of_reference": $scope.Model.searchscope ? $scope.Model.searchscope : "AT-OeAW-BA-3-27*"});
+    opacsearch.updateHistory($scope.Model.keyword, $scope.Model.Query, undefined, undefined);
+    $state.go('gl.results', {queryID: "1", pageNo: "1"});
   };
   $scope.KWICSearch = function () {
     $state.go('gl.kwicresults', {querystring: $scope.Model.kwickeyword});
