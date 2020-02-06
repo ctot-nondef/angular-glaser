@@ -36,10 +36,6 @@ GlaserApp
     totalGeo: 0,
     geo: 0
   };
-
-
-
-
   opacsearch.getPointerList('archive','10000').then(function(res){
     $scope.Model.total = parseInt(res.data.adlibJSON.recordList.record[0]['hits'][0], 10);
     $scope.Model.geo =  Math.round( $scope.Model.totalGeo / $scope.Model.total * 100);
@@ -164,7 +160,7 @@ GlaserApp
     $scope.promise = opacsearch.history.result[$stateParams.queryID-1][$stateParams.pageNo];
   }
   else {
-    $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', opacsearch.history.query[$stateParams.queryID-1],"AND",undefined,['priref','production.place','production.place.lref','production.place.context','production.place.uri','inscription.language', 'title', 'reproduction.reference','object_number'],$stateParams.pageNo);
+    $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', opacsearch.history.query[$stateParams.queryID-1],"AND",undefined,['priref','production.place','production.place.lref','production.place.context','production.place.uri','inscription.language', 'title', 'reproduction.reference','object_number', 'part_of_reference'],$stateParams.pageNo);
     opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
   }
   $scope.promise.then($scope.update);
