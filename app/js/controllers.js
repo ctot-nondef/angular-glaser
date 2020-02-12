@@ -68,7 +68,7 @@ GlaserApp
         $scope.Model.Query.push(JSON.parse('{"s1":"'+entry+'*"}'));
       });
     }
-    $scope.Model.Query.push({"part_of_reference": $scope.Model.searchscope ? $scope.Model.searchscope : "AT-OeAW-BA-3-27*"});
+    $scope.Model.Query.push({"s1": $scope.Model.searchscope ? $scope.Model.searchscope : "AT-OeAW-BA-3-27*"});
     opacsearch.updateHistory($scope.Model.keyword, $scope.Model.Query, undefined, undefined);
     $state.go('gl.results', {queryID: "1", pageNo: "1"});
   };

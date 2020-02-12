@@ -3,23 +3,21 @@
 /* Filters */
 
 GlaserApp
-.filter('checkmark', function() {
+.filter('type', function() {
   return function(input) {
-    return input ? '\u2713' : '\u2718';
+    switch (input) {
+      case 'AT-OeAW-BA-3-27-P':
+        return 'image';
+      case 'AT-OeAW-BA-3-27-A':
+        return 'layers';
+      case 'AT-OeAW-BA-3-27-T':
+        return 'library_books';
+    }
   };
 })
-.filter('hasTranslation', function() {
+.filter('encode', function() {
   return function(input) {
-    return input ? '\u2713' : '\u2718';
-  };
-})
-.filter('hasTranscription', function() {
-  return function(input) {
-    return input ? '\u2713' : '\u2718';
-  };
-})
-.filter('geoGeonamesID', function() {
-  return function(input) {
-    return input ? '\u2713' : '\u2718';
+    return encodeURIComponent(input);
   };
 });
+

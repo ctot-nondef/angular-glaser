@@ -26,7 +26,7 @@
 	  <table md-table ng-model="selected" md-progress="promise">
 	    <thead md-head md-order="" md-on-reorder="getNewOrder">
 	      <tr md-row>
-									<th md-column><span>Type</span></th>
+									<th md-columnss><span>Type</span></th>
 									<th md-column><span></span></th>
 	        <th md-column><span>Title</span></th>
 	        <th md-column><span>Language</span></th>
@@ -39,7 +39,7 @@
 	      		ng-repeat="squeeze in Model.Result"
 	      		ui-sref="gl.singleRecord({refID: {{squeeze.priref[0]}}})"
 	      		class="vspinentry" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50+'s','overflow':'hidden'}" >
-									<td md-cell>{{squeeze.part_of_reference[0]}}</td>
+								<td md-cell><md-icon>{{squeeze.part_of_reference[0] | type}}</md-icon></td>
 									<td md-cell>
 										<img ng-src="{{'http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value=' + squeeze['reproduction.reference'][0] + '&width=200&height=200&scalemode=fill&fillmode=center&imageformat=jpg'}}" class="squeezeicon" alt="{{squeeze['reproduction.reference'][0]}}" />
 									</td>
@@ -54,7 +54,7 @@
 															Details
 														</md-tooltip>
 											</md-button>
-											<md-button class="md-icon-button" aria-label="View Image" ui-sref="gl.fullImage({imgID: '{{squeeze['reproduction.reference'][0]}}'})" >
+											<md-button class="md-icon-button" aria-label="View Image" ui-sref="gl.fullImage({imgID: '{{squeeze['reproduction.reference'][0] | encode }}'})" >
 												<md-icon md-colors="{color: 'primary-800'}" >code</md-icon>
 													<md-tooltip md-direction="bottom">
 															View Image

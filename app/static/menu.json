@@ -16,14 +16,6 @@
 		"items":""
 	},
 	{
-		"caption":"Diaries",
-		"arialabel":"",
-		"mdicon":"library_books",
-		"abstract":"",
-		"startpage":"gl.diaries",
-		"items":""
-	},
-	{
 		"caption":"Bibliography",
 		"arialabel":"",
 		"mdicon":"local_library",

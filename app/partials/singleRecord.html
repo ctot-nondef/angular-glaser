@@ -217,9 +217,9 @@
 						</md-list>
 						<h3 class="md-title">Related Materials</h3>
 						<md-list flex>
-							<md-list-item class="vspinentry" ng-repeat="number in Model.SingleRecord['related_object.reference'] track by $index" >
+							<md-list-item class="vspinentry" ng-repeat="number in Model.SingleRecord['related_object.reference'] track by $index" ui-sref="gl.singleRecord({refID: '{{Model.SingleRecord['related_object.reference.lref'][$index]}}'})" >
 								<p style="width:40%">{{ Model.SingleRecord['related_object.association'][$index] }}</p>
-								<p style="width:40%" ui-sref="gl.singleRecord({refID: '{{Model.SingleRecord['related_object.reference.lref'][$index]}}'})">{{ Model.SingleRecord['related_object.reference'][$index] }} - {{ Model.SingleRecord['related_object.title'][$index] }}</p>
+								<p style="width:40%" >{{ Model.SingleRecord['related_object.reference'][$index] }} - {{ Model.SingleRecord['related_object.title'][$index] }}</p>
 								<md-divider></md-divider>
 							</md-list-item>
 						</md-list>
@@ -238,7 +238,7 @@
 					<div style="width: 100%;" layout-padding>
 						<h3 class="md-title">Available Digital Objects</h3>
 									<md-list flex>
-											<md-list-item class="vspinentry" ng-repeat="line in Model.SingleRecord['reproduction.reference.lref']  track by $index" ui-sref="gl.fullImage({imgID: '{{Model.SingleRecord['reproduction.reference'][$index]}}'})" >
+											<md-list-item class="vspinentry" ng-repeat="line in Model.SingleRecord['reproduction.reference.lref']  track by $index" ui-sref="gl.fullImage({imgID: '{{Model.SingleRecord['reproduction.reference'][$index] | encode}}'})" >
 												<img ng-src="{{'http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value=' + Model.SingleRecord['reproduction.reference'][$index] + '&width=200&height=200&scalemode=fill&fillmode=center&imageformat=jpg'}}" class="md-avatar" alt="{{Model.SingleRecord['reproduction.reference.notes'][$index]}}" />
 													<p style="width: 20%;">{{Model.SingleRecord['reproduction.notes'][$index]}}</p>
 													<p style="width: 20%;">{{Model.SingleRecord['reproduction.reference'][$index]}}</p>
