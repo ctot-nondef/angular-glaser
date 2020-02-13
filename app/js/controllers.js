@@ -506,13 +506,18 @@ GlaserApp
     });
 	});
 })
-.controller('GlaserScan', ['$scope', '$timeout', '$stateParams', '$http', '$log', function ($scope, $timeout, $stateParams, $http, $log) {
-    $scope.Model = {};
-    $scope.Model.scanID = $stateParams.scanID;
-    var presenter = null;
-    init3dhop();
-    setup3dhop($scope.Model.scanID);
-    resizeCanvas(window.innerWidth-100, window.innerHeight-4);
+.controller('GlaserScan', ['$scope', '$timeout', '$stateParams', '$http', '$log', 'opacsearch',  function ($scope, $timeout, $stateParams, $http, $log, opacsearch) {
+  $scope.Model = {
+    scanID: $stateParams.scanID || null
+  };
+  if($scope.Model.scanID) {
+    opacsearch.getSingleRecordbyRef("archive", $scope.Model.scanID, []).then(function(res) {
+      var presenter = null;
+      init3dhop();
+      setup3dhop($scope.Model.scanID);
+      resizeCanvas(window.innerWidth - 100, window.innerHeight - 4);
+    });
+  }
 }])
 .controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state) {
   //********* DECLARATIVE PART *********************************************

@@ -17,6 +17,28 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+function setup3dhop(scan) {
+  presenter = new Presenter("draw-canvas");
+
+  presenter.setScene({
+    meshes: {
+      "Laurana" : { url: "http://opacbasis.w07adlib1.arz.oeaw.ac.at/3D/" + scan + ".nxs" }
+    },
+    modelInstances : {
+      "Model1" : { mesh : "Laurana" }
+    }
+  });
+  presenter.rotateLight(0, 0.35)
+}
+
+function actionsToolbar(action) {
+  if(action=='home') presenter.resetTrackball();
+  else if(action=='zoomin') presenter.zoomIn();
+  else if(action=='zoomout') presenter.zoomOut();
+  else if(action=='light' || action=='light_on') { presenter.enableLightTrackball(!presenter.isLightTrackballEnabled()); lightSwitch(); }
+  else if(action=='full'  || action=='full_on') fullscreenSwitch();
+}
+
 function init3dhop() {
 	var interval, id, ismousedown;
 	var button = 0;

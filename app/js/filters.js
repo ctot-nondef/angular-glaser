@@ -12,6 +12,8 @@ GlaserApp
         return 'layers';
       case 'AT-OeAW-BA-3-27-T':
         return 'library_books';
+      default:
+        return 'folder';
     }
   };
 })
