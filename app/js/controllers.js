@@ -416,9 +416,32 @@ GlaserApp
       $mdSidenav('sidenav').toggle();
     };
 }])
-.controller('GlaserImage', ['$scope', '$timeout', '$stateParams', '$http', '$log', function ($scope, $timeout, $stateParams, $http, $log) {
-    $scope.Model = {};
-    $scope.Model.imgID = $stateParams.imgID;
+.controller('GlaserImage', ['$scope', '$timeout', '$stateParams', '$http', '$log', 'opacsearch', function ($scope, $timeout, $stateParams, $http, $log, opacsearch) {
+  $scope.Model = {
+    scanID: $stateParams.imgID || null,
+    rec: {},
+    availableScans: [],
+    selectedScan: '',
+    loading: true,
+  };
+  if($scope.Model.scanID) {
+    opacsearch.getSingleRecordbyRef("archive", $scope.Model.scanID, []).then(function(res) {
+      let refs = res.data.adlibJSON.recordList.record[0]['reproduction.reference'];
+      if(refs[0]) {
+        $scope.Model.selectedScan = refs[0];
+        $scope.Model.loading = false;
+      }
+      $scope.Model.availableScans = refs.filter((ref) => ref != "");
+    });
+  }
+  $scope.loadScan = function() {
+    $scope.Model.loading = true;
+    console.log('loading ', $scope.Model.selectedScan);
+    setTimeout(() => {
+      $scope.Model.loading = false;
+    }, 0);
+    //$scope.Model.loading = false;
+  }
 }])
 .controller('GlaserAbout', ['$scope', '$timeout', '$stateParams', '$http', '$log', function ($scope, $timeout, $stateParams, $http, $log) {
     $scope.Model = {};
