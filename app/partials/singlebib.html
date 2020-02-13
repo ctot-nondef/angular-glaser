@@ -90,7 +90,7 @@
   											View Image
   										</md-tooltip>
   							</md-button>
-  							<md-button class="md-icon-button" aria-label="View Scan" ui-sref="gl.scan({scanID: '{{squeeze.object_number[0]}}'})">
+  							<md-button class="md-icon-button" aria-label="View Scan" ng-repeat="ref in squeeze['priref'] track by $index" ui-sref="gl.scan({scanID: '{{ref}}'})">
   								<md-icon md-colors="{color: 'primary-800'}" >3d_rotation</md-icon>
   									<md-tooltip md-direction="bottom">
   											View 3D Scan

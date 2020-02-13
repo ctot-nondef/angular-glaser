@@ -256,7 +256,7 @@
 													<p style="width: 20%;">{{Model.SingleRecord['reproduction.reference'][$index]}}</p>
 															<md-divider></md-divider>
 											</md-list-item>
-											<md-list-item ng-if="Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'" class="vspinentry" ng-repeat="line in Model.SingleRecord['object_number']" ui-sref="gl.scan({scanID: '{{Model.SingleRecord['object_number'][$index]}}'})">
+											<md-list-item ng-if="Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'" class="vspinentry" ng-repeat="ref in Model.SingleRecord['priref'] track by $index" ui-sref="gl.scan({scanID: '{{ref}}'})"
 												<img ng-src="{{'http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value=' + Model.SingleRecord['reproduction.reference'][0] + '&width=200&height=200&scalemode=fill&fillmode=center&imageformat=jpg'}}" class="md-avatar" alt="{{Model.SingleRecord['reproduction.reference'][0]}}" />
 													<p style="width: 20%;">3D - Scan (Reduced Quality Preview)</p>
 													<p style="width: 20%;">{{line}}</p>
