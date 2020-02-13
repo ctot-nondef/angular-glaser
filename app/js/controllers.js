@@ -508,14 +508,16 @@ GlaserApp
 })
 .controller('GlaserScan', ['$scope', '$timeout', '$stateParams', '$http', '$log', 'opacsearch',  function ($scope, $timeout, $stateParams, $http, $log, opacsearch) {
   $scope.Model = {
-    scanID: $stateParams.scanID || null
+    scanID: $stateParams.scanID || null,
+    availableScans: [],
   };
   if($scope.Model.scanID) {
     opacsearch.getSingleRecordbyRef("archive", $scope.Model.scanID, []).then(function(res) {
+
       var presenter = null;
       init3dhop();
       setup3dhop($scope.Model.scanID);
-      resizeCanvas(window.innerWidth - 100, window.innerHeight - 4);
+      resizeCanvas(window.innerWidth - 100, window.innerHeight - 60);
     });
   }
 }])
