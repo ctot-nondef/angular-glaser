@@ -507,18 +507,43 @@ GlaserApp
 	});
 })
 .controller('GlaserScan', ['$scope', '$timeout', '$stateParams', '$http', '$log', 'opacsearch',  function ($scope, $timeout, $stateParams, $http, $log, opacsearch) {
+  const regex = new RegExp('3D\\b', 'g');
+  var presenter = null;
   $scope.Model = {
     scanID: $stateParams.scanID || null,
+    rec: {},
     availableScans: [],
+    selectedScan: '',
+    presenter: null,
   };
   if($scope.Model.scanID) {
     opacsearch.getSingleRecordbyRef("archive", $scope.Model.scanID, []).then(function(res) {
-
-      var presenter = null;
-      init3dhop();
-      setup3dhop($scope.Model.scanID);
-      resizeCanvas(window.innerWidth - 100, window.innerHeight - 60);
+      let refs = res.data.adlibJSON.recordList.record[0].digital_reference;
+      refs = refs.filter((ref) => ref.match(regex));
+      if(refs[0]) {
+        $scope.loadScan(refs[0]);
+      }
+      $scope.Model.availableScans = refs;
     });
+    $scope.loadScan = function(ref) {
+      if (!ref) ref = $scope.Model.selectedScan;
+      console.log('loading ', ref, $scope.Model.selectedScan);
+      if($scope.presenter != null) {
+        $scope.presenter.setScene({
+          meshes: {
+            "Squeeze" : { url: "http://opacbasis.w07adlib1.arz.oeaw.ac.at/" + ref.split('.')[0] + ".nxs" }
+          },
+          modelInstances : {
+            "Model1" : { mesh : "Squeeze" }
+          }
+        });
+      }
+      else {
+        init3dhop();
+        $scope.presenter = setup3dhop(`${ref.split('.')[0]}`);
+        resizeCanvas(window.innerWidth - 100, window.innerHeight - 60);
+      }
+    }
   }
 }])
 .controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', function($scope, $stateParams, opacsearch,leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state) {
@@ -571,7 +596,6 @@ GlaserApp
 	$scope.squeeze = {};
 	$attrs.$observe('squeezeid', function(val){
     opacsearch.getSingleRecordbyRef("archive", val, []).then(function(res){
-      //console.log(res);
       $scope.squeeze = res.data.adlibJSON.recordList.record[0];
     });
 	});

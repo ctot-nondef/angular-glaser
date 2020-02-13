@@ -22,13 +22,14 @@ function setup3dhop(scan) {
 
   presenter.setScene({
     meshes: {
-      "Laurana" : { url: "http://opacbasis.w07adlib1.arz.oeaw.ac.at/3D/" + scan + ".nxs" }
+      "Squeeze" : { url: "http://opacbasis.w07adlib1.arz.oeaw.ac.at/" + scan + ".nxs" }
     },
     modelInstances : {
-      "Model1" : { mesh : "Laurana" }
+      "Model1" : { mesh : "Squeeze" }
     }
   });
   presenter.rotateLight(0, 0.35)
+  return presenter;
 }
 
 function actionsToolbar(action) {

@@ -1,10 +1,7 @@
 <div style="width: 100%; overflow: hidden;">
  <div style="height: 40px; width: calc(100% - 100px); padding-left: 10px">
-  <md-select ng-model="Model.availablescans"  class="" placeholder="Select Scan to load">
-   <md-option value="AT-OeAW-BA-3-27*">Entire Collection</md-option>
-   <md-option value="AT-OeAW-BA-3-27-P*">Glass plate negatives and -positives, photographs</md-option>
-   <md-option value="AT-OeAW-BA-3-27-A*">Squeezes</md-option>
-   <md-option value="AT-OeAW-BA-3-27-T*">Diaries & Transcripts</md-option>
+  <md-select ng-model="Model.selectedScan" md-on-close="loadScan()" placeholder="Select Scan to load">
+   <md-option ng-repeat="ref in Model.availableScans track by $index" value="{{ref}}">{{ref}}</md-option>
   </md-select>
  </div>
  <div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()" style="margin: auto;"><div id="tdhlg"></div>
