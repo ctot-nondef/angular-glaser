@@ -261,6 +261,9 @@ GlaserApp
           });
         }
       }
+      if(rec['reproduction.reference']) {
+        rec['reproduction.reference'] = rec['reproduction.reference'].map(ref => encodeURIComponent(ref));
+      }
       $scope.Model.SingleRecord = rec;
       if($scope.Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A') $scope.activeTab = 1;
       if(rec['production.place.uri'].length > 0 && rec['production.place.uri'][0] != "") {

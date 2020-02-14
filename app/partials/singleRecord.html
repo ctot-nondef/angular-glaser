@@ -1,19 +1,18 @@
 <div class="pagewrapper">
-		<div class="pagecover" layout="row" flex="noshrink" layout-align="start end">
+		<div class="pagecover" layout="row" flex="noshrink" layout-align="start end" default-image="media/preload.jpg" preload-bg-image="{{'http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value='+Model.SingleRecord['reproduction.reference'][0]+'&width=1000&height=500&scalemode=fill&fillmode=center&imageformat=jpg'}}">
 			<h2 class="md-display-1" style="color: #ffffff; position: relative; margin: 5px; z-index:1;">{{Model.SingleRecord.title[0]}}</h2>
-			<md-button style="position: relative; margin: 13px; z-index:1;" class="md-primary md-raised" aria-label="3D Scans" ng-repeat="ref in Model.SingleRecord['priref'] track by $index" ui-sref="gl.scan({scanID: '{{ref}}'})">
-				<md-icon>code</md-icon>
+			<md-button style="position: relative; margin: 13px; z-index:1;" class="md-primary md-raised" aria-label="3D Scans" ng-repeat="ref in Model.SingleRecord['priref'] track by $index" ui-sref="gl.scan({scanID: '{{ref}}'})" ng-if="Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'">
+				<md-icon>3d_rotation</md-icon>
 				3D - Scans
 			</md-button>
-			<md-button style="position: relative; margin: 13px; z-index:1;" class="md-primary md-raised" aria-label="Image Scans" ng-repeat="ref in Model.SingleRecord['priref'] track by $index" ui-sref="gl.fullImage({imgID: '{{ref}}'})">
-				<md-icon>code</md-icon>
+			<md-button style="position: relative; margin: 13px; z-index:1;" class="md-primary md-raised" aria-label="Image Scans" ng-repeat="ref in Model.SingleRecord['priref'] track by $index" ui-sref="gl.fullImage({imgID: '{{ref}}'})" ng-if="Model.SingleRecord['reproduction.reference'].length > 0">
+				<md-icon>image</md-icon>
 				Image Scans
 			</md-button>
 			<md-button style="position: relative; margin: 13px; z-index:1;" class="md-primary md-raised" aria-label="TEI encoded texts" ui-sref="gl.tei({id:'adlib{{Model.refID}}'})" ng-if="hasTEI(Model.refID)">
 				<md-icon>code</md-icon>
 				TEI Encodings
 			</md-button>
-			<img preload-image default-image="media/preload.jpg" style="position:absolute;" ng-src="{{'http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value='+Model.SingleRecord['reproduction.reference'][0]+'&width=1000&height=500&scalemode=fill&fillmode=center&imageformat=jpg'}}">
 		</div>
 		<md-tabs md-dynamic-height md-border-bottom md-selected="activeTab" md-stretch-tabs="always" style="width: 100%;">
 			<md-tab label="Basic" ng-if="Model.SingleRecord['part_of_reference'][0] !== 'AT-OeAW-BA-3-27-A'">
@@ -245,24 +244,10 @@
 					</div>
 				</div>
 			</md-tab>
-			<md-tab label="Digital Objects">
+			<md-tab label="Downloads">
 				<div class="card maincard" layout="row" flex="noshrink" layout-align="start start">
 					<div style="width: 100%;" layout-padding>
-						<h3 class="md-title">Available Digital Objects</h3>
-									<md-list flex>
-											<md-list-item class="vspinentry" ng-repeat="line in Model.SingleRecord['reproduction.reference.lref']  track by $index" ui-sref="gl.fullImage({imgID: '{{Model.SingleRecord['reproduction.reference'][$index] | encode}}'})" >
-												<img ng-src="{{'http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value=' + Model.SingleRecord['reproduction.reference'][$index] + '&width=200&height=200&scalemode=fill&fillmode=center&imageformat=jpg'}}" class="md-avatar" alt="{{Model.SingleRecord['reproduction.reference.notes'][$index]}}" />
-													<p style="width: 20%;">{{Model.SingleRecord['reproduction.notes'][$index]}}</p>
-													<p style="width: 20%;">{{Model.SingleRecord['reproduction.reference'][$index]}}</p>
-															<md-divider></md-divider>
-											</md-list-item>
-											<md-list-item ng-if="Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'" class="vspinentry" ng-repeat="ref in Model.SingleRecord['priref'] track by $index" ui-sref="gl.scan({scanID: '{{ref}}'})"
-												<img ng-src="{{'http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value=' + Model.SingleRecord['reproduction.reference'][0] + '&width=200&height=200&scalemode=fill&fillmode=center&imageformat=jpg'}}" class="md-avatar" alt="{{Model.SingleRecord['reproduction.reference'][0]}}" />
-													<p style="width: 20%;">3D - Scan (Reduced Quality Preview)</p>
-													<p style="width: 20%;">{{line}}</p>
-															<md-divider></md-divider>
-											</md-list-item>
-									</md-list>
+						<h3 class="md-title">Downloads</h3>
 						<md-list-item ng-if="Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'" class="vspinentry">
 							<md-button class="md-primary md-raised" aria-label="Download Scan" href="{{'https://id.acdh.oeaw.ac.at/glasersqueezes2015/rec' + Model.SingleRecord.priref[0] + '?format=collection'}}" style="width: 100%;"><md-icon>file_download</md-icon> DOWNLOAD SQUEEZE</md-button>
 							<md-divider></md-divider>
