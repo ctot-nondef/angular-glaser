@@ -22,7 +22,7 @@ function setup3dhop(scan) {
 
   presenter.setScene({
     meshes: {
-      "Squeeze" : { url: "http://opacbasis.w07adlib1.arz.oeaw.ac.at/" + scan + ".nxs" }
+      "Squeeze" : { url: "https://opacbasis.acdh.oeaw.ac.at/" + scan + ".nxs" }
     },
     modelInstances : {
       "Model1" : { mesh : "Squeeze" }

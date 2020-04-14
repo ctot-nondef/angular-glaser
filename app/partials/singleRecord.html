@@ -1,5 +1,5 @@
 <div class="pagewrapper">
-		<div class="pagecover" layout="row" flex="noshrink" layout-align="start end" default-image="media/preload.jpg" preload-bg-image="{{'http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value='+Model.SingleRecord['reproduction.reference'][0]+'&width=1000&height=500&scalemode=fill&fillmode=center&imageformat=jpg'}}">
+		<div class="pagecover" layout="row" flex="noshrink" layout-align="start end" default-image="media/preload.jpg" preload-bg-image="{{'https://opacbasis.acdh.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value='+Model.SingleRecord['reproduction.reference'][0]+'&width=1000&height=500&scalemode=fill&fillmode=center&imageformat=jpg'}}">
 			<h2 class="md-display-1" style="color: #ffffff; position: relative; margin: 5px; z-index:1;">{{Model.SingleRecord.title[0]}}</h2>
 			<md-button style="position: relative; margin: 13px; z-index:1;" class="md-primary md-raised" aria-label="3D Scans" ng-repeat="ref in Model.SingleRecord['priref'] track by $index" ui-sref="gl.scan({scanID: '{{ref}}'})" ng-if="Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'">
 				<md-icon>3d_rotation</md-icon>

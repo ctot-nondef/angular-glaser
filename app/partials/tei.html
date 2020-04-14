@@ -34,7 +34,7 @@
    	      		ng-repeat="(key, trans) in Model.Result" ng-click='selSite(key)' ng-controller="SqueezeByAttr" squeezeid="{{key.substr(5)}}"
    	      		class="vspinentry" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50+'s','overflow':'hidden'}" >
        			<td md-cell>
-       				<img ng-src="{{'http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value=' + squeeze['reproduction.reference'][0] + '&width=200&height=200&scalemode=fill&fillmode=center&imageformat=jpg'}}" class="squeezeicon" alt="{{squeeze['reproduction.reference'][0]}}" />
+       				<img ng-src="{{'https://opacbasis.acdh.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value=' + squeeze['reproduction.reference'][0] + '&width=200&height=200&scalemode=fill&fillmode=center&imageformat=jpg'}}" class="squeezeicon" alt="{{squeeze['reproduction.reference'][0]}}" />
        			</td>
   	        <td md-cell>{{squeeze.title[0]}}</td>
   	        <td md-cell>{{squeeze['inscription.language'][0]}}</td>

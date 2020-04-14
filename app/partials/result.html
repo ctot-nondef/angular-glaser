@@ -12,7 +12,7 @@
 		            md-colspan-sm="1"
 		            md-colspan-xs="1"
 		            class="spinentry" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50+'s','overflow':'hidden'}">
-		  	<img ng-src="{{'http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value='+squeeze['reproduction.reference'][0]+'&width=200&height=200&scalemode=fill&fillmode=center&imageformat=jpg'}}" style="width:100%;" />
+		  	<img ng-src="{{'https://opacbasis.acdh.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value='+squeeze['reproduction.reference'][0]+'&width=200&height=200&scalemode=fill&fillmode=center&imageformat=jpg'}}" style="width:100%;" />
 		  	<md-grid-tile-footer layout="column" layout-align="center center">
 		  		<h5 >{{squeeze.title[0]}}</h5>
 		  	</md-grid-tile-footer>
@@ -41,7 +41,7 @@
 	      		class="vspinentry" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50+'s','overflow':'hidden'}" >
 								<td md-cell><md-icon>{{squeeze.part_of_reference[0] | type}}</md-icon></td>
 									<td md-cell>
-										<img ng-src="{{'http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value=' + squeeze['reproduction.reference'][0] + '&width=200&height=200&scalemode=fill&fillmode=center&imageformat=jpg'}}" class="squeezeicon" alt="{{squeeze['reproduction.reference'][0]}}" />
+										<img ng-src="{{'https://opacbasis.acdh.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value=' + squeeze['reproduction.reference'][0] + '&width=200&height=200&scalemode=fill&fillmode=center&imageformat=jpg'}}" class="squeezeicon" alt="{{squeeze['reproduction.reference'][0]}}" />
 									</td>
 	        <td md-cell>{{squeeze.title[0]}}</td>
 	        <td md-cell>{{squeeze['inscription.language'][0]}}</td>

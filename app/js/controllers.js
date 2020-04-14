@@ -557,7 +557,7 @@ GlaserApp
       if($scope.presenter != null) {
         $scope.presenter.setScene({
           meshes: {
-            "Squeeze" : { url: "http://opacbasis.w07adlib1.arz.oeaw.ac.at/" + ref.split('.')[0] + ".nxs" }
+            "Squeeze" : { url: "https://opacbasis.acdh.oeaw.ac.at/" + ref.split('.')[0] + ".nxs" }
           },
           modelInstances : {
             "Model1" : { mesh : "Squeeze" }

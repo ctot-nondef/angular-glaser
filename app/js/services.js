@@ -2,7 +2,7 @@
 
 /* Adlib API Query Services Module */
 const Config = {
-    "baseURL":"http://opacbasis.w07adlib1.arz.oeaw.ac.at/wwwopac.ashx?",
+    "baseURL":"https://opacbasis.acdh.oeaw.ac.at/wwwopac.ashx?",
     "pagesize": 40,
     "sortField":"title",
     "sortOrder":"ascending",
