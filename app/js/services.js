@@ -2431,18 +2431,18 @@ AdlibServices.service('opacsearch', ['$http', '$localStorage' ,function($http,$l
 		}
 	//////////Callable retrieval functions///////////////////////////////
 		this.getFullListbyDB = function(database, fields, page, limit){console.log('getFullList Query: ', database, fields, page, limit);
-			return $http.get(Config.baseURL+"&action=search&search=all"+this.parseSorting()+"&output=JSON"+this.parseLimit(limit,page)+this.parseDB(database)+this.parseFields(fields));
+			return $http.get(Config.baseURL+"&action=search&search=all"+this.parseSorting()+"&output=JSON&span=false"+this.parseLimit(limit,page)+this.parseDB(database)+this.parseFields(fields));
 		}
 		this.getPointerList = function(database, pointerfile ){console.log('getPointerList Query: ', database, pointerfile );
-			if(pointerfile) return $http.get(Config.baseURL+"&command=getpointerfile&number="+pointerfile+"&output=JSON"+this.parseDB(database));
+			if(pointerfile) return $http.get(Config.baseURL+"&command=getpointerfile&number="+pointerfile+"&output=JSON&span=false"+this.parseDB(database));
 			else console.log('Parameters Missing');
 		}
 		this.getRecordsbyPointer = function(database, pointerfile, fields, page, limit){console.log('getRecordsbyPointer Query: ', database, pointerfile, fields, page, limit);
-			if(pointerfile) return $http.get(Config.baseURL+"&action=search&search=pointer "+pointerfile+"&output=JSON"+this.parseLimit(limit,page)+this.parseDB(database)+this.parseFields(fields));
+			if(pointerfile) return $http.get(Config.baseURL+"&action=search&search=pointer "+pointerfile+"&output=JSON&span=false"+this.parseLimit(limit,page)+this.parseDB(database)+this.parseFields(fields));
 			else console.log('Parameters Missing');
 		}
 		this.getSingleRecordbyRef = function(database, reference, fields){console.log('getSingleRecord Query: ', database, reference, fields);
-			if(reference) return $http.get(Config.baseURL+"&action=search&search=priref="+reference+"&output=JSON"+this.parseDB(database)+this.parseFields(fields));
+			if(reference) return $http.get(Config.baseURL+"&action=search&search=priref="+reference+"&output=JSON&span=false"+this.parseDB(database)+this.parseFields(fields));
 			else console.log('Parameters Missing');
 		}
 		this.getRecordsbyIndex = function(database, index, logic, pointer, fields, page, limit){console.log('getRecordsbyIndex Query: ', database, index, logic, pointer, page, fields, limit);
@@ -2458,7 +2458,7 @@ AdlibServices.service('opacsearch', ['$http', '$localStorage' ,function($http,$l
 				if(pointer) {
 					searchstring = "(pointer%20"+pointer+")%20AND%20("+searchstring +")";
 				}
-				return $http.get(Config.baseURL+"&action=search&search="+searchstring+this.parseSorting()+"&output=JSON"+this.parseLimit(limit,page)+this.parseDB(database)+this.parseFields(fields));
+				return $http.get(Config.baseURL+"&action=search&search="+searchstring+this.parseSorting()+"&output=JSON&span=false"+this.parseLimit(limit,page)+this.parseDB(database)+this.parseFields(fields));
 			}
 			else console.log('Parameters Missing');
 		}
