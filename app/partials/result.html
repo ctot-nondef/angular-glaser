@@ -6,7 +6,7 @@
 	    md-row-height-gt-md="1:1" md-row-height="1:1"
 	    md-gutter="8px" md-gutter-gt-sm="4px" layout="row" layout-align="center start" ng-animate="'spinentry'">
 		<md-grid-tile ng-repeat="squeeze in Model.Result"
-					ui-sref="gl.singleRecord({refID: {{squeeze.priref[0]}}})"
+					ui-sref="gl.singleRecord({refID: {{squeeze.priref}}})"
 		            md-rowspan="1"
 		            md-colspan="1"
 		            md-colspan-sm="1"
@@ -37,7 +37,7 @@
 	    <tbody md-body>
 	      <tr md-row
 	      		ng-repeat="squeeze in Model.Result"
-	      		ui-sref="gl.singleRecord({refID: {{squeeze.priref[0]}}})"
+	      		ui-sref="gl.singleRecord({refID: {{squeeze.priref}}})"
 	      		class="vspinentry" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50+'s','overflow':'hidden'}" >
 								<td md-cell><md-icon>{{squeeze.part_of_reference[0] | type}}</md-icon></td>
 									<td md-cell>
@@ -48,25 +48,25 @@
 	        <td md-cell>{{squeeze['production.place'][0]}}</td>
 	        <td md-cell>
 										<div class="tabletoolbar" layout="row" layout-align="end" ng-if="!squeeze.position" ng-click="$event.stopPropagation()">
-											<md-button class="md-icon-button" aria-label="Details" ui-sref="{{'gl.singleRecord({refID: '+squeeze.priref[0]+'})'}}">
+											<md-button class="md-icon-button" aria-label="Details" ui-sref="{{'gl.singleRecord({refID: '+squeeze.priref+'})'}}">
 												<md-icon md-colors="{color: 'primary-800'}" >library_books</md-icon>
 													<md-tooltip md-direction="bottom">
 															Details
 														</md-tooltip>
 											</md-button>
-											<md-button class="md-icon-button" aria-label="View Image" ui-sref="gl.fullImage({imgID: '{{squeeze.priref[0]}}'})" >
+											<md-button class="md-icon-button" aria-label="View Image" ui-sref="gl.fullImage({imgID: '{{squeeze.priref}}'})" >
 												<md-icon md-colors="{color: 'primary-800'}" >image</md-icon>
 													<md-tooltip md-direction="bottom">
 															View Image
 														</md-tooltip>
 											</md-button>
-											<md-button class="md-icon-button" aria-label="View Scan" ng-repeat="ref in squeeze['priref'] track by $index" ui-sref="gl.scan({scanID: '{{ref}}'})" ng-if="squeeze['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'">
+											<md-button class="md-icon-button" aria-label="View Scan" ui-sref="gl.scan({scanID: '{{squeeze.priref}}'})" ng-if="squeeze['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'">
 												<md-icon md-colors="{color: 'primary-800'}" >3d_rotation</md-icon>
 													<md-tooltip md-direction="bottom">
 															View 3D Scan
 														</md-tooltip>
 											</md-button>
-											<md-button class="md-icon-button" aria-label="Download Scan" href="{{'https://id.acdh.oeaw.ac.at/glasersqueezes2015/rec' + squeeze.priref[0] + '?format=collection'}}" >
+											<md-button class="md-icon-button" aria-label="Download Scan" href="{{'https://id.acdh.oeaw.ac.at/glasersqueezes2015/rec' + squeeze.priref + '?format=collection'}}" >
 												<md-icon md-colors="{color: 'primary-800'}" >file_download</md-icon>
 													<md-tooltip md-direction="bottom">
 															Download Scan

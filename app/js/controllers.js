@@ -37,20 +37,20 @@ GlaserApp
     geo: 0
   };
   opacsearch.getPointerList('archive','2').then(function(res){
-    $scope.Model.total = parseInt(res.data.adlibJSON.recordList.record[0]['hits'][0], 10);
+    $scope.Model.total = parseInt(res.data.adlibJSON.recordList.record[0]['hits'], 10);
     $scope.Model.geo =  Math.round( $scope.Model.totalGeo / $scope.Model.total * 100);
   });
   opacsearch.getPointerList('archive','4').then(function(res){
-    $scope.Model.totalA = parseInt(res.data.adlibJSON.recordList.record[0]['hits'][0], 10);
+    $scope.Model.totalA = parseInt(res.data.adlibJSON.recordList.record[0]['hits'], 10);
   });
   opacsearch.getPointerList('archive','3').then(function(res){
-    $scope.Model.totalP = parseInt(res.data.adlibJSON.recordList.record[0]['hits'][0], 10);
+    $scope.Model.totalP = parseInt(res.data.adlibJSON.recordList.record[0]['hits'], 10);
   });
   opacsearch.getPointerList('archive','5').then(function(res){
-    $scope.Model.totalT = parseInt(res.data.adlibJSON.recordList.record[0]['hits'][0], 10);
+    $scope.Model.totalT = parseInt(res.data.adlibJSON.recordList.record[0]['hits'], 10);
   });
   opacsearch.getPointerList('archive','6').then(function(res){
-    $scope.Model.totalGeo = parseInt(res.data.adlibJSON.recordList.record[0]['hits'][0], 10);
+    $scope.Model.totalGeo = parseInt(res.data.adlibJSON.recordList.record[0]['hits'], 10);
     $scope.Model.geo =  Math.round($scope.Model.totalGeo / $scope.Model.total * 100);
     console.log($scope.Model.totalGeo, $scope.Model.total, $scope.Model.geo);
   });

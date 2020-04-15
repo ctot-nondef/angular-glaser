@@ -66,9 +66,9 @@
   	    <tbody md-body>
   	      <tr md-row
   	      		md-select="squeeze"
-  	      		md-select-id="{{squeeze.priref[0]}}"
+  	      		md-select-id="{{squeeze.priref}}"
   	      		ng-repeat="squeeze in Model.Result"
-  	      		ui-sref="gl.singleRecord({refID: {{squeeze.priref[0]}}})"
+  	      		ui-sref="gl.singleRecord({refID: {{squeeze.priref}}})"
   	      		class="vspinentry" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50+'s','overflow':'hidden'}" >
   			<td md-cell>
   				<img ng-src="{{'https://opacbasis.acdh.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value=' + squeeze['reproduction.reference'][0] + '&width=200&height=200&scalemode=fill&fillmode=center&imageformat=jpg'}}" class="squeezeicon" alt="{{squeeze['reproduction.reference'][0]}}" />
@@ -78,7 +78,7 @@
   	        <td md-cell>{{squeeze['production.place'][0]}}</td>
   	        <td md-cell>
               <div class="tabletoolbar" layout="row" layout-align="end" ng-if="!squeeze.position" ng-click="$event.stopPropagation()">
-  							<md-button class="md-icon-button" aria-label="Details" ui-sref="{{'gl.singleRecord({refID: '+squeeze.priref[0]+'})'}}">
+  							<md-button class="md-icon-button" aria-label="Details" ui-sref="{{'gl.singleRecord({refID: '+squeeze.priref+'})'}}">
   								<md-icon md-colors="{color: 'primary-800'}" >library_books</md-icon>
   									<md-tooltip md-direction="bottom">
   											Details

@@ -1,11 +1,11 @@
 <div class="pagewrapper">
 		<div class="pagecover" layout="row" flex="noshrink" layout-align="start end" default-image="media/preload.jpg" preload-bg-image="{{'https://opacbasis.acdh.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value='+Model.SingleRecord['reproduction.reference'][0]+'&width=1000&height=500&scalemode=fill&fillmode=center&imageformat=jpg'}}">
 			<h2 class="md-display-1" style="color: #ffffff; position: relative; margin: 5px; z-index:1;">{{Model.SingleRecord.title[0]}}</h2>
-			<md-button style="position: relative; margin: 13px; z-index:1;" class="md-primary md-raised" aria-label="3D Scans" ng-repeat="ref in Model.SingleRecord['priref'] track by $index" ui-sref="gl.scan({scanID: '{{ref}}'})" ng-if="Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'">
+			<md-button style="position: relative; margin: 13px; z-index:1;" class="md-primary md-raised" aria-label="3D Scans"  ui-sref="gl.scan({scanID: '{{Model.SingleRecord.priref}}'})" ng-if="Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'">
 				<md-icon>3d_rotation</md-icon>
 				3D - Scans
 			</md-button>
-			<md-button style="position: relative; margin: 13px; z-index:1;" class="md-primary md-raised" aria-label="Image Scans" ng-repeat="ref in Model.SingleRecord['priref'] track by $index" ui-sref="gl.fullImage({imgID: '{{ref}}'})" ng-if="Model.SingleRecord['reproduction.reference'].length > 0">
+			<md-button style="position: relative; margin: 13px; z-index:1;" class="md-primary md-raised" aria-label="Image Scans" ui-sref="gl.fullImage({imgID: '{{Model.SingleRecord.priref}}'})" ng-if="Model.SingleRecord['reproduction.reference'].length > 0">
 				<md-icon>image</md-icon>
 				Image Scans
 			</md-button>
@@ -42,7 +42,7 @@
 									</md-list-item>
 									<md-list-item class="vspinentry">
 												<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Level: </h3>
-												<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['description_level'][0].value[0]}}</p>
+												<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['description_level'][0][0].value}}</p>
 												<md-divider></md-divider>
 									</md-list-item>
 									<md-list-item class="vspinentry">
@@ -124,17 +124,17 @@
 										</md-list-item>
 									<md-list-item class="vspinentry">
 												<h3 class="md-title" style="width:40%; padding-right: 15px;text-align: right;">First Line starts: </h3>
-											<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['Inscription.FirstLineStartsWith'][0].value[0]}}</p>
+											<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['Inscription.FirstLineStartsWith'][0][0].value}}</p>
 											<md-divider></md-divider>
 									</md-list-item>
 									<md-list-item class="vspinentry">
 												<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Bustrophedon: </h3>
-											<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['Inscription.Bustrophedon'][0].value[0]}}</p>
+											<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['Inscription.Bustrophedon'][0][0].value}}</p>
 											<md-divider></md-divider>
 									</md-list-item>
 									<md-list-item class="vspinentry">
 												<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Quality: </h3>
-											<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['Inscription.Quality'][0].value[0]}}</p>
+											<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['Inscription.Quality'][0][0].value}}</p>
 											<md-divider></md-divider>
 									</md-list-item>
 									<md-list-item class="vspinentry">
@@ -144,7 +144,7 @@
 									</md-list-item>
 									<md-list-item class="vspinentry">
 												<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Period: </h3>
-											<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['period_enum'][0].value[0]}}</p>
+											<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['period_enum'][0][0].value}}</p>
 											<md-divider></md-divider>
 									</md-list-item>
 									<md-list-item class="vspinentry">
@@ -249,7 +249,7 @@
 					<div style="width: 100%;" layout-padding>
 						<h3 class="md-title">Downloads</h3>
 						<md-list-item ng-if="Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'" class="vspinentry">
-							<md-button class="md-primary md-raised" aria-label="Download Scan" href="{{'https://id.acdh.oeaw.ac.at/glasersqueezes2015/rec' + Model.SingleRecord.priref[0] + '?format=collection'}}" style="width: 100%;"><md-icon>file_download</md-icon> DOWNLOAD SQUEEZE</md-button>
+							<md-button class="md-primary md-raised" aria-label="Download Scan" href="{{'https://id.acdh.oeaw.ac.at/glasersqueezes2015/rec' + Model.SingleRecord.priref + '?format=collection'}}" style="width: 100%;"><md-icon>file_download</md-icon> DOWNLOAD SQUEEZE</md-button>
 							<md-divider></md-divider>
 						</md-list-item>
 						<md-list-item ng-if="Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'" class="vspinentry">
