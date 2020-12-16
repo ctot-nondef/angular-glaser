@@ -35,35 +35,35 @@ function createUV(selector, data, dataProvider) {
     }, false);
 
     uv.on('created', function(obj) {
-       
+
     }, false);
 
     uv.on('collectionIndexChanged', function(collectionIndex) {
-        dataProvider.set('c', collectionIndex);
+        //dataProvider.set('c', collectionIndex);
     }, false);
 
     uv.on('manifestIndexChanged', function(manifestIndex) {
-        dataProvider.set('m', manifestIndex);
+        //dataProvider.set('m', manifestIndex);
     }, false);
 
     uv.on('sequenceIndexChanged', function(sequenceIndex) {
-        dataProvider.set('s', sequenceIndex);
+        //dataProvider.set('s', sequenceIndex);
     }, false);
 
     uv.on('canvasIndexChanged', function(canvasIndex) {
-        dataProvider.set('cv', canvasIndex);
+        //dataProvider.set('cv', canvasIndex);
     }, false);
 
     uv.on('rangeChanged', function(rangeId) {
-        dataProvider.set('rid', rangeId);
+        //dataProvider.set('rid', rangeId);
     }, false);
 
     uv.on('openseadragonExtension.rotationChanged', function(rotation) {
-        dataProvider.set('r', rotation);
+        //dataProvider.set('r', rotation);
     }, false);
 
     uv.on('openseadragonExtension.xywhChanged', function(xywh) {
-        dataProvider.set('xywh', xywh);
+        //dataProvider.set('xywh', xywh);
     }, false);
 
     uv.on('openseadragonExtension.currentViewUri', function(data) {
