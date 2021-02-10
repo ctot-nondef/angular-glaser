@@ -49,6 +49,18 @@ GlaserApp
   opacsearch.getPointerList('archive','5').then(function(res){
     $scope.Model.totalT = parseInt(res.data.adlibJSON.recordList.record[0]['hits'], 10);
   });
+  opacsearch.getPointerList('archive','11').then(function(res){
+    $scope.Model.totalManuscripts = parseInt(res.data.adlibJSON.recordList.record[0]['hits'], 10);
+  });
+  opacsearch.getPointerList('archive','12').then(function(res){
+    $scope.Model.totalOtherRecords = parseInt(res.data.adlibJSON.recordList.record[0]['hits'], 10);
+  });
+  opacsearch.getPointerList('archive','13').then(function(res){
+    $scope.Model.totalCorrespondences = parseInt(res.data.adlibJSON.recordList.record[0]['hits'], 10);
+  });
+  opacsearch.getPointerList('archive','14').then(function(res){
+    $scope.Model.totalByOthers = parseInt(res.data.adlibJSON.recordList.record[0]['hits'], 10);
+  });
   opacsearch.getPointerList('archive','6').then(function(res){
     $scope.Model.totalGeo = parseInt(res.data.adlibJSON.recordList.record[0]['hits'], 10);
     $scope.Model.geo =  Math.round($scope.Model.totalGeo / $scope.Model.total * 100);
@@ -557,7 +569,7 @@ GlaserApp
       if($scope.presenter != null) {
         $scope.presenter.setScene({
           meshes: {
-            "Squeeze" : { url: "https://opacbasis.acdh.oeaw.ac.at/" + ref.split('.')[0] + ".nxs" }
+            "Squeeze" : { url: "https://opacbasis.acdh.oeaw.ac.at/nxs/" + ref.split('.')[0].split('/')[1] + ".nxs" }
           },
           modelInstances : {
             "Model1" : { mesh : "Squeeze" }
@@ -566,7 +578,7 @@ GlaserApp
       }
       else {
         init3dhop();
-        $scope.presenter = setup3dhop(`${ref.split('.')[0]}`);
+        $scope.presenter = setup3dhop("https://opacbasis.acdh.oeaw.ac.at/nxs/" + ref.split('.')[0].split('/')[1] + ".nxs");
         resizeCanvas(window.innerWidth - 100, window.innerHeight - 60);
       }
     }

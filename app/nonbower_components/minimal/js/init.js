@@ -1,7 +1,7 @@
 /*
 3DHOP - 3D Heritage Online Presenter
 Copyright (c) 2014, Marco Callieri - Visual Computing Lab, ISTI - CNR
-All rights reserved.    
+All rights reserved.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -17,12 +17,12 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-function setup3dhop(scan) {
+function setup3dhop(url) {
   presenter = new Presenter("draw-canvas");
 
   presenter.setScene({
     meshes: {
-      "Squeeze" : { url: "https://opacbasis.acdh.oeaw.ac.at/" + scan + ".nxs" }
+      "Squeeze" : { url }
     },
     modelInstances : {
       "Model1" : { mesh : "Squeeze" }
@@ -51,7 +51,7 @@ function init3dhop() {
 			else $(this).css("opacity","1.0");
 		})
 		.mouseout(function(e) {
-			clearInterval(interval); 
+			clearInterval(interval);
 			$(this).css("opacity","0.5");
 		})
 		.mousedown(function(e) {
@@ -64,7 +64,7 @@ function init3dhop() {
 					}, 100);
 				}
 				else {
-					clearInterval(interval); 
+					clearInterval(interval);
 				}
 				$(this).css("opacity","1.0");
 				button=0;
@@ -73,12 +73,12 @@ function init3dhop() {
 		.mouseup(function(e) {
 			ismousedown = false;
 			if(e.button==button){
-				clearInterval(interval); 
+				clearInterval(interval);
 				$(this).css("opacity","0.8");
 				button=0;
 			}
 		})
-		.on('touchstart', function(e) { 
+		.on('touchstart', function(e) {
 			button=2;
 		})
 		.on('touchend', function(e) {
@@ -86,22 +86,22 @@ function init3dhop() {
 		});
 
 	$('#measure-output')
-		.on('contextmenu', function(e){ 
+		.on('contextmenu', function(e){
 			e.stopPropagation();
 		});
 
 	$('#3dhop')
-		.on('contextmenu', function(e){ 
-			return false; 
+		.on('contextmenu', function(e){
+			return false;
 		})
 		.on('touchstart', function(e) {
 			$('#toolbar img').css("opacity","0.5");
 		})
 		.on('touchend', function(e) {
-			clearInterval(interval); 
+			clearInterval(interval);
 		})
 		.on('touchmove', function(e) {
-			clearInterval(interval); 
+			clearInterval(interval);
 			$('#toolbar img').css("opacity","0.5");
 		});
 
@@ -109,7 +109,7 @@ function init3dhop() {
 //		.css("cursor","default")
 		.mousedown(function() { $('#toolbar img').css("opacity","0.5"); });
 
-	if (window.navigator.userAgent.indexOf('Trident/') > 0) { //IE fullscreen handler 
+	if (window.navigator.userAgent.indexOf('Trident/') > 0) { //IE fullscreen handler
 		$('#full').click(function(e) {enterFullscreen();});
 		$('#full_on').click(function(e) {exitFullscreen();});
 	}
@@ -117,7 +117,7 @@ function init3dhop() {
 	resizeCanvas($('#3dhop').parent().width(),$('#3dhop').parent().height());
 
 	set3dhlg();
-} 
+}
 
 function lightSwitch() {
   var on = presenter.isLightTrackballEnabled();
@@ -202,11 +202,11 @@ function exitFullscreen() {
   $('#full').css("opacity","0.5");
   resizeCanvas(presenter.native_width,presenter.native_height);
 
-  if (document.msExitFullscreen) document.msExitFullscreen();  
+  if (document.msExitFullscreen) document.msExitFullscreen();
   else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
   else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
 
-  presenter.ui.postDrawEvent(); 
+  presenter.ui.postDrawEvent();
 }
 
 function moveToolbar(l,t) {
@@ -223,18 +223,18 @@ function resizeCanvas(w,h) {
   $('#draw-canvas').attr('width', w);
   $('#draw-canvas').attr('height',h);
   $('#3dhop').css('width', w);
-  $('#3dhop').css('height', h);  
+  $('#3dhop').css('height', h);
 }
 
 function set3dhlg() {
   $('#tdhlg').html("Powered by 3DHOP</br>&nbsp;C.N.R. &nbsp;&ndash;&nbsp; I.S.T.I.");
   $('#tdhlg').mouseover(function() {
-	 $('#tdhlg').animate({ 
+	 $('#tdhlg').animate({
 		height: "25px"
 	  }, "fast" );
 	 })
 	.mouseout(function() {
-	 $('#tdhlg').animate({ 
+	 $('#tdhlg').animate({
 		height: "13px"
 	  }, "slow" );
 	 });

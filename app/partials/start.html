@@ -7,7 +7,7 @@
 										md-rowspan="{{squeeze.position>0 ? squeeze.rows : 1}}"
 										md-colspan="{{squeeze.position>0 ? squeeze.cols : 1}}"
 										class="spinentry raise" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50+'s','overflow':'hidden'}">
-					<img preload-image default-image="media/preload.jpg" ng-src="{{squeeze.position>0 ? squeeze.bgImg :'https://opacbasis.acdh.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value='+squeeze['reproduction.reference'][0]+'&width=200&height=200&scalemode=fill&fillmode=center'}}" style="width:100%;" />
+					<img preload-image default-image="media/preload.jpg" ng-src="{{squeeze.position>0 ? squeeze.bgImg :'https://opacbasis.acdh.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value='+squeeze['reproduction.reference'][0]+'&width=200&height=200&scalemode=fill&fillmode=center&imageformat=jpg'}}" style="width:100%;" />
 					<md-grid-tile-footer layout="column" layout-align="center center">
 						<h5 >{{squeeze.position>0 ? squeeze.title : squeeze.title[0]}}</h5>
 					</md-grid-tile-footer>

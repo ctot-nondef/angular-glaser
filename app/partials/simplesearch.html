@@ -74,13 +74,13 @@
         </span>
       </div>
       <md-list class="md-dense" flex>
-        <md-list-item class="md-dense" ng-click="simpleSearch(null, 'AT-OeAW-BA-3-27-A*')">
+        <md-list-item class="md-dense" ng-click="simpleSearch(null, 'AT-OeAW-BA-3-27-A-*')">
           <md-icon>layers</md-icon>
           <h3 class="md-title" style="width:70%;padding-right: 15px;">Squeezes: </h3>
           <p style="width: 30%; text-align: justify;">{{Model.totalA || "counting"}}</p>
           <md-divider></md-divider>
         </md-list-item>
-        <md-list-item class="md-dense" ng-click="simpleSearch(null, 'AT-OeAW-BA-3-27-P*')">
+        <md-list-item class="md-dense" ng-click="simpleSearch(null, 'AT-OeAW-BA-3-27-P-*')">
           <md-icon>image</md-icon>
           <h3 class="md-title" style="width:70%;padding-right: 15px;">Glass plate negatives etc: </h3>
           <p style="width: 30%; text-align: justify;">{{Model.totalP || "counting"}}</p>
@@ -90,6 +90,30 @@
           <md-icon>library_books</md-icon>
           <h3 class="md-title" style="width:70%;padding-right: 15px;">Diaries & Transcripts: </h3>
           <p style="width: 30%; text-align: justify;">{{Model.totalT || "counting"}}</p>
+          <md-divider></md-divider>
+        </md-list-item>
+        <md-list-item class="md-dense" ng-click="simpleSearch(null, 'AT-OeAW-BA-3-27-2-')">
+          <md-icon>library_books</md-icon>
+          <h3 class="md-title" style="width:70%;padding-right: 15px;">Manuscripts: </h3>
+          <p style="width: 30%; text-align: justify;">{{Model.totalManuscripts || "counting"}}</p>
+          <md-divider></md-divider>
+        </md-list-item>
+        <md-list-item class="md-dense" ng-click="simpleSearch(null, 'AT-OeAW-BA-3-27-3-')">
+          <md-icon>library_books</md-icon>
+          <h3 class="md-title" style="width:70%;padding-right: 15px;">Other Records by Glaser: </h3>
+          <p style="width: 30%; text-align: justify;">{{Model.totalOtherRecords || "counting"}}</p>
+          <md-divider></md-divider>
+        </md-list-item>
+        <md-list-item class="md-dense" ng-click="simpleSearch(null, 'AT-OeAW-BA-3-27-4-')">
+          <md-icon>library_books</md-icon>
+          <h3 class="md-title" style="width:70%;padding-right: 15px;">Correspondences: </h3>
+          <p style="width: 30%; text-align: justify;">{{Model.totalCorrespondences || "counting"}}</p>
+          <md-divider></md-divider>
+        </md-list-item>
+        <md-list-item class="md-dense" ng-click="simpleSearch(null, 'AT-OeAW-BA-3-27-5-')">
+          <md-icon>library_books</md-icon>
+          <h3 class="md-title" style="width:70%;padding-right: 15px;">Records by Others: </h3>
+          <p style="width: 30%; text-align: justify;">{{Model.totalByOthers || "counting"}}</p>
           <md-divider></md-divider>
         </md-list-item>
       </md-list>
