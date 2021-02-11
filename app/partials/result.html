@@ -61,12 +61,14 @@
 															View Image
 														</md-tooltip>
 											</md-button>
-											<md-button class="md-icon-button" aria-label="View Scan" ui-sref="gl.scan({scanID: '{{squeeze.priref}}'})" ng-if="squeeze['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'">
+											<!-- 3D Scan Button -->
+											<md-button class="md-icon-button" aria-label="View Scan" ui-sref="gl.scan({scanID: '{{squeeze.priref}}'})" ng-if="hasScan(squeeze)">
 												<md-icon md-colors="{color: 'primary-800'}" >3d_rotation</md-icon>
 													<md-tooltip md-direction="bottom">
 															View 3D Scan
 														</md-tooltip>
 											</md-button>
+											<!-- Arche Button -->
 											<md-button class="md-icon-button" aria-label="Download Scan" href="{{'https://id.acdh.oeaw.ac.at/glasersqueezes2015/rec' + squeeze.priref + '?format=collection'}}" >
 												<md-icon md-colors="{color: 'primary-800'}" >file_download</md-icon>
 													<md-tooltip md-direction="bottom">

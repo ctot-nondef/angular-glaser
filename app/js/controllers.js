@@ -157,7 +157,13 @@ GlaserApp
     $scope.vmToggle = function(){
       if($scope.uiview.menuOpen) $scope.uiview.menuOpen=false;
       else $scope.uiview.menuOpen=true;
-    }
+    };
+    $scope.hasScan = function(rec){
+      if( Array.isArray(rec.digital_reference) &&
+          rec.digital_reference.filter(ref => ref.match(/^3D/g)).length > 0
+      ) return true;
+      else return false;
+    };
   //********* END OF DECLARATIVE PART **************************************
   //************************************************************************
   // if the url is fucked up, go back to search
@@ -169,7 +175,7 @@ GlaserApp
     $scope.promise = opacsearch.history.result[$stateParams.queryID-1][$stateParams.pageNo];
   }
   else {
-    $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', opacsearch.history.query[$stateParams.queryID-1],"AND",undefined,['priref','production.place','production.place.lref','production.place.context','production.place.uri','inscription.language', 'title', 'reproduction.reference','object_number', 'part_of_reference'],$stateParams.pageNo);
+    $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', opacsearch.history.query[$stateParams.queryID-1],"AND",undefined,['priref','production.place','production.place.lref','production.place.context','production.place.uri','inscription.language', 'title', 'reproduction.reference','object_number', 'part_of_reference', 'digital_reference', 'digital_reference.description'],$stateParams.pageNo);
     opacsearch.updatePage($stateParams.queryID-1, $stateParams.pageNo, $scope.promise);
   }
   $scope.promise.then($scope.update);
