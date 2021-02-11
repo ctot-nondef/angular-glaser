@@ -139,12 +139,10 @@ GlaserApp
     //************************************************************************
     // generic page update
     $scope.update = function(res) {
-      console.log(res);
       $scope.Model.Total = res.data.adlibJSON.diagnostic.hits;
       $scope.Model.Page = $stateParams.pageNo;
       $scope.Model.Pagesize = opacsearch.pagesize;
       $scope.Model.Result = res.data.adlibJSON.recordList.record;
-      console.log($scope.Model.Result);
     };
     //************************************************************************
     // UI-switching
@@ -157,7 +155,6 @@ GlaserApp
       Config.currentView = 'grid';
     };
     $scope.vmToggle = function(){
-      console.log($scope.uiview.menuOpen);
       if($scope.uiview.menuOpen) $scope.uiview.menuOpen=false;
       else $scope.uiview.menuOpen=true;
     }
@@ -565,11 +562,14 @@ GlaserApp
     });
     $scope.loadScan = function(ref) {
       if (!ref) ref = $scope.Model.selectedScan;
+      let cleanref = "";
+      if (ref.split('.')[0].split('\\')[1]) cleanref = ref.split('.')[0].split('\\')[1];
+      else cleanref = ref.split('.')[0].split('/')[1]
       console.log('loading ', ref, $scope.Model.selectedScan);
       if($scope.presenter != null) {
         $scope.presenter.setScene({
           meshes: {
-            "Squeeze" : { url: "https://opacbasis.acdh.oeaw.ac.at/nxs/" + ref.split('.')[0].split('/')[1] + ".nxs" }
+            "Squeeze" : { url: "https://opacbasis.acdh.oeaw.ac.at/nxs/" + cleanref + ".nxs" }
           },
           modelInstances : {
             "Model1" : { mesh : "Squeeze" }
@@ -578,7 +578,7 @@ GlaserApp
       }
       else {
         init3dhop();
-        $scope.presenter = setup3dhop("https://opacbasis.acdh.oeaw.ac.at/nxs/" + ref.split('.')[0].split('/')[1] + ".nxs");
+        $scope.presenter = setup3dhop("https://opacbasis.acdh.oeaw.ac.at/nxs/" + cleanref + ".nxs");
         resizeCanvas(window.innerWidth - 100, window.innerHeight - 60);
       }
     }

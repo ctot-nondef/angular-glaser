@@ -37,7 +37,6 @@
 	    <tbody md-body>
 	      <tr md-row
 	      		ng-repeat="squeeze in Model.Result"
-	      		ui-sref="gl.singleRecord({refID: {{squeeze.priref}}})"
 	      		class="vspinentry" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50+'s','overflow':'hidden'}" >
 								<td md-cell><md-icon>{{squeeze.part_of_reference[0] | type}}</md-icon></td>
 									<td md-cell>
@@ -47,7 +46,7 @@
 	        <td md-cell>{{squeeze['inscription.language'][0]}}</td>
 	        <td md-cell>{{squeeze['production.place'][0]}}</td>
 	        <td md-cell>
-										<div class="tabletoolbar" layout="row" layout-align="end" ng-if="!squeeze.position" ng-click="$event.stopPropagation()">
+										<div layout="row" layout-align="end" ng-if="!squeeze.position" ng-click="$event.stopPropagation()">
 											<md-button class="md-icon-button" aria-label="Details" ui-sref="{{'gl.singleRecord({refID: '+squeeze.priref+'})'}}">
 												<md-icon md-colors="{color: 'primary-800'}" >library_books</md-icon>
 													<md-tooltip md-direction="bottom">

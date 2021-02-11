@@ -177,20 +177,6 @@ md-grid-tile:hover .tiletoolbar {
 }
 
 
-.tabletoolbar {
-  opacity: 0.8;
-  -webkit-transition: right 0.3s; /* Safari */
-  transition: right 0.3s;
-  right: -260px;
-  height: 35px;
-  position: relative;
-  overflow: hidden;
-}
-
-tr:hover .tabletoolbar {
-  right: 0px;
-}
-
 .raise {
   -webkit-transition: box-shadow 0.3s; /* Safari */
   transition: box-shadow 0.3s;
