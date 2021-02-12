@@ -153,12 +153,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0002"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ex libris: Jas. Lumbsden son  Co. Wholesale Stationers. Booksellers & Account Book Manufactures Glasgow"
-            }
           ]
         },
         {
@@ -184,12 +178,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0003"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "empty"
             }
           ]
         },
@@ -217,16 +205,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0004"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "empty"
-            },
-            {
-              "label": "description",
-              "value": "Ankunft in ʿAdan mit dem Lloydschiff Prageses, Samstag 29 / X 1887."
-            }
           ]
         },
         {
@@ -252,16 +230,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0005"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "calculations"
-            },
-            {
-              "label": "description",
-              "value": "ʿAdan, Tawāḥī Samstag 4 / 5 Novbr [November] 1887. measurements of barometric pressure and temperature"
             }
           ]
         },
@@ -289,12 +257,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0006"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Unfall in Tawāḥī"
-            }
           ]
         },
         {
@@ -320,16 +282,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0007"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Laḥğ Montag 7 / XI 7h 15m"
-            },
-            {
-              "label": "description",
-              "value": "Laḥğ Dienstag 8 / XI"
             }
           ]
         },
@@ -357,16 +309,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0008"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Laḥğ Dienstag 8 / XI - Mittwoch 9 / XI 1887; sketches of knives; Langer: Gabelsberger"
-            },
-            {
-              "label": "description",
-              "value": "Skizze von einer Lanzenspitze, zwei Krummsäbel. Gruss der Beduinen Ḥabbān"
-            }
           ]
         },
         {
@@ -392,16 +334,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0009"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Weihrauch in Ḥabbān. Sprachliches Ḥabbān"
-            },
-            {
-              "label": "description",
-              "value": "sprachliche Aufzeichnungen"
             }
           ]
         },
@@ -429,16 +361,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0010"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Donnerstag 10 / XI 1887 ....Bungalow (Bankala) in Laḥğ.... Laḥğ 8h morgens"
-            },
-            {
-              "label": "description",
-              "value": "ʿAnad"
-            }
           ]
         },
         {
@@ -464,16 +386,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0011"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "ʿAnad 10 / XI 1887 um 6h 35m"
-            },
-            {
-              "label": "description",
-              "value": "SW von Ğabal Talaʿ. Talaʿ. Skizze der Umgebung"
             }
           ]
         },
@@ -501,12 +413,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0012"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "9h 40m"
-            }
           ]
         },
         {
@@ -532,16 +438,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0013"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Samstag 12 / XI Lagerplatz ʿAqqān 5h 45m"
-            },
-            {
-              "label": "description",
-              "value": "6h 0m "
             }
           ]
         },
@@ -569,12 +465,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0014"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Lagerplatz al-Ḥuwaymī 1h 20m"
-            }
           ]
         },
         {
@@ -600,12 +490,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0015"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": " ʿAqqān "
             }
           ]
         },
@@ -633,16 +517,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0016"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Lagerplatz Biʾr Ğirāba Sonntag 13 / XI 1887. sketch"
-            },
-            {
-              "label": "description",
-              "value": "Ğabal Ḥurwa,Bilād al-Ġābira"
-            }
           ]
         },
         {
@@ -668,12 +542,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0017"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "sketch"
             }
           ]
         },
@@ -701,16 +569,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0018"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Masāḥīn = al-Musayḥa"
-            },
-            {
-              "label": "description",
-              "value": "Wādī Ẓabāb"
-            }
           ]
         },
         {
@@ -736,16 +594,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0019"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "ʿAbadān (Dorf östlich von Ṣabr)"
-            },
-            {
-              "label": "description",
-              "value": "sketch"
             }
           ]
         },
@@ -773,16 +621,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0020"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "sketch; Wādī Darr"
-            },
-            {
-              "label": "description",
-              "value": "Der Weg von ʿAdan nach Ṣubayḥī"
-            }
           ]
         },
         {
@@ -808,16 +646,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0021"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ṭarīq al-Madrağa; Stämme in Ṣubayḥī"
-            },
-            {
-              "label": "description",
-              "value": "Dienstag 15 / XI 1887. Skizze einer Pflanze"
             }
           ]
         },
@@ -845,12 +673,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0022"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "sketch of a plant"
-            }
           ]
         },
         {
@@ -876,12 +698,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0023"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sūq az-Zaylaʿī"
             }
           ]
         },
@@ -909,12 +725,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0024"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "sketch of a plant, Ḍubba"
-            }
           ]
         },
         {
@@ -940,12 +750,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0025"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "sketch of a map, Raʾs Naqīl Ṣurayḥ"
             }
           ]
         },
@@ -973,12 +777,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0026"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Taʿizz Mittwoch 16 / XI 2h nachmittags - Taʿizz Donnerstag 17 / XI 1887"
-            }
           ]
         },
         {
@@ -1004,16 +802,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0027"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Taʿizz Donnerstag 16/17 Novbr 1887. longitudes (?) measurements"
-            },
-            {
-              "label": "description",
-              "value": "Taʿizz 16/17 Novbr 1887 Breitenbestimmung"
             }
           ]
         },
@@ -1041,16 +829,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0028"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Erkundete Ruinen"
-            },
-            {
-              "label": "description",
-              "value": "Freitag 18 / XI, Skizze"
-            }
           ]
         },
         {
@@ -1077,16 +855,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0029"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Skizze"
-            },
-            {
-              "label": "description",
-              "value": "Ẓabāb"
-            }
           ]
         },
         {
@@ -1112,16 +880,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0030"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Zollstationen"
-            },
-            {
-              "label": "description",
-              "value": "Taʿizz Samstag 19 XI / 1887"
             }
           ]
         },
@@ -1175,16 +933,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0032"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Skizze"
-            },
-            {
-              "label": "description",
-              "value": "Wādī Tāluq (?)"
-            }
           ]
         },
         {
@@ -1210,12 +958,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0033"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sprachliches"
             }
           ]
         },
@@ -1243,12 +985,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0034"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sonntag 20 / XI"
-            }
           ]
         },
         {
@@ -1274,12 +1010,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0035"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ğabal ʿAwd, Murays"
             }
           ]
         },
@@ -1307,12 +1037,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0036"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Montag 21 / XI Taizz 7h20"
-            }
           ]
         },
         {
@@ -1338,16 +1062,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0037"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Wars; sketch of a plant"
-            },
-            {
-              "label": "description",
-              "value": "sketch of a plant"
             }
           ]
         },
@@ -1375,16 +1089,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0038"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sawā und Kolaibus des Periplus; text crossed out"
-            },
-            {
-              "label": "description",
-              "value": "Taʿizz, Mittwoch 23 / XI 6h 45m"
-            }
           ]
         },
         {
@@ -1410,12 +1114,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0039"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Qaʿda"
             }
           ]
         },
@@ -1469,12 +1167,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0041"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ġayl Naḫlān"
-            }
           ]
         },
         {
@@ -1500,12 +1192,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0042"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sawdān, Ḥawbān, Širmān, Ṯawmān"
             }
           ]
         },
@@ -1533,12 +1219,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0043"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Donnerstag 24 / XI 6h 10m; Qaʿda, Taʿizz, Ḥağda"
-            }
           ]
         },
         {
@@ -1564,12 +1244,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0044"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ḏī Sufāl"
             }
           ]
         },
@@ -1623,12 +1297,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0046"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "sketch of a plant (leaf), text crossed out"
-            }
           ]
         },
         {
@@ -1654,16 +1322,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0047"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Blütenzäppfchen Text durchgestrichen"
-            },
-            {
-              "label": "description",
-              "value": "Wars"
             }
           ]
         },
@@ -1691,16 +1349,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0048"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Erkundiggen [Erkundigungen]"
-            },
-            {
-              "label": "description",
-              "value": "Raymān, Wādī ʿAnna"
-            }
           ]
         },
         {
@@ -1726,12 +1374,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0049"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ğibla, Freitag 25. / XI 6h 10m"
             }
           ]
         },
@@ -1759,12 +1401,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0050"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "ʾIbb, Freitag 25 / XI - ʾIbb, Samstag 26 / XI"
-            }
           ]
         },
         {
@@ -1790,12 +1426,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0051"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ḥaysān"
             }
           ]
         },
@@ -1823,12 +1453,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0052"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Erkundigungen"
-            }
           ]
         },
         {
@@ -1854,16 +1478,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0053"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "ʿUrwān"
-            },
-            {
-              "label": "description",
-              "value": "Ḥuṣn Raymān,, Sonntag 27 / XI 1887"
             }
           ]
         },
@@ -1943,12 +1557,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0056"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Wasserscheide"
-            }
           ]
         },
         {
@@ -1975,16 +1583,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0057"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "ʾIbb, Montag 27/28 Novebr. 1887"
-            },
-            {
-              "label": "description",
-              "value": "Breitenbestimmung. ʾIbb, Montag 27/28 Novber 1887"
-            }
           ]
         },
         {
@@ -2010,12 +1608,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0058"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Weg von <Denn> (?) nach ʾIbb"
             }
           ]
         },
@@ -2068,16 +1660,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0060"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Map, way from ʾIbb to Naḫla (westl.)"
-            },
-            {
-              "label": "description",
-              "value": "Abreise von ʾIbb, Samstag 3/12 [1887]"
             }
           ]
         },
@@ -2183,16 +1765,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0064"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Antiquitäten .... Taʿizz"
-            },
-            {
-              "label": "description",
-              "value": "altsüdarabische Transkription (einer Münze?)"
-            }
           ]
         },
         {
@@ -2245,12 +1817,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0066"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Wādī Rasrūṣ...Globenblätter"
-            }
           ]
         },
         {
@@ -2276,12 +1842,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0067"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Radmān ʿAbdallah"
             }
           ]
         },
@@ -2309,12 +1869,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0068"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "von ʿIrš nach Taʿizz. ʿIrš, al-Falak, Rubuʿ bin Šaʿb , Taʿizz; Abreise"
-            }
           ]
         },
         {
@@ -2340,16 +1894,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0069"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Wādī Sahūl"
-            },
-            {
-              "label": "description",
-              "value": "Myrrhe, Datteln"
             }
           ]
         },
@@ -2377,16 +1921,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0070"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Mittwoch 7/12 1887"
-            },
-            {
-              "label": "description",
-              "value": "Kleidung: Kranz"
-            }
           ]
         },
         {
@@ -2412,16 +1946,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0071"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sūq al-Ǧarrāḥī, Mittwoch 7/12 "
-            },
-            {
-              "label": "description",
-              "value": "Moscheen Zabīd"
             }
           ]
         },
@@ -2449,12 +1973,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0072"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Zabīd, Freitag 9/12 1887. Stämme in der Nähe von Zabīd"
-            }
           ]
         },
         {
@@ -2480,12 +1998,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0073"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "ʾAḫdām, Zabīd"
             }
           ]
         },
@@ -2538,12 +2050,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0075"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sonntag 11/12 [1887]"
             }
           ]
         },
@@ -2649,16 +2155,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0079"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Bāğil Mittwoch 14/12 1887"
-            },
-            {
-              "label": "description",
-              "value": "Ḥuğayla , Donnerstag 15/12 1887"
-            }
           ]
         },
         {
@@ -2684,12 +2180,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0080"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "16/12 [1887]"
             }
           ]
         },
@@ -2769,16 +2259,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0083"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Manāḥa, Samstag 16/17 Dezember 1887"
-            },
-            {
-              "label": "description",
-              "value": "Measurements"
-            }
           ]
         },
         {
@@ -2804,16 +2284,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0084"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Measurements"
-            },
-            {
-              "label": "description",
-              "value": "Sonntag 18/12 1887"
             }
           ]
         },
@@ -2867,12 +2337,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0086"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "small sketch"
-            }
           ]
         },
         {
@@ -2898,12 +2362,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0087"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Dienstag 20/12 [1887]"
             }
           ]
         },
@@ -2931,16 +2389,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0088"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ṣanʿāʾ, Mittwoch 20/21 Dezbr. 1887; Messungen"
-            },
-            {
-              "label": "description",
-              "value": "Messungen; Donnerstag 18/1 1888"
-            }
           ]
         },
         {
@@ -2966,16 +2414,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0089"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Donnerstag 19/1 1888 (Nachmittag), Messungen"
-            },
-            {
-              "label": "description",
-              "value": "Aneroidvergliech am 15. März 1888 (.... Maʾrib). mitgenommen wird II"
             }
           ]
         },
@@ -3237,16 +2675,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0099"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Berechnung"
-            },
-            {
-              "label": "description",
-              "value": "Diener Ḥassan aṣ-Ṣanʿānī, Saʿd (Sawğarī) aḏ-Ḏamārī ... Sonntag 6/XI 1887"
-            }
           ]
         },
         {
@@ -3273,12 +2701,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0100"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Soll, Haben, Notizen (16/12 [1887]"
-            }
           ]
         },
         {
@@ -3304,12 +2726,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0101"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "zwei Zeilen (durchgestrichen)"
             }
           ]
         },

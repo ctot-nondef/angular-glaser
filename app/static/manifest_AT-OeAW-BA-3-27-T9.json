@@ -45,12 +45,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0001"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "IX Proben der Dialekte von Mahrâ, Ẓafar und Soḳoṭrâ aufgenommen in den Jahren 1888 - 1894 von Eduard Glaser (Blatt 1-186)"
-            }
           ]
         },
         {
@@ -81,7 +75,7 @@
           "metadata": [
             {
               "label": "description",
-              "value": "Note by Maria Höfner: \"A 1001 siehe Inventarzettel\". "
+              "value": " "
             }
           ]
         }

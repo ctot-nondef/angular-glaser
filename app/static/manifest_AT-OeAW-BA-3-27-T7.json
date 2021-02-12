@@ -105,12 +105,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0001"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Glasers Tagebuch VII. (Bl. 1-26). Enthält die Inschr. No. 382-404 u. 346. Mit der Nummerierung Höfners A999"
-            }
           ]
         },
         {
@@ -162,12 +156,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0003"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "17. Januar 1886"
             }
           ]
         },
@@ -350,12 +338,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0010"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Blatt 5 fehlt"
             }
           ]
         },
@@ -616,12 +598,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0020"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "leer"
             }
           ]
         },
@@ -1507,12 +1483,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0054"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "leer"
-            }
           ]
         },
         {
@@ -1538,12 +1508,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0055"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "t'hair, mahri Worte"
             }
           ]
         },
@@ -1571,12 +1535,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0056"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Rechnung Buchbinder Franz Schlegel für Eduasrd Glaser, datiert 10 Mai 1897"
-            }
           ]
         },
         {
@@ -1602,12 +1560,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0057"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "ʾIbb  17 nummerierte Namen"
             }
           ]
         },
@@ -1635,12 +1587,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0058"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Beschrieben in arabisch"
-            }
           ]
         },
         {
@@ -1666,12 +1612,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0059"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL404"
             }
           ]
         },
@@ -1699,12 +1639,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0060"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "leer"
-            }
           ]
         },
         {
@@ -1731,12 +1665,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0061"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Skizze Umgebung von Ẓafār"
-            }
           ]
         },
         {
@@ -1762,12 +1690,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0062"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Nr. 36"
             }
           ]
         }

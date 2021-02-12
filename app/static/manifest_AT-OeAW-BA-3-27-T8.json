@@ -143,12 +143,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0001"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Glasers Tagebuch VIII 1886 (Bl. 1-191).  Mit der Nummerierung Höfners A1000.\nInschriften Nr. 19, 302, 359-381.\n"
-            }
           ]
         },
         {
@@ -175,16 +169,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0002"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Rechnungen"
-            },
-            {
-              "label": "description",
-              "value": "GL19"
-            }
           ]
         },
         {
@@ -210,12 +194,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0003"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL19"
             }
           ]
         },
@@ -269,12 +247,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0005"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Dialekt"
-            }
           ]
         },
         {
@@ -301,12 +273,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0006"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Juden im südlichen Jemen; Pariajuden"
-            }
           ]
         },
         {
@@ -332,16 +298,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0007"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sprachlehen"
-            },
-            {
-              "label": "description",
-              "value": "Juden Jemens"
             }
           ]
         },
@@ -447,12 +403,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0011"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Nach der Hochzeit; Sprachliches"
-            }
           ]
         },
         {
@@ -478,16 +428,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0012"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ortschaften; Bakīl"
-            },
-            {
-              "label": "description",
-              "value": "Namen von Jungen und Thieren"
             }
           ]
         },
@@ -749,12 +689,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0022"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Himjarische Gräber"
-            }
           ]
         },
         {
@@ -807,16 +741,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0024"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Tabaksorten"
-            },
-            {
-              "label": "description",
-              "value": "Einwohnerzahl Jemens"
-            }
           ]
         },
         {
@@ -843,12 +767,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0025"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Erkundete Ortschaften"
-            }
           ]
         },
         {
@@ -874,16 +792,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0026"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Weitere Ruinen"
-            },
-            {
-              "label": "description",
-              "value": "Notiz Höfners GL808=1045"
             }
           ]
         },
@@ -963,12 +871,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0029"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Namen für Gold"
-            }
           ]
         },
         {
@@ -994,12 +896,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0030"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ruinen. Stand der Dinge vor Einmarsch der türk. Truppen"
             }
           ]
         },
@@ -1027,12 +923,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0031"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Dialect. heidnische Stämme im Jemen"
-            }
           ]
         },
         {
@@ -1058,12 +948,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0032"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ruine"
             }
           ]
         },
@@ -1091,12 +975,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0033"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Goldfund"
-            }
           ]
         },
         {
@@ -1122,16 +1000,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0034"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Begrüßung der Gattin ..."
-            },
-            {
-              "label": "description",
-              "value": "Dialectisches"
             }
           ]
         },
@@ -1159,12 +1027,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0035"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Saatausdrücke"
-            }
           ]
         },
         {
@@ -1190,16 +1052,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0036"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Einführung des Kaffees im Jemen durch die Türken"
-            },
-            {
-              "label": "description",
-              "value": "Ṣanʿāʾ, Freitag 7. Jänner 1886"
             }
           ]
         },
@@ -1227,16 +1079,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0037"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Skizzen von Tieren"
-            },
-            {
-              "label": "description",
-              "value": "Skizzen von Tieren"
-            }
           ]
         },
         {
@@ -1262,12 +1104,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0038"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Samstag 9/1 1886. Skizze von Dörfern südlich von Ṣanʿāʾ"
             }
           ]
         },
@@ -1295,16 +1131,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0039"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL359-GL364"
-            },
-            {
-              "label": "description",
-              "value": "GL365"
-            }
           ]
         },
         {
@@ -1330,12 +1156,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0040"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL366- GL371"
             }
           ]
         },
@@ -1363,16 +1183,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0041"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Skizze von Ǧabal Qarwān, Wādī Lamis, etc."
-            },
-            {
-              "label": "description",
-              "value": "GL372"
-            }
           ]
         },
         {
@@ -1398,12 +1208,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0042"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL373"
             }
           ]
         },
@@ -1561,12 +1365,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0048"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Skizze Dörfer zwischen Ḏamār und Yakār"
-            }
           ]
         },
         {
@@ -1592,12 +1390,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0049"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL374"
             }
           ]
         },
@@ -1650,12 +1442,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0051"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Dienstag 12/1 1886"
             }
           ]
         },
@@ -1787,12 +1573,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0056"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ḏamār, Mittwoch 12/13. Jänner 1886"
-            }
           ]
         },
         {
@@ -1844,12 +1624,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0058"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ruinen"
             }
           ]
         },
@@ -2059,12 +1833,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0066"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL377"
-            }
           ]
         },
         {
@@ -2116,12 +1884,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0068"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Radāʿ"
             }
           ]
         },
@@ -2201,16 +1963,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0071"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Skizze einer Moschee  ʿĀmirīya"
-            },
-            {
-              "label": "description",
-              "value": "Skizze eines Gebäudes"
-            }
           ]
         },
         {
@@ -2289,16 +2041,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0074"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen  zu Hamdānī’s Ǧazīra"
-            },
-            {
-              "label": "description",
-              "value": "Anmerkungen  zu Hamdānī"
-            }
           ]
         },
         {
@@ -2324,16 +2066,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0075"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen  zu Hamdānī"
-            },
-            {
-              "label": "description",
-              "value": "Anmerkungen  zu Hamdānī"
             }
           ]
         },
@@ -2361,16 +2093,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0076"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen  zu Hamdānī"
-            },
-            {
-              "label": "description",
-              "value": "Anmerkungen  zu Hamdānī"
-            }
           ]
         },
         {
@@ -2396,16 +2118,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0077"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen  zu Hamdānī"
-            },
-            {
-              "label": "description",
-              "value": "Anmerkungen  zu Hamdānī"
             }
           ]
         },
@@ -2433,16 +2145,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0078"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen  zu Hamdānī ; Skizze zu Ḥudayda-Bilād Ḥakam"
-            },
-            {
-              "label": "description",
-              "value": "Anmerkungen  zu Hamdānī"
-            }
           ]
         },
         {
@@ -2468,12 +2170,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0079"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Skizze eines Gebäudes in Radāʿ"
             }
           ]
         },
@@ -2501,16 +2197,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0080"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL379"
-            },
-            {
-              "label": "description",
-              "value": "GL379"
-            }
           ]
         },
         {
@@ -2536,16 +2222,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0081"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL380"
-            },
-            {
-              "label": "description",
-              "value": "GL381"
             }
           ]
         },
@@ -2573,16 +2249,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0082"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            },
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            }
           ]
         },
         {
@@ -2608,16 +2274,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0083"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            },
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
             }
           ]
         },
@@ -2645,16 +2301,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0084"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            },
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            }
           ]
         },
         {
@@ -2680,16 +2326,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0085"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            },
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
             }
           ]
         },
@@ -2717,16 +2353,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0086"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            },
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            }
           ]
         },
         {
@@ -2752,16 +2378,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0087"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            },
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
             }
           ]
         },
@@ -2789,16 +2405,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0088"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra; Skizze Ṣanʿāʾ-Ǧiḥāna"
-            },
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            }
           ]
         },
         {
@@ -2824,16 +2430,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0089"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            },
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
             }
           ]
         },
@@ -2861,16 +2457,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0090"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            },
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            }
           ]
         },
         {
@@ -2896,16 +2482,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0091"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            },
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
             }
           ]
         },
@@ -2933,16 +2509,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0092"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            },
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            }
           ]
         },
         {
@@ -2968,16 +2534,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0093"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            },
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
             }
           ]
         },
@@ -3005,16 +2561,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0094"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkungen zu Hamdānī’s Ǧazīra"
-            },
-            {
-              "label": "description",
-              "value": "Steine mit Fundorten"
-            }
           ]
         },
         {
@@ -3040,16 +2586,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0095"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Steine mit Fundorten"
-            },
-            {
-              "label": "description",
-              "value": "Bronze und andere ... a-j"
             }
           ]
         },
@@ -3077,16 +2613,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0096"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Steine mit Fundorten"
-            },
-            {
-              "label": "description",
-              "value": "Steine mit Fundorten"
-            }
           ]
         },
         {
@@ -3112,16 +2638,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0097"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Salih Abrechnungen"
-            },
-            {
-              "label": "description",
-              "value": "Rechungen"
             }
           ]
         },
@@ -3149,16 +2665,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0098"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Rechungen"
-            },
-            {
-              "label": "description",
-              "value": "Rechungen"
-            }
           ]
         },
         {
@@ -3184,12 +2690,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0099"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "\"GL 380 Hakir Kopie Mlakers\"; Rückseite leer"
             }
           ]
         },

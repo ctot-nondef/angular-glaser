@@ -468,6 +468,12 @@ md-table-container {
   margin: auto;
 }
 
+.tablewrapper {
+    width: 95%;
+    margin: auto;
+}
+
+
 .card {
   margin: 5px;
   text-align: justify;

@@ -118,12 +118,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0001"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Übertragung von Hedi und Friedrich Baumgartner"
-            }
           ]
         },
         {
@@ -149,12 +143,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0002"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 1-2"
             }
           ]
         },
@@ -182,12 +170,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0003"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 3"
-            }
           ]
         },
         {
@@ -213,12 +195,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0004"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 4-5"
             }
           ]
         },
@@ -246,12 +222,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0005"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite  8-7"
-            }
           ]
         },
         {
@@ -277,12 +247,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0006"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 10"
             }
           ]
         },
@@ -310,12 +274,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0007"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 11"
-            }
           ]
         },
         {
@@ -341,12 +299,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0008"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 12"
             }
           ]
         },
@@ -374,12 +326,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0009"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 13-14"
-            }
           ]
         },
         {
@@ -405,12 +351,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0010"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 14"
             }
           ]
         },
@@ -438,12 +378,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0011"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 15-16"
-            }
           ]
         },
         {
@@ -469,12 +403,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0012"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 16"
             }
           ]
         },
@@ -502,12 +430,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0013"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 17-18"
-            }
           ]
         },
         {
@@ -533,12 +455,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0014"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 19"
             }
           ]
         },
@@ -566,12 +482,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0015"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 19-20"
-            }
           ]
         },
         {
@@ -597,12 +507,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0016"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 20"
             }
           ]
         },
@@ -630,12 +534,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0017"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 20-21"
-            }
           ]
         },
         {
@@ -661,12 +559,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0018"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 21-22"
             }
           ]
         },
@@ -694,12 +586,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0019"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 22-23"
-            }
           ]
         },
         {
@@ -725,12 +611,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0020"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 24-25"
             }
           ]
         },
@@ -758,12 +638,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0021"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 26"
-            }
           ]
         },
         {
@@ -789,12 +663,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0022"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 27-28"
             }
           ]
         },
@@ -822,12 +690,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0023"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 28-29"
-            }
           ]
         },
         {
@@ -853,12 +715,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0024"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 29"
             }
           ]
         },
@@ -886,12 +742,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0025"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 30-31"
-            }
           ]
         },
         {
@@ -917,12 +767,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0026"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 32"
             }
           ]
         },
@@ -950,12 +794,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0027"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 32-33"
-            }
           ]
         },
         {
@@ -981,12 +819,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0028"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 33-34"
             }
           ]
         },
@@ -1014,12 +846,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0029"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 34"
-            }
           ]
         },
         {
@@ -1045,12 +871,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0030"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 34-35"
             }
           ]
         },
@@ -1078,12 +898,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0031"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 35-36"
-            }
           ]
         },
         {
@@ -1109,12 +923,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0032"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 36-37"
             }
           ]
         },
@@ -1142,12 +950,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0033"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 37"
-            }
           ]
         },
         {
@@ -1173,12 +975,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0034"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 37-38"
             }
           ]
         },
@@ -1206,12 +1002,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0035"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 38-39"
-            }
           ]
         },
         {
@@ -1237,12 +1027,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0036"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 39-40"
             }
           ]
         },
@@ -1270,12 +1054,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0037"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 40-41"
-            }
           ]
         },
         {
@@ -1301,12 +1079,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0038"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 41"
             }
           ]
         },
@@ -1334,12 +1106,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0039"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 41-42"
-            }
           ]
         },
         {
@@ -1365,12 +1131,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0040"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 42"
             }
           ]
         },
@@ -1398,12 +1158,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0041"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 43"
-            }
           ]
         },
         {
@@ -1429,12 +1183,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0042"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 43-44"
             }
           ]
         },
@@ -1462,12 +1210,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0043"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 44-45"
-            }
           ]
         },
         {
@@ -1493,12 +1235,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0044"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 45"
             }
           ]
         },
@@ -1526,12 +1262,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0045"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 45-46"
-            }
           ]
         },
         {
@@ -1557,12 +1287,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0046"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 46-47"
             }
           ]
         },
@@ -1590,12 +1314,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0047"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 47-49"
-            }
           ]
         },
         {
@@ -1621,12 +1339,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0048"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 49-50"
             }
           ]
         },
@@ -1654,12 +1366,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0049"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 50-52"
-            }
           ]
         },
         {
@@ -1685,12 +1391,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0050"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 52-56"
             }
           ]
         },
@@ -1718,12 +1418,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0051"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 56-58"
-            }
           ]
         },
         {
@@ -1749,12 +1443,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0052"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 58-60"
             }
           ]
         },
@@ -1782,12 +1470,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0053"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 61-62"
-            }
           ]
         },
         {
@@ -1813,12 +1495,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0054"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 63-64"
             }
           ]
         },
@@ -1846,12 +1522,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0055"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 65-66"
-            }
           ]
         },
         {
@@ -1877,12 +1547,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0056"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 67"
             }
           ]
         },
@@ -1910,12 +1574,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0057"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 68-69"
-            }
           ]
         },
         {
@@ -1941,12 +1599,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0058"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 70-71"
             }
           ]
         },
@@ -1974,12 +1626,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0059"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 72"
-            }
           ]
         },
         {
@@ -2005,12 +1651,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0060"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 73"
             }
           ]
         },
@@ -2038,12 +1678,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0061"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 73-74"
-            }
           ]
         },
         {
@@ -2069,12 +1703,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0062"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 74-75"
             }
           ]
         },
@@ -2102,12 +1730,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0063"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 76-77"
-            }
           ]
         },
         {
@@ -2133,12 +1755,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0064"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 77-79"
             }
           ]
         },
@@ -2166,12 +1782,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0065"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 79-80"
-            }
           ]
         },
         {
@@ -2197,12 +1807,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0066"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 80-88"
             }
           ]
         },
@@ -2230,12 +1834,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0067"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Seite 88, Einband letzte Seite"
-            }
           ]
         },
         {
@@ -2261,12 +1859,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0068"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Einband letzte Seite"
             }
           ]
         },
@@ -2294,12 +1886,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0069"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Beilage A 1. S. - 4. S."
-            }
           ]
         },
         {
@@ -2325,12 +1911,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0070"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Beilage B"
             }
           ]
         },
@@ -2358,12 +1938,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0071"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Beilage C Hierodulenstele GL 941-1026, Beilage D"
-            }
           ]
         },
         {
@@ -2389,12 +1963,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0072"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Beilage E"
             }
           ]
         },
@@ -2422,12 +1990,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0073"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Beilage E"
-            }
           ]
         },
         {
@@ -2454,12 +2016,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0074"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Beilage F1-F2"
-            }
           ]
         },
         {
@@ -2485,12 +2041,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0075"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Beilage F2"
             }
           ]
         }

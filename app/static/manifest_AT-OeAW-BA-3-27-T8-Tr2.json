@@ -252,12 +252,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0001"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "die erste Seite fehlt"
-            }
           ]
         },
         {
@@ -1194,12 +1188,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0037"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "ein Notizzettel liegt bei"
-            }
           ]
         },
         {
@@ -1927,12 +1915,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0065"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizzettel"
             }
           ]
         },

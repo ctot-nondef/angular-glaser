@@ -1498,1199 +1498,325 @@
         },
         {
           "@type": "sc:Canvas",
-          "width": 3692,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0054",
-          "label": 54,
-          "height": 5280,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0054",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3692,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0054",
-                "height": 5280
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0054"
-            }
-          ]
+          "label": "54 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3726,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0055",
-          "label": 55,
-          "height": 5253,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0055",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3726,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0055",
-                "height": 5253
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0055"
-            }
-          ]
+          "label": "55 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3677,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0056",
-          "label": 56,
-          "height": 5241,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0056",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3677,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0056",
-                "height": 5241
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0056"
-            }
-          ]
+          "label": "56 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3719,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0057",
-          "label": 57,
-          "height": 5216,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0057",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3719,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0057",
-                "height": 5216
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0057"
-            }
-          ]
+          "label": "57 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3727,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0058",
-          "label": 58,
-          "height": 5260,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0058",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3727,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0058",
-                "height": 5260
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0058"
-            }
-          ]
+          "label": "58 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3719,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0059",
-          "label": 59,
-          "height": 5250,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0059",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3719,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0059",
-                "height": 5250
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0059"
-            }
-          ]
+          "label": "59 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3727,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0060",
-          "label": 60,
-          "height": 5258,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0060",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3727,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0060",
-                "height": 5258
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0060"
-            }
-          ]
+          "label": "60 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3703,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0061",
-          "label": 61,
-          "height": 5234,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0061",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3703,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0061",
-                "height": 5234
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0061"
-            }
-          ]
+          "label": "61 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3735,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0062",
-          "label": 62,
-          "height": 5256,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0062",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3735,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0062",
-                "height": 5256
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0062"
-            }
-          ]
+          "label": "62 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3687,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0063",
-          "label": 63,
-          "height": 5246,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0063",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3687,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0063",
-                "height": 5246
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0063"
-            }
-          ]
+          "label": "63 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3691,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0064",
-          "label": 64,
-          "height": 5248,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0064",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3691,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0064",
-                "height": 5248
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0064"
-            }
-          ]
+          "label": "64 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3684,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0065",
-          "label": 65,
-          "height": 5258,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0065",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3684,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0065",
-                "height": 5258
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0065"
-            }
-          ]
+          "label": "65 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3687,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0066",
-          "label": 66,
-          "height": 5262,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0066",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3687,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0066",
-                "height": 5262
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0066"
-            }
-          ]
+          "label": "66 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3715,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0067",
-          "label": 67,
-          "height": 5246,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0067",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3715,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0067",
-                "height": 5246
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0067"
-            }
-          ]
+          "label": "67 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3700,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0068",
-          "label": 68,
-          "height": 5248,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0068",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3700,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0068",
-                "height": 5248
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0068"
-            }
-          ]
+          "label": "68 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3700,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0069",
-          "label": 69,
-          "height": 5256,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0069",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3700,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0069",
-                "height": 5256
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0069"
-            }
-          ]
+          "label": "69 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3679,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0070",
-          "label": 70,
-          "height": 5250,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0070",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3679,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0070",
-                "height": 5250
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0070"
-            }
-          ]
+          "label": "70 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3692,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0071",
-          "label": 71,
-          "height": 5222,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0071",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3692,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0071",
-                "height": 5222
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0071"
-            }
-          ]
+          "label": "71 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3687,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0072",
-          "label": 72,
-          "height": 5246,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0072",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3687,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0072",
-                "height": 5246
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0072"
-            }
-          ]
+          "label": "72 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3719,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0073",
-          "label": 73,
-          "height": 5280,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0073",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3719,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0073",
-                "height": 5280
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0073"
-            }
-          ]
+          "label": "73 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3699,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0074",
-          "label": 74,
-          "height": 5280,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0074",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3699,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0074",
-                "height": 5280
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0074"
-            }
-          ]
+          "label": "74 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3719,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0075",
-          "label": 75,
-          "height": 5248,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0075",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3719,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0075",
-                "height": 5248
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0075"
-            }
-          ]
+          "label": "75 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3699,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0076",
-          "label": 76,
-          "height": 5256,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0076",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3699,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0076",
-                "height": 5256
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0076"
-            }
-          ]
+          "label": "76 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3711,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0077",
-          "label": 77,
-          "height": 5248,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0077",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3711,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0077",
-                "height": 5248
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0077"
-            }
-          ]
+          "label": "77 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3712,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0078",
-          "label": 78,
-          "height": 5264,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0078",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3712,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0078",
-                "height": 5264
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0078"
-            }
-          ]
+          "label": "78 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3691,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0079",
-          "label": 79,
-          "height": 5246,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0079",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3691,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0079",
-                "height": 5246
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0079"
-            }
-          ]
+          "label": "79 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3671,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0080",
-          "label": 80,
-          "height": 5146,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0080",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3671,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0080",
-                "height": 5146
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0080"
-            }
-          ]
+          "label": "80 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3711,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0081",
-          "label": 81,
-          "height": 5296,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0081",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3711,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0081",
-                "height": 5296
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0081"
-            }
-          ]
+          "label": "81 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3715,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0082",
-          "label": 82,
-          "height": 5244,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0082",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3715,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0082",
-                "height": 5244
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0082"
-            }
-          ]
+          "label": "82 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3719,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0083",
-          "label": 83,
-          "height": 5282,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0083",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3719,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0083",
-                "height": 5282
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0083"
-            }
-          ]
+          "label": "83 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3663,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0084",
-          "label": 84,
-          "height": 5242,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0084",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3663,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0084",
-                "height": 5242
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0084"
-            }
-          ]
+          "label": "84 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3664,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0085",
-          "label": 85,
-          "height": 5274,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0085",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3664,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0085",
-                "height": 5274
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0085"
-            }
-          ]
+          "label": "85 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3703,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0086",
-          "label": 86,
-          "height": 5256,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0086",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3703,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0086",
-                "height": 5256
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0086"
-            }
-          ]
+          "label": "86 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3704,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0087",
-          "label": 87,
-          "height": 5246,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0087",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3704,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0087",
-                "height": 5246
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0087"
-            }
-          ]
+          "label": "87 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3695,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0088",
-          "label": 88,
-          "height": 5258,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0088",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3695,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0088",
-                "height": 5258
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0088"
-            }
-          ]
+          "label": "88 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3703,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0089",
-          "label": 89,
-          "height": 5248,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0089",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3703,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0089",
-                "height": 5248
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0089"
-            }
-          ]
+          "label": "89 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3712,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0090",
-          "label": 90,
-          "height": 5258,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0090",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3712,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0090",
-                "height": 5258
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0090"
-            }
-          ]
+          "label": "90 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3719,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0091",
-          "label": 91,
-          "height": 5240,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0091",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3719,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0091",
-                "height": 5240
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0091"
-            }
-          ]
+          "label": "91 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3680,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0092",
-          "label": 92,
-          "height": 5254,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0092",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3680,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0092",
-                "height": 5254
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0092"
-            }
-          ]
+          "label": "92 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3727,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0093",
-          "label": 93,
-          "height": 5236,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0093",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3727,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0093",
-                "height": 5236
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0093"
-            }
-          ]
+          "label": "93 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3703,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0094",
-          "label": 94,
-          "height": 5250,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0094",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3703,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0094",
-                "height": 5250
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0094"
-            }
-          ]
+          "label": "94 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3704,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0095",
-          "label": 95,
-          "height": 5248,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0095",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3704,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0095",
-                "height": 5248
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0095"
-            }
-          ]
+          "label": "95 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3696,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0096",
-          "label": 96,
-          "height": 5272,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0096",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3696,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0096",
-                "height": 5272
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0096"
-            }
-          ]
+          "label": "96 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3711,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0097",
-          "label": 97,
-          "height": 5242,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0097",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3711,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0097",
-                "height": 5242
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0097"
-            }
-          ]
+          "label": "97 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3678,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0098",
-          "label": 98,
-          "height": 5205,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0098",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3678,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0098",
-                "height": 5205
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0098"
-            }
-          ]
+          "label": "98 - image not found",
+          "height": 0
         },
         {
           "@type": "sc:Canvas",
-          "width": 3699,
+          "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0099",
-          "label": 99,
-          "height": 5250,
-          "images": [
-            {
-              "resource": {
-                "@type": "dctypes:Image",
-                "service": {
-                  "profile": "http://iiif.io/api/image/2/level1.json",
-                  "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0099",
-                  "@context": "http://iiif.io/api/image/2/context.json"
-                },
-                "format": "image/jpg",
-                "width": 3699,
-                "@id": "https://glaser-iiif.acdh-dev.oeaw.ac.at/AT-OeAW-BA-3-27-T1-Tr1_MASTER_0099",
-                "height": 5250
-              },
-              "@type": "oa:Annotation",
-              "motivation": "sc:painting",
-              "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0099"
-            }
-          ]
+          "label": "99 - image not found",
+          "height": 0
         }
       ],
       "@type": "sc:Sequence",

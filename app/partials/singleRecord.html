@@ -15,124 +15,27 @@
 			</md-button>
 		</div>
 		<md-tabs md-dynamic-height md-border-bottom md-selected="activeTab" md-stretch-tabs="always" style="width: 100%;">
-			<md-tab label="Basic" ng-if="Model.SingleRecord['part_of_reference'][0] !== 'AT-OeAW-BA-3-27-A'">
-					<div layout="row" layout-align="start start" layout-wrap>
-						<div class="card subcard" layout="row" flex="noshrink" layout-align="start start">
-							<div style="width: 100%;" layout-padding>
-								<md-list class="md-dense" flex>
-									<md-list-item class="vspinentry">
-												<h3 class="md-title" style="width:40%; padding-right: 15px;text-align: right;">Signature: </h3>
-												<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['object_number'][0]}}</p>
-												<md-divider></md-divider>
-									</md-list-item>
-									<md-list-item class="vspinentry" ng-repeat="number in Model.SingleRecord['alternative_number.type']  track by $index">
-												<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Alternate Number: </h3>
-										<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['alternative_number.type'][$index]}} - {{Model.SingleRecord['alternative_number'][$index]}} - {{Model.SingleRecord['alternative_number.institution'][$index]}} - {{Model.SingleRecord['alternative_number.date'][$index]}}</p>
-												<md-divider></md-divider>
-									</md-list-item>
-									<md-list-item ng-if="Model.SingleRecord['production.date.notes'][0]" class="vspinentry">
-											<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Time: </h3>
-											<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['production.date.notes'][0]}}</p>
-											<md-divider></md-divider>
-								</md-list-item>
-									<md-list-item ng-if="Model.SingleRecord['production.date.start'][0]" class="vspinentry">
-										<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Time: </h3>
-										<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['production.date.start'][0]}} - {{Model.SingleRecord['production.date.end'][0]}}</p>
-										<md-divider></md-divider>
-									</md-list-item>
-									<md-list-item class="vspinentry">
-												<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Level: </h3>
-												<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['description_level'][0][0].value}}</p>
-												<md-divider></md-divider>
-									</md-list-item>
-									<md-list-item class="vspinentry">
-										<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Access: </h3>
-										<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['access_category.notes'][0]}}</p>
-										<md-divider></md-divider>
-									</md-list-item>
-								</md-list>
-							</div>
-						</div>
-						<div class="md-whiteframe-3dp card subcard" >
-							<div class="nomap subcard" ng-if="!Model.SingleRecord['production.place.uri'][0]" layout="row" layout-align="center center">
-								<h3>No Geoinformation available for this Item</h3>
-							</div>
-							<leaflet id="singlemap" markers="markers" width="100%" height="400px"></leaflet>
-						</div>
-						<div class="card maincard" layout="row" flex="noshrink" layout-align="start start">
-							<div style="width: 100%;" layout-padding>
-								<h3 class="md-title">Extent & Dimensions</h3>
-								<md-list flex>
-									<md-list-item ng-if="Model.SingleRecord['dimension.free'][0]" class="vspinentry">
-										<p style="width:20%">Extent: </p>
-										<p style="width: 40%; text-align: justify;">{{Model.SingleRecord['dimension.free'][0]}}</p>
-										<md-divider></md-divider>
-									</md-list-item>
-									<md-list-item class="vspinentry" ng-repeat="dimension in Model.SingleRecord['dimension.type'] track by $index">
-										<p style="width:20%">{{Model.SingleRecord['dimension.type'][$index]}}: </p>
-										<p style="width: 40%; text-align: justify;">{{Model.SingleRecord['dimension.value'][$index]}} {{Model.SingleRecord['dimension.unit'][$index]}} ( {{Model.SingleRecord['dimension.notes'][$index]}} ) </p>
-										<md-divider></md-divider>
-									</md-list-item>
-								</md-list>
-								<h3 class="md-title">Notes & Description</h3>
-								<md-list flex>
-									<md-list-item ng-if="Model.SingleRecord['content.description'][0]" class="vspinentry"  >
-										<p style="width: 20%;" >Scope</p>
-										<p style="width: 40%;">{{Model.SingleRecord['content.description'][0]}}</p>
-										<md-divider></md-divider>
-									</md-list-item>
-									<md-list-item ng-if="Model.SingleRecord['object_history_note'][0]" class="vspinentry"  >
-										<p style="width: 20%;" >Object History</p>
-										<p style="width: 40%;">{{Model.SingleRecord['object_history_note'][0]}}</p>
-										<md-divider></md-divider>
-									</md-list-item>
-									<md-list-item ng-if="Model.SingleRecord['inscription.notes'][0]"  class="vspinentry"  >
-										<p style="width: 20%;" >Notes</p>
-										<p style="width: 40%;">{{Model.SingleRecord['inscription.notes'][0]}}</p>
-										<md-divider></md-divider>
-									</md-list-item>
-									<md-list-item ng-if="Model.SingleRecord['inscription.description'][0]"  class="vspinentry"  >
-										<p style="width: 20%;">Description</p>
-										<p style="width: 40%;">{{Model.SingleRecord['inscription.description'][0]}}</p>
-										<md-divider></md-divider>
-									</md-list-item>
-								</md-list>
-								<h3 class="md-title">Print</h3>
-								<md-list flex>
-									<md-list-item class="vspinentry">
-										<p style="width: 1000%;"><md-icon style="color: red;">error_outline</md-icon>Due to various <a href="https://support.mozilla.org/en-US/kb/fix-printing-problems-firefox" target="_blank">browser bugs</a>, the print function works best when used in Chrome.</p>
-										<md-divider></md-divider>
-									</md-list-item>
-									<md-list-item class="vspinentry">
-										<md-button class="md-primary md-raised"  aria-label="Print Record" ui-sref="gl.singlePrint({refID:'{{Model.refID}}'})" style="width: 100%;"><md-icon>print</md-icon> PRINT </md-button>
-										<md-divider></md-divider>
-									</md-list-item>
-								</md-list>
-							</div>
-						</div>
-					</div>
-			</md-tab>
-			<md-tab label="Squeeze" ng-if="Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'">
+			<md-tab label="Basic">
 				<div layout="row" layout-align="start start" layout-wrap>
 					<div class="card subcard" layout="row" flex="noshrink" layout-align="start start">
 						<div style="width: 100%;" layout-padding>
 									<md-list class="md-dense" flex>
 										<md-list-item class="vspinentry">
-											<h3 class="md-title" style="width:40%; padding-right: 15px;text-align: right;">Signatur: </h3>
+											<h3 class="md-title" style="width:40%; padding-right: 15px;text-align: right;">Reference Number: </h3>
 											<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['object_number'][0]}}</p>
 											<md-divider></md-divider>
 										</md-list-item>
-									<md-list-item class="vspinentry">
+									<md-list-item class="vspinentry" ng-if="Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'">
 												<h3 class="md-title" style="width:40%; padding-right: 15px;text-align: right;">First Line starts: </h3>
 											<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['Inscription.FirstLineStartsWith'][0][0].value}}</p>
 											<md-divider></md-divider>
 									</md-list-item>
-									<md-list-item class="vspinentry">
+									<md-list-item class="vspinentry" ng-if="Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'">
 												<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Bustrophedon: </h3>
 											<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['Inscription.Bustrophedon'][0][0].value}}</p>
 											<md-divider></md-divider>
 									</md-list-item>
-									<md-list-item class="vspinentry">
+									<md-list-item class="vspinentry" ng-if="Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'">
 												<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Quality: </h3>
 											<p style="width: 60%; text-align: justify;">{{Model.SingleRecord['Inscription.Quality'][0][0].value}}</p>
 											<md-divider></md-divider>
@@ -248,10 +151,19 @@
 				<div class="card maincard" layout="row" flex="noshrink" layout-align="start start">
 					<div style="width: 100%;" layout-padding>
 						<h3 class="md-title">Downloads</h3>
-						<md-list-item ng-if="Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'" class="vspinentry">
-							<md-button class="md-primary md-raised" aria-label="Download Scan" href="{{'https://id.acdh.oeaw.ac.at/glasersqueezes2015/rec' + Model.SingleRecord.priref + '?format=collection'}}" style="width: 100%;"><md-icon>file_download</md-icon> DOWNLOAD SQUEEZE</md-button>
+						<md-list flex>
+							<md-list-item class="vspinentry" ng-repeat="item in Model.SingleRecord['digital_reference'] track by $index" >
+								<p style="width:40%">{{ Model.SingleRecord['digital_reference.description'][$index] }}</p>
+								<p style="width: 60%; text-align: justify;"><md-button class="md-primary md-raised" aria-label="Download Scan" href="{{'https://opacbasis.acdh.oeaw.ac.at/' + Model.SingleRecord['digital_reference'][$index] }}" style="width: 100%;"><md-icon>file_download</md-icon>{{ Model.SingleRecord['digital_reference'][$index] }}</md-button></p>
+								<md-divider></md-divider>
+							</md-list-item>
+						</md-list>
+						<md-list-item class="vspinentry" ng-repeat="item in Model.SingleRecord['reproduction.reference'] track by $index" >
+							<p style="width:40%">{{ Model.SingleRecord['reproduction.original_file_name'][$index] }}</p>
+							<p style="width: 60%; text-align: justify;"><md-button class="md-primary md-raised" aria-label="Download Scan" href="{{'https://opacbasis.acdh.oeaw.ac.at/' + Model.SingleRecord['reproduction.reference'][$index] }}" style="width: 100%;"><md-icon>file_download</md-icon>{{ Model.SingleRecord['reproduction.reference'][$index] }}</md-button></p>
 							<md-divider></md-divider>
 						</md-list-item>
+						</md-list>
 						<md-list-item ng-if="Model.SingleRecord['part_of_reference'][0] == 'AT-OeAW-BA-3-27-A'" class="vspinentry">
 							<md-button class="md-primary md-raised" aria-label="Download Viewer" href="http://www.meshlab.net/#download" style="width: 100%;"><md-icon>visibility</md-icon> FREE MESHLAB VIEWER DOWNLOAD</md-button>
 							<md-divider></md-divider>

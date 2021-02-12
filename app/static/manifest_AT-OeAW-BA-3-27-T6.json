@@ -105,12 +105,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0001"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "1880 Tagebuch VI. 799-825 (GL799- GL825). Mit der Nummerierung Höfners A998"
-            }
           ]
         },
         {
@@ -136,12 +130,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0002"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Abreise von Ṣanʿāʾ, Donnerstag 5. August 1888"
             }
           ]
         },
@@ -195,12 +183,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0004"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL799; Seiten 6 , 9 fehlen in der Zählung"
-            }
           ]
         },
         {
@@ -253,16 +235,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0006"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Skizze"
-            },
-            {
-              "label": "description",
-              "value": "Skizze"
-            }
           ]
         },
         {
@@ -288,16 +260,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0007"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL 801 - GL 807"
-            },
-            {
-              "label": "description",
-              "value": "GL 808  - GL 813"
             }
           ]
         },
@@ -325,16 +287,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0008"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL 814"
-            },
-            {
-              "label": "description",
-              "value": "GL 815- GL 822"
-            }
           ]
         },
         {
@@ -361,16 +313,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0009"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Abreise Diener 10/8 (10. August); Skizze"
-            },
-            {
-              "label": "description",
-              "value": "Skizze"
-            }
           ]
         },
         {
@@ -396,12 +338,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0010"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL 823"
             }
           ]
         },
@@ -455,12 +391,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0012"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "leer"
-            }
           ]
         },
         {
@@ -487,16 +417,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0013"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Skizze"
-            },
-            {
-              "label": "description",
-              "value": "Skizze"
-            }
           ]
         },
         {
@@ -522,12 +442,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0014"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Anmerkung mit Tinte"
             }
           ]
         },
@@ -581,16 +495,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0016"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Zeichnung"
-            },
-            {
-              "label": "description",
-              "value": "Zeichnung; Sanaḥ Dienstag 21. August 1888"
-            }
           ]
         },
         {
@@ -616,12 +520,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0017"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL 824"
             }
           ]
         },
@@ -674,12 +572,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0019"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Besuch der Ruine Sabaʾ Suḥayb"
             }
           ]
         },
@@ -785,12 +677,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0023"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Fremdenbuch Laḥğ Bangalow (7.-10. November 1887)"
-            }
           ]
         },
         {
@@ -816,12 +702,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0024"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL825"
             }
           ]
         },
@@ -849,16 +729,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0025"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Über Mehri Literaturangabe, sonst leer"
-            },
-            {
-              "label": "description",
-              "value": "Ẓufār"
-            }
           ]
         },
         {
@@ -884,16 +754,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0026"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            },
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
             }
           ]
         },
@@ -921,16 +781,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0027"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            },
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            }
           ]
         },
         {
@@ -956,16 +806,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0028"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            },
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
             }
           ]
         },
@@ -993,16 +833,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0029"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            },
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            }
           ]
         },
         {
@@ -1028,16 +858,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0030"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            },
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
             }
           ]
         },
@@ -1065,16 +885,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0031"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            },
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            }
           ]
         },
         {
@@ -1100,16 +910,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0032"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            },
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
             }
           ]
         },
@@ -1137,16 +937,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0033"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            },
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            }
           ]
         },
         {
@@ -1172,16 +962,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0034"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            },
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
             }
           ]
         },
@@ -1209,16 +989,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0035"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            },
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            }
           ]
         },
         {
@@ -1244,16 +1014,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0036"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            },
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
             }
           ]
         },
@@ -1281,16 +1041,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0037"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            },
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            }
           ]
         },
         {
@@ -1316,16 +1066,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0038"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra"
-            },
-            {
-              "label": "description",
-              "value": "Sprache: t'ahrat - Mahra, Weihrauch"
             }
           ]
         },
@@ -1379,16 +1119,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0040"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "literaturangaben"
-            },
-            {
-              "label": "description",
-              "value": "literaturangaben"
-            }
           ]
         },
         {
@@ -1414,12 +1144,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0041"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Aufzeichnungen über seine 'Diener'"
             }
           ]
         },
@@ -1447,16 +1171,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0042"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Leerseite"
-            },
-            {
-              "label": "description",
-              "value": "GL824 mit Verweis auf S. 33"
-            }
           ]
         },
         {
@@ -1482,16 +1196,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0043"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Leerseite"
-            },
-            {
-              "label": "description",
-              "value": "Gradnetz-Angaben?"
             }
           ]
         },
@@ -1519,16 +1223,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0044"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Gradnetz-Angaben?"
-            },
-            {
-              "label": "description",
-              "value": "Gradnetz-Angaben?"
-            }
           ]
         },
         {
@@ -1555,12 +1249,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0045"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen, Rechnungen"
-            }
           ]
         },
         {
@@ -1586,12 +1274,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0046"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notiz mit der Anmerkung Tageb. VI, vorne einzulegen"
             }
           ]
         },
@@ -1645,12 +1327,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0048"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen Bronzetafel von ʿAmrān"
-            }
           ]
         },
         {
@@ -1702,12 +1378,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0050"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Hierodulenstele, erledigt GL 976-997; GL1013-1026"
             }
           ]
         },
@@ -1761,12 +1431,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0052"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Hierodulenstele, GL 941-1026"
-            }
           ]
         },
         {
@@ -1792,12 +1456,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0053"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL 941-974"
             }
           ]
         },
@@ -1825,12 +1483,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0054"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Karte "
-            }
           ]
         },
         {
@@ -1856,12 +1508,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0055"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Karte verso, Nr. 61"
             }
           ]
         },
@@ -1889,12 +1535,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0056"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "zu Tagebuch VI; Skizze"
-            }
           ]
         },
         {
@@ -1920,12 +1560,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0057"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Tagebuch VI, S. 28/29"
             }
           ]
         },
@@ -1953,12 +1587,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0058"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Weihrauch Onkor"
-            }
           ]
         },
         {
@@ -1984,12 +1612,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0059"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Weihrauch verso"
             }
           ]
         },
@@ -2017,12 +1639,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0060"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Daṯīna"
-            }
           ]
         },
         {
@@ -2048,12 +1664,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0061"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Daṯīna verso"
             }
           ]
         },

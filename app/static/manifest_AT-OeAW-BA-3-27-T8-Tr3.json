@@ -114,12 +114,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0001"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ed. Glaser's Tagebuch VIII, 1886\nSyrien; Juden im südlichen Jemen; Judem Jemens "
-            }
           ]
         },
         {
@@ -146,12 +140,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0002"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Nach der Hochzeit; Ortschaften"
-            }
           ]
         },
         {
@@ -177,12 +165,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0003"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Bakil; Geister, Gespendter, Dämonen und Hexen"
             }
           ]
         },
@@ -262,12 +244,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0006"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Gespenster im Djof; Himjarische Gräber; Tabaksorten im Jemen"
-            }
           ]
         },
         {
@@ -293,12 +269,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0007"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Tabaksorten im Jemen; Einwohnerzahl Jemens; Erkundete Ortschaften, mit alten Ruinen"
             }
           ]
         },
@@ -352,12 +322,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0009"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Weitere Ruinen oder Inschriften; Jerim und Zafar"
-            }
           ]
         },
         {
@@ -383,12 +347,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0010"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Merkwürdige Traditionen für Arhab und die ismaelitischen Bewohner des Wadi dhahr"
             }
           ]
         },
@@ -416,12 +374,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0011"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Kaffeesorten in Haima; Monte Clima(n)"
-            }
           ]
         },
         {
@@ -447,12 +399,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0012"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ruinen; Stand der Dinge vor Einmarsch der türkischen Truppen; Hednische Stämme im Jemen"
             }
           ]
         },
@@ -506,12 +452,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0014"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Die Ahl el Hums und Ahdam"
-            }
           ]
         },
         {
@@ -537,12 +477,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0015"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ruine (fraglich Rhaba); die Debai der alten Schriftsteller"
             }
           ]
         },
@@ -570,12 +504,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0016"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Die Alilari der Alten; Der Habinus, Laimus (Berg) der Alten; Goldfunde"
-            }
           ]
         },
         {
@@ -601,12 +529,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0017"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Stierdienst im Jemen; Begrüssung eines Gastes bei den Kabail; Neswan ibn Said el-Himjari"
             }
           ]
         },
@@ -634,12 +556,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0018"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Einführung des Kaffee's im Jemen durch die Türken"
-            }
           ]
         },
         {
@@ -665,12 +581,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0019"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Samstag, 9.1. 1886"
             }
           ]
         },
@@ -698,12 +608,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0020"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Photokopie TB VIII 72-73"
-            }
           ]
         },
         {
@@ -729,12 +633,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0021"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Photokopie TB VIII 74-75"
             }
           ]
         },
@@ -762,12 +660,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0022"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Photokopie TB VIII 76-77"
-            }
           ]
         },
         {
@@ -793,12 +685,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0023"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Photokopie TB VIII 78-79"
             }
           ]
         },
@@ -826,12 +712,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0024"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Photokopie TB VIII 80-81"
-            }
           ]
         },
         {
@@ -857,12 +737,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0025"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Photokopie TB VIII 82-83"
             }
           ]
         },
@@ -890,12 +764,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0026"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Photokopie TB VIII 84-85"
-            }
           ]
         },
         {
@@ -921,12 +789,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0027"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Photokopie TB VIII 86-87"
             }
           ]
         },
@@ -954,12 +816,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0028"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Photokopie TB VIII 88-89"
-            }
           ]
         },
         {
@@ -985,12 +841,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0029"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Photokopie TB VIII 90-91"
             }
           ]
         },
@@ -1018,12 +868,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0030"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Photokopie TB VIII 92"
-            }
           ]
         },
         {
@@ -1049,12 +893,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0031"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Photokopie TB VIII 92-93"
             }
           ]
         },
@@ -1082,12 +920,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0032"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Photokopie TB VIII 94-95"
-            }
           ]
         },
         {
@@ -1113,12 +945,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0033"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Photokopie TB VIII 96-97"
             }
           ]
         },
@@ -1146,12 +972,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0034"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Photokopie TB VIII 98-99"
-            }
           ]
         },
         {
@@ -1178,12 +998,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0035"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Photokopie TB VIII 100-101"
-            }
           ]
         },
         {
@@ -1209,12 +1023,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0036"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Photokopie TB VIII 102-103"
             }
           ]
         },
@@ -1320,12 +1128,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0040"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Erkundigungen über Behah"
-            }
           ]
         },
         {
@@ -1351,12 +1153,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0041"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Damar. Semera el Haus (Ftene); Mi 12./13. Jänner 1886"
             }
           ]
         },
@@ -1384,12 +1180,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0042"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Von Damar; Ruinen in der gegend von Behan, Damar Mittwoch 12/13. Januar 1886"
-            }
           ]
         },
         {
@@ -1416,12 +1206,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0043"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Grenzen des Beled Ans"
-            }
           ]
         },
         {
@@ -1447,12 +1231,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0044"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ruinen; Azimuth vom höchsten Punkt des Dj. Hirran"
             }
           ]
         },
@@ -1532,12 +1310,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0047"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Dörfer von Bilad Behan"
-            }
           ]
         },
         {
@@ -1563,12 +1335,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0048"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Nachbarn dieses Gebiets"
             }
           ]
         },
@@ -1648,12 +1414,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0051"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Azimuthe vom Kaffee"
-            }
           ]
         },
         {
@@ -1706,12 +1466,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0053"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Dörfer von Ruain el-harigija; Dörfer von Ruain dahilija; Berge von Ruain"
-            }
           ]
         },
         {
@@ -1737,12 +1491,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0054"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "bis"
             }
           ]
         },
@@ -1770,12 +1518,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0055"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Wadi Hakir"
-            }
           ]
         },
         {
@@ -1801,12 +1543,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0056"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ruine Mighal; weitere Zahlenangaben"
             }
           ]
         },
@@ -1834,12 +1570,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0057"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Hammat es-Satar; Ruine von El Dajama (Gama)"
-            }
           ]
         },
         {
@@ -1865,12 +1595,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0058"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ein großer Habasi-Stein ---> GL###"
             }
           ]
         },
@@ -1898,12 +1622,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0059"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Dj. Jarah, Reda, Samstag 15./16. Januar 1886"
-            }
           ]
         },
         {
@@ -1929,12 +1647,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0060"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL378 Reda"
             }
           ]
         },
@@ -1962,12 +1674,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0061"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Azimuthe von der Festung Reda"
-            }
           ]
         },
         {
@@ -1993,12 +1699,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0062"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "erneut zusätzliche Zahlenangaben"
             }
           ]
         },
@@ -2052,12 +1752,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0064"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Einwohner"
-            }
           ]
         },
         {
@@ -2084,12 +1778,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0065"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Moschee El-Amirija"
-            }
           ]
         },
         {
@@ -2115,12 +1803,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0066"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ha sim Effendi Kudsi; Tobdji Kaimakam Tewfik Bey; sertabib Sakik Bey: Bücherkäufe"
             }
           ]
         },
@@ -2174,12 +1856,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0068"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Abreise von Reda 17.3.1886"
-            }
           ]
         },
         {
@@ -2205,12 +1881,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0069"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Nekir GL379: Samar Ju´haris"
             }
           ]
         },
@@ -2238,12 +1908,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0070"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL380 und GL381"
-            }
           ]
         },
         {
@@ -2269,12 +1933,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0071"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Bronze und andere Antiquitäten: Bronzetafel (erworben von einem Nachbar Habsus') etc."
             }
           ]
         }

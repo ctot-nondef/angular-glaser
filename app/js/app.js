@@ -112,7 +112,8 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
         }
     })
     .state('gl.singleRecord',{
-        url: '/rec/:refID',
+        url: '/rec/:refID/:tab',
+        params: { tab: '0' },
         views: {
             'content@': {
                 templateUrl: 'partials/singleRecord.html',

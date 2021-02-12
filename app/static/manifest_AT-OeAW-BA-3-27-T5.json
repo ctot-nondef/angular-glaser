@@ -191,12 +191,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0001"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Hamdani Tagebuch V. Aufkleber Maria Höfners A 997."
-            }
           ]
         },
         {
@@ -248,12 +242,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0003"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Kartonumschlag"
             }
           ]
         },
@@ -307,12 +295,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0005"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Schreiben der Zentralbibliothek Zürich vom 1.IV. 1935 an die Nationalbibliothek Wien, dass Sie das vorliegende Tagebuch retournieren sich aber das den ersten Band (=Tagebuch IV behalten)"
-            }
           ]
         },
         {
@@ -338,12 +320,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0006"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Rechnungen mit Bleistift notiert"
             }
           ]
         },
@@ -1021,12 +997,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0032"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen, sämtliche in Gabelsberger"
-            }
           ]
         },
         {
@@ -1052,16 +1022,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0033"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -1089,16 +1049,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0034"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -1124,16 +1074,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0035"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -1265,16 +1205,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0040"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen, Speer-Skizze"
-            }
           ]
         },
         {
@@ -1300,16 +1230,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0041"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -1337,16 +1257,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0042"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -1372,16 +1282,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0043"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen, Skizze einer Karte"
             }
           ]
         },
@@ -1409,16 +1309,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0044"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -1444,16 +1334,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0045"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -1481,16 +1361,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0046"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -1516,16 +1386,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0047"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -1553,16 +1413,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0048"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -1588,16 +1438,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0049"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -1625,16 +1465,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0050"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -1660,16 +1490,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0051"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -1697,16 +1517,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0052"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -1732,16 +1542,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0053"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen, Skizze einer Karte"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -1769,16 +1569,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0054"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -1804,16 +1594,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0055"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -1841,16 +1621,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0056"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -1876,16 +1646,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0057"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -1913,16 +1673,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0058"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -1948,16 +1698,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0059"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -1985,16 +1725,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0060"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -2020,16 +1750,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0061"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -2057,16 +1777,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0062"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -2092,16 +1802,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0063"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -2129,16 +1829,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0064"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -2164,16 +1854,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0065"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -2201,16 +1881,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0066"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -2236,12 +1906,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0067"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notiz Glasers auf einem Kuvert"
             }
           ]
         },
@@ -2269,12 +1933,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0068"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Kuvertrückseite unbeschrieben"
-            }
           ]
         },
         {
@@ -2300,16 +1958,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0069"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -2337,16 +1985,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0070"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -2372,16 +2010,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0071"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -2409,16 +2037,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0072"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -2444,16 +2062,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0073"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -2481,16 +2089,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0074"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -2516,16 +2114,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0075"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -2553,16 +2141,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0076"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -2588,16 +2166,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0077"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -2625,16 +2193,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0078"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -2660,16 +2218,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0079"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -2697,16 +2245,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0080"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -2732,16 +2270,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0081"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -2769,16 +2297,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0082"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -2804,16 +2322,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0083"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -2841,16 +2349,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0084"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -2876,16 +2374,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0085"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -2913,16 +2401,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0086"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -2948,12 +2426,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0087"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -2981,12 +2453,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0088"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -3012,16 +2478,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0089"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -3049,16 +2505,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0090"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -3084,16 +2530,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0091"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -3121,16 +2557,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0092"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -3156,16 +2582,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0093"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -3193,16 +2609,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0094"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -3228,12 +2634,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0095"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -3261,16 +2661,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0096"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -3296,16 +2686,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0097"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -3333,16 +2713,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0098"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -3368,16 +2738,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0099"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -3405,16 +2765,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0100"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -3440,16 +2790,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0101"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -3477,16 +2817,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0102"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -3512,16 +2842,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0103"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -3549,16 +2869,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0104"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -3584,16 +2894,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0105"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -3621,16 +2921,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0106"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -3656,16 +2946,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0107"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -3693,16 +2973,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0108"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -3729,12 +2999,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0109"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -3760,16 +3024,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0110"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -3901,16 +3155,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0115"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -3936,12 +3180,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0116"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -3969,16 +3207,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0117"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -4005,12 +3233,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0118"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -4036,16 +3258,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0119"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -4177,12 +3389,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0124"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -4261,16 +3467,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0127"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -4296,16 +3492,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0128"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -4333,12 +3519,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0129"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -4364,12 +3544,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0130"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -4397,16 +3571,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0131"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -4432,16 +3596,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0132"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -4469,16 +3623,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0133"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -4504,16 +3648,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0134"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -4541,16 +3675,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0135"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -4576,12 +3700,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0136"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -4609,16 +3727,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0137"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -4644,12 +3752,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0138"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -4703,12 +3805,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0140"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -4734,12 +3830,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0141"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
             }
           ]
         },
@@ -4897,16 +3987,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0147"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notizen"
-            },
-            {
-              "label": "description",
-              "value": "Notizen"
-            }
           ]
         },
         {
@@ -4932,12 +4012,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0148"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "die fehlende Seite 279 wäre die letzte  des Buches"
             }
           ]
         }

@@ -140,12 +140,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0001"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Tagebuch (Sna'a- Aden 1888) VI. Bl. 1-86"
-            }
           ]
         },
         {
@@ -250,12 +244,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0005"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Kopie aus dem Tagebuch"
-            }
           ]
         },
         {
@@ -333,12 +321,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0008"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Notiz Grohmanns"
             }
           ]
         },
@@ -418,12 +400,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0011"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ruinen in Bilad"
-            }
           ]
         },
         {
@@ -450,12 +426,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0012"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Andere Ruine"
-            }
           ]
         },
         {
@@ -481,12 +451,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0013"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Kopie aus dem Tagebuch"
             }
           ]
         },
@@ -644,12 +608,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0019"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL 808-GL813"
-            }
           ]
         },
         {
@@ -675,12 +633,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0020"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL814"
             }
           ]
         },
@@ -734,12 +686,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0022"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL815-GL822"
-            }
           ]
         },
         {
@@ -766,12 +712,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0023"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Abreise von Damar Freitag 10/8"
-            }
           ]
         },
         {
@@ -797,12 +737,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0024"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Kopie"
             }
           ]
         },
@@ -882,12 +816,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0027"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Kopie"
-            }
           ]
         },
         {
@@ -913,12 +841,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0028"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Kopie einer Skizze"
             }
           ]
         },
@@ -946,12 +868,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0029"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Unser Weg von Serim"
-            }
           ]
         },
         {
@@ -977,12 +893,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0030"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL823"
             }
           ]
         },
@@ -1166,12 +1076,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0037"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Wasserscheide"
-            }
           ]
         },
         {
@@ -1250,12 +1154,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0040"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Kopie"
-            }
           ]
         },
         {
@@ -1281,12 +1179,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0041"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Kopie"
             }
           ]
         },
@@ -1314,12 +1206,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0042"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Basam (Lubbau sehribaum)"
-            }
           ]
         },
         {
@@ -1345,12 +1231,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0043"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Hadas"
             }
           ]
         },
@@ -1378,12 +1258,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0044"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Asad, Sumur, Hadak, Kadak, Karat, Salam"
-            }
           ]
         },
         {
@@ -1409,12 +1283,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0045"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sira, Mustka, Isar, Kat, Talh, Wars, Kafal"
             }
           ]
         },
@@ -1442,12 +1310,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0046"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Katad, Sohat, Andad, Daumar, Baka, Rahd, Batam, Ylb"
-            }
           ]
         },
         {
@@ -1473,12 +1335,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0047"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Myrrhen und Weihrauchgegend"
             }
           ]
         },
@@ -1532,12 +1388,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0049"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Hadas"
-            }
           ]
         },
         {
@@ -1564,12 +1414,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0050"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Azimuth in Menadi"
-            }
           ]
         },
         {
@@ -1595,12 +1439,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0051"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Dorf Merfad"
             }
           ]
         },
@@ -1654,12 +1492,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0053"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL824 Dj. Hozael"
-            }
           ]
         },
         {
@@ -1712,12 +1544,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0055"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Erhöhung der Madjabi"
-            }
           ]
         },
         {
@@ -1743,12 +1569,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0056"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Abreise 25/8 Merkula"
             }
           ]
         },
@@ -1854,12 +1674,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0060"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Wadi Maswara"
-            }
           ]
         },
         {
@@ -1885,12 +1699,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0061"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Besuch der Ruine Saba Suhaib"
             }
           ]
         },
@@ -1996,12 +1804,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0065"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "27/8 Abritt"
-            }
           ]
         },
         {
@@ -2053,12 +1855,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0067"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "gegenwärtiger Weg von Suhaib nach Lahedj"
             }
           ]
         },
@@ -2138,12 +1934,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0070"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Aufbruch 28/8 im Wadi Bila"
-            }
           ]
         },
         {
@@ -2222,12 +2012,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0073"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Fremdenbuch Lahadj Bangalow"
-            }
           ]
         },
         {
@@ -2253,12 +2037,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0074"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Vers von Jacob Schmidt :-)"
             }
           ]
         },
@@ -2286,12 +2064,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0075"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Abreise 30/8 "
-            }
           ]
         },
         {
@@ -2318,12 +2090,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0076"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Weihrauch, Myrrhe, Gummi"
-            }
           ]
         },
         {
@@ -2349,12 +2115,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0077"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Gummi"
             }
           ]
         },
@@ -2408,12 +2168,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0079"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "zu Weihrauch I (Querformat)"
-            }
           ]
         },
         {
@@ -2439,12 +2193,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0080"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "zu Weihrauch II"
             }
           ]
         },
@@ -2472,12 +2220,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0081"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Zu Weihrauchsorten in Onkor, Myrrhe in Onkor"
-            }
           ]
         },
         {
@@ -2503,12 +2245,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0082"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "zu Weihrauch III, Sorten von Weihrauch"
             }
           ]
         },
@@ -2536,12 +2272,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0083"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Murr, Gummi"
-            }
           ]
         },
         {
@@ -2567,12 +2297,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0084"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "GL825"
             }
           ]
         },
@@ -2600,12 +2324,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0085"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Über Mehri: ZD m G XXV, XXVII, im letzten besonders viel"
-            }
           ]
         },
         {
@@ -2631,12 +2349,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0086"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Tafar"
             }
           ]
         },
@@ -2664,12 +2376,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0087"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Wadis von Tafar"
-            }
           ]
         },
         {
@@ -2695,12 +2401,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0088"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Wadis von Mahra, Berge von Mahra"
             }
           ]
         },
@@ -2728,12 +2428,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0089"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Sprache. In Tafar und Mahra"
-            }
           ]
         },
         {
@@ -2759,12 +2453,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0090"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Stämme welche das hier verzeichnete tehrat sprechen"
             }
           ]
         },
@@ -2818,12 +2506,6 @@
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0092"
             }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Weihrauchbaum"
-            }
           ]
         },
         {
@@ -2849,12 +2531,6 @@
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
               "on": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0093"
-            }
-          ],
-          "metadata": [
-            {
-              "label": "description",
-              "value": "p. 74-78 ausgelassen"
             }
           ]
         },
@@ -2941,13 +2617,7 @@
           "width": 0,
           "@id": "http://glaser.acdh.oeaw.ac.at/iiif/canvas/0097",
           "label": "96 - image not found",
-          "height": 0,
-          "metadata": [
-            {
-              "label": "description",
-              "value": "Ein Onkorgewährsmann gibt folgendes über meine Pflanze an"
-            }
-          ]
+          "height": 0
         }
       ],
       "@type": "sc:Sequence",

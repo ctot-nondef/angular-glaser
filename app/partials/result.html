@@ -19,16 +19,19 @@
 		</md-grid-tile>
 	</md-grid-list>
 </div>
-<div ng-if="uiview.currentView=='list'" class="pagewrapper" layout="column" layout-align="start start" layout-padding>
+<div ng-if="uiview.currentView=='list'" class="tablewrapper" layout="column" layout-align="start start" layout-padding>
 	<h2 class="md-display-1">Search Results</h2>
-	<md-table-pagination md-limit="Model.Pagesize" md-limit-options="[10, 20, 40, 100]" md-page="Model.Page" md-total="{{Model.Total}}" md-on-paginate="getPage" md-page-select></md-table-pagination>
+
 	<md-table-container>
+		<md-table-pagination md-limit="Model.Pagesize" md-limit-options="[10, 20, 40, 100]" md-page="Model.Page" md-total="{{Model.Total}}" md-on-paginate="getPage" md-page-select></md-table-pagination>
 	  <table md-table ng-model="selected" md-progress="promise">
 	    <thead md-head md-order="" md-on-reorder="getNewOrder">
 	      <tr md-row>
 									<th md-columnss><span>Type</span></th>
 									<th md-column><span></span></th>
 	        <th md-column><span>Title</span></th>
+								 <th md-column ><span>ID</span></th>
+								 <th md-column ><span>Production Dates</span></th>
 	        <th md-column><span>Language</span></th>
 	        <th md-column><span>Site</span></th>
 	        <th md-column><span>Actions</span></th>
@@ -43,6 +46,8 @@
 										<img ng-src="{{'https://opacbasis.acdh.oeaw.ac.at/wwwopac.ashx?command=getcontent&server=images&value=' + squeeze['reproduction.reference'][0] + '&width=200&height=200&scalemode=fill&fillmode=center&imageformat=jpg'}}" class="squeezeicon" alt="{{squeeze['reproduction.reference'][0]}}" ng-if="squeeze['reproduction.reference']" />
 									</td>
 	        <td md-cell>{{squeeze.title[0]}}</td>
+ 								<td md-cell>{{squeeze.object_number[0]}}</td>
+	 							<td md-cell>{{squeeze['production.date.start'][0]}} - {{squeeze['production.date.end'][0]}}</td>
 	        <td md-cell>{{squeeze['inscription.language'][0]}}</td>
 	        <td md-cell>{{squeeze['production.place'][0]}}</td>
 	        <td md-cell>
@@ -62,14 +67,21 @@
 														</md-tooltip>
 											</md-button>
 											<!-- 3D Scan Button -->
-											<md-button class="md-icon-button" aria-label="View Scan" ui-sref="gl.scan({scanID: '{{squeeze.priref}}'})" ng-if="hasScan(squeeze)">
+											<md-button class="md-icon-button" aria-label="View Scan in 3DHOP Viewer" ui-sref="gl.scan({scanID: '{{squeeze.priref}}'})" ng-if="hasScan(squeeze)">
 												<md-icon md-colors="{color: 'primary-800'}" >3d_rotation</md-icon>
 													<md-tooltip md-direction="bottom">
 															View 3D Scan
 														</md-tooltip>
 											</md-button>
+											<!-- IIIF UV Button -->
+											<md-button class="md-icon-button" aria-label="View Scan in UniversalViewer" ui-sref="{{'gl.diariesingle({did: \''+squeeze.priref+'\'})'}}" ng-if="hasIIIF(squeeze)">
+												<md-icon md-colors="{color: 'primary-800'}" >local_library</md-icon>
+												<md-tooltip md-direction="bottom">
+													View Scan in UniversalViewer
+												</md-tooltip>
+											</md-button>
 											<!-- Arche Button -->
-											<md-button class="md-icon-button" aria-label="Download Scan" href="{{'https://id.acdh.oeaw.ac.at/glasersqueezes2015/rec' + squeeze.priref + '?format=collection'}}" >
+											<md-button class="md-icon-button" aria-label="Download Options" ui-sref="{{'gl.singleRecord({refID: '+squeeze.priref+', tab: 3 })'}}" >
 												<md-icon md-colors="{color: 'primary-800'}" >file_download</md-icon>
 													<md-tooltip md-direction="bottom">
 															Download Scan
@@ -80,6 +92,7 @@
 	      </tr>
 	    </tbody>
 	  </table>
+		<md-table-pagination md-limit="Model.Pagesize" md-limit-options="[10, 20, 40, 100]" md-page="Model.Page" md-total="{{Model.Total}}" md-on-paginate="getPage" md-page-select></md-table-pagination>
 	</md-table-container>
 </div>
 <div class="viewmenu">
@@ -89,16 +102,12 @@
 				<md-icon aria-label="{{Icon.arialabel}}">pageview</md-icon>
 			</md-button>
 		</md-fab-trigger>
-
 		<md-fab-actions>
 			<md-button aria-label="List" class="md-fab md-raised md-mini" ng-click="onGrid()">
 				<md-icon aria-label="{{Icon.arialabel}}">view_comfy</md-icon>
 			</md-button>
 			<md-button aria-label="List" class="md-fab md-raised md-mini" ng-click="onList()">
 				<md-icon aria-label="{{Icon.arialabel}}">view_list</md-icon>
-			</md-button>
-			<md-button aria-label="List" class="md-fab md-raised md-mini" ng-click="onMap()">
-				<md-icon aria-label="{{Icon.arialabel}}">map</md-icon>
 			</md-button>
 		</md-fab-actions>
 	</md-fab-speed-dial>
