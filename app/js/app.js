@@ -111,6 +111,15 @@ function config($stateProvider, $urlRouterProvider, $locationProvider, $compileP
             }
         }
     })
+    .state('gl.entities',{
+      url: '/entities',
+      views: {
+        'content@': {
+          templateUrl: 'partials/entities.html',
+          controller: 'GlaserTeiEntities'
+        }
+      }
+    })
     .state('gl.singleRecord',{
         url: '/rec/:refID/:tab',
         params: { tab: '0' },

@@ -1,0 +1,34 @@
+<div class="tablewrapper" layout="column" layout-align="start start" layout-padding>
+	<h2 class="md-display-1">Entity List</h2>
+	<md-table-container>
+	  <table md-table md-progress="promise">
+				<md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-page-select md-boundary-links md-total="{{Model.Total}}"></md-table-pagination>
+	    <thead md-head md-order="" md-on-reorder="getNewOrder">
+	      <tr md-row>
+	        <th><span>Entity</span></th>
+	        <th><span>Occurence</span></th>
+								<th><span>Type</span></th>
+								<th><span>documents</span></th>
+	      </tr>
+	    </thead>
+	    <tbody md-body>
+	      <tr md-row
+	      		ng-repeat="squeeze in Model.Result | limitTo: query.limit : (query.page -1) * query.limit"
+	      		class="vspinentry" ng-style="dynStyle" ng-init="dynStyle={'animation-delay':$index/50+'s','overflow':'hidden'}" >
+									<td md-cell>{{squeeze.text}}</td>
+									<td md-cell>{{squeeze.occurences}}</td>
+									<td md-cell>{{squeeze.maintype}} - {{ squeeze.type }} - {{ squeeze.subtype }}</td>
+								<td md-cell>
+									<!-- Details Button -->
+									<md-button class="md-icon-button" aria-label="Details" ng-repeat="d in squeeze.doc track by $index" ui-sref="{{'gl.singleRecord({refID: '+cleanPriref(d)+', tab: 4 })'}}">
+										<md-icon md-colors="{color: 'primary-800'}" >library_books</md-icon>
+										<md-tooltip md-direction="bottom">
+											Jump to Record {{ cleanPriref(d) }}
+										</md-tooltip>
+									</md-button>
+								</td>
+							</tr>
+	    </tbody>
+	  </table>
+	</md-table-container>
+</div>

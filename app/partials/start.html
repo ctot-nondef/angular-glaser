@@ -12,29 +12,33 @@
 						<h5 >{{squeeze.position>0 ? squeeze.title : squeeze.title[0]}}</h5>
 					</md-grid-tile-footer>
 					<div class="tiletoolbar" layout="row" layout-align="end" ng-if="!squeeze.position" ng-click="$event.stopPropagation()">
-						<md-button class="md-icon-button" aria-label="Details" ui-sref="gl.singleRecord({refID: '{{squeeze.priref}}'})">
+						<!-- Details Button -->
+						<md-button class="md-icon-button" aria-label="Details" ui-sref="{{'gl.singleRecord({refID: '+squeeze.priref+'})'}}">
 							<md-icon md-colors="{color: 'primary-800'}" >library_books</md-icon>
-								<md-tooltip md-direction="bottom">
-										Details
-									</md-tooltip>
+							<md-tooltip md-direction="bottom">
+								Details
+							</md-tooltip>
 						</md-button>
-						<md-button class="md-icon-button" aria-label="View Image" ui-sref="gl.fullImage({imgID: '{{squeeze.priref}}'})">
+						<!-- Image Button -->
+						<md-button class="md-icon-button" aria-label="View Image" ui-sref="gl.fullImage({imgID: '{{squeeze.priref}}'})" ng-if="squeeze['reproduction.reference']">
 							<md-icon md-colors="{color: 'primary-800'}" >image</md-icon>
-								<md-tooltip md-direction="bottom">
-										View Image
-									</md-tooltip>
+							<md-tooltip md-direction="bottom">
+								View Image
+							</md-tooltip>
 						</md-button>
-						<md-button class="md-icon-button" aria-label="View Scan" ui-sref="gl.scan({scanID: '{{squeeze.priref}}'})">
+						<!-- 3D Scan Button -->
+						<md-button class="md-icon-button" aria-label="View Scan in 3DHOP Viewer" ui-sref="gl.scan({scanID: '{{squeeze.priref}}'})">
 							<md-icon md-colors="{color: 'primary-800'}" >3d_rotation</md-icon>
-								<md-tooltip md-direction="bottom">
-										View 3D Scan
-									</md-tooltip>
+							<md-tooltip md-direction="bottom">
+								View 3D Scan
+							</md-tooltip>
 						</md-button>
-						<md-button class="md-icon-button" aria-label="Download Scan" href="{{'https://id.acdh.oeaw.ac.at/glasersqueezes2015/rec' + squeeze.priref + '?format=collection'}}" >
+						<!-- Arche Button -->
+						<md-button class="md-icon-button" aria-label="Download Options" ui-sref="{{'gl.singleRecord({refID: '+squeeze.priref+', tab: 3 })'}}" >
 							<md-icon md-colors="{color: 'primary-800'}" >file_download</md-icon>
-								<md-tooltip md-direction="bottom">
-										Download Scan
-									</md-tooltip>
+							<md-tooltip md-direction="bottom">
+								Download Scan
+							</md-tooltip>
 						</md-button>
 					</div>
 			</md-grid-tile>

@@ -1,7 +1,7 @@
 <div style="width: 100%; height: 100%; overflow: hidden;">
   <div style="height: 40px; width: calc(100% - 100px); padding-left: 10px">
     <md-select ng-model="Model.selectedScan" md-on-close="loadScan()" placeholder="Select Scan to load">
-      <md-option ng-repeat="ref in Model.availableScans track by $index" value="{{ref}}">{{ref}}</md-option>
+      <md-option ng-repeat="ref in Model.rec['reproduction.reference'] track by $index" value="{{ref}}">{{Model.rec['reproduction.original_file_name'][$index] || Model.rec['reproduction.reference'][$index]}} - {{Model.rec['reproduction.notes'][$index]}}</md-option>
     </md-select>
   </div>
   <image-viewer ng-if="!Model.loading"

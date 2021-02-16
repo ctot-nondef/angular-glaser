@@ -32,6 +32,14 @@
 		"items":""
 	},
 	{
+		"caption":"TEI Entities (beta)",
+		"arialabel":"",
+		"mdicon":"format_list_numbered",
+		"abstract":"",
+		"startpage":"gl.entities",
+		"items":""
+	},
+	{
 		"caption":"About the Project",
 		"arialabel":"",
 		"mdicon":"info_outline",
