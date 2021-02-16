@@ -75,7 +75,7 @@
 										</md-list-item>
 										<md-list-item class="vspinentry" ng-repeat="dimension in Model.SingleRecord['dimension.value'] track by $index">
 											<p style="width:60%">{{ Model.SingleRecord['dimension.part'][$index] }} - {{ Model.SingleRecord['dimension.type'][$index] }}:</p>
-											<p style="width: 40%; text-align: justify;">{{ Model.SingleRecord['dimension.precision'][$index] }} {{ Model.SingleRecord['dimension.value'][$index] }} {{ Model.SingleRecord['dimension.unit'][$index] }}</p>
+											<p style="width: 40%; text-align: justify;">{{ Model.SingleRecord['dimension.precision'][$index] }} {{ Model.SingleRecord['dimension.value'][$index] }} {{ Model.SingleRecord['dimension.unit'][$index] }} {{ Model.SingleRecord['dimension.notes'][$index] }}</p>
 											<md-divider></md-divider>
 										</md-list-item>
 								</md-list>
@@ -91,6 +91,16 @@
 						<div style="width: 100%;" layout-padding>
 							<h3 class="md-title">Notes & Description</h3>
 								<md-list flex>
+									<md-list-item class="vspinentry"  >
+										<p style="width: 20%;" >Archival History</p>
+										<p style="width: 40%;">{{Model.SingleRecord['object_history_note'][0]}}</p>
+										<md-divider></md-divider>
+									</md-list-item>
+									<md-list-item class="vspinentry"  >
+										<p style="width: 20%;" >Content</p>
+										<p style="width: 40%;">{{Model.SingleRecord['content.description'][0]}}</p>
+										<md-divider></md-divider>
+									</md-list-item>
 									<md-list-item class="vspinentry"  >
 										<p style="width: 20%;" >Notes</p>
 										<p style="width: 40%;">{{Model.SingleRecord['inscription.notes'][0]}}</p>
@@ -120,6 +130,12 @@
 					<div style="width: 100%;" layout-padding>
 						<h3 class="md-title">Persons & Institutions</h3>
 						<md-list flex>
+							<md-list-item class="vspinentry" ng-repeat="person in Model.SingleRecord['creator'] track by $index">
+								<p style="width:20%">Creator: </p>
+								<p style="width: 40%; text-align: justify;">{{person}}</p>
+								<md-divider></md-divider>
+							</md-list-item>
+						</md-list>
 							<md-list-item class="vspinentry" ng-repeat="person in Model.SingleRecord['content.person.name'] track by $index">
 								<p style="width:20%">{{Model.SingleRecord['content.person.name.role'][$index][1]['value']}}: </p>
 								<p style="width: 40%; text-align: justify;">{{person}}</p>
