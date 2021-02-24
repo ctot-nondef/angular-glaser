@@ -209,20 +209,6 @@ GlaserApp
         console.log($stateParams.querystring);
       }
     }])
-    .controller('GlaserDiaryList', ['$scope', '$http', '$state', '$stateParams', 'opacsearch', function ($scope, $http, $state, $stateParams, opacsearch) {
-      //********* DECLARATIVE PART *********************************************
-      $scope.Model = {};
-      $scope.selected = [];
-      $scope.Model.Pagesize = 100;
-      $scope.Model.Page = 1;
-      //********* END OF DECLARATIVE PART **************************************
-      //************************************************************************
-      opacsearch.getRecordsbyPointer('archive', '5', [], '1', '40').then(function (res) {
-        $scope.Model.Total = res.data.adlibJSON.diagnostic.hits;
-        $scope.Model.Pagesize = opacsearch.pagesize;
-        $scope.Model.Result = res.data.adlibJSON.recordList.record;
-      });
-    }])
     .controller('GlaserDiarySingle', ['$scope', '$http', '$state', '$stateParams', 'opacsearch', function ($scope, $http, $state, $stateParams, opacsearch) {
       //********* DECLARATIVE PART *********************************************
       $scope.Model = {};
@@ -266,6 +252,12 @@ GlaserApp
         if($scope.Manifest["adlib" + legacyPrirefs.NewToOld($stateParams.refID)] ) $scope.TEIName = "adlib" + legacyPrirefs.NewToOld($stateParams.refID);
         if($scope.Manifest[legacyPrirefs.NewToOld($stateParams.refID)] ) $scope.TEIName = legacyPrirefs.NewToOld($stateParams.refID);
         if ($scope.Manifest && ($scope.Manifest["adlib" + legacyPrirefs.NewToOld($stateParams.refID)] || $scope.Manifest[legacyPrirefs.NewToOld($stateParams.refID)])) return true;
+        else return false;
+      }
+      $scope.hasIIIF = function (rec) {
+        if (Array.isArray(rec.digital_reference) &&
+            rec.digital_reference.filter(ref => ref.match(/\.json/g)).length > 0
+        ) return true;
         else return false;
       }
       $scope.parseDLLink = function(file) {

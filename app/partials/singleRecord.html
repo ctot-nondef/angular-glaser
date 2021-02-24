@@ -13,6 +13,10 @@
 				<md-icon>code</md-icon>
 				TEI Encodings
 			</md-button>
+			<md-button style="position: relative; margin: 13px; z-index:1;" class="md-primary md-raised" aria-label="IIIF Viewer" ui-sref="{{'gl.diariesingle({did: \''+Model.SingleRecord.priref+'\'})'}}" ng-if="hasIIIF(Model.SingleRecord)">
+				<md-icon>local_library</md-icon>
+				IIIF Viewer
+			</md-button>
 		</div>
 		<md-tabs md-dynamic-height md-border-bottom md-selected="activeTab" md-stretch-tabs="always" style="width: 100%;">
 			<md-tab label="Basic">
