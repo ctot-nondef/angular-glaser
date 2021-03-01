@@ -1,9 +1,13 @@
 <div class="tablewrapper" layout="column" layout-align="start start" layout-padding>
-	<h2 class="md-display-1">Entity List</h2>
+	<h2 class="md-display-1">Entity Lists</h2>
+	<md-select ng-model="Model.selectedList" ng-change="changeSelected()" style="width: 100%;">
+		<md-option ng-repeat="(key, value) in lists" value="{{value}}" >
+			{{key}}
+		</md-option>
+	</md-select>
 	<md-table-container>
 	  <table md-table md-progress="promise">
-				<md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-page-select md-boundary-links md-total="{{Model.Total}}"></md-table-pagination>
-	    <thead md-head md-order="" md-on-reorder="getNewOrder">
+	    <thead md-head md-order="">
 	      <tr md-row>
 	        <th><span>Entity</span></th>
 	        <th><span>Occurence</span></th>

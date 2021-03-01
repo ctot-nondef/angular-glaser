@@ -605,32 +605,53 @@ GlaserApp
         }
       }
     }])
-    .controller('GlaserTeiEntities', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', 'legacyPrirefs', function ($scope, $stateParams, opacsearch, leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state, legacyPrirefs) {
+    .controller('GlaserTeiEntities', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', 'legacyPrirefs', '$http', function ($scope, $stateParams, opacsearch, leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state, legacyPrirefs, $http) {
       //********* DECLARATIVE PART *********************************************
       $scope.Model = {
         Result: [],
         Total: 0,
+        selectedList: 'https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=placeName',
       };
-      $scope.query = {
-        order: 'name',
-        limit: 40,
-        page: 1
-      };
-      $scope.limitOptions = [20, 40, 100];
       $scope.cleanPriref = function(p) {
         if(p.match(/^adlib.*/)) return legacyPrirefs.OldToNew(p.substring(5, 15));
         else return legacyPrirefs.OldToNew(p.substring(0, 10));
       }
+      $scope.lists = {
+        "place name":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=placeName",
+        "place name sanctuary":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=placeName&subType=sanctuary",
+        "place name building":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=placeName&subType=building",
+        "name epithet divine":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=name&subType=epithet&subSubType=divine (hier scheint es ohnehin nur diese unter-untergruppe zu geben), da https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=name&subType=epithet die gleiche Trefferanzahl auswirft",
+        "name theonym":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=name&subType=theonym",
+        "pers.name gender male":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=persName&subType=gender&subSubType=m",
+        "pers.name gender female":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=persName&subType=gender&subSubType=f",
+        "pers.name gender unknown":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=persName&subType=gender&subSubType=u",
+        "pers.name patronymic":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=persName&subType=patronymic",
+        "pers.name royal":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=persName&subType=royal",
+        "pers.name royal with title":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=persName&subType=royal&subSubType=withTitle",
+        "Pers.name patronymic royal with title":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=persName&subType=patronymic&subSubType=royalWithTitle",
+        "orgname tribe":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=orgName&subType=tribe",
+        "orgname group":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=orgName&subType=group"
+      }
       //************************************************************************
       ////////////////////////////////////////////////////////////////////////////
-      $scope.promise = ExistService.getEntities();
+      $scope.promise = $http.get($scope.Model.selectedList);
       $scope.promise.then(res => {
-        res.data.item.forEach((entity, index) => {
-          if(!Array.isArray(res.data.item[index]['doc'])) res.data.item[index]['doc'] = [...new Set(entity.doc.split(' '))];
+        console.log(res.data);
+        res.data.data.item.forEach((entity, index) => {
+          if(!Array.isArray(res.data.data.item[index]['doc'])) res.data.data.item[index]['doc'] = [...new Set(entity.doc.split(' '))];
         })
-        $scope.Model.Result = res.data.item;
-        $scope.Model.Total = res.data.item.length;
+        $scope.Model.Result = res.data.data.item;
+        $scope.Model.Total = res.data.data.item.length;
       });
+      $scope.changeSelected = function() {
+        $scope.promise = $http.get($scope.Model.selectedList).then(res => {
+          res.data.data.item.forEach((entity, index) => {
+            if(!Array.isArray(res.data.data.item[index]['doc'])) res.data.data.item[index]['doc'] = [...new Set(entity.doc.split(' '))];
+          })
+          $scope.Model.Result = res.data.data.item;
+          $scope.Model.Total = res.data.data.item.length;
+        });
+      }
     }])
     .controller('GlaserTei', ['$scope', '$stateParams', 'opacsearch', 'leafletData', 'leafletBoundsHelpers', 'ExistService', '$mdMedia', '$mdSidenav', '$state', 'legacyPrirefs', function ($scope, $stateParams, opacsearch, leafletData, leafletBoundsHelpers, ExistService, $mdMedia, $mdSidenav, $state, legacyPrirefs) {
       //********* DECLARATIVE PART *********************************************
