@@ -333,6 +333,28 @@ GlaserApp
         center: {},
         Model: {},
         markers: {},
+        events: {
+          markers: {
+            enable: [ 'mouseover', 'mouseout', 'click' ]
+            //logic: 'emit'
+          }
+        },
+        layers: {
+          baselayers: {
+            osm: {
+              name: 'OpenStreetMap',
+              type: 'xyz',
+              url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+            }
+          },
+          overlays: {
+            squeezes: {
+              name: "Real world data",
+              type: "markercluster",
+              visible: true
+            }
+          }
+        },
         ssite: "",
         activeTab: 0,
         allsites: {}
@@ -344,9 +366,17 @@ GlaserApp
           "lng": parseFloat(GeoNamesServices.staticcache[id].lng),
           "message": GeoNamesServices.staticcache[id].name,
           "id": id,
-        };
+        }
       }
-      ;
+      $scope.$on("leafletDirectiveMarker.mainmap.mouseover", function(event, args){
+        args.leafletObject.openPopup();
+      });
+      $scope.$on("leafletDirectiveMarker.mainmap.mouseout", function(event, args){
+        args.leafletObject.closePopup();
+      });
+      $scope.$on('leafletDirectiveMarker.mainmap.click', function (event, args) {
+        $scope.selSite(args.modelName);
+      });
       $rootScope.loading.progress = false;
       if ($stateParams.placeID && $scope.markers[$stateParams.placeID]) {
         leafletData.getMap('mainmap').then(function (map) {
@@ -356,10 +386,7 @@ GlaserApp
             map.invalidateSize()
           }, 400);
           map.panTo({"lat": parseFloat('14.5'), "lng": parseFloat('45.5')});
-          map.setZoom(8);
-        });
-        $scope.$on('leafletDirectiveMarker.mainmap.click', function (event, args) {
-          $scope.selSite(args.modelName);
+          map.setZoom(7);
         });
       } else if ($stateParams.placeID == 0) {
         leafletData.getMap('mainmap').then(function (map) {
@@ -367,11 +394,7 @@ GlaserApp
             map.invalidateSize()
           }, 400);
           map.panTo({"lat": parseFloat('14.5'), "lng": parseFloat('45.5')});
-          map.setZoom(8);
-        });
-        $scope.$on('leafletDirectiveMarker.mainmap.click', function (event, args) {
-          $scope.selSite(args.modelName);
-          console.log(JSON.stringify($scope.allsites));
+          map.setZoom(7);
         });
       }
       $scope.selSite = function (site) {

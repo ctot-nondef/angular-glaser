@@ -1,10 +1,13 @@
-<leaflet id="mainmap" markers="markers" class="map"></leaflet>
+<leaflet id="mainmap" markers="markers" event-broadcast="events" layers="layers" class="map"></leaflet>
 <md-sidenav
     class="md-sidenav-right md-whiteframe-0dp"
     md-component-id="right"
     md-is-open="big"
     md-whiteframe="4"
-    md-disable-backdrop="true">
+    md-disable-backdrop="true"
+				md-disable-close-events
+				style="width: 35%!important; max-width: 1000px!important;"
+>
   <md-content >
     <md-tabs md-dynamic-height md-border-bottom md-selected="activeTab" md-stretch-tabs="always">
      <md-tab label="sites">
