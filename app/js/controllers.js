@@ -612,6 +612,12 @@ GlaserApp
         Total: 0,
         selectedList: 'https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=placeName',
       };
+      $scope.query = {
+        order: 'name',
+        limit: 40,
+        page: 1
+      };
+      $scope.limitOptions = [20, 40, 100];
       $scope.cleanPriref = function(p) {
         if(p.match(/^adlib.*/)) return legacyPrirefs.OldToNew(p.substring(5, 15));
         else return legacyPrirefs.OldToNew(p.substring(0, 10));
@@ -620,7 +626,7 @@ GlaserApp
         "place name":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=placeName",
         "place name sanctuary":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=placeName&subType=sanctuary",
         "place name building":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=placeName&subType=building",
-        "name epithet divine":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=name&subType=epithet&subSubType=divine (hier scheint es ohnehin nur diese unter-untergruppe zu geben), da https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=name&subType=epithet die gleiche Trefferanzahl auswirft",
+        "name epithet divine":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=name&subType=epithet&subSubType=divine",
         "name theonym":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=name&subType=theonym",
         "pers.name gender male":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=persName&subType=gender&subSubType=m",
         "pers.name gender female":"https://glaser-tei.acdh.oeaw.ac.at/analyze/entities.xql?entType=persName&subType=gender&subSubType=f",

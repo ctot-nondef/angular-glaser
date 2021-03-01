@@ -7,7 +7,8 @@
 	</md-select>
 	<md-table-container>
 	  <table md-table md-progress="promise">
-	    <thead md-head md-order="">
+				<md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-page-select md-boundary-links md-total="{{Model.Total}}"></md-table-pagination>
+	    <thead md-head md-order="" md-on-reorder="getNewOrder">
 	      <tr md-row>
 	        <th><span>Entity</span></th>
 	        <th><span>Occurence</span></th>
