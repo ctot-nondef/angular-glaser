@@ -74,6 +74,24 @@
 										<p style="width: 60%; text-align: justify;"><a href="{{Model.SingleRecord['digital_reference'][$index]}}" target="_blank">{{Model.SingleRecord['digital_reference'][$index].split("=").slice(-1)[0]}}</a></p>
 										<md-divider></md-divider>
 									</md-list-item>
+										<md-list-item class="vspinentry" ng-if="Model.SingleRecord['production.date.start'] || Model.SingleRecord['production.date.end'] || Model.SingleRecord['production.date.notes']">
+											<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Production Dates: </h3>
+										</md-list-item>
+										<md-list-item class="vspinentry" ng-repeat="date in Model.SingleRecord['production.date.start'] track by $index">
+											<p style="width:60%">Start:</p>
+											<p style="width: 40%; text-align: justify;">{{ Model.SingleRecord['production.date.start'][$index] }} {{ Model.SingleRecord['production.date.start.prec'][$index] }}</p>
+											<md-divider></md-divider>
+										</md-list-item>
+										<md-list-item class="vspinentry" ng-repeat="date in Model.SingleRecord['production.date.start'] track by $index">
+											<p style="width:60%">End:</p>
+											<p style="width: 40%; text-align: justify;">{{ Model.SingleRecord['production.date.end'][$index] }} {{ Model.SingleRecord['production.date.end.prec'][$index] }}</p>
+											<md-divider></md-divider>
+										</md-list-item>
+										<md-list-item class="vspinentry" ng-repeat="date in Model.SingleRecord['production.date.notes'] track by $index">
+											<p style="width:60%">Notes:</p>
+											<p style="width: 40%; text-align: justify;">{{ Model.SingleRecord['production.date.notes'][$index] }}</p>
+											<md-divider></md-divider>
+										</md-list-item>
 										<md-list-item class="vspinentry" ng-if="Model.SingleRecord['dimension.value']">
 											<h3 class="md-title" style="width:40%;padding-right: 15px;text-align: right;">Dimensions: </h3>
 										</md-list-item>
