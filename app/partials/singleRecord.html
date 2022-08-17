@@ -191,6 +191,7 @@
 						<md-list flex>
 							<md-list-item class="vspinentry" ng-repeat="number in Model.SingleRecord['related_object.reference'] track by $index" ui-sref="gl.singleRecord({refID: '{{Model.SingleRecord['related_object.reference.lref'][$index]}}'})" >
 								<p style="width:40%">{{ Model.SingleRecord['related_object.association'][$index] }}</p>
+								<p style="width:40%">{{ Model.SingleRecord['related_object.notes'][$index] }}</p>
 								<p style="width:40%" >{{ Model.SingleRecord['related_object.reference'][$index] }} - {{ Model.SingleRecord['related_object.title'][$index] }}</p>
 								<md-divider></md-divider>
 							</md-list-item>
