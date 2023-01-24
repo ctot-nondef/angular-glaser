@@ -400,7 +400,7 @@ GlaserApp
       $scope.selSite = function (site) {
         if ($scope.ssite) $scope.markers[$scope.ssite].focus = false;
         $state.go('gl.map', {placeID: site});
-        $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', [{"production.place.uri": $scope.markers[site].id}, {"part_of_reference": "*BA-3-27-*"}], "AND", undefined, [], 1, 100).then($scope.update);
+        $scope.promise = opacsearch.getRecordsbyIndex('collect.inf', [{"production.place.uri": `https://sws.geonames.org/${$scope.markers[site].id}`}, {"part_of_reference": "*BA-3-27-*"}], "AND", undefined, [], 1, 100).then($scope.update);
         $scope.markers[site].focus = true;
         $scope.activeTab = 1;
         $scope.ssite = site;
